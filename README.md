@@ -1,7 +1,7 @@
-# Chiplab用户手册 
-## 前言
-chiplab项目致力于构建基于LoongArch32 Reduced的soc敏捷开发平台。如发现问题请在issues提出。
 
+## CHIPLAB
+chiplab项目致力于构建基于LoongArch32 Reduced的soc敏捷开发平台。
+本项目总体框架引用了[CHIPLAB](https://portrait.gitee.com/loongson-edu/chiplab）项目，对其进行了针对Skeleton CPU的适配和修改。
 详细介绍请参考[CHIPLAB使用介绍](https://chiplab.readthedocs.io/)
 
 ## 
