@@ -1,0 +1,38 @@
+
+
+
+仅在 <local_flush_icache_range>中出现ibar
+a03063a8 <local_flush_icache_range>:
+a03063a8:	38728000 	ibar	0x0
+a03063ac:	4c000020 	jirl	$r0,$r1,0
+
+所有出现位置如下
+Kernel call:
+    nonboot_cpu_trap_init（may called by user）
+            local_flush_icache_range
+
+    start_kernel    
+        trap_init
+            set_handler(only be called in trap_init)
+                local_flush_icache_range
+
+    setup_tlb_handler            
+        setup_tlb_handler.part.4
+            local_flush_icache_range
+
+    tlb_init
+        setup_tlb_handler.part.4
+            local_flush_icache_range
+
+
+均在<memcpy>后调用<local_flush_icache_range>
+而这里的<memcpy>均涉及trap_handler设置或是tlb_handler设置，
+这两者在内存或dcache中被修改，修改后需重新载入icache
+而在loader中不涉及<local_flush_icache_range>的调用
+
+La500
+    //from axi
+    input                               write_buffer_empty,
+    //from dcache 
+	input 							    dcache_empty      ,
+
