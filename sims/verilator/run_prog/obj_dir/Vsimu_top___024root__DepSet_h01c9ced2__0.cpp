@@ -72,6 +72,10 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_pnd;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_pnd 
         = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_pnd;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ms_int_pnd 
         = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ms_int_pnd;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rda_int_pnd 
@@ -147,10 +151,10 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_resp_prog 
         = vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_resp_prog;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0 
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top 
         = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count 
@@ -188,6 +192,8 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v17 = 0U;
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v18 = 0U;
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v19 = 0U;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_1 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_1;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__bit_out 
         = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__bit_out;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__shift_out 
@@ -209,8 +215,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__tf_count 
         = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__tf_count;
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__fifo_tx__DOT__tfifo__DOT__ram__v0 = 0U;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_1;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_0 
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_0;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__confreg__DOT__cr7 
@@ -231,34 +235,8 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         = vlSelf->simu_top__DOT__soc__DOT__confreg__DOT__cr0;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__retirePtr 
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__retirePtr;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBufferTail 
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBufferTail;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__rd_count 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__rd_count;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_rd_size 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_rd_size;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__reg_datai_32 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__reg_datai_32;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_s_wstrb 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_s_wstrb;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_rd 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_rd;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_wr 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_wr;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__apb_s_bvalid 
-        = vlSelf->simu_top__DOT__soc__DOT__apb_s_bvalid;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_psel_cpu 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_psel_cpu;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_req_addr 
-        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_req_addr;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__wr_ptr 
-        = vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__wr_ptr;
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__apb_s_rvalid 
-        = vlSelf->simu_top__DOT__soc__DOT__apb_s_rvalid;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_swRead_value_32 
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_swRead_value_32;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_swRead_value_31 
@@ -277,22 +255,44 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_interrupt;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_swRead_value_25 
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_swRead_value_25;
-    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__fifo_ram__v0 = 0U;
-    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__fifo_ram__v1 = 0U;
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__tag_3__DOT__mem_reg__v0 = 0U;
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__tag_2__DOT__mem_reg__v0 = 0U;
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__tag_1__DOT__mem_reg__v0 = 0U;
     vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__tag_0__DOT__mem_reg__v0 = 0U;
-    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__fifo_ram__v0 = 0U;
-    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__fifo_ram__v1 = 0U;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__rd_count 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__rd_count;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_rd_size 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_rd_size;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__reg_datai_32 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__reg_datai_32;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_s_wstrb 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__apb_s_wstrb;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_rd 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_rd;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_wr 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_sel_wr;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__apb_s_bvalid 
+        = vlSelf->simu_top__DOT__soc__DOT__apb_s_bvalid;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_psel_cpu 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_psel_cpu;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_req_addr 
+        = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_axi2apb_bridge_cpu__DOT__axi_s_req_addr;
     vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__transferBlockOffset 
         = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__transferBlockOffset;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__wr_ptr 
+        = vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__wr_ptr;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__apb_s_rvalid 
+        = vlSelf->simu_top__DOT__soc__DOT__apb_s_rvalid;
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_redirectPC 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_redirectPC;
+    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__fifo_ram__v0 = 0U;
+    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__fifo_ram__v1 = 0U;
+    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__fifo_ram__v0 = 0U;
+    vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__fifo_ram__v1 = 0U;
     if ((1U & (~ (IData)(vlSelf->aresetn)))) {
         vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_fifo__DOT__i = 2U;
         vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__i = 2U;
     }
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_redirectPC 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_redirectPC;
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__portRen0_0) {
         if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__portWen0_0) {
             vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__data_0__DOT__unnamedblk1__DOT__i = 4U;
@@ -344,11 +344,11 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_2_1) {
         Vsimu_top___024unit____Vdpiimwrap_v_difftest_InstrCommit_TOP____024unit(0U, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_2_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_2_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_2_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_2_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_2_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_2_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_2_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_2_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_2_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_2_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_2_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_2_1);
     }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1) {
-        Vsimu_top___024unit____Vdpiimwrap_v_difftest_InstrCommit_TOP____024unit(0U, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_1_1);
-    }
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_0_1) {
         Vsimu_top___024unit____Vdpiimwrap_v_difftest_InstrCommit_TOP____024unit(0U, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_0_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_0_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_0_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_0_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_0_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_0_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_0_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_0_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_0_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_0_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_0_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_0_1);
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1) {
+        Vsimu_top___024unit____Vdpiimwrap_v_difftest_InstrCommit_TOP____024unit(0U, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_1_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_1_1, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_1_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_1_1);
     }
     Vsimu_top___024unit____Vdpiimwrap_v_difftest_LoadEvent_TOP____024unit(0U, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventValid_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventPAddr_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventVAddr_1);
     Vsimu_top___024unit____Vdpiimwrap_v_difftest_StoreEvent_TOP____024unit(0U, (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_1), vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventValid_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventPAddr_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventVAddr_1, vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventData_1);
@@ -579,10 +579,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_uop_divuOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_uop_divuOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_imm 
@@ -603,10 +599,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_uop_muluOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_uop_muluOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_imm 
@@ -627,10 +619,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_roop_cruROOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_roop_cruROOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_uop_bruOp 
@@ -649,10 +637,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_exceptionInfo_eCode;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_pc;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_uop_bruOp 
@@ -673,10 +657,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_exceptionInfo_eCode;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_pc;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__counter_value 
@@ -699,10 +679,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_branchResult_branchResult;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_branchResult_branchResult 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_branchResult_branchResult;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_srcReady_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_srcReady_0;
     } else {
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_uop_lsuCoOp = 0U;
@@ -714,8 +690,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_uop_divuOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_exceptionInfo_eCode = 0U;
@@ -726,8 +700,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_uop_muluOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_exceptionInfo_eCode = 0U;
@@ -738,8 +710,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_roop_cruROOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_exceptionInfo_eSubCode = 0U;
@@ -749,8 +719,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_exceptionInfo_exception = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_exceptionInfo_eCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_pc = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_uop_cruOp = 0U;
@@ -761,8 +729,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_exceptionInfo_exception = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_exceptionInfo_eCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_pc = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__counter_value = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_branchResult_branchResult = 0U;
@@ -774,8 +740,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_branchResult_branchResult = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_branchResult_branchResult = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_branchResult_branchResult = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_0 = 0U;
     }
     vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_roop_lsuROOp 
         = (1U & ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset)) 
@@ -785,10 +749,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_uop_lsuCoOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_psrc_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_exceptionInfo_eSubCode 
@@ -805,18 +765,10 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_branchResult_targetPC 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_branchResult_targetPC;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_srcReady_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_uop_divuOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_uop_divuOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_psrc_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_srcReady_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_robIdx 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_branchResult_targetPC 
@@ -837,10 +789,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_uop_muluOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_psrc_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_robIdx 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_branchResult_targetPC 
@@ -863,8 +811,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_uop_bruOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_exceptionInfo_eSubCode 
@@ -873,8 +819,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_exceptionInfo_eCode;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_exceptionInfo_exception 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_exceptionInfo_exception;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_robIdx 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_branchInfo_predictPC 
@@ -887,8 +831,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_uop_bruOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_exceptionInfo_eSubCode 
@@ -897,8 +839,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_exceptionInfo_eCode;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_exceptionInfo_exception 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_exceptionInfo_exception;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_robIdx 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_branchInfo_predictPC 
@@ -921,10 +861,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_branchResult_targetPC;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_robIdx 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_robIdx;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_psrc_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_uop_lsuCoOp 
@@ -932,8 +868,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
     } else {
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_uop_lsuCoOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_exceptionInfo_eCode = 0U;
@@ -942,12 +876,8 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_prd = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_branchResult_targetPC = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_uop_divuOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_branchResult_targetPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_branchResult_predictFail = 0U;
@@ -958,8 +888,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_prd = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_uop_muluOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_branchResult_targetPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_branchResult_predictFail = 0U;
@@ -971,24 +899,20 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_roop_cruROOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_exceptionInfo_eCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_exceptionInfo_exception = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_branchInfo_predictPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_branchInfo_predictResult = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_uop_cruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_exceptionInfo_eCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_exceptionInfo_exception = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_branchInfo_predictPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_branchInfo_predictResult = 0U;
@@ -1000,8 +924,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_branchResult_predictFail = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_branchResult_targetPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_robIdx = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_uop_lsuCoOp = 0U;
     }
@@ -1009,10 +931,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         = (1U & ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset)) 
                  | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_roop_lsuROOp)));
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_srcReady_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_robIdx 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_branchResult_targetPC 
@@ -1029,17 +947,11 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_uop_lsuCoOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_uop_lsuCoOp;
     } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_branchResult_targetPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_branchResult_predictFail = 0U;
@@ -1048,8 +960,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_uop_lsuCoOp = 0U;
     }
@@ -1057,14 +967,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         = (1U & ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset)) 
                  | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_roop_lsuROOp)));
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_srcReady_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_psrc_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_prd;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_pc 
@@ -1085,10 +987,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_uop_divuOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_srcReady_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_robIdx 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_branchResult_targetPC 
@@ -1105,22 +1003,10 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_uop_divuOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_uop_divuOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_srcReady_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_psrc_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_prd;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_pc 
@@ -1157,16 +1043,10 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_prd 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_uop_muluOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_uop_muluOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_exceptionInfo_eSubCode 
@@ -1183,8 +1063,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_uop_bruOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_uop_bruOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_roop_cruROOp 
@@ -1203,18 +1081,12 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_exceptionInfo_eSubCode;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_pc;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_uop_bruOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_uop_bruOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_roop_cruROOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_roop_cruROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_psrc_0;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_exceptionInfo_eSubCode 
@@ -1231,8 +1103,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_robIdx;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_uop_bruOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_uop_bruOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_uop_cruOp 
@@ -1251,22 +1121,122 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_exceptionInfo_eSubCode;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_pc;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_imm 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_imm;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_uop_bruOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_uop_bruOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_uop_cruOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_uop_cruOp;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_srcReady_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_srcReady_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_srcReady_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_srcReady_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_srcReady_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_srcReady_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_psrc_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_uop_lsuOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_uop_lsuOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_uop_aluOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_uop_aluOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_uop_aluOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_uop_aluOp;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_srcReady_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_srcReady_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_srcReady_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_srcReady_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_srcReady_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_srcReady_1;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_uop_lsuOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_uop_lsuOp;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_uop_aluOp 
@@ -1286,10 +1256,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_uop_aluOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_uop_aluOp;
     } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_prd = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_exceptionInfo_eSubCode = 0U;
@@ -1300,8 +1266,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_uop_divuOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_branchResult_targetPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_branchResult_predictFail = 0U;
@@ -1310,14 +1274,8 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_uop_divuOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_prd = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_exceptionInfo_eSubCode = 0U;
@@ -1336,11 +1294,8 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_uop_muluOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_exceptionInfo_eCode = 0U;
@@ -1349,7 +1304,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_branchInfo_predictPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_roop_cruROOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_robIdx = 0U;
@@ -1359,12 +1313,9 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_exceptionInfo_eCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_pc = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_roop_cruROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_pc = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_exceptionInfo_eCode = 0U;
@@ -1373,7 +1324,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_branchInfo_predictPC = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_robIdx = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_imm = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_uop_cruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_robIdx = 0U;
@@ -1383,14 +1333,64 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_exceptionInfo_eCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_exceptionInfo_eSubCode = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_pc = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_imm = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_uop_bruOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_uop_cruOp = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_srcReady_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_srcReady_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_srcReady_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_psrc_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_uop_lsuOp = 0xcU;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_uop_aluOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_uop_aluOp = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_srcReady_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_srcReady_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_0 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_srcReady_1 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_uop_lsuOp = 0xcU;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_uop_aluOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_uop_aluOp = 0U;
@@ -1401,6 +1401,14 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_uop_aluOp = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_uop_aluOp = 0U;
     }
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_1_branchInfo_predictResult 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_1_branchInfo_predictResult;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_1_branchInfo_predictPC 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_1_branchInfo_predictPC;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_0_branchInfo_predictResult 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_0_branchInfo_predictResult;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_0_branchInfo_predictPC 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_0_branchInfo_predictPC;
     if ((1U & (~ (IData)(vlSelf->aresetn)))) {
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__rbit_in = 0U;
     }
@@ -1853,6 +1861,14 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             }
         }
     }
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_1_exceptionInfo_eSubCode 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_1_exceptionInfo_eSubCode;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_1_exceptionInfo_eCode 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_1_exceptionInfo_eCode;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_0_exceptionInfo_eSubCode 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_0_exceptionInfo_eSubCode;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_0_exceptionInfo_eCode 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_0_exceptionInfo_eCode;
     if (vlSelf->aresetn) {
         if (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_apb_mux16__DOT__apb_rw) 
              & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__HIT10))) {
@@ -2131,11 +2147,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                     = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_lruBit_0_2;
             }
         }
-        if (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_apb_mux16__DOT__apb_rw) 
-             & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__HIT8))) {
-            vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__nand_ce_map0 
-                = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_nand_datai;
-        }
     } else {
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__nand_rdy_map0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__nand_rdy_map1 = 0U;
@@ -2204,6 +2215,22 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__lruBit_29_2 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__lruBit_30_2 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__lruBit_31_2 = 0U;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_rData_imm 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT___zz_issueEntry_imm;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_rData_imm 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT___zz_issueEntry_imm;
+    }
+    if (vlSelf->aresetn) {
+        if (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_apb_mux16__DOT__apb_rw) 
+             & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__HIT8))) {
+            vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__nand_ce_map0 
+                = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_nand_datai;
+        }
+    } else {
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__nand_ce_map0 = 0U;
     }
     if (vlSelf->simu_top__DOT__soc__DOT__conf_axi_ram__DOT__ram_r_en) {
@@ -2214,20 +2241,41 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_rlast 
             = vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_a_data_arlen_last;
     }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_rData_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT___zz_issueEntry_psrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_rData_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT___zz_issueEntry_psrc_1;
+    }
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_pnd 
+        = ((IData)(vlSelf->aresetn) & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__fifo_read)
+                                        ? 0U : (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int) 
+                                                 & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_d)))
+                                                 ? 1U
+                                                 : 
+                                                ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_pnd) 
+                                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier)))));
+    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_pnd 
+        = ((IData)(vlSelf->aresetn) & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr_mask)
+                                        ? 0U : (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int) 
+                                                 & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_d)))
+                                                 ? 1U
+                                                 : 
+                                                ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_pnd) 
+                                                 & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier) 
+                                                    >> 2U)))));
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0 
+            = (7U & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0) 
+                     + (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchNum)));
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1 
+            = (7U & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1) 
+                     + (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchNum)));
+    } else {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0 = 0U;
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1 = 1U;
+    }
     if (vlSelf->aresetn) {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_pnd 
-            = ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__fifo_read)
-                ? 0U : (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int) 
-                         & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_d)))
-                         ? 1U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_pnd) 
-                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier))));
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_pnd 
-            = ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr_mask)
-                ? 0U : (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int) 
-                         & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_d)))
-                         ? 1U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_pnd) 
-                                 & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier) 
-                                    >> 2U))));
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ms_int_pnd 
             = ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__msr_read)
                 ? 0U : (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ms_int) 
@@ -2375,8 +2423,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                          ? 1U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rda_int_pnd) 
                                  & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier))));
     } else {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ti_int_pnd = 0U;
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rls_int_pnd = 0U;
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ms_int_pnd = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__lruBit_27_0 = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__lruBit_26_0 = 0U;
@@ -2453,32 +2499,11 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                                                    | (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_data_out) 
                                                        >> 1U) 
                                                       & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr2_d)))))));
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_prd;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_prd 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_prd;
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_prd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_prd = 0U;
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT___zz_issueEntry_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT___zz_issueEntry_psrc_0;
     }
     if (vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_w_a_data_push) {
         vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_w_a_data_awsize 
@@ -2556,6 +2581,22 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         } else if (vlSelf->simu_top__DOT__soc__DOT__m0_awvalid) {
             vlSelf->simu_top__DOT__soc__DOT__delay__DOT__mask_aw_disable = 1U;
         }
+    } else {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__confreg__DOT__timer = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__confreg__DOT__write_timer_begin_r3 
+            = vlSelf->simu_top__DOT__soc__DOT__confreg__DOT__write_timer_begin_r2;
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__thre_int_pnd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__delay__DOT__mask_aw_disable = 0U;
+    }
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_1_exceptionInfo_exception 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_1_exceptionInfo_exception;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_0_exceptionInfo_exception 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_0_exceptionInfo_exception;
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roDIVU_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roDIVU_io_toFU_rData_pc 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_rData_pc;
+    }
+    if (vlSelf->aresetn) {
         if (((IData)(vlSelf->simu_top__DOT__soc__DOT__m0_arvalid) 
              & (IData)(vlSelf->simu_top__DOT__soc__DOT__m0_arready))) {
             vlSelf->simu_top__DOT__soc__DOT__delay__DOT__mask_ar_disable = 0U;
@@ -2614,11 +2655,73 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rValid 
                 = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_valid;
         }
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__delay__DOT__mask_ar_disable = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__conf_axi_ram__DOT__ram_r_a_valid = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_a_valid = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__nand_number = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rValid = 0U;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roLSU_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_pc 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_pc;
+    }
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_srcReady_1));
+    if (vlSelf->aresetn) {
         if (((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo_full)) 
              & (IData)(vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_dir_ins))) {
             vlSelf->__Vdly__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__wr_ptr 
                 = (3U & ((IData)(1U) + (IData)(vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__wr_ptr)));
         }
+    } else {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__wr_ptr = 0U;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT___zz_issueEntry_psrc_0;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_psrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT___zz_issueEntry_psrc_0;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT___zz_issueEntry_psrc_1;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_psrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT___zz_issueEntry_psrc_1;
+    }
+    if (vlSelf->aresetn) {
         if (((IData)(vlSelf->simu_top__DOT__soc__DOT__m0_bvalid) 
              & (IData)(vlSelf->simu_top__DOT__soc__DOT__m0_bready))) {
             vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_resp_pre_sel 
@@ -2634,20 +2737,42 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                          >> 7U));
         }
     } else {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__confreg__DOT__timer = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__confreg__DOT__write_timer_begin_r3 
-            = vlSelf->simu_top__DOT__soc__DOT__confreg__DOT__write_timer_begin_r2;
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__thre_int_pnd = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__delay__DOT__mask_aw_disable = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__delay__DOT__mask_ar_disable = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__conf_axi_ram__DOT__ram_r_a_valid = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_a_valid = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__nand_number = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rValid = 0U;
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__wr_ptr = 0U;
         vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_resp_pre_sel = 0U;
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rx_pol = 0U;
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__infrared = 0U;
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_prd 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_prd;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_srcReady_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_srcReady_0;
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_prd = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_0 = 0U;
     }
     if (vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_push_pulse) {
         vlSelf->__Vdlyvval__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__rfifo__DOT__ram__v0 
@@ -2739,6 +2864,22 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__msr = 0U;
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__rf_push_q = 0U;
     }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1;
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__io_input_fire) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 = 1U;
+        }
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__when_DIVU_l26) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 = 0U;
+        }
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 = 0U;
+    }
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__dispatchInfoOut_0_asrc_1 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchInfoOut_0_asrc_1;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__dispatchInfoOut_0_asrc_0 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchInfoOut_0_asrc_0;
     if ((1U & ((~ (IData)(vlSelf->aresetn)) | (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__NANDtag))))) {
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__now_up_half = 0U;
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__now_oob = 0U;
@@ -4685,6 +4826,13 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__missBuffer_1 
             = vlSelf->simu_top__DOT__soc__DOT__m0_rdata;
     }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_wayDirty 
+            = (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty_9) 
+                << 3U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty_6) 
+                           << 2U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty_3) 
+                                      << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty))));
+    }
     if (vlSelf->aresetn) {
         if (vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop) {
             vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop = 0U;
@@ -4703,6 +4851,491 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                              >> 6U));
             }
         }
+    } else {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__fcr = 3U;
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictResult 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictPC 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_pc 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
+        }
+    }
+    if (vlSelf->aresetn) {
         if (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__we) 
              & (1U == (7U & vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_apb_mux16__DOT__apb_addr)))) {
             if ((1U & (~ ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lcr) 
@@ -4714,6 +5347,106 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier 
                 = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier;
         }
+    } else {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier = 0U;
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_inst_1;
+        }
+    }
+    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
+        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_inst 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_inst_1;
+        }
+    }
+    if (vlSelf->aresetn) {
         if (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__tx_reset) 
              | (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr_mask))) {
             vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__tf_overrun = 0U;
@@ -4721,21 +5454,25 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                     & (0x10U == (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__tf_count)))) {
             vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__tf_overrun = 1U;
         }
-        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0r 
-            = (((((1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count)) 
-                  & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop)) 
-                 & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_push_pulse))) 
-                | (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rx_reset))
-                ? 0U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0r) 
-                        | ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0) 
-                           & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0_d)))));
     } else {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__fcr = 3U;
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__ier = 0U;
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__tf_overrun = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0r = 0U;
     }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roDIVU_io_toFU_ready) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roDIVU_io_toFU_rValid 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_rValid;
+        }
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roDIVU_io_toFU_rValid = 0U;
+    }
+    vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0r 
+        = ((IData)(vlSelf->aresetn) & (((((1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count)) 
+                                          & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop)) 
+                                         & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_push_pulse))) 
+                                        | (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rx_reset))
+                                        ? 0U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0r) 
+                                                | ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0) 
+                                                   & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr0_d))))));
     if ((1U & ((~ (IData)(vlSelf->aresetn)) | ((IData)(vlSelf->simu_top__DOT__soc__DOT__m0_bvalid) 
                                                & (IData)(vlSelf->simu_top__DOT__soc__DOT__m0_bready))))) {
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_resp_prog = 0U;
@@ -4752,293 +5489,15 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
     } else {
         vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__wr_resp_sel_reg = 0U;
     }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictResult;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_branchInfo_predictResult 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictResult;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_branchInfo_predictPC;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_branchInfo_predictPC 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_branchInfo_predictPC;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_pc;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_pc;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_src2 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_src2;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_src1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_src1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_pc 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_pc;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_uop_muluOp 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_uop_muluOp;
     }
     if (vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_a_data_push) {
         vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_a_data_arsize 
@@ -5088,208 +5547,65 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             = (0xfU & (IData)((vlSelf->simu_top__DOT__soc__DOT__conf_axi_ram__DOT__ram_r_a_queue_datas 
                                >> 4U)));
     }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsException 
+            = (1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_exceptionInfo_exception)));
     }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_pc 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
     }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_pc 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_pc;
     }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_uop_bruOp 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_uop_bruOp;
     }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_uop_bruOp 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_uop_bruOp;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_uop_cruOp 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_uop_cruOp;
     }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
+    if (vlSelf->aresetn) {
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__when_LSU_l292) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_ll 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsCtrlBundle_ll;
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_signed 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsCtrlBundle_signed;
         }
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_ll = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_signed = 0U;
     }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_uop_aluOp 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_uop_aluOp;
     }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
-        }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_uop_aluOp 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_uop_aluOp;
     }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
+    if (vlSelf->aresetn) {
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__when_LSU_l292) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_load 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsCtrlBundle_load;
         }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((2U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_1_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((4U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_2_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((8U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_3_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x10U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_4_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x20U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_5_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_6_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
-    }
-    if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_0_exceptionInfo_eSubCode;
-        }
-    }
-    if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
-        if ((0x80U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_7_exceptionInfo_eSubCode 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_eSubCode;
-        }
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_load = 0U;
     }
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1 
-            = (7U & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1) 
-                     + (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_fetchNum)));
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0 
             = (7U & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0) 
                      + (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_fetchNum)));
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1 
+            = (7U & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1) 
+                     + (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_fetchNum)));
     } else {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1 = 1U;
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0 = 0U;
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1 = 1U;
     }
     if (vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_a_data_push) {
         vlSelf->simu_top__DOT__soc__DOT__sram_axi_ram__DOT__ram_r_a_data_araddr 
@@ -5307,28 +5623,115 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_valid 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_payload_valid;
     }
-    vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr1r 
-        = ((IData)(vlSelf->aresetn) & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr_mask)
-                                        ? 0U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr1r) 
-                                                | ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_overrun) 
-                                                   & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr1_d))))));
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_rData_imm 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT___zz_issueEntry_imm;
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_ready) {
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_exceptionInfo_exception) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_exceptionInfo_eSubCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_exceptionInfo_eSubCode;
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_exceptionInfo_eCode 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_exceptionInfo_eCode;
+        } else {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_exceptionInfo_eSubCode = 0U;
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_exceptionInfo_eCode = 9U;
+        }
     }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_rData_imm 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT___zz_issueEntry_imm;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_rData_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT___zz_issueEntry_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_rData_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT___zz_issueEntry_psrc_1;
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1_io_toFU_ready) {
+        if ((4U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
+                = ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))
+                    ? (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
+                       << 2U) : ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))
+                                  ? (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
+                                     << 2U) : (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
+                                               << 2U)));
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
+        } else if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
+            if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg2;
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg1;
+            } else {
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm;
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
+            }
+        } else {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
+                = ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))
+                    ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm
+                    : (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
+                       << 2U));
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
+        }
     }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT___zz_issueEntry_psrc_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT___zz_issueEntry_psrc_0;
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0_io_toFU_ready) {
+        if ((4U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src4 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_pc;
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src3 
+                = ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))
+                    ? (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_imm 
+                       << 2U) : ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))
+                                  ? (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_imm 
+                                     << 2U) : (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_imm 
+                                               << 2U)));
+        } else if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))) {
+            if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))) {
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src4 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0__DOT__reg1;
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src3 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0__DOT__reg2;
+            } else {
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src4 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_pc;
+                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src3 
+                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_imm;
+            }
+        } else {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src4 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_pc;
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src3 
+                = ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))
+                    ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_imm
+                    : (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_imm 
+                       << 2U));
+        }
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src2 
+            = ((4U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))
+                ? 4U : ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))
+                         ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm
+                         : ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))
+                             ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm
+                             : vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg2)));
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU0_io_toFU_rData_src1 
+            = ((4U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))
+                ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_pc
+                : ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))
+                    ? ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_roop_aluROOp))
+                        ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr_io_swRead_value
+                        : vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_pc)
+                    : vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU0__DOT__reg1));
+    }
+    if (vlSelf->aresetn) {
+        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr1r 
+            = ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr_mask)
+                ? 0U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr1r) 
+                        | ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_overrun) 
+                           & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr1_d)))));
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__when_LSU_l292) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_prd 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_prd;
+        }
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__lsr1r = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_prd = 0U;
     }
     if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en) 
          | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
@@ -5479,29 +5882,6 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                  & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__fetchMask_1) 
                     | ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__bufWriteMask) 
                        >> 1U))));
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_wayValid_1 
-            = (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1_6) 
-                << 3U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1_4) 
-                           << 2U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1_2) 
-                                      << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_wayValid_0 
-            = (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0_9) 
-                << 3U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0_6) 
-                           << 2U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0_3) 
-                                      << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0))));
-    }
-    vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__dma_grant 
-        = ((IData)(vlSelf->aresetn) & ((~ ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu) 
-                                           & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma)))) 
-                                       & (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma) 
-                                           & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu))) 
-                                          | ((~ (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu) 
-                                                  & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma)) 
-                                                 & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__dma_grant)))) 
-                                             & (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu) 
-                                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma)) 
-                                                & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__dma_grant))))));
     if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))) {
         if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)))) {
             vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__queue_0_exceptionInfo_exception 
@@ -5598,7 +5978,42 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                 = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_io_output_info_1_exceptionInfo_exception;
         }
     }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_wayValid_1 
+            = (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1_6) 
+                << 3U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1_4) 
+                           << 2U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1_2) 
+                                      << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_1))));
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_wayValid_0 
+            = (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0_9) 
+                << 3U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0_6) 
+                           << 2U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0_3) 
+                                      << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_stage1Out_payload_wayValid_0))));
+    }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roLSU_io_toFU_ready) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rValid 
+                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rValid;
+        }
+    } else {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rValid = 0U;
+    }
     if (vlSelf->aresetn) {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__dma_grant 
+            = ((~ ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu) 
+                   & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma)))) 
+               & (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma) 
+                   & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu))) 
+                  | ((~ (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu) 
+                          & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma)) 
+                         & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__dma_grant)))) 
+                     & (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_cpu) 
+                         & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__apb_valid_dma)) 
+                        & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__dma_grant)))));
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_1_inst 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_1_inst_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_0_inst 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_0_inst_1;
         if ((1U & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__start_dlc) 
                    | (~ (IData)((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__dlc))))))) {
             vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__dlc 
@@ -5623,6 +6038,161 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                 = (0xffU & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__block_cnt) 
                             - (IData)(1U)));
         }
+    } else {
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__dma_grant = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_1_inst 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_1_inst_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__infoOut_0_inst 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_infoOut_0_inst_1;
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__dlc = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__M_cnt = 0U;
+        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__block_cnt = 0U;
+    }
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_7 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((7U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((7U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_7) 
+                 | (((7U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((7U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_6 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((6U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((6U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_6) 
+                 | (((6U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((6U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_3 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((3U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((3U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_3) 
+                 | (((3U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((3U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_5 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((5U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((5U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_5) 
+                 | (((5U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((5U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((0U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((0U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_0) 
+                 | (((0U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((0U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_1) 
+                 | (((1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_2 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((2U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((2U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_2) 
+                 | (((2U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((2U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_4 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & ((~ (((4U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_1)) 
+                   & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask) 
+                      >> 1U)) | ((4U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__head_0)) 
+                                 & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_dispatcher__DOT__dispatchMask)))) 
+              & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__valid_4) 
+                 | (((4U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_1)) 
+                     & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask) 
+                        >> 1U)) | ((4U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__tail_0)) 
+                                   & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue_io_in_allowMask))))));
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_isStoreTag 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__iCacheStoreTag;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_isIndexInvalidate 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__iCacheIndexInvalidate;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_isHitInvalidate 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__iCacheHitInvalidate;
+    }
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_srcReady_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_srcReady_0 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_srcReady_0));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_srcReady_1 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
+           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_srcReady_1));
+    if (vlSelf->aresetn) {
         if ((((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__isomode) 
               & (1U < (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__fi_di_reg))) 
              & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__sclk_en_reg))) {
@@ -5644,369 +6214,26 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
             vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__sclk_count = 0U;
             vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__sclk_reg = 0U;
         }
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__dispatchInfoOut_1_asrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchInfoOut_1_asrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__dispatchInfoOut_1_asrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchInfoOut_1_asrc_1;
+        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__when_MEMService_l26) {
+            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__opBuffer_asid 
+                = (0x3ffU & vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_src1);
+        }
     } else {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__dlc = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__M_cnt = 0U;
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__block_cnt = 0U;
         vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__sclk_count = 0U;
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__sclk_reg = 0U;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roDIVU_io_toFU_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roDIVU_io_toFU_rData_pc 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_rData_pc;
-    }
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_3_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_3_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_1_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_1_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_2_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_2_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_srcReady_1 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_srcReady_1));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_srcReady_0 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_srcReady_0));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_srcReady_1 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_srcReady_1));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_srcReady_0 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_srcReady_0));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_srcReady_0 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_srcReady_0));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_srcReady_1 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_srcReady_1));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_srcReady_0 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_srcReady_0));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_srcReady_1 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_srcReady_1));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_srcReady_0 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_srcReady_0));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_srcReady_1 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_srcReady_1));
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roLSU_io_toFU_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_pc 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_pc;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_exceptionInfo_eSubCode 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr_io_interrupt)) 
-               & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_exceptionInfo_eSubCode));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rData_exceptionInfo_eCode 
-            = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr_io_interrupt)
-                ? 0U : (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_exceptionInfo_eCode));
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_valid 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_3_valid;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_valid 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_1_valid;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_valid 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_2_valid;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_roop_aluROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_roop_aluROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_roop_aluROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_roop_aluROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_srcReady_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_srcReady_0;
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_3_valid = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_1_valid = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_2_valid = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_roop_aluROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_roop_aluROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_roop_aluROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_roop_aluROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_srcReady_0 = 0U;
-    }
-    if (vlSelf->aresetn) {
-        if (vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rx_reset) {
-            vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top = 0U;
-            vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__bottom = 0U;
-            vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count = 0U;
-            vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v0 = 1U;
-        } else if ((2U == (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_push_pulse) 
-                            << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop)))) {
-            if ((0x10U > (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count))) {
-                vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count 
-                    = (0x1fU & ((IData)(1U) + (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count)));
-                vlSelf->__Vdlyvval__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v16 
-                    = (7U & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__rf_data_in));
-                vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v16 = 1U;
-                vlSelf->__Vdlyvdim0__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v16 
-                    = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top;
-                vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top 
-                    = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top_plus_1;
-            }
-        } else if ((1U == (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_push_pulse) 
-                            << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop)))) {
-            if ((0U < (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count))) {
-                vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count 
-                    = (0x1fU & ((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count) 
-                                - (IData)(1U)));
-                vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v17 = 1U;
-                vlSelf->__Vdlyvdim0__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v17 
-                    = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__bottom;
-                vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__bottom 
-                    = (0xfU & ((IData)(1U) + (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__bottom)));
-            }
-        } else if ((3U == (((IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_push_pulse) 
-                            << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_pop)))) {
-            vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__bottom 
-                = (0xfU & ((IData)(1U) + (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__bottom)));
-            vlSelf->__Vdlyvval__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v18 
-                = (7U & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__rf_data_in));
-            vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v18 = 1U;
-            vlSelf->__Vdlyvdim0__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v18 
-                = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top;
-            vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top 
-                = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top_plus_1;
-        }
-    } else {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__top = 0U;
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__bottom = 0U;
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__rf_count = 0U;
-        vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__receiver__DOT__fifo_rx__DOT__fifo__v19 = 1U;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__when_StateMachine_l253) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__transferIndexOffset 
-            = (0x3fU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__missAddr 
-                        >> 6U));
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__tf_push) {
-        vlSelf->__Vdlyvval__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__fifo_tx__DOT__tfifo__DOT__ram__v0 
-            = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__AA_apb_mux16__DOT__apb_datai;
-        vlSelf->__Vdlyvset__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__fifo_tx__DOT__tfifo__DOT__ram__v0 = 1U;
-        vlSelf->__Vdlyvdim0__simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__fifo_tx__DOT__tfifo__DOT__ram__v0 
-            = vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__transmitter__DOT__fifo_tx__DOT__top;
-    }
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queue_0_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU__DOT__queueNext_0_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_0_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_0_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_3_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_3_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_1_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_1_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queue_2_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueMULU__DOT__queueNext_2_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queue_0_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT__queueNext_0_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__acceptMask 
-        = ((IData)(vlSelf->aresetn) ? ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire)
-                                        ? 0U : ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__acceptMask) 
-                                                | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_acceptMask)))
-            : 0U);
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1;
-        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__io_input_fire) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 = 1U;
-        }
-        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__when_DIVU_l26) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 = 0U;
-        }
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1 = 0U;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__dispatchInfoOut_1_asrc_0 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchInfoOut_1_asrc_0;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT__dispatchInfoOut_1_asrc_1 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_instQueue__DOT___zz_dispatchInfoOut_1_asrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__opBuffer_asid = 0U;
     }
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_exceptionInfo_eSubCode 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_payload_exceptionInfo_eSubCode;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_exceptionInfo_eCode 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_payload_exceptionInfo_eCode;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_wayDirty 
-            = (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty_9) 
-                << 3U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty_6) 
-                           << 2U) | (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty_3) 
-                                      << 1U) | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_stage1Out_payload_wayDirty))));
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT___zz_issueEntry_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT___zz_issueEntry_psrc_1;
-    }
-    if (vlSelf->aresetn) {
-        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__when_LSU_l292) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_prd 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_prd;
-        }
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__missBuffer_0_prd = 0U;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roDIVU_io_toFU_ready) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roDIVU_io_toFU_rValid 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_rValid;
-        }
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roDIVU_io_toFU_rValid = 0U;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_src2 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_src2;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_src1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_src1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_pc 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_pc;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_uop_muluOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_uop_muluOp;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_0_roop_aluROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_3_roop_aluROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_1_roop_aluROOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_roop_aluROOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queueNext_2_roop_aluROOp;
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_0_roop_aluROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_3_roop_aluROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_1_roop_aluROOp = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT__queue_2_roop_aluROOp = 0U;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_tlb_pageInfo_v 
-            = (1U & ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_tlb__DOT__when_TLB_l177)) 
-                     | ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_tlb__DOT__when_TLB_l178) 
-                        | ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_tlb__DOT__when_TLB_l185) 
-                           | ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_tlb__DOT___zz___05Fzz_io_iCacheReq_pageInfo_ppn_6)
-                               ? (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_tlb__DOT___zz_io_iCacheReq_pageInfo_v)
-                               : (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_tlb__DOT___zz_io_iCacheReq_pageInfo_v_1))))));
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1_io_toFU_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_pc 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_uop_bruOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_uop_bruOp;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_uop_aluOp 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_uop_aluOp;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_srcReady_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_srcReady_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_srcReady_1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_srcReady_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_srcReady_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_srcReady_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_srcReady_1;
-        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roLSU_io_toFU_ready) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rValid 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rValid;
-        }
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_srcReady_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_srcReady_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roLSU_io_toFU_rValid = 0U;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1_io_toFU_ready) {
-        if ((4U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
-            if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
-                    = (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
-                       << 2U);
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg1;
-            } else if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
-                    = (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
-                       << 2U);
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg1;
-            } else {
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
-                    = (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
-                       << 2U);
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
-            }
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src2 = 4U;
-        } else if ((2U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
-            if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg2;
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg1;
-            } else {
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm;
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
-            }
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src2 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm;
-        } else if ((1U & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_roop_aluROOp))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src2 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm;
-        } else {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src3 
-                = (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_imm 
-                   << 2U);
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src4 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU1_io_output_rData_pc;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roALU1_io_toFU_rData_src2 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roALU1__DOT__reg2;
-        }
-    }
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_0_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_0_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_3_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_3_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_1_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_1_valid));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queue_2_valid 
-        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) 
-           & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU1__DOT__queueNext_2_valid));
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_psrc_0 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT___zz_issueEntry_psrc_0;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_rData_psrc_1 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueALU0__DOT___zz_issueEntry_psrc_1;
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_isStoreTag 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__dCacheStoreTag;
     }
     if (vlSelf->aresetn) {
         if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__when_LSU_l267) {
@@ -6066,48 +6293,7 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
                 vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_5_waySelect 
                     = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_writeBuffer_0_waySelect;
             }
-            if ((0x40U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBufferTail)))) {
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_6_waySelect 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_writeBuffer_0_waySelect;
-            }
-            if ((1U & ((IData)(1U) << (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBufferTail)))) {
-                vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_0_waySelect 
-                    = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT___zz_writeBuffer_0_waySelect;
-            }
         }
-        if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuALU0_io_csrWrite_wen) 
-             & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT__csrWriteBufferLock = 1U;
-        }
-        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT__csrWriteBufferLock = 0U;
-        }
-        if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU_io_specialOpBufferUpdate_valid) 
-             & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__bufferLock = 1U;
-        }
-        if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__bufferLock = 0U;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_target = 0U;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_target = 0U;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_pc = 0U;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_pc = 0U;
-        } else {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_target 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_retireTargetPC_1;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_target 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_retireTargetPC_0;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_retirePC_0;
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_pc 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_retirePC_1;
-        }
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_taken 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_0_taken));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_taken 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_1_taken));
     } else {
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_1_prevDirty = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_0_prevDirty = 0U;
@@ -6123,300 +6309,5 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__10(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_1_waySelect = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_7_waySelect = 0U;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_5_waySelect = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_6_waySelect = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__writeBuffer_0_waySelect = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT__csrWriteBufferLock = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__bufferLock = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_target = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_target = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_pc = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_pc = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_taken = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_taken = 0U;
-    }
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_ready) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_branchInfo_0_predictResult 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__branchInfo_0_predictResult;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_branchInfo_0_predictPC 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__branchInfo_0_predictPC;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_branchInfo_1_predictResult 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__branchInfo_1_predictResult;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_thrown_rData_branchInfo_1_predictPC 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__branchInfo_1_predictPC;
-    }
-    if (vlSelf->aresetn) {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_1 
-            = (0x3fU & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_1) 
-                        + (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_freePRFNum)));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_isJumpInst 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & (1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_1_isJumpInst)));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_predictFail 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_1_predictFail));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_predictFail 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_0_predictFail));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_isJumpInst 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & (1U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_0_isJumpInst)));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireEn_1 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__retireMask) 
-                  >> 1U));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireEn_0 
-            = (1U & ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-                     & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__retireMask)));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_wakeupMem 
-            = ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)) 
-               & (0U != ((((2U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_1_isJumpInst)) 
-                           << 1U) | (2U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz___05Fzz_stage_updateBPU_0_isJumpInst))) 
-                         & (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__retireMask))));
-    } else {
-        vlSelf->__Vdly__simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_freeList__DOT__freePtr_1 = 1U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_isJumpInst = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_1_predictFail = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_predictFail = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_updateBPU_0_isJumpInst = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireEn_1 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireEn_0 = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_wakeupMem = 0U;
-    }
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__valid_1 
-        = (1U & ((~ (IData)(vlSelf->aresetn)) | ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush) 
-                                                 | ((0U 
-                                                     == 
-                                                     (3U 
-                                                      & ((IData)(1U) 
-                                                         + 
-                                                         ((0U 
-                                                           == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                           ? 0U
-                                                           : 
-                                                          ((1U 
-                                                            == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                            ? 1U
-                                                            : 
-                                                           ((2U 
-                                                             == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                             ? 1U
-                                                             : 2U))))))
-                                                     ? (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__nextValidListMid_1_0)
-                                                     : 
-                                                    ((1U 
-                                                      == 
-                                                      (3U 
-                                                       & ((IData)(1U) 
-                                                          + 
-                                                          ((0U 
-                                                            == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                            ? 0U
-                                                            : 
-                                                           ((1U 
-                                                             == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                             ? 1U
-                                                             : 
-                                                            ((2U 
-                                                              == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                              ? 1U
-                                                              : 2U))))))
-                                                      ? (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__nextValidListMid_1_1)
-                                                      : 
-                                                     ((2U 
-                                                       == 
-                                                       (3U 
-                                                        & ((IData)(1U) 
-                                                           + 
-                                                           ((0U 
-                                                             == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                             ? 0U
-                                                             : 
-                                                            ((1U 
-                                                              == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                              ? 1U
-                                                              : 
-                                                             ((2U 
-                                                               == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                               ? 1U
-                                                               : 2U)))))) 
-                                                      | (0xfU 
-                                                         == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT___zz_nextValidListMid_1_3))))))));
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__valid_0 
-        = (1U & ((~ (IData)(vlSelf->aresetn)) | ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush) 
-                                                 | ((0U 
-                                                     == 
-                                                     ((0U 
-                                                       == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                       ? 0U
-                                                       : 
-                                                      ((1U 
-                                                        == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                        ? 1U
-                                                        : 
-                                                       ((2U 
-                                                         == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                         ? 1U
-                                                         : 2U))))
-                                                     ? (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__nextValidListMid_1_0)
-                                                     : 
-                                                    ((1U 
-                                                      == 
-                                                      ((0U 
-                                                        == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                        ? 0U
-                                                        : 
-                                                       ((1U 
-                                                         == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                         ? 1U
-                                                         : 
-                                                        ((2U 
-                                                          == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                          ? 1U
-                                                          : 2U))))
-                                                      ? (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__nextValidListMid_1_1)
-                                                      : 
-                                                     ((2U 
-                                                       == 
-                                                       ((0U 
-                                                         == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                         ? 0U
-                                                         : 
-                                                        ((1U 
-                                                          == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                          ? 1U
-                                                          : 
-                                                         ((2U 
-                                                           == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__acceptMask))
-                                                           ? 1U
-                                                           : 2U)))) 
-                                                      | (0xfU 
-                                                         == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT___zz_nextValidListMid_1_3))))))));
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_3_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_3_1__DOT__mem_reg
-                [(0x1fU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                           >> 6U))];
-        }
-    }
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_1) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_1)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_2_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_2_1__DOT__mem_reg
-                [(0x1fU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                           >> 6U))];
-        }
-    }
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_2) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_2)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_1_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_1_1__DOT__mem_reg
-                [(0x1fU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                           >> 6U))];
-        }
-    }
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_3) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_3)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_0_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__tag_0_1__DOT__mem_reg
-                [(0x1fU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                           >> 6U))];
-        }
-    }
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_4) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_4)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_3_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_3_1__DOT__mem_reg
-                [(0x1ffU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                            >> 2U))];
-        }
-    }
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_5) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_5)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_2_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_2_1__DOT__mem_reg
-                [(0x1ffU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                            >> 2U))];
-        }
-    }
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_6) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_6)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_1_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_1_1__DOT__mem_reg
-                [(0x1ffU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                            >> 2U))];
-        }
-    }
-    if (((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_7) 
-         | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__stage1Out_fire))) {
-        if ((1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT___zz_wr_en_7)))) {
-            vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_0_1__DOT__output_buffer 
-                = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_iCache__DOT__data_0_1__DOT__mem_reg
-                [(0x1ffU & (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_pc__DOT__pc_1 
-                            >> 2U))];
-        }
-    }
-    if (vlSelf->aresetn) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_availROBMask 
-            = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush)
-                ? 0U : ((2U & ((~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_stage_availROBMask_3)) 
-                               << 1U)) | (1U & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_stage_availROBMask)))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_31_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_31_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_31_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_31_isComplete))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_16_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_16_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_16_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_16_isComplete))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_30_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_30_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_30_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_30_isComplete))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_29_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_29_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_29_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_29_isComplete))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_14_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_14_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_14_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_14_isComplete))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_13_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_13_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_13_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_13_isComplete))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_4_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_4_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_4_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_4_isComplete))));
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_0_isComplete 
-            = ((~ ((0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_0_isComplete_1)) 
-                   | (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_flush))) 
-               & ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_0_isComplete) 
-                  | (0U != (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_rob_0_isComplete))));
-    } else {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_availROBMask = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_31_isComplete = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_16_isComplete = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_30_isComplete = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_29_isComplete = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_14_isComplete = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_13_isComplete = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_4_isComplete = 0U;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__rob_0_isComplete = 0U;
     }
 }

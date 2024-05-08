@@ -138,6 +138,8 @@ void CpuTestbench::simulate(vluint64_t& main_time) {
                     //ns->ms
                     timer = timer / 1000000000;
                     printf("Frequency: %lfMHz\n", (main_time / timer)/1000000);
+                    //计算IPC
+                    printf("IPC: %lf\n", (double)inst_total / clock_total);
                 }
             //当main_time等于save_bp_time时，保存模型
             if ((main_time <= (save_bp_time+1) && main_time >= (save_bp_time-1)) && (break_once == 0)) {

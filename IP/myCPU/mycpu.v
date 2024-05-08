@@ -8886,10 +8886,10 @@ module ALU (
     io_csrWrite_wen = 1'b0;
     case(io_input_payload_uop_cruOp)
       CRUOp_pass : begin
-        io_csrWrite_wen = 1'b1;
+        io_csrWrite_wen = io_input_valid;
       end
       CRUOp_mask : begin
-        io_csrWrite_wen = 1'b1;
+        io_csrWrite_wen = io_input_valid;
       end
       default : begin
       end
@@ -9725,7 +9725,7 @@ module ReadOperandLogic_1 (
         io_toFU_payload_src4 = io_cmd_payload_pc;
       end
       default : begin
-        io_toFU_payload_src4 = reg1;
+        io_toFU_payload_src4 = io_cmd_payload_pc;
       end
     endcase
   end
@@ -10095,7 +10095,7 @@ module ReadOperandLogic (
         io_toFU_payload_src4 = io_cmd_payload_pc;
       end
       default : begin
-        io_toFU_payload_src4 = reg1;
+        io_toFU_payload_src4 = io_cmd_payload_pc;
       end
     endcase
   end
@@ -10211,86 +10211,146 @@ module IssueQueue_4 (
   wire                _zz_appendEntry_srcReady_1_8;
   wire       [0:0]    _zz_appendEntry_srcReady_1_9;
   wire       [0:0]    _zz_appendEntry_srcReady_1_10;
-  wire                _zz_updatedEntry_0_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_2;
-  wire                _zz_updatedEntry_0_srcReady_0_3;
-  wire                _zz_updatedEntry_0_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_5;
-  wire       [5:0]    _zz_updatedEntry_0_srcReady_0_6;
-  wire                _zz_updatedEntry_0_srcReady_0_7;
-  wire                _zz_updatedEntry_0_srcReady_0_8;
-  wire                _zz_updatedEntry_0_srcReady_0_9;
-  wire                _zz_updatedEntry_0_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_2;
-  wire                _zz_updatedEntry_0_srcReady_1_3;
-  wire                _zz_updatedEntry_0_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_5;
-  wire       [5:0]    _zz_updatedEntry_0_srcReady_1_6;
-  wire                _zz_updatedEntry_0_srcReady_1_7;
-  wire                _zz_updatedEntry_0_srcReady_1_8;
-  wire                _zz_updatedEntry_0_srcReady_1_9;
-  wire                _zz_updatedEntry_1_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_2;
-  wire                _zz_updatedEntry_1_srcReady_0_3;
-  wire                _zz_updatedEntry_1_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_5;
-  wire       [5:0]    _zz_updatedEntry_1_srcReady_0_6;
-  wire                _zz_updatedEntry_1_srcReady_0_7;
-  wire                _zz_updatedEntry_1_srcReady_0_8;
-  wire                _zz_updatedEntry_1_srcReady_0_9;
-  wire                _zz_updatedEntry_1_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_2;
-  wire                _zz_updatedEntry_1_srcReady_1_3;
-  wire                _zz_updatedEntry_1_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_5;
-  wire       [5:0]    _zz_updatedEntry_1_srcReady_1_6;
-  wire                _zz_updatedEntry_1_srcReady_1_7;
-  wire                _zz_updatedEntry_1_srcReady_1_8;
-  wire                _zz_updatedEntry_1_srcReady_1_9;
-  wire                _zz_updatedEntry_2_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_2;
-  wire                _zz_updatedEntry_2_srcReady_0_3;
-  wire                _zz_updatedEntry_2_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_5;
-  wire       [5:0]    _zz_updatedEntry_2_srcReady_0_6;
-  wire                _zz_updatedEntry_2_srcReady_0_7;
-  wire                _zz_updatedEntry_2_srcReady_0_8;
-  wire                _zz_updatedEntry_2_srcReady_0_9;
-  wire                _zz_updatedEntry_2_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_2;
-  wire                _zz_updatedEntry_2_srcReady_1_3;
-  wire                _zz_updatedEntry_2_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_5;
-  wire       [5:0]    _zz_updatedEntry_2_srcReady_1_6;
-  wire                _zz_updatedEntry_2_srcReady_1_7;
-  wire                _zz_updatedEntry_2_srcReady_1_8;
-  wire                _zz_updatedEntry_2_srcReady_1_9;
-  wire                _zz_updatedEntry_3_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_2;
-  wire                _zz_updatedEntry_3_srcReady_0_3;
-  wire                _zz_updatedEntry_3_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_5;
-  wire       [5:0]    _zz_updatedEntry_3_srcReady_0_6;
-  wire                _zz_updatedEntry_3_srcReady_0_7;
-  wire                _zz_updatedEntry_3_srcReady_0_8;
-  wire                _zz_updatedEntry_3_srcReady_0_9;
-  wire                _zz_updatedEntry_3_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_2;
-  wire                _zz_updatedEntry_3_srcReady_1_3;
-  wire                _zz_updatedEntry_3_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_5;
-  wire       [5:0]    _zz_updatedEntry_3_srcReady_1_6;
-  wire                _zz_updatedEntry_3_srcReady_1_7;
-  wire                _zz_updatedEntry_3_srcReady_1_8;
-  wire                _zz_updatedEntry_3_srcReady_1_9;
+  wire                _zz_queueNext_0_srcReady_0;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_2;
+  wire                _zz_queueNext_0_srcReady_0_3;
+  wire                _zz_queueNext_0_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_5;
+  wire       [5:0]    _zz_queueNext_0_srcReady_0_6;
+  wire                _zz_queueNext_0_srcReady_0_7;
+  wire                _zz_queueNext_0_srcReady_0_8;
+  wire                _zz_queueNext_0_srcReady_0_9;
+  wire                _zz_queueNext_0_srcReady_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_2;
+  wire                _zz_queueNext_0_srcReady_1_3;
+  wire                _zz_queueNext_0_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_5;
+  wire       [5:0]    _zz_queueNext_0_srcReady_1_6;
+  wire                _zz_queueNext_0_srcReady_1_7;
+  wire                _zz_queueNext_0_srcReady_1_8;
+  wire                _zz_queueNext_0_srcReady_1_9;
+  wire                _zz_queueNext_0_srcReady_0_10;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_12;
+  wire                _zz_queueNext_0_srcReady_0_13;
+  wire                _zz_queueNext_0_srcReady_0_14;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_15;
+  wire       [5:0]    _zz_queueNext_0_srcReady_0_16;
+  wire                _zz_queueNext_0_srcReady_0_17;
+  wire                _zz_queueNext_0_srcReady_0_18;
+  wire                _zz_queueNext_0_srcReady_0_19;
+  wire                _zz_queueNext_0_srcReady_1_10;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_12;
+  wire                _zz_queueNext_0_srcReady_1_13;
+  wire                _zz_queueNext_0_srcReady_1_14;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_15;
+  wire       [5:0]    _zz_queueNext_0_srcReady_1_16;
+  wire                _zz_queueNext_0_srcReady_1_17;
+  wire                _zz_queueNext_0_srcReady_1_18;
+  wire                _zz_queueNext_0_srcReady_1_19;
+  wire                _zz_queueNext_1_srcReady_0;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_2;
+  wire                _zz_queueNext_1_srcReady_0_3;
+  wire                _zz_queueNext_1_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_5;
+  wire       [5:0]    _zz_queueNext_1_srcReady_0_6;
+  wire                _zz_queueNext_1_srcReady_0_7;
+  wire                _zz_queueNext_1_srcReady_0_8;
+  wire                _zz_queueNext_1_srcReady_0_9;
+  wire                _zz_queueNext_1_srcReady_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_2;
+  wire                _zz_queueNext_1_srcReady_1_3;
+  wire                _zz_queueNext_1_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_5;
+  wire       [5:0]    _zz_queueNext_1_srcReady_1_6;
+  wire                _zz_queueNext_1_srcReady_1_7;
+  wire                _zz_queueNext_1_srcReady_1_8;
+  wire                _zz_queueNext_1_srcReady_1_9;
+  wire                _zz_queueNext_1_srcReady_0_10;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_12;
+  wire                _zz_queueNext_1_srcReady_0_13;
+  wire                _zz_queueNext_1_srcReady_0_14;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_15;
+  wire       [5:0]    _zz_queueNext_1_srcReady_0_16;
+  wire                _zz_queueNext_1_srcReady_0_17;
+  wire                _zz_queueNext_1_srcReady_0_18;
+  wire                _zz_queueNext_1_srcReady_0_19;
+  wire                _zz_queueNext_1_srcReady_1_10;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_12;
+  wire                _zz_queueNext_1_srcReady_1_13;
+  wire                _zz_queueNext_1_srcReady_1_14;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_15;
+  wire       [5:0]    _zz_queueNext_1_srcReady_1_16;
+  wire                _zz_queueNext_1_srcReady_1_17;
+  wire                _zz_queueNext_1_srcReady_1_18;
+  wire                _zz_queueNext_1_srcReady_1_19;
+  wire                _zz_queueNext_2_srcReady_0;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_2;
+  wire                _zz_queueNext_2_srcReady_0_3;
+  wire                _zz_queueNext_2_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_5;
+  wire       [5:0]    _zz_queueNext_2_srcReady_0_6;
+  wire                _zz_queueNext_2_srcReady_0_7;
+  wire                _zz_queueNext_2_srcReady_0_8;
+  wire                _zz_queueNext_2_srcReady_0_9;
+  wire                _zz_queueNext_2_srcReady_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_2;
+  wire                _zz_queueNext_2_srcReady_1_3;
+  wire                _zz_queueNext_2_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_5;
+  wire       [5:0]    _zz_queueNext_2_srcReady_1_6;
+  wire                _zz_queueNext_2_srcReady_1_7;
+  wire                _zz_queueNext_2_srcReady_1_8;
+  wire                _zz_queueNext_2_srcReady_1_9;
+  wire                _zz_queueNext_2_srcReady_0_10;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_12;
+  wire                _zz_queueNext_2_srcReady_0_13;
+  wire                _zz_queueNext_2_srcReady_0_14;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_15;
+  wire       [5:0]    _zz_queueNext_2_srcReady_0_16;
+  wire                _zz_queueNext_2_srcReady_0_17;
+  wire                _zz_queueNext_2_srcReady_0_18;
+  wire                _zz_queueNext_2_srcReady_0_19;
+  wire                _zz_queueNext_2_srcReady_1_10;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_12;
+  wire                _zz_queueNext_2_srcReady_1_13;
+  wire                _zz_queueNext_2_srcReady_1_14;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_15;
+  wire       [5:0]    _zz_queueNext_2_srcReady_1_16;
+  wire                _zz_queueNext_2_srcReady_1_17;
+  wire                _zz_queueNext_2_srcReady_1_18;
+  wire                _zz_queueNext_2_srcReady_1_19;
+  wire                _zz_queueNext_3_srcReady_0;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_2;
+  wire                _zz_queueNext_3_srcReady_0_3;
+  wire                _zz_queueNext_3_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_5;
+  wire       [5:0]    _zz_queueNext_3_srcReady_0_6;
+  wire                _zz_queueNext_3_srcReady_0_7;
+  wire                _zz_queueNext_3_srcReady_0_8;
+  wire                _zz_queueNext_3_srcReady_0_9;
+  wire                _zz_queueNext_3_srcReady_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_2;
+  wire                _zz_queueNext_3_srcReady_1_3;
+  wire                _zz_queueNext_3_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_5;
+  wire       [5:0]    _zz_queueNext_3_srcReady_1_6;
+  wire                _zz_queueNext_3_srcReady_1_7;
+  wire                _zz_queueNext_3_srcReady_1_8;
+  wire                _zz_queueNext_3_srcReady_1_9;
   reg                 _zz_issueEntry_valid_4;
   reg        [4:0]    _zz_issueEntry_robIdx;
   reg        [31:0]   _zz_issueEntry_branchResult_targetPC;
@@ -10390,78 +10450,6 @@ module IssueQueue_4 (
   wire       [4:0]    emptyEntry_ohFirst_input;
   wire       [4:0]    emptyEntry_ohFirst_masked;
   wire       [4:0]    writeVector;
-  wire                updatedEntry_0_valid;
-  wire       [4:0]    updatedEntry_0_robIdx;
-  wire       [31:0]   updatedEntry_0_branchResult_targetPC;
-  wire                updatedEntry_0_branchResult_branchResult;
-  wire                updatedEntry_0_branchResult_predictFail;
-  wire                updatedEntry_0_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_0_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_0_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_0_pc;
-  wire       [5:0]    updatedEntry_0_prd;
-  wire       [5:0]    updatedEntry_0_psrc_0;
-  wire       [5:0]    updatedEntry_0_psrc_1;
-  wire       [31:0]   updatedEntry_0_imm;
-  wire       [3:0]    updatedEntry_0_uop_lsuOp;
-  wire       [4:0]    updatedEntry_0_uop_lsuCoOp;
-  wire       [0:0]    updatedEntry_0_roop_lsuROOp;
-  reg                 updatedEntry_0_srcReady_0;
-  reg                 updatedEntry_0_srcReady_1;
-  wire                updatedEntry_1_valid;
-  wire       [4:0]    updatedEntry_1_robIdx;
-  wire       [31:0]   updatedEntry_1_branchResult_targetPC;
-  wire                updatedEntry_1_branchResult_branchResult;
-  wire                updatedEntry_1_branchResult_predictFail;
-  wire                updatedEntry_1_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_1_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_1_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_1_pc;
-  wire       [5:0]    updatedEntry_1_prd;
-  wire       [5:0]    updatedEntry_1_psrc_0;
-  wire       [5:0]    updatedEntry_1_psrc_1;
-  wire       [31:0]   updatedEntry_1_imm;
-  wire       [3:0]    updatedEntry_1_uop_lsuOp;
-  wire       [4:0]    updatedEntry_1_uop_lsuCoOp;
-  wire       [0:0]    updatedEntry_1_roop_lsuROOp;
-  reg                 updatedEntry_1_srcReady_0;
-  reg                 updatedEntry_1_srcReady_1;
-  wire                updatedEntry_2_valid;
-  wire       [4:0]    updatedEntry_2_robIdx;
-  wire       [31:0]   updatedEntry_2_branchResult_targetPC;
-  wire                updatedEntry_2_branchResult_branchResult;
-  wire                updatedEntry_2_branchResult_predictFail;
-  wire                updatedEntry_2_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_2_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_2_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_2_pc;
-  wire       [5:0]    updatedEntry_2_prd;
-  wire       [5:0]    updatedEntry_2_psrc_0;
-  wire       [5:0]    updatedEntry_2_psrc_1;
-  wire       [31:0]   updatedEntry_2_imm;
-  wire       [3:0]    updatedEntry_2_uop_lsuOp;
-  wire       [4:0]    updatedEntry_2_uop_lsuCoOp;
-  wire       [0:0]    updatedEntry_2_roop_lsuROOp;
-  reg                 updatedEntry_2_srcReady_0;
-  reg                 updatedEntry_2_srcReady_1;
-  wire                updatedEntry_3_valid;
-  wire       [4:0]    updatedEntry_3_robIdx;
-  wire       [31:0]   updatedEntry_3_branchResult_targetPC;
-  wire                updatedEntry_3_branchResult_branchResult;
-  wire                updatedEntry_3_branchResult_predictFail;
-  wire                updatedEntry_3_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_3_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_3_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_3_pc;
-  wire       [5:0]    updatedEntry_3_prd;
-  wire       [5:0]    updatedEntry_3_psrc_0;
-  wire       [5:0]    updatedEntry_3_psrc_1;
-  wire       [31:0]   updatedEntry_3_imm;
-  wire       [3:0]    updatedEntry_3_uop_lsuOp;
-  wire       [4:0]    updatedEntry_3_uop_lsuCoOp;
-  wire       [0:0]    updatedEntry_3_roop_lsuROOp;
-  reg                 updatedEntry_3_srcReady_0;
-  reg                 updatedEntry_3_srcReady_1;
   wire                appendEntry_valid;
   wire       [4:0]    appendEntry_robIdx;
   wire       [31:0]   appendEntry_branchResult_targetPC;
@@ -10552,19 +10540,18 @@ module IssueQueue_4 (
   reg        [0:0]    queueNext_3_roop_lsuROOp;
   reg                 queueNext_3_srcReady_0;
   reg                 queueNext_3_srcReady_1;
-  wire                when_IssueQueue_l81;
-  wire                when_IssueQueue_l83;
-  wire                when_IssueQueue_l96;
-  wire                when_IssueQueue_l81_1;
-  wire                when_IssueQueue_l83_1;
-  wire                when_IssueQueue_l96_1;
-  wire                when_IssueQueue_l81_2;
-  wire                when_IssueQueue_l83_2;
-  wire                when_IssueQueue_l96_2;
-  wire                when_IssueQueue_l81_3;
-  wire                when_IssueQueue_l89;
-  wire                when_IssueQueue_l96_3;
-  wire                io_output_fire;
+  wire                when_IssueQueue_l73;
+  wire                when_IssueQueue_l75;
+  wire                when_IssueQueue_l93;
+  wire                when_IssueQueue_l73_1;
+  wire                when_IssueQueue_l75_1;
+  wire                when_IssueQueue_l93_1;
+  wire                when_IssueQueue_l73_2;
+  wire                when_IssueQueue_l75_2;
+  wire                when_IssueQueue_l93_2;
+  wire                when_IssueQueue_l73_3;
+  wire                when_IssueQueue_l86;
+  wire                when_IssueQueue_l93_3;
   wire                _zz_issueEntry_valid;
   wire                _zz_issueEntry_valid_1;
   wire                _zz_issueEntry_valid_2;
@@ -10600,14 +10587,6 @@ module IssueQueue_4 (
   reg [47:0] queue_2_roop_lsuROOp_string;
   reg [55:0] queue_3_uop_lsuOp_string;
   reg [47:0] queue_3_roop_lsuROOp_string;
-  reg [55:0] updatedEntry_0_uop_lsuOp_string;
-  reg [47:0] updatedEntry_0_roop_lsuROOp_string;
-  reg [55:0] updatedEntry_1_uop_lsuOp_string;
-  reg [47:0] updatedEntry_1_roop_lsuROOp_string;
-  reg [55:0] updatedEntry_2_uop_lsuOp_string;
-  reg [47:0] updatedEntry_2_roop_lsuROOp_string;
-  reg [55:0] updatedEntry_3_uop_lsuOp_string;
-  reg [47:0] updatedEntry_3_roop_lsuROOp_string;
   reg [55:0] appendEntry_uop_lsuOp_string;
   reg [47:0] appendEntry_roop_lsuROOp_string;
   reg [55:0] queueNext_0_uop_lsuOp_string;
@@ -10647,86 +10626,146 @@ module IssueQueue_4 (
   assign _zz_appendEntry_srcReady_1_8 = ((io_input_payload_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid);
   assign _zz_appendEntry_srcReady_1_9 = ((io_input_payload_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
   assign _zz_appendEntry_srcReady_1_10 = ((io_input_payload_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_0_3 = (queue_0_psrc_0 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_0_srcReady_0_4 = ((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_0_srcReady_0_5 = ((queue_0_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_0_srcReady_0_6 = {((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_0_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_0_srcReady_0_8,_zz_updatedEntry_0_srcReady_0_9}}}}};
-  assign _zz_updatedEntry_0_srcReady_0_7 = (queue_0_psrc_0 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_0_srcReady_0_8 = ((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_0_srcReady_0_9 = ((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_1_3 = (queue_0_psrc_1 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_0_srcReady_1_4 = ((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_0_srcReady_1_5 = ((queue_0_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_0_srcReady_1_6 = {((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_0_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_0_srcReady_1_8,_zz_updatedEntry_0_srcReady_1_9}}}}};
-  assign _zz_updatedEntry_0_srcReady_1_7 = (queue_0_psrc_1 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_0_srcReady_1_8 = ((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_0_srcReady_1_9 = ((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_0_3 = (queue_1_psrc_0 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_1_srcReady_0_4 = ((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_1_srcReady_0_5 = ((queue_1_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_1_srcReady_0_6 = {((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_1_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_1_srcReady_0_8,_zz_updatedEntry_1_srcReady_0_9}}}}};
-  assign _zz_updatedEntry_1_srcReady_0_7 = (queue_1_psrc_0 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_1_srcReady_0_8 = ((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_1_srcReady_0_9 = ((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_1_3 = (queue_1_psrc_1 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_1_srcReady_1_4 = ((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_1_srcReady_1_5 = ((queue_1_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_1_srcReady_1_6 = {((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_1_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_1_srcReady_1_8,_zz_updatedEntry_1_srcReady_1_9}}}}};
-  assign _zz_updatedEntry_1_srcReady_1_7 = (queue_1_psrc_1 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_1_srcReady_1_8 = ((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_1_srcReady_1_9 = ((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_0_3 = (queue_2_psrc_0 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_2_srcReady_0_4 = ((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_2_srcReady_0_5 = ((queue_2_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_2_srcReady_0_6 = {((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_2_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_2_srcReady_0_8,_zz_updatedEntry_2_srcReady_0_9}}}}};
-  assign _zz_updatedEntry_2_srcReady_0_7 = (queue_2_psrc_0 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_2_srcReady_0_8 = ((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_2_srcReady_0_9 = ((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_1_3 = (queue_2_psrc_1 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_2_srcReady_1_4 = ((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_2_srcReady_1_5 = ((queue_2_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_2_srcReady_1_6 = {((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_2_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_2_srcReady_1_8,_zz_updatedEntry_2_srcReady_1_9}}}}};
-  assign _zz_updatedEntry_2_srcReady_1_7 = (queue_2_psrc_1 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_2_srcReady_1_8 = ((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_2_srcReady_1_9 = ((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_0_3 = (queue_3_psrc_0 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_3_srcReady_0_4 = ((queue_3_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_3_srcReady_0_5 = ((queue_3_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_3_srcReady_0_6 = {((queue_3_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_3_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_3_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_3_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_3_srcReady_0_8,_zz_updatedEntry_3_srcReady_0_9}}}}};
-  assign _zz_updatedEntry_3_srcReady_0_7 = (queue_3_psrc_0 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_3_srcReady_0_8 = ((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_3_srcReady_0_9 = ((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
-  assign _zz_updatedEntry_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_1_3 = (queue_3_psrc_1 == io_earlyWakeup_8_payload);
-  assign _zz_updatedEntry_3_srcReady_1_4 = ((queue_3_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
-  assign _zz_updatedEntry_3_srcReady_1_5 = ((queue_3_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
-  assign _zz_updatedEntry_3_srcReady_1_6 = {((queue_3_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_3_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_3_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_updatedEntry_3_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_updatedEntry_3_srcReady_1_8,_zz_updatedEntry_3_srcReady_1_9}}}}};
-  assign _zz_updatedEntry_3_srcReady_1_7 = (queue_3_psrc_1 == io_earlyWakeup_2_payload);
-  assign _zz_updatedEntry_3_srcReady_1_8 = ((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
-  assign _zz_updatedEntry_3_srcReady_1_9 = ((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0_3 = (queue_0_psrc_0 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_0_srcReady_0_4 = ((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_0_srcReady_0_5 = ((queue_0_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_0_srcReady_0_6 = {((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_0_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_queueNext_0_srcReady_0_8,_zz_queueNext_0_srcReady_0_9}}}}};
+  assign _zz_queueNext_0_srcReady_0_7 = (queue_0_psrc_0 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_0_srcReady_0_8 = ((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_0_srcReady_0_9 = ((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_1_3 = (queue_0_psrc_1 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_0_srcReady_1_4 = ((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_0_srcReady_1_5 = ((queue_0_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_0_srcReady_1_6 = {((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_0_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_queueNext_0_srcReady_1_8,_zz_queueNext_0_srcReady_1_9}}}}};
+  assign _zz_queueNext_0_srcReady_1_7 = (queue_0_psrc_1 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_0_srcReady_1_8 = ((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_0_srcReady_1_9 = ((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_0_srcReady_0_10 = (queue_0_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_0_11 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_12 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0_13 = (queue_0_psrc_0 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_0_srcReady_0_14 = ((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_0_srcReady_0_15 = ((queue_0_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_0_srcReady_0_16 = {((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_0_srcReady_0_17 && io_earlyWakeup_2_valid),{_zz_queueNext_0_srcReady_0_18,_zz_queueNext_0_srcReady_0_19}}}}};
+  assign _zz_queueNext_0_srcReady_0_17 = (queue_0_psrc_0 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_0_srcReady_0_18 = ((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_0_srcReady_0_19 = ((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_0_srcReady_1_10 = (queue_0_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_1_11 = (queue_0_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_1_12 = (queue_0_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_1_13 = (queue_0_psrc_1 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_0_srcReady_1_14 = ((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_0_srcReady_1_15 = ((queue_0_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_0_srcReady_1_16 = {((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_0_srcReady_1_17 && io_earlyWakeup_2_valid),{_zz_queueNext_0_srcReady_1_18,_zz_queueNext_0_srcReady_1_19}}}}};
+  assign _zz_queueNext_0_srcReady_1_17 = (queue_0_psrc_1 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_0_srcReady_1_18 = ((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_0_srcReady_1_19 = ((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_0_3 = (queue_1_psrc_0 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_1_srcReady_0_4 = ((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_1_srcReady_0_5 = ((queue_1_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_1_srcReady_0_6 = {((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_1_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_queueNext_1_srcReady_0_8,_zz_queueNext_1_srcReady_0_9}}}}};
+  assign _zz_queueNext_1_srcReady_0_7 = (queue_1_psrc_0 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_1_srcReady_0_8 = ((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_1_srcReady_0_9 = ((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_1_3 = (queue_1_psrc_1 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_1_srcReady_1_4 = ((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_1_srcReady_1_5 = ((queue_1_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_1_srcReady_1_6 = {((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_1_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_queueNext_1_srcReady_1_8,_zz_queueNext_1_srcReady_1_9}}}}};
+  assign _zz_queueNext_1_srcReady_1_7 = (queue_1_psrc_1 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_1_srcReady_1_8 = ((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_1_srcReady_1_9 = ((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_1_srcReady_0_10 = (queue_1_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_0_11 = (queue_1_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_0_12 = (queue_1_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_0_13 = (queue_1_psrc_0 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_1_srcReady_0_14 = ((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_1_srcReady_0_15 = ((queue_1_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_1_srcReady_0_16 = {((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_1_srcReady_0_17 && io_earlyWakeup_2_valid),{_zz_queueNext_1_srcReady_0_18,_zz_queueNext_1_srcReady_0_19}}}}};
+  assign _zz_queueNext_1_srcReady_0_17 = (queue_1_psrc_0 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_1_srcReady_0_18 = ((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_1_srcReady_0_19 = ((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_1_srcReady_1_10 = (queue_1_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_1_11 = (queue_1_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_1_12 = (queue_1_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_1_13 = (queue_1_psrc_1 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_1_srcReady_1_14 = ((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_1_srcReady_1_15 = ((queue_1_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_1_srcReady_1_16 = {((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_1_srcReady_1_17 && io_earlyWakeup_2_valid),{_zz_queueNext_1_srcReady_1_18,_zz_queueNext_1_srcReady_1_19}}}}};
+  assign _zz_queueNext_1_srcReady_1_17 = (queue_1_psrc_1 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_1_srcReady_1_18 = ((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_1_srcReady_1_19 = ((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_0_3 = (queue_2_psrc_0 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_2_srcReady_0_4 = ((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_2_srcReady_0_5 = ((queue_2_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_2_srcReady_0_6 = {((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_2_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_queueNext_2_srcReady_0_8,_zz_queueNext_2_srcReady_0_9}}}}};
+  assign _zz_queueNext_2_srcReady_0_7 = (queue_2_psrc_0 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_2_srcReady_0_8 = ((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_2_srcReady_0_9 = ((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_1_3 = (queue_2_psrc_1 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_2_srcReady_1_4 = ((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_2_srcReady_1_5 = ((queue_2_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_2_srcReady_1_6 = {((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_2_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_queueNext_2_srcReady_1_8,_zz_queueNext_2_srcReady_1_9}}}}};
+  assign _zz_queueNext_2_srcReady_1_7 = (queue_2_psrc_1 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_2_srcReady_1_8 = ((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_2_srcReady_1_9 = ((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_2_srcReady_0_10 = (queue_2_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_0_11 = (queue_2_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_0_12 = (queue_2_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_0_13 = (queue_2_psrc_0 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_2_srcReady_0_14 = ((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_2_srcReady_0_15 = ((queue_2_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_2_srcReady_0_16 = {((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_2_srcReady_0_17 && io_earlyWakeup_2_valid),{_zz_queueNext_2_srcReady_0_18,_zz_queueNext_2_srcReady_0_19}}}}};
+  assign _zz_queueNext_2_srcReady_0_17 = (queue_2_psrc_0 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_2_srcReady_0_18 = ((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_2_srcReady_0_19 = ((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_2_srcReady_1_10 = (queue_2_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_1_11 = (queue_2_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_1_12 = (queue_2_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_1_13 = (queue_2_psrc_1 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_2_srcReady_1_14 = ((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_2_srcReady_1_15 = ((queue_2_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_2_srcReady_1_16 = {((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_2_srcReady_1_17 && io_earlyWakeup_2_valid),{_zz_queueNext_2_srcReady_1_18,_zz_queueNext_2_srcReady_1_19}}}}};
+  assign _zz_queueNext_2_srcReady_1_17 = (queue_2_psrc_1 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_2_srcReady_1_18 = ((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_2_srcReady_1_19 = ((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_0_3 = (queue_3_psrc_0 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_3_srcReady_0_4 = ((queue_3_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_3_srcReady_0_5 = ((queue_3_psrc_0 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_3_srcReady_0_6 = {((queue_3_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_3_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_3_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_3_srcReady_0_7 && io_earlyWakeup_2_valid),{_zz_queueNext_3_srcReady_0_8,_zz_queueNext_3_srcReady_0_9}}}}};
+  assign _zz_queueNext_3_srcReady_0_7 = (queue_3_psrc_0 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_3_srcReady_0_8 = ((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_3_srcReady_0_9 = ((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
+  assign _zz_queueNext_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_1_3 = (queue_3_psrc_1 == io_earlyWakeup_8_payload);
+  assign _zz_queueNext_3_srcReady_1_4 = ((queue_3_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid);
+  assign _zz_queueNext_3_srcReady_1_5 = ((queue_3_psrc_1 == io_earlyWakeup_6_payload) && io_earlyWakeup_6_valid);
+  assign _zz_queueNext_3_srcReady_1_6 = {((queue_3_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid),{((queue_3_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid),{((queue_3_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{(_zz_queueNext_3_srcReady_1_7 && io_earlyWakeup_2_valid),{_zz_queueNext_3_srcReady_1_8,_zz_queueNext_3_srcReady_1_9}}}}};
+  assign _zz_queueNext_3_srcReady_1_7 = (queue_3_psrc_1 == io_earlyWakeup_2_payload);
+  assign _zz_queueNext_3_srcReady_1_8 = ((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid);
+  assign _zz_queueNext_3_srcReady_1_9 = ((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid);
   always @(*) begin
     case(_zz_issueEntry_valid_3)
       2'b00 : begin
@@ -10970,110 +11009,6 @@ module IssueQueue_4 (
     endcase
   end
   always @(*) begin
-    case(updatedEntry_0_uop_lsuOp)
-      LSUOp_cacop : updatedEntry_0_uop_lsuOp_string = "cacop  ";
-      LSUOp_tlbsrch : updatedEntry_0_uop_lsuOp_string = "tlbsrch";
-      LSUOp_tlbrd : updatedEntry_0_uop_lsuOp_string = "tlbrd  ";
-      LSUOp_tlbwr : updatedEntry_0_uop_lsuOp_string = "tlbwr  ";
-      LSUOp_tlbfill : updatedEntry_0_uop_lsuOp_string = "tlbfill";
-      LSUOp_invtlb : updatedEntry_0_uop_lsuOp_string = "invtlb ";
-      LSUOp_ll : updatedEntry_0_uop_lsuOp_string = "ll     ";
-      LSUOp_sc : updatedEntry_0_uop_lsuOp_string = "sc     ";
-      LSUOp_ld : updatedEntry_0_uop_lsuOp_string = "ld     ";
-      LSUOp_ldu : updatedEntry_0_uop_lsuOp_string = "ldu    ";
-      LSUOp_st : updatedEntry_0_uop_lsuOp_string = "st     ";
-      LSUOp_preld : updatedEntry_0_uop_lsuOp_string = "preld  ";
-      LSUOp_dbar : updatedEntry_0_uop_lsuOp_string = "dbar   ";
-      LSUOp_ibar : updatedEntry_0_uop_lsuOp_string = "ibar   ";
-      default : updatedEntry_0_uop_lsuOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_0_roop_lsuROOp)
-      LSUROOp_reg_1 : updatedEntry_0_roop_lsuROOp_string = "reg_1 ";
-      LSUROOp_regimm : updatedEntry_0_roop_lsuROOp_string = "regimm";
-      default : updatedEntry_0_roop_lsuROOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_lsuOp)
-      LSUOp_cacop : updatedEntry_1_uop_lsuOp_string = "cacop  ";
-      LSUOp_tlbsrch : updatedEntry_1_uop_lsuOp_string = "tlbsrch";
-      LSUOp_tlbrd : updatedEntry_1_uop_lsuOp_string = "tlbrd  ";
-      LSUOp_tlbwr : updatedEntry_1_uop_lsuOp_string = "tlbwr  ";
-      LSUOp_tlbfill : updatedEntry_1_uop_lsuOp_string = "tlbfill";
-      LSUOp_invtlb : updatedEntry_1_uop_lsuOp_string = "invtlb ";
-      LSUOp_ll : updatedEntry_1_uop_lsuOp_string = "ll     ";
-      LSUOp_sc : updatedEntry_1_uop_lsuOp_string = "sc     ";
-      LSUOp_ld : updatedEntry_1_uop_lsuOp_string = "ld     ";
-      LSUOp_ldu : updatedEntry_1_uop_lsuOp_string = "ldu    ";
-      LSUOp_st : updatedEntry_1_uop_lsuOp_string = "st     ";
-      LSUOp_preld : updatedEntry_1_uop_lsuOp_string = "preld  ";
-      LSUOp_dbar : updatedEntry_1_uop_lsuOp_string = "dbar   ";
-      LSUOp_ibar : updatedEntry_1_uop_lsuOp_string = "ibar   ";
-      default : updatedEntry_1_uop_lsuOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_roop_lsuROOp)
-      LSUROOp_reg_1 : updatedEntry_1_roop_lsuROOp_string = "reg_1 ";
-      LSUROOp_regimm : updatedEntry_1_roop_lsuROOp_string = "regimm";
-      default : updatedEntry_1_roop_lsuROOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_lsuOp)
-      LSUOp_cacop : updatedEntry_2_uop_lsuOp_string = "cacop  ";
-      LSUOp_tlbsrch : updatedEntry_2_uop_lsuOp_string = "tlbsrch";
-      LSUOp_tlbrd : updatedEntry_2_uop_lsuOp_string = "tlbrd  ";
-      LSUOp_tlbwr : updatedEntry_2_uop_lsuOp_string = "tlbwr  ";
-      LSUOp_tlbfill : updatedEntry_2_uop_lsuOp_string = "tlbfill";
-      LSUOp_invtlb : updatedEntry_2_uop_lsuOp_string = "invtlb ";
-      LSUOp_ll : updatedEntry_2_uop_lsuOp_string = "ll     ";
-      LSUOp_sc : updatedEntry_2_uop_lsuOp_string = "sc     ";
-      LSUOp_ld : updatedEntry_2_uop_lsuOp_string = "ld     ";
-      LSUOp_ldu : updatedEntry_2_uop_lsuOp_string = "ldu    ";
-      LSUOp_st : updatedEntry_2_uop_lsuOp_string = "st     ";
-      LSUOp_preld : updatedEntry_2_uop_lsuOp_string = "preld  ";
-      LSUOp_dbar : updatedEntry_2_uop_lsuOp_string = "dbar   ";
-      LSUOp_ibar : updatedEntry_2_uop_lsuOp_string = "ibar   ";
-      default : updatedEntry_2_uop_lsuOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_roop_lsuROOp)
-      LSUROOp_reg_1 : updatedEntry_2_roop_lsuROOp_string = "reg_1 ";
-      LSUROOp_regimm : updatedEntry_2_roop_lsuROOp_string = "regimm";
-      default : updatedEntry_2_roop_lsuROOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_lsuOp)
-      LSUOp_cacop : updatedEntry_3_uop_lsuOp_string = "cacop  ";
-      LSUOp_tlbsrch : updatedEntry_3_uop_lsuOp_string = "tlbsrch";
-      LSUOp_tlbrd : updatedEntry_3_uop_lsuOp_string = "tlbrd  ";
-      LSUOp_tlbwr : updatedEntry_3_uop_lsuOp_string = "tlbwr  ";
-      LSUOp_tlbfill : updatedEntry_3_uop_lsuOp_string = "tlbfill";
-      LSUOp_invtlb : updatedEntry_3_uop_lsuOp_string = "invtlb ";
-      LSUOp_ll : updatedEntry_3_uop_lsuOp_string = "ll     ";
-      LSUOp_sc : updatedEntry_3_uop_lsuOp_string = "sc     ";
-      LSUOp_ld : updatedEntry_3_uop_lsuOp_string = "ld     ";
-      LSUOp_ldu : updatedEntry_3_uop_lsuOp_string = "ldu    ";
-      LSUOp_st : updatedEntry_3_uop_lsuOp_string = "st     ";
-      LSUOp_preld : updatedEntry_3_uop_lsuOp_string = "preld  ";
-      LSUOp_dbar : updatedEntry_3_uop_lsuOp_string = "dbar   ";
-      LSUOp_ibar : updatedEntry_3_uop_lsuOp_string = "ibar   ";
-      default : updatedEntry_3_uop_lsuOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_roop_lsuROOp)
-      LSUROOp_reg_1 : updatedEntry_3_roop_lsuROOp_string = "reg_1 ";
-      LSUROOp_regimm : updatedEntry_3_roop_lsuROOp_string = "regimm";
-      default : updatedEntry_3_roop_lsuROOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
     case(appendEntry_uop_lsuOp)
       LSUOp_cacop : appendEntry_uop_lsuOp_string = "cacop  ";
       LSUOp_tlbsrch : appendEntry_uop_lsuOp_string = "tlbsrch";
@@ -11274,110 +11209,6 @@ module IssueQueue_4 (
   assign appendEntry_roop_lsuROOp = io_input_payload_roop_lsuROOp;
   assign appendEntry_srcReady_0 = ((io_input_payload_srcReady_0 || (|{(io_input_payload_psrc_0 == io_writebackSignal_4),{_zz_appendEntry_srcReady_0,{_zz_appendEntry_srcReady_0_1,_zz_appendEntry_srcReady_0_2}}})) || (|{((io_input_payload_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{(_zz_appendEntry_srcReady_0_3 && io_earlyWakeup_9_valid),{_zz_appendEntry_srcReady_0_4,{_zz_appendEntry_srcReady_0_5,_zz_appendEntry_srcReady_0_6}}}}));
   assign appendEntry_srcReady_1 = ((io_input_payload_srcReady_1 || (|{(io_input_payload_psrc_1 == io_writebackSignal_4),{(io_input_payload_psrc_1 == io_writebackSignal_3),{_zz_appendEntry_srcReady_1,{_zz_appendEntry_srcReady_1_1,_zz_appendEntry_srcReady_1_2}}}})) || (|{((io_input_payload_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((io_input_payload_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_appendEntry_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_appendEntry_srcReady_1_4,{_zz_appendEntry_srcReady_1_5,_zz_appendEntry_srcReady_1_6}}}}}));
-  assign updatedEntry_0_valid = queue_0_valid;
-  assign updatedEntry_0_robIdx = queue_0_robIdx;
-  assign updatedEntry_0_branchResult_targetPC = queue_0_branchResult_targetPC;
-  assign updatedEntry_0_branchResult_branchResult = queue_0_branchResult_branchResult;
-  assign updatedEntry_0_branchResult_predictFail = queue_0_branchResult_predictFail;
-  assign updatedEntry_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
-  assign updatedEntry_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
-  assign updatedEntry_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
-  assign updatedEntry_0_pc = queue_0_pc;
-  assign updatedEntry_0_prd = queue_0_prd;
-  assign updatedEntry_0_psrc_0 = queue_0_psrc_0;
-  assign updatedEntry_0_psrc_1 = queue_0_psrc_1;
-  assign updatedEntry_0_imm = queue_0_imm;
-  assign updatedEntry_0_uop_lsuOp = queue_0_uop_lsuOp;
-  assign updatedEntry_0_uop_lsuCoOp = queue_0_uop_lsuCoOp;
-  assign updatedEntry_0_roop_lsuROOp = queue_0_roop_lsuROOp;
-  always @(*) begin
-    updatedEntry_0_srcReady_0 = queue_0_srcReady_0;
-    updatedEntry_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_0,{_zz_updatedEntry_0_srcReady_0_1,_zz_updatedEntry_0_srcReady_0_2}}}})) || (|{((queue_0_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_0_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_0_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_0_srcReady_0_4,{_zz_updatedEntry_0_srcReady_0_5,_zz_updatedEntry_0_srcReady_0_6}}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_0_srcReady_1 = queue_0_srcReady_1;
-    updatedEntry_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_1,{_zz_updatedEntry_0_srcReady_1_1,_zz_updatedEntry_0_srcReady_1_2}}}})) || (|{((queue_0_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_0_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_0_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_0_srcReady_1_4,{_zz_updatedEntry_0_srcReady_1_5,_zz_updatedEntry_0_srcReady_1_6}}}}}));
-  end
-
-  assign updatedEntry_1_valid = queue_1_valid;
-  assign updatedEntry_1_robIdx = queue_1_robIdx;
-  assign updatedEntry_1_branchResult_targetPC = queue_1_branchResult_targetPC;
-  assign updatedEntry_1_branchResult_branchResult = queue_1_branchResult_branchResult;
-  assign updatedEntry_1_branchResult_predictFail = queue_1_branchResult_predictFail;
-  assign updatedEntry_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
-  assign updatedEntry_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
-  assign updatedEntry_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
-  assign updatedEntry_1_pc = queue_1_pc;
-  assign updatedEntry_1_prd = queue_1_prd;
-  assign updatedEntry_1_psrc_0 = queue_1_psrc_0;
-  assign updatedEntry_1_psrc_1 = queue_1_psrc_1;
-  assign updatedEntry_1_imm = queue_1_imm;
-  assign updatedEntry_1_uop_lsuOp = queue_1_uop_lsuOp;
-  assign updatedEntry_1_uop_lsuCoOp = queue_1_uop_lsuCoOp;
-  assign updatedEntry_1_roop_lsuROOp = queue_1_roop_lsuROOp;
-  always @(*) begin
-    updatedEntry_1_srcReady_0 = queue_1_srcReady_0;
-    updatedEntry_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_0,{_zz_updatedEntry_1_srcReady_0_1,_zz_updatedEntry_1_srcReady_0_2}}}})) || (|{((queue_1_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_1_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_1_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_1_srcReady_0_4,{_zz_updatedEntry_1_srcReady_0_5,_zz_updatedEntry_1_srcReady_0_6}}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_1_srcReady_1 = queue_1_srcReady_1;
-    updatedEntry_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_1,{_zz_updatedEntry_1_srcReady_1_1,_zz_updatedEntry_1_srcReady_1_2}}}})) || (|{((queue_1_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_1_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_1_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_1_srcReady_1_4,{_zz_updatedEntry_1_srcReady_1_5,_zz_updatedEntry_1_srcReady_1_6}}}}}));
-  end
-
-  assign updatedEntry_2_valid = queue_2_valid;
-  assign updatedEntry_2_robIdx = queue_2_robIdx;
-  assign updatedEntry_2_branchResult_targetPC = queue_2_branchResult_targetPC;
-  assign updatedEntry_2_branchResult_branchResult = queue_2_branchResult_branchResult;
-  assign updatedEntry_2_branchResult_predictFail = queue_2_branchResult_predictFail;
-  assign updatedEntry_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
-  assign updatedEntry_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
-  assign updatedEntry_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
-  assign updatedEntry_2_pc = queue_2_pc;
-  assign updatedEntry_2_prd = queue_2_prd;
-  assign updatedEntry_2_psrc_0 = queue_2_psrc_0;
-  assign updatedEntry_2_psrc_1 = queue_2_psrc_1;
-  assign updatedEntry_2_imm = queue_2_imm;
-  assign updatedEntry_2_uop_lsuOp = queue_2_uop_lsuOp;
-  assign updatedEntry_2_uop_lsuCoOp = queue_2_uop_lsuCoOp;
-  assign updatedEntry_2_roop_lsuROOp = queue_2_roop_lsuROOp;
-  always @(*) begin
-    updatedEntry_2_srcReady_0 = queue_2_srcReady_0;
-    updatedEntry_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_0,{_zz_updatedEntry_2_srcReady_0_1,_zz_updatedEntry_2_srcReady_0_2}}}})) || (|{((queue_2_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_2_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_2_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_2_srcReady_0_4,{_zz_updatedEntry_2_srcReady_0_5,_zz_updatedEntry_2_srcReady_0_6}}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_2_srcReady_1 = queue_2_srcReady_1;
-    updatedEntry_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_1,{_zz_updatedEntry_2_srcReady_1_1,_zz_updatedEntry_2_srcReady_1_2}}}})) || (|{((queue_2_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_2_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_2_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_2_srcReady_1_4,{_zz_updatedEntry_2_srcReady_1_5,_zz_updatedEntry_2_srcReady_1_6}}}}}));
-  end
-
-  assign updatedEntry_3_valid = queue_3_valid;
-  assign updatedEntry_3_robIdx = queue_3_robIdx;
-  assign updatedEntry_3_branchResult_targetPC = queue_3_branchResult_targetPC;
-  assign updatedEntry_3_branchResult_branchResult = queue_3_branchResult_branchResult;
-  assign updatedEntry_3_branchResult_predictFail = queue_3_branchResult_predictFail;
-  assign updatedEntry_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
-  assign updatedEntry_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
-  assign updatedEntry_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
-  assign updatedEntry_3_pc = queue_3_pc;
-  assign updatedEntry_3_prd = queue_3_prd;
-  assign updatedEntry_3_psrc_0 = queue_3_psrc_0;
-  assign updatedEntry_3_psrc_1 = queue_3_psrc_1;
-  assign updatedEntry_3_imm = queue_3_imm;
-  assign updatedEntry_3_uop_lsuOp = queue_3_uop_lsuOp;
-  assign updatedEntry_3_uop_lsuCoOp = queue_3_uop_lsuCoOp;
-  assign updatedEntry_3_roop_lsuROOp = queue_3_roop_lsuROOp;
-  always @(*) begin
-    updatedEntry_3_srcReady_0 = queue_3_srcReady_0;
-    updatedEntry_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_0,{_zz_updatedEntry_3_srcReady_0_1,_zz_updatedEntry_3_srcReady_0_2}}}})) || (|{((queue_3_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_3_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_3_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_3_srcReady_0_4,{_zz_updatedEntry_3_srcReady_0_5,_zz_updatedEntry_3_srcReady_0_6}}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_3_srcReady_1 = queue_3_srcReady_1;
-    updatedEntry_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_1,{_zz_updatedEntry_3_srcReady_1_1,_zz_updatedEntry_3_srcReady_1_2}}}})) || (|{((queue_3_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_3_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_updatedEntry_3_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_updatedEntry_3_srcReady_1_4,{_zz_updatedEntry_3_srcReady_1_5,_zz_updatedEntry_3_srcReady_1_6}}}}}));
-  end
-
   always @(*) begin
     shiftAhead[0] = ((|readyToIssue[0 : 0]) && io_output_ready);
     shiftAhead[1] = ((|readyToIssue[1 : 0]) && io_output_ready);
@@ -11385,17 +11216,17 @@ module IssueQueue_4 (
     shiftAhead[3] = ((|readyToIssue[3 : 0]) && io_output_ready);
   end
 
-  assign when_IssueQueue_l81 = shiftAhead[0];
-  assign when_IssueQueue_l83 = writeVector[1];
+  assign when_IssueQueue_l73 = shiftAhead[0];
+  assign when_IssueQueue_l75 = writeVector[1];
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_1_valid;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_0_valid;
@@ -11404,14 +11235,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_1_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_0_robIdx;
@@ -11420,14 +11251,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_0_branchResult_targetPC = queue_1_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_0_branchResult_targetPC = queue_0_branchResult_targetPC;
@@ -11436,14 +11267,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_0_branchResult_branchResult = queue_1_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_0_branchResult_branchResult = queue_0_branchResult_branchResult;
@@ -11452,14 +11283,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_0_branchResult_predictFail = queue_1_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_0_branchResult_predictFail = queue_0_branchResult_predictFail;
@@ -11468,14 +11299,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_1_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
@@ -11484,14 +11315,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
@@ -11500,14 +11331,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
@@ -11516,14 +11347,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_1_pc;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_0_pc;
@@ -11532,14 +11363,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_1_prd;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_0_prd;
@@ -11548,14 +11379,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_1_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_0_psrc_0;
@@ -11564,14 +11395,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_1_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_0_psrc_1;
@@ -11580,14 +11411,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_1_imm;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_0_imm;
@@ -11596,14 +11427,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_0_uop_lsuOp = queue_1_uop_lsuOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_0_uop_lsuOp = queue_0_uop_lsuOp;
@@ -11612,14 +11443,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_0_uop_lsuCoOp = queue_1_uop_lsuCoOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_0_uop_lsuCoOp = queue_0_uop_lsuCoOp;
@@ -11628,14 +11459,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_0_roop_lsuROOp = queue_1_roop_lsuROOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_0_roop_lsuROOp = queue_0_roop_lsuROOp;
@@ -11644,49 +11475,53 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_1_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_0,{_zz_queueNext_0_srcReady_0_1,_zz_queueNext_0_srcReady_0_2}}}})) || (|{((queue_0_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_0_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_0_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_queueNext_0_srcReady_0_4,{_zz_queueNext_0_srcReady_0_5,_zz_queueNext_0_srcReady_0_6}}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_0_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_0_10,{_zz_queueNext_0_srcReady_0_11,_zz_queueNext_0_srcReady_0_12}}}})) || (|{((queue_0_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_0_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_0_srcReady_0_13 && io_earlyWakeup_8_valid),{_zz_queueNext_0_srcReady_0_14,{_zz_queueNext_0_srcReady_0_15,_zz_queueNext_0_srcReady_0_16}}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_1_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_1,{_zz_queueNext_0_srcReady_1_1,_zz_queueNext_0_srcReady_1_2}}}})) || (|{((queue_0_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_0_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_0_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_queueNext_0_srcReady_1_4,{_zz_queueNext_0_srcReady_1_5,_zz_queueNext_0_srcReady_1_6}}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_0_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_1_10,{_zz_queueNext_0_srcReady_1_11,_zz_queueNext_0_srcReady_1_12}}}})) || (|{((queue_0_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_0_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_0_srcReady_1_13 && io_earlyWakeup_8_valid),{_zz_queueNext_0_srcReady_1_14,{_zz_queueNext_0_srcReady_1_15,_zz_queueNext_0_srcReady_1_16}}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96 = writeVector[0];
-  assign when_IssueQueue_l81_1 = shiftAhead[1];
-  assign when_IssueQueue_l83_1 = writeVector[2];
+  assign when_IssueQueue_l93 = writeVector[0];
+  assign when_IssueQueue_l73_1 = shiftAhead[1];
+  assign when_IssueQueue_l75_1 = writeVector[2];
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_2_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_1_valid;
@@ -11695,14 +11530,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_2_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_1_robIdx;
@@ -11711,14 +11546,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_1_branchResult_targetPC = queue_2_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_1_branchResult_targetPC = queue_1_branchResult_targetPC;
@@ -11727,14 +11562,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_1_branchResult_branchResult = queue_2_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_1_branchResult_branchResult = queue_1_branchResult_branchResult;
@@ -11743,14 +11578,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_1_branchResult_predictFail = queue_2_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_1_branchResult_predictFail = queue_1_branchResult_predictFail;
@@ -11759,14 +11594,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_2_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
@@ -11775,14 +11610,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
@@ -11791,14 +11626,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
@@ -11807,14 +11642,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_2_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_1_pc;
@@ -11823,14 +11658,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_2_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_1_prd;
@@ -11839,14 +11674,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_2_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_1_psrc_0;
@@ -11855,14 +11690,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_2_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_1_psrc_1;
@@ -11871,14 +11706,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_2_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_1_imm;
@@ -11887,14 +11722,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_1_uop_lsuOp = queue_2_uop_lsuOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_1_uop_lsuOp = queue_1_uop_lsuOp;
@@ -11903,14 +11738,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_1_uop_lsuCoOp = queue_2_uop_lsuCoOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_1_uop_lsuCoOp = queue_1_uop_lsuCoOp;
@@ -11919,14 +11754,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_1_roop_lsuROOp = queue_2_roop_lsuROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_1_roop_lsuROOp = queue_1_roop_lsuROOp;
@@ -11935,49 +11770,53 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_2_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_0,{_zz_queueNext_1_srcReady_0_1,_zz_queueNext_1_srcReady_0_2}}}})) || (|{((queue_1_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_1_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_1_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_queueNext_1_srcReady_0_4,{_zz_queueNext_1_srcReady_0_5,_zz_queueNext_1_srcReady_0_6}}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_1_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_0_10,{_zz_queueNext_1_srcReady_0_11,_zz_queueNext_1_srcReady_0_12}}}})) || (|{((queue_1_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_1_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_1_srcReady_0_13 && io_earlyWakeup_8_valid),{_zz_queueNext_1_srcReady_0_14,{_zz_queueNext_1_srcReady_0_15,_zz_queueNext_1_srcReady_0_16}}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_2_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_1,{_zz_queueNext_1_srcReady_1_1,_zz_queueNext_1_srcReady_1_2}}}})) || (|{((queue_1_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_1_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_1_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_queueNext_1_srcReady_1_4,{_zz_queueNext_1_srcReady_1_5,_zz_queueNext_1_srcReady_1_6}}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_1_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_1_10,{_zz_queueNext_1_srcReady_1_11,_zz_queueNext_1_srcReady_1_12}}}})) || (|{((queue_1_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_1_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_1_srcReady_1_13 && io_earlyWakeup_8_valid),{_zz_queueNext_1_srcReady_1_14,{_zz_queueNext_1_srcReady_1_15,_zz_queueNext_1_srcReady_1_16}}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_1 = writeVector[1];
-  assign when_IssueQueue_l81_2 = shiftAhead[2];
-  assign when_IssueQueue_l83_2 = writeVector[3];
+  assign when_IssueQueue_l93_1 = writeVector[1];
+  assign when_IssueQueue_l73_2 = shiftAhead[2];
+  assign when_IssueQueue_l75_2 = writeVector[3];
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_3_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_2_valid;
@@ -11986,14 +11825,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_3_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_2_robIdx;
@@ -12002,14 +11841,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_2_branchResult_targetPC = queue_3_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_2_branchResult_targetPC = queue_2_branchResult_targetPC;
@@ -12018,14 +11857,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_2_branchResult_branchResult = queue_3_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_2_branchResult_branchResult = queue_2_branchResult_branchResult;
@@ -12034,14 +11873,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_2_branchResult_predictFail = queue_3_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_2_branchResult_predictFail = queue_2_branchResult_predictFail;
@@ -12050,14 +11889,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_3_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
@@ -12066,14 +11905,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
@@ -12082,14 +11921,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
@@ -12098,14 +11937,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_3_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_2_pc;
@@ -12114,14 +11953,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_3_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_2_prd;
@@ -12130,14 +11969,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_3_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_2_psrc_0;
@@ -12146,14 +11985,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_3_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_2_psrc_1;
@@ -12162,14 +12001,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_3_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_2_imm;
@@ -12178,14 +12017,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_2_uop_lsuOp = queue_3_uop_lsuOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_2_uop_lsuOp = queue_2_uop_lsuOp;
@@ -12194,14 +12033,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_2_uop_lsuCoOp = queue_3_uop_lsuCoOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_2_uop_lsuCoOp = queue_2_uop_lsuCoOp;
@@ -12210,14 +12049,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_2_roop_lsuROOp = queue_3_roop_lsuROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_2_roop_lsuROOp = queue_2_roop_lsuROOp;
@@ -12226,49 +12065,53 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_3_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_0,{_zz_queueNext_2_srcReady_0_1,_zz_queueNext_2_srcReady_0_2}}}})) || (|{((queue_2_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_2_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_2_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_queueNext_2_srcReady_0_4,{_zz_queueNext_2_srcReady_0_5,_zz_queueNext_2_srcReady_0_6}}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_2_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_0_10,{_zz_queueNext_2_srcReady_0_11,_zz_queueNext_2_srcReady_0_12}}}})) || (|{((queue_2_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_2_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_2_srcReady_0_13 && io_earlyWakeup_8_valid),{_zz_queueNext_2_srcReady_0_14,{_zz_queueNext_2_srcReady_0_15,_zz_queueNext_2_srcReady_0_16}}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_3_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_1,{_zz_queueNext_2_srcReady_1_1,_zz_queueNext_2_srcReady_1_2}}}})) || (|{((queue_2_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_2_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_2_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_queueNext_2_srcReady_1_4,{_zz_queueNext_2_srcReady_1_5,_zz_queueNext_2_srcReady_1_6}}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_2_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_1_10,{_zz_queueNext_2_srcReady_1_11,_zz_queueNext_2_srcReady_1_12}}}})) || (|{((queue_2_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_2_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_2_srcReady_1_13 && io_earlyWakeup_8_valid),{_zz_queueNext_2_srcReady_1_14,{_zz_queueNext_2_srcReady_1_15,_zz_queueNext_2_srcReady_1_16}}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_2 = writeVector[2];
-  assign when_IssueQueue_l81_3 = shiftAhead[3];
-  assign when_IssueQueue_l89 = writeVector[4];
+  assign when_IssueQueue_l93_2 = writeVector[2];
+  assign when_IssueQueue_l73_3 = shiftAhead[3];
+  assign when_IssueQueue_l86 = writeVector[4];
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = queue_3_valid;
@@ -12277,14 +12120,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = 5'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = queue_3_robIdx;
@@ -12293,14 +12136,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_3_branchResult_targetPC = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_3_branchResult_targetPC = queue_3_branchResult_targetPC;
@@ -12309,14 +12152,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_3_branchResult_branchResult = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_3_branchResult_branchResult = queue_3_branchResult_branchResult;
@@ -12325,14 +12168,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_3_branchResult_predictFail = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_3_branchResult_predictFail = queue_3_branchResult_predictFail;
@@ -12341,14 +12184,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
@@ -12357,14 +12200,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
@@ -12373,14 +12216,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
@@ -12389,14 +12232,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = queue_3_pc;
@@ -12405,14 +12248,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = queue_3_prd;
@@ -12421,14 +12264,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = queue_3_psrc_0;
@@ -12437,14 +12280,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = queue_3_psrc_1;
@@ -12453,14 +12296,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = queue_3_imm;
@@ -12469,14 +12312,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_3_uop_lsuOp = LSUOp_dbar;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_lsuOp = appendEntry_uop_lsuOp;
       end else begin
         queueNext_3_uop_lsuOp = queue_3_uop_lsuOp;
@@ -12485,14 +12328,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_3_uop_lsuCoOp = 5'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_lsuCoOp = appendEntry_uop_lsuCoOp;
       end else begin
         queueNext_3_uop_lsuCoOp = queue_3_uop_lsuCoOp;
@@ -12501,14 +12344,14 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_3_roop_lsuROOp = LSUROOp_regimm;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_roop_lsuROOp = appendEntry_roop_lsuROOp;
       end else begin
         queueNext_3_roop_lsuROOp = queue_3_roop_lsuROOp;
@@ -12517,40 +12360,41 @@ module IssueQueue_4 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = queue_3_srcReady_0;
+        queueNext_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_0,{_zz_queueNext_3_srcReady_0_1,_zz_queueNext_3_srcReady_0_2}}}})) || (|{((queue_3_psrc_0 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_3_psrc_0 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_3_srcReady_0_3 && io_earlyWakeup_8_valid),{_zz_queueNext_3_srcReady_0_4,{_zz_queueNext_3_srcReady_0_5,_zz_queueNext_3_srcReady_0_6}}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = queue_3_srcReady_1;
+        queueNext_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_1,{_zz_queueNext_3_srcReady_1_1,_zz_queueNext_3_srcReady_1_2}}}})) || (|{((queue_3_psrc_1 == io_earlyWakeup_10_payload) && io_earlyWakeup_10_valid),{((queue_3_psrc_1 == io_earlyWakeup_9_payload) && io_earlyWakeup_9_valid),{(_zz_queueNext_3_srcReady_1_3 && io_earlyWakeup_8_valid),{_zz_queueNext_3_srcReady_1_4,{_zz_queueNext_3_srcReady_1_5,_zz_queueNext_3_srcReady_1_6}}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_3 = writeVector[3];
-  assign io_output_fire = (io_output_valid && io_output_ready);
-  assign io_input_ready = ((|emptyEntry[3 : 0]) || io_output_fire);
+  assign when_IssueQueue_l93_3 = writeVector[3];
+  assign io_input_ready = (|emptyEntry[3 : 0]);
   assign _zz_issueEntry_valid = issueVector[3];
   assign _zz_issueEntry_valid_1 = (issueVector[1] || _zz_issueEntry_valid);
   assign _zz_issueEntry_valid_2 = (issueVector[2] || _zz_issueEntry_valid);
@@ -12879,70 +12723,6 @@ module IssueQueue_3 (
   wire       [4:0]    emptyEntry_ohFirst_input;
   wire       [4:0]    emptyEntry_ohFirst_masked;
   wire       [4:0]    writeVector;
-  wire                updatedEntry_0_valid;
-  wire       [4:0]    updatedEntry_0_robIdx;
-  wire       [31:0]   updatedEntry_0_branchResult_targetPC;
-  wire                updatedEntry_0_branchResult_branchResult;
-  wire                updatedEntry_0_branchResult_predictFail;
-  wire                updatedEntry_0_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_0_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_0_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_0_pc;
-  wire       [5:0]    updatedEntry_0_prd;
-  wire       [5:0]    updatedEntry_0_psrc_0;
-  wire       [5:0]    updatedEntry_0_psrc_1;
-  wire       [31:0]   updatedEntry_0_imm;
-  wire       [1:0]    updatedEntry_0_uop_divuOp;
-  reg                 updatedEntry_0_srcReady_0;
-  reg                 updatedEntry_0_srcReady_1;
-  wire                updatedEntry_1_valid;
-  wire       [4:0]    updatedEntry_1_robIdx;
-  wire       [31:0]   updatedEntry_1_branchResult_targetPC;
-  wire                updatedEntry_1_branchResult_branchResult;
-  wire                updatedEntry_1_branchResult_predictFail;
-  wire                updatedEntry_1_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_1_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_1_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_1_pc;
-  wire       [5:0]    updatedEntry_1_prd;
-  wire       [5:0]    updatedEntry_1_psrc_0;
-  wire       [5:0]    updatedEntry_1_psrc_1;
-  wire       [31:0]   updatedEntry_1_imm;
-  wire       [1:0]    updatedEntry_1_uop_divuOp;
-  reg                 updatedEntry_1_srcReady_0;
-  reg                 updatedEntry_1_srcReady_1;
-  wire                updatedEntry_2_valid;
-  wire       [4:0]    updatedEntry_2_robIdx;
-  wire       [31:0]   updatedEntry_2_branchResult_targetPC;
-  wire                updatedEntry_2_branchResult_branchResult;
-  wire                updatedEntry_2_branchResult_predictFail;
-  wire                updatedEntry_2_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_2_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_2_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_2_pc;
-  wire       [5:0]    updatedEntry_2_prd;
-  wire       [5:0]    updatedEntry_2_psrc_0;
-  wire       [5:0]    updatedEntry_2_psrc_1;
-  wire       [31:0]   updatedEntry_2_imm;
-  wire       [1:0]    updatedEntry_2_uop_divuOp;
-  reg                 updatedEntry_2_srcReady_0;
-  reg                 updatedEntry_2_srcReady_1;
-  wire                updatedEntry_3_valid;
-  wire       [4:0]    updatedEntry_3_robIdx;
-  wire       [31:0]   updatedEntry_3_branchResult_targetPC;
-  wire                updatedEntry_3_branchResult_branchResult;
-  wire                updatedEntry_3_branchResult_predictFail;
-  wire                updatedEntry_3_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_3_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_3_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_3_pc;
-  wire       [5:0]    updatedEntry_3_prd;
-  wire       [5:0]    updatedEntry_3_psrc_0;
-  wire       [5:0]    updatedEntry_3_psrc_1;
-  wire       [31:0]   updatedEntry_3_imm;
-  wire       [1:0]    updatedEntry_3_uop_divuOp;
-  reg                 updatedEntry_3_srcReady_0;
-  reg                 updatedEntry_3_srcReady_1;
   wire                appendEntry_valid;
   wire       [4:0]    appendEntry_robIdx;
   wire       [31:0]   appendEntry_branchResult_targetPC;
@@ -13023,19 +12803,18 @@ module IssueQueue_3 (
   reg        [1:0]    queueNext_3_uop_divuOp;
   reg                 queueNext_3_srcReady_0;
   reg                 queueNext_3_srcReady_1;
-  wire                when_IssueQueue_l81;
-  wire                when_IssueQueue_l83;
-  wire                when_IssueQueue_l96;
-  wire                when_IssueQueue_l81_1;
-  wire                when_IssueQueue_l83_1;
-  wire                when_IssueQueue_l96_1;
-  wire                when_IssueQueue_l81_2;
-  wire                when_IssueQueue_l83_2;
-  wire                when_IssueQueue_l96_2;
-  wire                when_IssueQueue_l81_3;
-  wire                when_IssueQueue_l89;
-  wire                when_IssueQueue_l96_3;
-  wire                io_output_fire;
+  wire                when_IssueQueue_l73;
+  wire                when_IssueQueue_l75;
+  wire                when_IssueQueue_l93;
+  wire                when_IssueQueue_l73_1;
+  wire                when_IssueQueue_l75_1;
+  wire                when_IssueQueue_l93_1;
+  wire                when_IssueQueue_l73_2;
+  wire                when_IssueQueue_l75_2;
+  wire                when_IssueQueue_l93_2;
+  wire                when_IssueQueue_l73_3;
+  wire                when_IssueQueue_l86;
+  wire                when_IssueQueue_l93_3;
   wire                _zz_issueEntry_valid;
   wire                _zz_issueEntry_valid_1;
   wire                _zz_issueEntry_valid_2;
@@ -13063,10 +12842,6 @@ module IssueQueue_3 (
   reg [39:0] queue_1_uop_divuOp_string;
   reg [39:0] queue_2_uop_divuOp_string;
   reg [39:0] queue_3_uop_divuOp_string;
-  reg [39:0] updatedEntry_0_uop_divuOp_string;
-  reg [39:0] updatedEntry_1_uop_divuOp_string;
-  reg [39:0] updatedEntry_2_uop_divuOp_string;
-  reg [39:0] updatedEntry_3_uop_divuOp_string;
   reg [39:0] appendEntry_uop_divuOp_string;
   reg [39:0] queueNext_0_uop_divuOp_string;
   reg [39:0] queueNext_1_uop_divuOp_string;
@@ -13211,42 +12986,6 @@ module IssueQueue_3 (
     endcase
   end
   always @(*) begin
-    case(updatedEntry_0_uop_divuOp)
-      DIVUOp_div : updatedEntry_0_uop_divuOp_string = "div  ";
-      DIVUOp_divu : updatedEntry_0_uop_divuOp_string = "divu ";
-      DIVUOp_mod_1 : updatedEntry_0_uop_divuOp_string = "mod_1";
-      DIVUOp_modu : updatedEntry_0_uop_divuOp_string = "modu ";
-      default : updatedEntry_0_uop_divuOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_divuOp)
-      DIVUOp_div : updatedEntry_1_uop_divuOp_string = "div  ";
-      DIVUOp_divu : updatedEntry_1_uop_divuOp_string = "divu ";
-      DIVUOp_mod_1 : updatedEntry_1_uop_divuOp_string = "mod_1";
-      DIVUOp_modu : updatedEntry_1_uop_divuOp_string = "modu ";
-      default : updatedEntry_1_uop_divuOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_divuOp)
-      DIVUOp_div : updatedEntry_2_uop_divuOp_string = "div  ";
-      DIVUOp_divu : updatedEntry_2_uop_divuOp_string = "divu ";
-      DIVUOp_mod_1 : updatedEntry_2_uop_divuOp_string = "mod_1";
-      DIVUOp_modu : updatedEntry_2_uop_divuOp_string = "modu ";
-      default : updatedEntry_2_uop_divuOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_divuOp)
-      DIVUOp_div : updatedEntry_3_uop_divuOp_string = "div  ";
-      DIVUOp_divu : updatedEntry_3_uop_divuOp_string = "divu ";
-      DIVUOp_mod_1 : updatedEntry_3_uop_divuOp_string = "mod_1";
-      DIVUOp_modu : updatedEntry_3_uop_divuOp_string = "modu ";
-      default : updatedEntry_3_uop_divuOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
     case(appendEntry_uop_divuOp)
       DIVUOp_div : appendEntry_uop_divuOp_string = "div  ";
       DIVUOp_divu : appendEntry_uop_divuOp_string = "divu ";
@@ -13343,102 +13082,6 @@ module IssueQueue_3 (
   assign appendEntry_uop_divuOp = io_input_payload_uop_divuOp;
   assign appendEntry_srcReady_0 = (io_input_payload_srcReady_0 || (|{(io_input_payload_psrc_0 == io_writebackSignal_4),{(io_input_payload_psrc_0 == io_writebackSignal_3),{(io_input_payload_psrc_0 == io_writebackSignal_2),{(io_input_payload_psrc_0 == io_writebackSignal_1),(io_input_payload_psrc_0 == io_writebackSignal_0)}}}}));
   assign appendEntry_srcReady_1 = (io_input_payload_srcReady_1 || (|{(io_input_payload_psrc_1 == io_writebackSignal_4),{(io_input_payload_psrc_1 == io_writebackSignal_3),{(io_input_payload_psrc_1 == io_writebackSignal_2),{(io_input_payload_psrc_1 == io_writebackSignal_1),(io_input_payload_psrc_1 == io_writebackSignal_0)}}}}));
-  assign updatedEntry_0_valid = queue_0_valid;
-  assign updatedEntry_0_robIdx = queue_0_robIdx;
-  assign updatedEntry_0_branchResult_targetPC = queue_0_branchResult_targetPC;
-  assign updatedEntry_0_branchResult_branchResult = queue_0_branchResult_branchResult;
-  assign updatedEntry_0_branchResult_predictFail = queue_0_branchResult_predictFail;
-  assign updatedEntry_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
-  assign updatedEntry_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
-  assign updatedEntry_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
-  assign updatedEntry_0_pc = queue_0_pc;
-  assign updatedEntry_0_prd = queue_0_prd;
-  assign updatedEntry_0_psrc_0 = queue_0_psrc_0;
-  assign updatedEntry_0_psrc_1 = queue_0_psrc_1;
-  assign updatedEntry_0_imm = queue_0_imm;
-  assign updatedEntry_0_uop_divuOp = queue_0_uop_divuOp;
-  always @(*) begin
-    updatedEntry_0_srcReady_0 = queue_0_srcReady_0;
-    updatedEntry_0_srcReady_0 = (queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{(queue_0_psrc_0 == io_writebackSignal_2),{(queue_0_psrc_0 == io_writebackSignal_1),(queue_0_psrc_0 == io_writebackSignal_0)}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_0_srcReady_1 = queue_0_srcReady_1;
-    updatedEntry_0_srcReady_1 = (queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{(queue_0_psrc_1 == io_writebackSignal_2),{(queue_0_psrc_1 == io_writebackSignal_1),(queue_0_psrc_1 == io_writebackSignal_0)}}}}));
-  end
-
-  assign updatedEntry_1_valid = queue_1_valid;
-  assign updatedEntry_1_robIdx = queue_1_robIdx;
-  assign updatedEntry_1_branchResult_targetPC = queue_1_branchResult_targetPC;
-  assign updatedEntry_1_branchResult_branchResult = queue_1_branchResult_branchResult;
-  assign updatedEntry_1_branchResult_predictFail = queue_1_branchResult_predictFail;
-  assign updatedEntry_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
-  assign updatedEntry_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
-  assign updatedEntry_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
-  assign updatedEntry_1_pc = queue_1_pc;
-  assign updatedEntry_1_prd = queue_1_prd;
-  assign updatedEntry_1_psrc_0 = queue_1_psrc_0;
-  assign updatedEntry_1_psrc_1 = queue_1_psrc_1;
-  assign updatedEntry_1_imm = queue_1_imm;
-  assign updatedEntry_1_uop_divuOp = queue_1_uop_divuOp;
-  always @(*) begin
-    updatedEntry_1_srcReady_0 = queue_1_srcReady_0;
-    updatedEntry_1_srcReady_0 = (queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{(queue_1_psrc_0 == io_writebackSignal_2),{(queue_1_psrc_0 == io_writebackSignal_1),(queue_1_psrc_0 == io_writebackSignal_0)}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_1_srcReady_1 = queue_1_srcReady_1;
-    updatedEntry_1_srcReady_1 = (queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{(queue_1_psrc_1 == io_writebackSignal_2),{(queue_1_psrc_1 == io_writebackSignal_1),(queue_1_psrc_1 == io_writebackSignal_0)}}}}));
-  end
-
-  assign updatedEntry_2_valid = queue_2_valid;
-  assign updatedEntry_2_robIdx = queue_2_robIdx;
-  assign updatedEntry_2_branchResult_targetPC = queue_2_branchResult_targetPC;
-  assign updatedEntry_2_branchResult_branchResult = queue_2_branchResult_branchResult;
-  assign updatedEntry_2_branchResult_predictFail = queue_2_branchResult_predictFail;
-  assign updatedEntry_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
-  assign updatedEntry_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
-  assign updatedEntry_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
-  assign updatedEntry_2_pc = queue_2_pc;
-  assign updatedEntry_2_prd = queue_2_prd;
-  assign updatedEntry_2_psrc_0 = queue_2_psrc_0;
-  assign updatedEntry_2_psrc_1 = queue_2_psrc_1;
-  assign updatedEntry_2_imm = queue_2_imm;
-  assign updatedEntry_2_uop_divuOp = queue_2_uop_divuOp;
-  always @(*) begin
-    updatedEntry_2_srcReady_0 = queue_2_srcReady_0;
-    updatedEntry_2_srcReady_0 = (queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{(queue_2_psrc_0 == io_writebackSignal_2),{(queue_2_psrc_0 == io_writebackSignal_1),(queue_2_psrc_0 == io_writebackSignal_0)}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_2_srcReady_1 = queue_2_srcReady_1;
-    updatedEntry_2_srcReady_1 = (queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{(queue_2_psrc_1 == io_writebackSignal_2),{(queue_2_psrc_1 == io_writebackSignal_1),(queue_2_psrc_1 == io_writebackSignal_0)}}}}));
-  end
-
-  assign updatedEntry_3_valid = queue_3_valid;
-  assign updatedEntry_3_robIdx = queue_3_robIdx;
-  assign updatedEntry_3_branchResult_targetPC = queue_3_branchResult_targetPC;
-  assign updatedEntry_3_branchResult_branchResult = queue_3_branchResult_branchResult;
-  assign updatedEntry_3_branchResult_predictFail = queue_3_branchResult_predictFail;
-  assign updatedEntry_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
-  assign updatedEntry_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
-  assign updatedEntry_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
-  assign updatedEntry_3_pc = queue_3_pc;
-  assign updatedEntry_3_prd = queue_3_prd;
-  assign updatedEntry_3_psrc_0 = queue_3_psrc_0;
-  assign updatedEntry_3_psrc_1 = queue_3_psrc_1;
-  assign updatedEntry_3_imm = queue_3_imm;
-  assign updatedEntry_3_uop_divuOp = queue_3_uop_divuOp;
-  always @(*) begin
-    updatedEntry_3_srcReady_0 = queue_3_srcReady_0;
-    updatedEntry_3_srcReady_0 = (queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{(queue_3_psrc_0 == io_writebackSignal_2),{(queue_3_psrc_0 == io_writebackSignal_1),(queue_3_psrc_0 == io_writebackSignal_0)}}}}));
-  end
-
-  always @(*) begin
-    updatedEntry_3_srcReady_1 = queue_3_srcReady_1;
-    updatedEntry_3_srcReady_1 = (queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{(queue_3_psrc_1 == io_writebackSignal_2),{(queue_3_psrc_1 == io_writebackSignal_1),(queue_3_psrc_1 == io_writebackSignal_0)}}}}));
-  end
-
   always @(*) begin
     shiftAhead[0] = ((|readyToIssue[0 : 0]) && io_output_ready);
     shiftAhead[1] = ((|readyToIssue[1 : 0]) && io_output_ready);
@@ -13446,17 +13089,17 @@ module IssueQueue_3 (
     shiftAhead[3] = ((|readyToIssue[3 : 0]) && io_output_ready);
   end
 
-  assign when_IssueQueue_l81 = shiftAhead[0];
-  assign when_IssueQueue_l83 = writeVector[1];
+  assign when_IssueQueue_l73 = shiftAhead[0];
+  assign when_IssueQueue_l75 = writeVector[1];
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_1_valid;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_0_valid;
@@ -13465,14 +13108,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_1_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_0_robIdx;
@@ -13481,14 +13124,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_0_branchResult_targetPC = queue_1_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_0_branchResult_targetPC = queue_0_branchResult_targetPC;
@@ -13497,14 +13140,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_0_branchResult_branchResult = queue_1_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_0_branchResult_branchResult = queue_0_branchResult_branchResult;
@@ -13513,14 +13156,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_0_branchResult_predictFail = queue_1_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_0_branchResult_predictFail = queue_0_branchResult_predictFail;
@@ -13529,14 +13172,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_1_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
@@ -13545,14 +13188,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
@@ -13561,14 +13204,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
@@ -13577,14 +13220,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_1_pc;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_0_pc;
@@ -13593,14 +13236,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_1_prd;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_0_prd;
@@ -13609,14 +13252,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_1_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_0_psrc_0;
@@ -13625,14 +13268,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_1_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_0_psrc_1;
@@ -13641,14 +13284,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_1_imm;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_0_imm;
@@ -13657,14 +13300,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_0_uop_divuOp = queue_1_uop_divuOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_0_uop_divuOp = queue_0_uop_divuOp;
@@ -13673,49 +13316,53 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_1_srcReady_0;
+        queueNext_0_srcReady_0 = (queue_1_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{(queue_0_psrc_0 == io_writebackSignal_2),{(queue_0_psrc_0 == io_writebackSignal_1),(queue_0_psrc_0 == io_writebackSignal_0)}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_0_srcReady_0;
+        queueNext_0_srcReady_0 = (queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{(queue_0_psrc_0 == io_writebackSignal_2),{(queue_0_psrc_0 == io_writebackSignal_1),(queue_0_psrc_0 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_1_srcReady_1;
+        queueNext_0_srcReady_1 = (queue_1_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{(queue_0_psrc_1 == io_writebackSignal_2),{(queue_0_psrc_1 == io_writebackSignal_1),(queue_0_psrc_1 == io_writebackSignal_0)}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_0_srcReady_1;
+        queueNext_0_srcReady_1 = (queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{(queue_0_psrc_1 == io_writebackSignal_2),{(queue_0_psrc_1 == io_writebackSignal_1),(queue_0_psrc_1 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96 = writeVector[0];
-  assign when_IssueQueue_l81_1 = shiftAhead[1];
-  assign when_IssueQueue_l83_1 = writeVector[2];
+  assign when_IssueQueue_l93 = writeVector[0];
+  assign when_IssueQueue_l73_1 = shiftAhead[1];
+  assign when_IssueQueue_l75_1 = writeVector[2];
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_2_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_1_valid;
@@ -13724,14 +13371,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_2_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_1_robIdx;
@@ -13740,14 +13387,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_1_branchResult_targetPC = queue_2_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_1_branchResult_targetPC = queue_1_branchResult_targetPC;
@@ -13756,14 +13403,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_1_branchResult_branchResult = queue_2_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_1_branchResult_branchResult = queue_1_branchResult_branchResult;
@@ -13772,14 +13419,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_1_branchResult_predictFail = queue_2_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_1_branchResult_predictFail = queue_1_branchResult_predictFail;
@@ -13788,14 +13435,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_2_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
@@ -13804,14 +13451,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
@@ -13820,14 +13467,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
@@ -13836,14 +13483,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_2_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_1_pc;
@@ -13852,14 +13499,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_2_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_1_prd;
@@ -13868,14 +13515,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_2_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_1_psrc_0;
@@ -13884,14 +13531,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_2_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_1_psrc_1;
@@ -13900,14 +13547,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_2_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_1_imm;
@@ -13916,14 +13563,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_1_uop_divuOp = queue_2_uop_divuOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_1_uop_divuOp = queue_1_uop_divuOp;
@@ -13932,49 +13579,53 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_2_srcReady_0;
+        queueNext_1_srcReady_0 = (queue_2_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{(queue_1_psrc_0 == io_writebackSignal_2),{(queue_1_psrc_0 == io_writebackSignal_1),(queue_1_psrc_0 == io_writebackSignal_0)}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_1_srcReady_0;
+        queueNext_1_srcReady_0 = (queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{(queue_1_psrc_0 == io_writebackSignal_2),{(queue_1_psrc_0 == io_writebackSignal_1),(queue_1_psrc_0 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_2_srcReady_1;
+        queueNext_1_srcReady_1 = (queue_2_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{(queue_1_psrc_1 == io_writebackSignal_2),{(queue_1_psrc_1 == io_writebackSignal_1),(queue_1_psrc_1 == io_writebackSignal_0)}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_1_srcReady_1;
+        queueNext_1_srcReady_1 = (queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{(queue_1_psrc_1 == io_writebackSignal_2),{(queue_1_psrc_1 == io_writebackSignal_1),(queue_1_psrc_1 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_1 = writeVector[1];
-  assign when_IssueQueue_l81_2 = shiftAhead[2];
-  assign when_IssueQueue_l83_2 = writeVector[3];
+  assign when_IssueQueue_l93_1 = writeVector[1];
+  assign when_IssueQueue_l73_2 = shiftAhead[2];
+  assign when_IssueQueue_l75_2 = writeVector[3];
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_3_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_2_valid;
@@ -13983,14 +13634,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_3_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_2_robIdx;
@@ -13999,14 +13650,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_2_branchResult_targetPC = queue_3_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_2_branchResult_targetPC = queue_2_branchResult_targetPC;
@@ -14015,14 +13666,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_2_branchResult_branchResult = queue_3_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_2_branchResult_branchResult = queue_2_branchResult_branchResult;
@@ -14031,14 +13682,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_2_branchResult_predictFail = queue_3_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_2_branchResult_predictFail = queue_2_branchResult_predictFail;
@@ -14047,14 +13698,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_3_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
@@ -14063,14 +13714,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
@@ -14079,14 +13730,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
@@ -14095,14 +13746,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_3_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_2_pc;
@@ -14111,14 +13762,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_3_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_2_prd;
@@ -14127,14 +13778,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_3_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_2_psrc_0;
@@ -14143,14 +13794,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_3_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_2_psrc_1;
@@ -14159,14 +13810,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_3_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_2_imm;
@@ -14175,14 +13826,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_2_uop_divuOp = queue_3_uop_divuOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_2_uop_divuOp = queue_2_uop_divuOp;
@@ -14191,49 +13842,53 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_3_srcReady_0;
+        queueNext_2_srcReady_0 = (queue_3_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{(queue_2_psrc_0 == io_writebackSignal_2),{(queue_2_psrc_0 == io_writebackSignal_1),(queue_2_psrc_0 == io_writebackSignal_0)}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_2_srcReady_0;
+        queueNext_2_srcReady_0 = (queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{(queue_2_psrc_0 == io_writebackSignal_2),{(queue_2_psrc_0 == io_writebackSignal_1),(queue_2_psrc_0 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_3_srcReady_1;
+        queueNext_2_srcReady_1 = (queue_3_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{(queue_2_psrc_1 == io_writebackSignal_2),{(queue_2_psrc_1 == io_writebackSignal_1),(queue_2_psrc_1 == io_writebackSignal_0)}}}}));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_2_srcReady_1;
+        queueNext_2_srcReady_1 = (queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{(queue_2_psrc_1 == io_writebackSignal_2),{(queue_2_psrc_1 == io_writebackSignal_1),(queue_2_psrc_1 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_2 = writeVector[2];
-  assign when_IssueQueue_l81_3 = shiftAhead[3];
-  assign when_IssueQueue_l89 = writeVector[4];
+  assign when_IssueQueue_l93_2 = writeVector[2];
+  assign when_IssueQueue_l73_3 = shiftAhead[3];
+  assign when_IssueQueue_l86 = writeVector[4];
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = queue_3_valid;
@@ -14242,14 +13897,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = 5'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = queue_3_robIdx;
@@ -14258,14 +13913,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_3_branchResult_targetPC = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_3_branchResult_targetPC = queue_3_branchResult_targetPC;
@@ -14274,14 +13929,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_3_branchResult_branchResult = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_3_branchResult_branchResult = queue_3_branchResult_branchResult;
@@ -14290,14 +13945,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_3_branchResult_predictFail = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_3_branchResult_predictFail = queue_3_branchResult_predictFail;
@@ -14306,14 +13961,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
@@ -14322,14 +13977,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
@@ -14338,14 +13993,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
@@ -14354,14 +14009,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = queue_3_pc;
@@ -14370,14 +14025,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = queue_3_prd;
@@ -14386,14 +14041,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = queue_3_psrc_0;
@@ -14402,14 +14057,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = queue_3_psrc_1;
@@ -14418,14 +14073,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = queue_3_imm;
@@ -14434,14 +14089,14 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_3_uop_divuOp = DIVUOp_div;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_divuOp = appendEntry_uop_divuOp;
       end else begin
         queueNext_3_uop_divuOp = queue_3_uop_divuOp;
@@ -14450,40 +14105,41 @@ module IssueQueue_3 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = queue_3_srcReady_0;
+        queueNext_3_srcReady_0 = (queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{(queue_3_psrc_0 == io_writebackSignal_2),{(queue_3_psrc_0 == io_writebackSignal_1),(queue_3_psrc_0 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = queue_3_srcReady_1;
+        queueNext_3_srcReady_1 = (queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{(queue_3_psrc_1 == io_writebackSignal_2),{(queue_3_psrc_1 == io_writebackSignal_1),(queue_3_psrc_1 == io_writebackSignal_0)}}}}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_3 = writeVector[3];
-  assign io_output_fire = (io_output_valid && io_output_ready);
-  assign io_input_ready = ((|emptyEntry[3 : 0]) || io_output_fire);
+  assign when_IssueQueue_l93_3 = writeVector[3];
+  assign io_input_ready = (|emptyEntry[3 : 0]);
   assign _zz_issueEntry_valid = issueVector[3];
   assign _zz_issueEntry_valid_1 = (issueVector[1] || _zz_issueEntry_valid);
   assign _zz_issueEntry_valid_2 = (issueVector[2] || _zz_issueEntry_valid);
@@ -14712,30 +14368,32 @@ module IssueQueue_2 (
   wire                _zz_appendEntry_srcReady_1;
   wire       [0:0]    _zz_appendEntry_srcReady_1_1;
   wire       [0:0]    _zz_appendEntry_srcReady_1_2;
-  wire                _zz_updatedEntry_0_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_2;
-  wire                _zz_updatedEntry_0_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_2;
-  wire                _zz_updatedEntry_1_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_2;
-  wire                _zz_updatedEntry_1_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_2;
-  wire                _zz_updatedEntry_2_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_2;
-  wire                _zz_updatedEntry_2_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_2;
-  wire                _zz_updatedEntry_3_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_2;
-  wire                _zz_updatedEntry_3_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_2;
+  wire                _zz_queueNext_0_srcReady_0;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_2;
+  wire                _zz_queueNext_0_srcReady_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_2;
+  wire                _zz_queueNext_0_srcReady_0_3;
+  wire                _zz_queueNext_0_srcReady_0_4;
+  wire                _zz_queueNext_1_srcReady_0;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_2;
+  wire                _zz_queueNext_1_srcReady_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_2;
+  wire                _zz_queueNext_2_srcReady_0;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_2;
+  wire                _zz_queueNext_2_srcReady_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_2;
+  wire                _zz_queueNext_3_srcReady_0;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_2;
+  wire                _zz_queueNext_3_srcReady_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_2;
   reg                 _zz_issueEntry_valid_4;
   reg        [4:0]    _zz_issueEntry_robIdx;
   reg        [31:0]   _zz_issueEntry_branchResult_targetPC;
@@ -14825,70 +14483,6 @@ module IssueQueue_2 (
   wire       [4:0]    emptyEntry_ohFirst_input;
   wire       [4:0]    emptyEntry_ohFirst_masked;
   wire       [4:0]    writeVector;
-  wire                updatedEntry_0_valid;
-  wire       [4:0]    updatedEntry_0_robIdx;
-  wire       [31:0]   updatedEntry_0_branchResult_targetPC;
-  wire                updatedEntry_0_branchResult_branchResult;
-  wire                updatedEntry_0_branchResult_predictFail;
-  wire                updatedEntry_0_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_0_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_0_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_0_pc;
-  wire       [5:0]    updatedEntry_0_prd;
-  wire       [5:0]    updatedEntry_0_psrc_0;
-  wire       [5:0]    updatedEntry_0_psrc_1;
-  wire       [31:0]   updatedEntry_0_imm;
-  wire       [1:0]    updatedEntry_0_uop_muluOp;
-  reg                 updatedEntry_0_srcReady_0;
-  reg                 updatedEntry_0_srcReady_1;
-  wire                updatedEntry_1_valid;
-  wire       [4:0]    updatedEntry_1_robIdx;
-  wire       [31:0]   updatedEntry_1_branchResult_targetPC;
-  wire                updatedEntry_1_branchResult_branchResult;
-  wire                updatedEntry_1_branchResult_predictFail;
-  wire                updatedEntry_1_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_1_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_1_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_1_pc;
-  wire       [5:0]    updatedEntry_1_prd;
-  wire       [5:0]    updatedEntry_1_psrc_0;
-  wire       [5:0]    updatedEntry_1_psrc_1;
-  wire       [31:0]   updatedEntry_1_imm;
-  wire       [1:0]    updatedEntry_1_uop_muluOp;
-  reg                 updatedEntry_1_srcReady_0;
-  reg                 updatedEntry_1_srcReady_1;
-  wire                updatedEntry_2_valid;
-  wire       [4:0]    updatedEntry_2_robIdx;
-  wire       [31:0]   updatedEntry_2_branchResult_targetPC;
-  wire                updatedEntry_2_branchResult_branchResult;
-  wire                updatedEntry_2_branchResult_predictFail;
-  wire                updatedEntry_2_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_2_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_2_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_2_pc;
-  wire       [5:0]    updatedEntry_2_prd;
-  wire       [5:0]    updatedEntry_2_psrc_0;
-  wire       [5:0]    updatedEntry_2_psrc_1;
-  wire       [31:0]   updatedEntry_2_imm;
-  wire       [1:0]    updatedEntry_2_uop_muluOp;
-  reg                 updatedEntry_2_srcReady_0;
-  reg                 updatedEntry_2_srcReady_1;
-  wire                updatedEntry_3_valid;
-  wire       [4:0]    updatedEntry_3_robIdx;
-  wire       [31:0]   updatedEntry_3_branchResult_targetPC;
-  wire                updatedEntry_3_branchResult_branchResult;
-  wire                updatedEntry_3_branchResult_predictFail;
-  wire                updatedEntry_3_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_3_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_3_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_3_pc;
-  wire       [5:0]    updatedEntry_3_prd;
-  wire       [5:0]    updatedEntry_3_psrc_0;
-  wire       [5:0]    updatedEntry_3_psrc_1;
-  wire       [31:0]   updatedEntry_3_imm;
-  wire       [1:0]    updatedEntry_3_uop_muluOp;
-  reg                 updatedEntry_3_srcReady_0;
-  reg                 updatedEntry_3_srcReady_1;
   wire                appendEntry_valid;
   wire       [4:0]    appendEntry_robIdx;
   wire       [31:0]   appendEntry_branchResult_targetPC;
@@ -14969,19 +14563,18 @@ module IssueQueue_2 (
   reg        [1:0]    queueNext_3_uop_muluOp;
   reg                 queueNext_3_srcReady_0;
   reg                 queueNext_3_srcReady_1;
-  wire                when_IssueQueue_l81;
-  wire                when_IssueQueue_l83;
-  wire                when_IssueQueue_l96;
-  wire                when_IssueQueue_l81_1;
-  wire                when_IssueQueue_l83_1;
-  wire                when_IssueQueue_l96_1;
-  wire                when_IssueQueue_l81_2;
-  wire                when_IssueQueue_l83_2;
-  wire                when_IssueQueue_l96_2;
-  wire                when_IssueQueue_l81_3;
-  wire                when_IssueQueue_l89;
-  wire                when_IssueQueue_l96_3;
-  wire                io_output_fire;
+  wire                when_IssueQueue_l73;
+  wire                when_IssueQueue_l75;
+  wire                when_IssueQueue_l93;
+  wire                when_IssueQueue_l73_1;
+  wire                when_IssueQueue_l75_1;
+  wire                when_IssueQueue_l93_1;
+  wire                when_IssueQueue_l73_2;
+  wire                when_IssueQueue_l75_2;
+  wire                when_IssueQueue_l93_2;
+  wire                when_IssueQueue_l73_3;
+  wire                when_IssueQueue_l86;
+  wire                when_IssueQueue_l93_3;
   wire                _zz_issueEntry_valid;
   wire                _zz_issueEntry_valid_1;
   wire                _zz_issueEntry_valid_2;
@@ -15009,10 +14602,6 @@ module IssueQueue_2 (
   reg [47:0] queue_1_uop_muluOp_string;
   reg [47:0] queue_2_uop_muluOp_string;
   reg [47:0] queue_3_uop_muluOp_string;
-  reg [47:0] updatedEntry_0_uop_muluOp_string;
-  reg [47:0] updatedEntry_1_uop_muluOp_string;
-  reg [47:0] updatedEntry_2_uop_muluOp_string;
-  reg [47:0] updatedEntry_3_uop_muluOp_string;
   reg [47:0] appendEntry_uop_muluOp_string;
   reg [47:0] queueNext_0_uop_muluOp_string;
   reg [47:0] queueNext_1_uop_muluOp_string;
@@ -15030,30 +14619,32 @@ module IssueQueue_2 (
   assign _zz_appendEntry_srcReady_1 = (io_input_payload_psrc_1 == io_writebackSignal_2);
   assign _zz_appendEntry_srcReady_1_1 = (io_input_payload_psrc_1 == io_writebackSignal_1);
   assign _zz_appendEntry_srcReady_1_2 = (io_input_payload_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0_3 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_4 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
   always @(*) begin
     case(_zz_issueEntry_valid_3)
       2'b00 : begin
@@ -15181,38 +14772,6 @@ module IssueQueue_2 (
     endcase
   end
   always @(*) begin
-    case(updatedEntry_0_uop_muluOp)
-      MULUOp_mullo : updatedEntry_0_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : updatedEntry_0_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : updatedEntry_0_uop_muluOp_string = "mulhiu";
-      default : updatedEntry_0_uop_muluOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_muluOp)
-      MULUOp_mullo : updatedEntry_1_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : updatedEntry_1_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : updatedEntry_1_uop_muluOp_string = "mulhiu";
-      default : updatedEntry_1_uop_muluOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_muluOp)
-      MULUOp_mullo : updatedEntry_2_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : updatedEntry_2_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : updatedEntry_2_uop_muluOp_string = "mulhiu";
-      default : updatedEntry_2_uop_muluOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_muluOp)
-      MULUOp_mullo : updatedEntry_3_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : updatedEntry_3_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : updatedEntry_3_uop_muluOp_string = "mulhiu";
-      default : updatedEntry_3_uop_muluOp_string = "??????";
-    endcase
-  end
-  always @(*) begin
     case(appendEntry_uop_muluOp)
       MULUOp_mullo : appendEntry_uop_muluOp_string = "mullo ";
       MULUOp_mulhi : appendEntry_uop_muluOp_string = "mulhi ";
@@ -15303,102 +14862,6 @@ module IssueQueue_2 (
   assign appendEntry_uop_muluOp = io_input_payload_uop_muluOp;
   assign appendEntry_srcReady_0 = ((io_input_payload_srcReady_0 || (|{(io_input_payload_psrc_0 == io_writebackSignal_4),{(io_input_payload_psrc_0 == io_writebackSignal_3),{_zz_appendEntry_srcReady_0,{_zz_appendEntry_srcReady_0_1,_zz_appendEntry_srcReady_0_2}}}})) || (|{((io_input_payload_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((io_input_payload_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
   assign appendEntry_srcReady_1 = ((io_input_payload_srcReady_1 || (|{(io_input_payload_psrc_1 == io_writebackSignal_4),{(io_input_payload_psrc_1 == io_writebackSignal_3),{_zz_appendEntry_srcReady_1,{_zz_appendEntry_srcReady_1_1,_zz_appendEntry_srcReady_1_2}}}})) || (|{((io_input_payload_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((io_input_payload_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  assign updatedEntry_0_valid = queue_0_valid;
-  assign updatedEntry_0_robIdx = queue_0_robIdx;
-  assign updatedEntry_0_branchResult_targetPC = queue_0_branchResult_targetPC;
-  assign updatedEntry_0_branchResult_branchResult = queue_0_branchResult_branchResult;
-  assign updatedEntry_0_branchResult_predictFail = queue_0_branchResult_predictFail;
-  assign updatedEntry_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
-  assign updatedEntry_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
-  assign updatedEntry_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
-  assign updatedEntry_0_pc = queue_0_pc;
-  assign updatedEntry_0_prd = queue_0_prd;
-  assign updatedEntry_0_psrc_0 = queue_0_psrc_0;
-  assign updatedEntry_0_psrc_1 = queue_0_psrc_1;
-  assign updatedEntry_0_imm = queue_0_imm;
-  assign updatedEntry_0_uop_muluOp = queue_0_uop_muluOp;
-  always @(*) begin
-    updatedEntry_0_srcReady_0 = queue_0_srcReady_0;
-    updatedEntry_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_0,{_zz_updatedEntry_0_srcReady_0_1,_zz_updatedEntry_0_srcReady_0_2}}}})) || (|{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
-  always @(*) begin
-    updatedEntry_0_srcReady_1 = queue_0_srcReady_1;
-    updatedEntry_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_1,{_zz_updatedEntry_0_srcReady_1_1,_zz_updatedEntry_0_srcReady_1_2}}}})) || (|{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
-  assign updatedEntry_1_valid = queue_1_valid;
-  assign updatedEntry_1_robIdx = queue_1_robIdx;
-  assign updatedEntry_1_branchResult_targetPC = queue_1_branchResult_targetPC;
-  assign updatedEntry_1_branchResult_branchResult = queue_1_branchResult_branchResult;
-  assign updatedEntry_1_branchResult_predictFail = queue_1_branchResult_predictFail;
-  assign updatedEntry_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
-  assign updatedEntry_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
-  assign updatedEntry_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
-  assign updatedEntry_1_pc = queue_1_pc;
-  assign updatedEntry_1_prd = queue_1_prd;
-  assign updatedEntry_1_psrc_0 = queue_1_psrc_0;
-  assign updatedEntry_1_psrc_1 = queue_1_psrc_1;
-  assign updatedEntry_1_imm = queue_1_imm;
-  assign updatedEntry_1_uop_muluOp = queue_1_uop_muluOp;
-  always @(*) begin
-    updatedEntry_1_srcReady_0 = queue_1_srcReady_0;
-    updatedEntry_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_0,{_zz_updatedEntry_1_srcReady_0_1,_zz_updatedEntry_1_srcReady_0_2}}}})) || (|{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
-  always @(*) begin
-    updatedEntry_1_srcReady_1 = queue_1_srcReady_1;
-    updatedEntry_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_1,{_zz_updatedEntry_1_srcReady_1_1,_zz_updatedEntry_1_srcReady_1_2}}}})) || (|{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
-  assign updatedEntry_2_valid = queue_2_valid;
-  assign updatedEntry_2_robIdx = queue_2_robIdx;
-  assign updatedEntry_2_branchResult_targetPC = queue_2_branchResult_targetPC;
-  assign updatedEntry_2_branchResult_branchResult = queue_2_branchResult_branchResult;
-  assign updatedEntry_2_branchResult_predictFail = queue_2_branchResult_predictFail;
-  assign updatedEntry_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
-  assign updatedEntry_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
-  assign updatedEntry_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
-  assign updatedEntry_2_pc = queue_2_pc;
-  assign updatedEntry_2_prd = queue_2_prd;
-  assign updatedEntry_2_psrc_0 = queue_2_psrc_0;
-  assign updatedEntry_2_psrc_1 = queue_2_psrc_1;
-  assign updatedEntry_2_imm = queue_2_imm;
-  assign updatedEntry_2_uop_muluOp = queue_2_uop_muluOp;
-  always @(*) begin
-    updatedEntry_2_srcReady_0 = queue_2_srcReady_0;
-    updatedEntry_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_0,{_zz_updatedEntry_2_srcReady_0_1,_zz_updatedEntry_2_srcReady_0_2}}}})) || (|{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
-  always @(*) begin
-    updatedEntry_2_srcReady_1 = queue_2_srcReady_1;
-    updatedEntry_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_1,{_zz_updatedEntry_2_srcReady_1_1,_zz_updatedEntry_2_srcReady_1_2}}}})) || (|{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
-  assign updatedEntry_3_valid = queue_3_valid;
-  assign updatedEntry_3_robIdx = queue_3_robIdx;
-  assign updatedEntry_3_branchResult_targetPC = queue_3_branchResult_targetPC;
-  assign updatedEntry_3_branchResult_branchResult = queue_3_branchResult_branchResult;
-  assign updatedEntry_3_branchResult_predictFail = queue_3_branchResult_predictFail;
-  assign updatedEntry_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
-  assign updatedEntry_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
-  assign updatedEntry_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
-  assign updatedEntry_3_pc = queue_3_pc;
-  assign updatedEntry_3_prd = queue_3_prd;
-  assign updatedEntry_3_psrc_0 = queue_3_psrc_0;
-  assign updatedEntry_3_psrc_1 = queue_3_psrc_1;
-  assign updatedEntry_3_imm = queue_3_imm;
-  assign updatedEntry_3_uop_muluOp = queue_3_uop_muluOp;
-  always @(*) begin
-    updatedEntry_3_srcReady_0 = queue_3_srcReady_0;
-    updatedEntry_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_0,{_zz_updatedEntry_3_srcReady_0_1,_zz_updatedEntry_3_srcReady_0_2}}}})) || (|{((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
-  always @(*) begin
-    updatedEntry_3_srcReady_1 = queue_3_srcReady_1;
-    updatedEntry_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_1,{_zz_updatedEntry_3_srcReady_1_1,_zz_updatedEntry_3_srcReady_1_2}}}})) || (|{((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
-  end
-
   always @(*) begin
     shiftAhead[0] = ((|readyToIssue[0 : 0]) && io_output_ready);
     shiftAhead[1] = ((|readyToIssue[1 : 0]) && io_output_ready);
@@ -15406,17 +14869,17 @@ module IssueQueue_2 (
     shiftAhead[3] = ((|readyToIssue[3 : 0]) && io_output_ready);
   end
 
-  assign when_IssueQueue_l81 = shiftAhead[0];
-  assign when_IssueQueue_l83 = writeVector[1];
+  assign when_IssueQueue_l73 = shiftAhead[0];
+  assign when_IssueQueue_l75 = writeVector[1];
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_1_valid;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_0_valid;
@@ -15425,14 +14888,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_1_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_0_robIdx;
@@ -15441,14 +14904,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_0_branchResult_targetPC = queue_1_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_0_branchResult_targetPC = queue_0_branchResult_targetPC;
@@ -15457,14 +14920,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_0_branchResult_branchResult = queue_1_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_0_branchResult_branchResult = queue_0_branchResult_branchResult;
@@ -15473,14 +14936,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_0_branchResult_predictFail = queue_1_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_0_branchResult_predictFail = queue_0_branchResult_predictFail;
@@ -15489,14 +14952,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_1_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
@@ -15505,14 +14968,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
@@ -15521,14 +14984,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
@@ -15537,14 +15000,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_1_pc;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_0_pc;
@@ -15553,14 +15016,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_1_prd;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_0_prd;
@@ -15569,14 +15032,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_1_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_0_psrc_0;
@@ -15585,14 +15048,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_1_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_0_psrc_1;
@@ -15601,14 +15064,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_1_imm;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_0_imm;
@@ -15617,14 +15080,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_0_uop_muluOp = queue_1_uop_muluOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_0_uop_muluOp = queue_0_uop_muluOp;
@@ -15633,49 +15096,53 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_1_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_0,{_zz_queueNext_0_srcReady_0_1,_zz_queueNext_0_srcReady_0_2}}}})) || (|{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_0_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{(queue_0_psrc_0 == io_writebackSignal_2),{_zz_queueNext_0_srcReady_0_3,_zz_queueNext_0_srcReady_0_4}}}})) || (|{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_1_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_1,{_zz_queueNext_0_srcReady_1_1,_zz_queueNext_0_srcReady_1_2}}}})) || (|{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_0_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{(queue_0_psrc_1 == io_writebackSignal_2),{(queue_0_psrc_1 == io_writebackSignal_1),(queue_0_psrc_1 == io_writebackSignal_0)}}}})) || (|{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
-  assign when_IssueQueue_l96 = writeVector[0];
-  assign when_IssueQueue_l81_1 = shiftAhead[1];
-  assign when_IssueQueue_l83_1 = writeVector[2];
+  assign when_IssueQueue_l93 = writeVector[0];
+  assign when_IssueQueue_l73_1 = shiftAhead[1];
+  assign when_IssueQueue_l75_1 = writeVector[2];
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_2_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_1_valid;
@@ -15684,14 +15151,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_2_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_1_robIdx;
@@ -15700,14 +15167,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_1_branchResult_targetPC = queue_2_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_1_branchResult_targetPC = queue_1_branchResult_targetPC;
@@ -15716,14 +15183,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_1_branchResult_branchResult = queue_2_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_1_branchResult_branchResult = queue_1_branchResult_branchResult;
@@ -15732,14 +15199,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_1_branchResult_predictFail = queue_2_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_1_branchResult_predictFail = queue_1_branchResult_predictFail;
@@ -15748,14 +15215,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_2_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
@@ -15764,14 +15231,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
@@ -15780,14 +15247,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
@@ -15796,14 +15263,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_2_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_1_pc;
@@ -15812,14 +15279,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_2_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_1_prd;
@@ -15828,14 +15295,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_2_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_1_psrc_0;
@@ -15844,14 +15311,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_2_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_1_psrc_1;
@@ -15860,14 +15327,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_2_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_1_imm;
@@ -15876,14 +15343,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_1_uop_muluOp = queue_2_uop_muluOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_1_uop_muluOp = queue_1_uop_muluOp;
@@ -15892,49 +15359,53 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_2_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_0,{_zz_queueNext_1_srcReady_0_1,_zz_queueNext_1_srcReady_0_2}}}})) || (|{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_1_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{(queue_1_psrc_0 == io_writebackSignal_2),{(queue_1_psrc_0 == io_writebackSignal_1),(queue_1_psrc_0 == io_writebackSignal_0)}}}})) || (|{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_2_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_1,{_zz_queueNext_1_srcReady_1_1,_zz_queueNext_1_srcReady_1_2}}}})) || (|{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_1_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{(queue_1_psrc_1 == io_writebackSignal_2),{(queue_1_psrc_1 == io_writebackSignal_1),(queue_1_psrc_1 == io_writebackSignal_0)}}}})) || (|{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_1 = writeVector[1];
-  assign when_IssueQueue_l81_2 = shiftAhead[2];
-  assign when_IssueQueue_l83_2 = writeVector[3];
+  assign when_IssueQueue_l93_1 = writeVector[1];
+  assign when_IssueQueue_l73_2 = shiftAhead[2];
+  assign when_IssueQueue_l75_2 = writeVector[3];
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_3_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_2_valid;
@@ -15943,14 +15414,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_3_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_2_robIdx;
@@ -15959,14 +15430,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_2_branchResult_targetPC = queue_3_branchResult_targetPC;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_2_branchResult_targetPC = queue_2_branchResult_targetPC;
@@ -15975,14 +15446,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_2_branchResult_branchResult = queue_3_branchResult_branchResult;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_2_branchResult_branchResult = queue_2_branchResult_branchResult;
@@ -15991,14 +15462,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_2_branchResult_predictFail = queue_3_branchResult_predictFail;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_2_branchResult_predictFail = queue_2_branchResult_predictFail;
@@ -16007,14 +15478,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_3_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
@@ -16023,14 +15494,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
@@ -16039,14 +15510,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
@@ -16055,14 +15526,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_3_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_2_pc;
@@ -16071,14 +15542,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_3_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_2_prd;
@@ -16087,14 +15558,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_3_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_2_psrc_0;
@@ -16103,14 +15574,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_3_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_2_psrc_1;
@@ -16119,14 +15590,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_3_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_2_imm;
@@ -16135,14 +15606,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_2_uop_muluOp = queue_3_uop_muluOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_2_uop_muluOp = queue_2_uop_muluOp;
@@ -16151,49 +15622,53 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_3_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_0,{_zz_queueNext_2_srcReady_0_1,_zz_queueNext_2_srcReady_0_2}}}})) || (|{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_2_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{(queue_2_psrc_0 == io_writebackSignal_2),{(queue_2_psrc_0 == io_writebackSignal_1),(queue_2_psrc_0 == io_writebackSignal_0)}}}})) || (|{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_3_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_1,{_zz_queueNext_2_srcReady_1_1,_zz_queueNext_2_srcReady_1_2}}}})) || (|{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_2_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{(queue_2_psrc_1 == io_writebackSignal_2),{(queue_2_psrc_1 == io_writebackSignal_1),(queue_2_psrc_1 == io_writebackSignal_0)}}}})) || (|{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_2 = writeVector[2];
-  assign when_IssueQueue_l81_3 = shiftAhead[3];
-  assign when_IssueQueue_l89 = writeVector[4];
+  assign when_IssueQueue_l93_2 = writeVector[2];
+  assign when_IssueQueue_l73_3 = shiftAhead[3];
+  assign when_IssueQueue_l86 = writeVector[4];
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = queue_3_valid;
@@ -16202,14 +15677,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = 5'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = queue_3_robIdx;
@@ -16218,14 +15693,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_3_branchResult_targetPC = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_targetPC = appendEntry_branchResult_targetPC;
       end else begin
         queueNext_3_branchResult_targetPC = queue_3_branchResult_targetPC;
@@ -16234,14 +15709,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_3_branchResult_branchResult = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_branchResult = appendEntry_branchResult_branchResult;
       end else begin
         queueNext_3_branchResult_branchResult = queue_3_branchResult_branchResult;
@@ -16250,14 +15725,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_3_branchResult_predictFail = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchResult_predictFail = appendEntry_branchResult_predictFail;
       end else begin
         queueNext_3_branchResult_predictFail = queue_3_branchResult_predictFail;
@@ -16266,14 +15741,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
@@ -16282,14 +15757,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
@@ -16298,14 +15773,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
@@ -16314,14 +15789,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = queue_3_pc;
@@ -16330,14 +15805,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = queue_3_prd;
@@ -16346,14 +15821,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = queue_3_psrc_0;
@@ -16362,14 +15837,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = queue_3_psrc_1;
@@ -16378,14 +15853,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = queue_3_imm;
@@ -16394,14 +15869,14 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_3_uop_muluOp = MULUOp_mullo;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_muluOp = appendEntry_uop_muluOp;
       end else begin
         queueNext_3_uop_muluOp = queue_3_uop_muluOp;
@@ -16410,40 +15885,41 @@ module IssueQueue_2 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = queue_3_srcReady_0;
+        queueNext_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_0,{_zz_queueNext_3_srcReady_0_1,_zz_queueNext_3_srcReady_0_2}}}})) || (|{((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = queue_3_srcReady_1;
+        queueNext_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_1,{_zz_queueNext_3_srcReady_1_1,_zz_queueNext_3_srcReady_1_2}}}})) || (|{((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}));
       end
     end
   end
 
-  assign when_IssueQueue_l96_3 = writeVector[3];
-  assign io_output_fire = (io_output_valid && io_output_ready);
-  assign io_input_ready = ((|emptyEntry[3 : 0]) || io_output_fire);
+  assign when_IssueQueue_l93_3 = writeVector[3];
+  assign io_input_ready = (|emptyEntry[3 : 0]);
   assign _zz_issueEntry_valid = issueVector[3];
   assign _zz_issueEntry_valid_1 = (issueVector[1] || _zz_issueEntry_valid);
   assign _zz_issueEntry_valid_2 = (issueVector[2] || _zz_issueEntry_valid);
@@ -16727,62 +16203,104 @@ module IssueQueue_1 (
   wire                _zz_appendEntry_srcReady_1_4;
   wire       [0:0]    _zz_appendEntry_srcReady_1_5;
   wire       [3:0]    _zz_appendEntry_srcReady_1_6;
-  wire                _zz_updatedEntry_0_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_2;
-  wire                _zz_updatedEntry_0_srcReady_0_3;
-  wire                _zz_updatedEntry_0_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_0_srcReady_0_6;
-  wire                _zz_updatedEntry_0_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_2;
-  wire                _zz_updatedEntry_0_srcReady_1_3;
-  wire                _zz_updatedEntry_0_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_0_srcReady_1_6;
-  wire                _zz_updatedEntry_1_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_2;
-  wire                _zz_updatedEntry_1_srcReady_0_3;
-  wire                _zz_updatedEntry_1_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_1_srcReady_0_6;
-  wire                _zz_updatedEntry_1_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_2;
-  wire                _zz_updatedEntry_1_srcReady_1_3;
-  wire                _zz_updatedEntry_1_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_1_srcReady_1_6;
-  wire                _zz_updatedEntry_2_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_2;
-  wire                _zz_updatedEntry_2_srcReady_0_3;
-  wire                _zz_updatedEntry_2_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_2_srcReady_0_6;
-  wire                _zz_updatedEntry_2_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_2;
-  wire                _zz_updatedEntry_2_srcReady_1_3;
-  wire                _zz_updatedEntry_2_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_2_srcReady_1_6;
-  wire                _zz_updatedEntry_3_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_2;
-  wire                _zz_updatedEntry_3_srcReady_0_3;
-  wire                _zz_updatedEntry_3_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_3_srcReady_0_6;
-  wire                _zz_updatedEntry_3_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_2;
-  wire                _zz_updatedEntry_3_srcReady_1_3;
-  wire                _zz_updatedEntry_3_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_3_srcReady_1_6;
+  wire                _zz_queueNext_0_srcReady_0;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_2;
+  wire                _zz_queueNext_0_srcReady_0_3;
+  wire                _zz_queueNext_0_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_0_srcReady_0_6;
+  wire                _zz_queueNext_0_srcReady_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_2;
+  wire                _zz_queueNext_0_srcReady_1_3;
+  wire                _zz_queueNext_0_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_0_srcReady_1_6;
+  wire                _zz_queueNext_0_srcReady_0_7;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_8;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_9;
+  wire                _zz_queueNext_0_srcReady_0_10;
+  wire                _zz_queueNext_0_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_12;
+  wire       [3:0]    _zz_queueNext_0_srcReady_0_13;
+  wire                _zz_queueNext_0_srcReady_1_7;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_8;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_9;
+  wire                _zz_queueNext_0_srcReady_1_10;
+  wire                _zz_queueNext_0_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_12;
+  wire       [3:0]    _zz_queueNext_0_srcReady_1_13;
+  wire                _zz_queueNext_1_srcReady_0;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_2;
+  wire                _zz_queueNext_1_srcReady_0_3;
+  wire                _zz_queueNext_1_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_1_srcReady_0_6;
+  wire                _zz_queueNext_1_srcReady_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_2;
+  wire                _zz_queueNext_1_srcReady_1_3;
+  wire                _zz_queueNext_1_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_1_srcReady_1_6;
+  wire                _zz_queueNext_1_srcReady_0_7;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_8;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_9;
+  wire                _zz_queueNext_1_srcReady_0_10;
+  wire                _zz_queueNext_1_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_12;
+  wire       [3:0]    _zz_queueNext_1_srcReady_0_13;
+  wire                _zz_queueNext_1_srcReady_1_7;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_8;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_9;
+  wire                _zz_queueNext_1_srcReady_1_10;
+  wire                _zz_queueNext_1_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_12;
+  wire       [3:0]    _zz_queueNext_1_srcReady_1_13;
+  wire                _zz_queueNext_2_srcReady_0;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_2;
+  wire                _zz_queueNext_2_srcReady_0_3;
+  wire                _zz_queueNext_2_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_2_srcReady_0_6;
+  wire                _zz_queueNext_2_srcReady_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_2;
+  wire                _zz_queueNext_2_srcReady_1_3;
+  wire                _zz_queueNext_2_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_2_srcReady_1_6;
+  wire                _zz_queueNext_2_srcReady_0_7;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_8;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_9;
+  wire                _zz_queueNext_2_srcReady_0_10;
+  wire                _zz_queueNext_2_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_12;
+  wire       [3:0]    _zz_queueNext_2_srcReady_0_13;
+  wire                _zz_queueNext_2_srcReady_1_7;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_8;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_9;
+  wire                _zz_queueNext_2_srcReady_1_10;
+  wire                _zz_queueNext_2_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_12;
+  wire       [3:0]    _zz_queueNext_2_srcReady_1_13;
+  wire                _zz_queueNext_3_srcReady_0;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_2;
+  wire                _zz_queueNext_3_srcReady_0_3;
+  wire                _zz_queueNext_3_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_3_srcReady_0_6;
+  wire                _zz_queueNext_3_srcReady_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_2;
+  wire                _zz_queueNext_3_srcReady_1_3;
+  wire                _zz_queueNext_3_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_3_srcReady_1_6;
   reg                 _zz_issueEntry_valid_4;
   reg        [4:0]    _zz_issueEntry_robIdx;
   reg        [31:0]   _zz_issueEntry_branchInfo_predictPC;
@@ -16882,78 +16400,6 @@ module IssueQueue_1 (
   wire       [4:0]    emptyEntry_ohFirst_input;
   wire       [4:0]    emptyEntry_ohFirst_masked;
   wire       [4:0]    writeVector;
-  wire                updatedEntry_0_valid;
-  wire       [4:0]    updatedEntry_0_robIdx;
-  wire       [31:0]   updatedEntry_0_branchInfo_predictPC;
-  wire                updatedEntry_0_branchInfo_predictResult;
-  wire                updatedEntry_0_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_0_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_0_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_0_pc;
-  wire       [5:0]    updatedEntry_0_prd;
-  wire       [5:0]    updatedEntry_0_psrc_0;
-  wire       [5:0]    updatedEntry_0_psrc_1;
-  wire       [31:0]   updatedEntry_0_imm;
-  wire       [3:0]    updatedEntry_0_uop_aluOp;
-  wire       [1:0]    updatedEntry_0_uop_bruOp;
-  wire       [2:0]    updatedEntry_0_roop_aluROOp;
-  wire       [1:0]    updatedEntry_0_roop_cruROOp;
-  reg                 updatedEntry_0_srcReady_0;
-  reg                 updatedEntry_0_srcReady_1;
-  wire                updatedEntry_1_valid;
-  wire       [4:0]    updatedEntry_1_robIdx;
-  wire       [31:0]   updatedEntry_1_branchInfo_predictPC;
-  wire                updatedEntry_1_branchInfo_predictResult;
-  wire                updatedEntry_1_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_1_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_1_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_1_pc;
-  wire       [5:0]    updatedEntry_1_prd;
-  wire       [5:0]    updatedEntry_1_psrc_0;
-  wire       [5:0]    updatedEntry_1_psrc_1;
-  wire       [31:0]   updatedEntry_1_imm;
-  wire       [3:0]    updatedEntry_1_uop_aluOp;
-  wire       [1:0]    updatedEntry_1_uop_bruOp;
-  wire       [2:0]    updatedEntry_1_roop_aluROOp;
-  wire       [1:0]    updatedEntry_1_roop_cruROOp;
-  reg                 updatedEntry_1_srcReady_0;
-  reg                 updatedEntry_1_srcReady_1;
-  wire                updatedEntry_2_valid;
-  wire       [4:0]    updatedEntry_2_robIdx;
-  wire       [31:0]   updatedEntry_2_branchInfo_predictPC;
-  wire                updatedEntry_2_branchInfo_predictResult;
-  wire                updatedEntry_2_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_2_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_2_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_2_pc;
-  wire       [5:0]    updatedEntry_2_prd;
-  wire       [5:0]    updatedEntry_2_psrc_0;
-  wire       [5:0]    updatedEntry_2_psrc_1;
-  wire       [31:0]   updatedEntry_2_imm;
-  wire       [3:0]    updatedEntry_2_uop_aluOp;
-  wire       [1:0]    updatedEntry_2_uop_bruOp;
-  wire       [2:0]    updatedEntry_2_roop_aluROOp;
-  wire       [1:0]    updatedEntry_2_roop_cruROOp;
-  reg                 updatedEntry_2_srcReady_0;
-  reg                 updatedEntry_2_srcReady_1;
-  wire                updatedEntry_3_valid;
-  wire       [4:0]    updatedEntry_3_robIdx;
-  wire       [31:0]   updatedEntry_3_branchInfo_predictPC;
-  wire                updatedEntry_3_branchInfo_predictResult;
-  wire                updatedEntry_3_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_3_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_3_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_3_pc;
-  wire       [5:0]    updatedEntry_3_prd;
-  wire       [5:0]    updatedEntry_3_psrc_0;
-  wire       [5:0]    updatedEntry_3_psrc_1;
-  wire       [31:0]   updatedEntry_3_imm;
-  wire       [3:0]    updatedEntry_3_uop_aluOp;
-  wire       [1:0]    updatedEntry_3_uop_bruOp;
-  wire       [2:0]    updatedEntry_3_roop_aluROOp;
-  wire       [1:0]    updatedEntry_3_roop_cruROOp;
-  reg                 updatedEntry_3_srcReady_0;
-  reg                 updatedEntry_3_srcReady_1;
   wire                appendEntry_valid;
   wire       [4:0]    appendEntry_robIdx;
   wire       [31:0]   appendEntry_branchInfo_predictPC;
@@ -17044,20 +16490,19 @@ module IssueQueue_1 (
   reg        [1:0]    queueNext_3_roop_cruROOp;
   reg                 queueNext_3_srcReady_0;
   reg                 queueNext_3_srcReady_1;
-  wire                when_IssueQueue_l81;
-  wire                when_IssueQueue_l83;
-  wire                when_IssueQueue_l96;
-  wire                when_IssueQueue_l81_1;
-  wire                when_IssueQueue_l83_1;
-  wire                when_IssueQueue_l96_1;
-  wire                when_IssueQueue_l81_2;
-  wire                when_IssueQueue_l83_2;
-  wire                when_IssueQueue_l96_2;
-  wire                when_IssueQueue_l81_3;
-  wire                when_IssueQueue_l89;
-  wire                when_IssueQueue_l96_3;
+  wire                when_IssueQueue_l73;
+  wire                when_IssueQueue_l75;
+  wire                when_IssueQueue_l93;
+  wire                when_IssueQueue_l73_1;
+  wire                when_IssueQueue_l75_1;
+  wire                when_IssueQueue_l93_1;
+  wire                when_IssueQueue_l73_2;
+  wire                when_IssueQueue_l75_2;
+  wire                when_IssueQueue_l93_2;
+  wire                when_IssueQueue_l73_3;
+  wire                when_IssueQueue_l86;
+  wire                when_IssueQueue_l93_3;
   reg        [3:0]    _zz_io_csrInQueue;
-  wire                io_output_fire;
   wire                _zz_issueEntry_valid;
   wire                _zz_issueEntry_valid_1;
   wire                _zz_issueEntry_valid_2;
@@ -17080,6 +16525,7 @@ module IssueQueue_1 (
   wire       [1:0]    issueEntry_roop_cruROOp;
   wire                issueEntry_srcReady_0;
   wire                issueEntry_srcReady_1;
+  wire                io_output_fire;
   `ifndef SYNTHESIS
   reg [39:0] io_input_payload_uop_aluOp_string;
   reg [39:0] io_input_payload_uop_bruOp_string;
@@ -17105,22 +16551,6 @@ module IssueQueue_1 (
   reg [39:0] queue_3_uop_bruOp_string;
   reg [55:0] queue_3_roop_aluROOp_string;
   reg [15:0] queue_3_roop_cruROOp_string;
-  reg [39:0] updatedEntry_0_uop_aluOp_string;
-  reg [39:0] updatedEntry_0_uop_bruOp_string;
-  reg [55:0] updatedEntry_0_roop_aluROOp_string;
-  reg [15:0] updatedEntry_0_roop_cruROOp_string;
-  reg [39:0] updatedEntry_1_uop_aluOp_string;
-  reg [39:0] updatedEntry_1_uop_bruOp_string;
-  reg [55:0] updatedEntry_1_roop_aluROOp_string;
-  reg [15:0] updatedEntry_1_roop_cruROOp_string;
-  reg [39:0] updatedEntry_2_uop_aluOp_string;
-  reg [39:0] updatedEntry_2_uop_bruOp_string;
-  reg [55:0] updatedEntry_2_roop_aluROOp_string;
-  reg [15:0] updatedEntry_2_roop_cruROOp_string;
-  reg [39:0] updatedEntry_3_uop_aluOp_string;
-  reg [39:0] updatedEntry_3_uop_bruOp_string;
-  reg [55:0] updatedEntry_3_roop_aluROOp_string;
-  reg [15:0] updatedEntry_3_roop_cruROOp_string;
   reg [39:0] appendEntry_uop_aluOp_string;
   reg [39:0] appendEntry_uop_bruOp_string;
   reg [55:0] appendEntry_roop_aluROOp_string;
@@ -17168,62 +16598,104 @@ module IssueQueue_1 (
   assign _zz_appendEntry_srcReady_1_4 = ((io_input_payload_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
   assign _zz_appendEntry_srcReady_1_5 = ((io_input_payload_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
   assign _zz_appendEntry_srcReady_1_6 = {((io_input_payload_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((io_input_payload_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((io_input_payload_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((io_input_payload_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_0_3 = (queue_0_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_0_srcReady_0_4 = ((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_0_srcReady_0_5 = ((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_0_srcReady_0_6 = {((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_1_3 = (queue_0_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_0_srcReady_1_4 = ((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_0_srcReady_1_5 = ((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_0_srcReady_1_6 = {((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_0_3 = (queue_1_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_1_srcReady_0_4 = ((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_1_srcReady_0_5 = ((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_1_srcReady_0_6 = {((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_1_3 = (queue_1_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_1_srcReady_1_4 = ((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_1_srcReady_1_5 = ((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_1_srcReady_1_6 = {((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_0_3 = (queue_2_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_2_srcReady_0_4 = ((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_2_srcReady_0_5 = ((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_2_srcReady_0_6 = {((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_1_3 = (queue_2_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_2_srcReady_1_4 = ((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_2_srcReady_1_5 = ((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_2_srcReady_1_6 = {((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_0_3 = (queue_3_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_3_srcReady_0_4 = ((queue_3_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_3_srcReady_0_5 = ((queue_3_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_3_srcReady_0_6 = {((queue_3_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_1_3 = (queue_3_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_3_srcReady_1_4 = ((queue_3_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_3_srcReady_1_5 = ((queue_3_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_3_srcReady_1_6 = {((queue_3_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0_3 = (queue_0_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_0_4 = ((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_0_5 = ((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_0_6 = {((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_1_3 = (queue_0_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_1_4 = ((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_1_5 = ((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_1_6 = {((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_0_7 = (queue_0_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_0_8 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_9 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0_10 = (queue_0_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_0_11 = ((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_0_12 = ((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_0_13 = {((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_1_7 = (queue_0_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_1_8 = (queue_0_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_1_9 = (queue_0_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_1_10 = (queue_0_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_1_11 = ((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_1_12 = ((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_1_13 = {((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_0_3 = (queue_1_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_0_4 = ((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_0_5 = ((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_0_6 = {((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_1_3 = (queue_1_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_1_4 = ((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_1_5 = ((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_1_6 = {((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_0_7 = (queue_1_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_0_8 = (queue_1_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_0_9 = (queue_1_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_0_10 = (queue_1_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_0_11 = ((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_0_12 = ((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_0_13 = {((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_1_7 = (queue_1_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_1_8 = (queue_1_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_1_9 = (queue_1_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_1_10 = (queue_1_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_1_11 = ((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_1_12 = ((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_1_13 = {((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_0_3 = (queue_2_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_0_4 = ((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_0_5 = ((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_0_6 = {((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_1_3 = (queue_2_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_1_4 = ((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_1_5 = ((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_1_6 = {((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_0_7 = (queue_2_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_0_8 = (queue_2_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_0_9 = (queue_2_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_0_10 = (queue_2_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_0_11 = ((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_0_12 = ((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_0_13 = {((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_1_7 = (queue_2_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_1_8 = (queue_2_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_1_9 = (queue_2_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_1_10 = (queue_2_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_1_11 = ((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_1_12 = ((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_1_13 = {((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_0_3 = (queue_3_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_3_srcReady_0_4 = ((queue_3_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_3_srcReady_0_5 = ((queue_3_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_3_srcReady_0_6 = {((queue_3_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_1_3 = (queue_3_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_3_srcReady_1_4 = ((queue_3_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_3_srcReady_1_5 = ((queue_3_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_3_srcReady_1_6 = {((queue_3_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
   always @(*) begin
     case(_zz_issueEntry_valid_3)
       2'b00 : begin
@@ -17593,194 +17065,6 @@ module IssueQueue_1 (
     endcase
   end
   always @(*) begin
-    case(updatedEntry_0_uop_aluOp)
-      ALUOp_add : updatedEntry_0_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_0_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_0_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_0_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_0_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_0_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_0_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_0_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_0_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_0_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_0_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_0_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_0_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_0_uop_aluOp_string = "passb";
-      default : updatedEntry_0_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_0_uop_bruOp)
-      BRUOp_nop : updatedEntry_0_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_0_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_0_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_0_uop_bruOp_string = "ncadd";
-      default : updatedEntry_0_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_0_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_0_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_0_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_0_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_0_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_0_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_0_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_0_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_0_roop_cruROOp)
-      CRUROOp_id : updatedEntry_0_roop_cruROOp_string = "id";
-      CRUROOp_lo : updatedEntry_0_roop_cruROOp_string = "lo";
-      CRUROOp_hi : updatedEntry_0_roop_cruROOp_string = "hi";
-      default : updatedEntry_0_roop_cruROOp_string = "??";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_aluOp)
-      ALUOp_add : updatedEntry_1_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_1_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_1_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_1_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_1_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_1_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_1_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_1_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_1_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_1_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_1_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_1_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_1_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_1_uop_aluOp_string = "passb";
-      default : updatedEntry_1_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_bruOp)
-      BRUOp_nop : updatedEntry_1_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_1_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_1_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_1_uop_bruOp_string = "ncadd";
-      default : updatedEntry_1_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_1_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_1_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_1_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_1_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_1_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_1_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_1_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_roop_cruROOp)
-      CRUROOp_id : updatedEntry_1_roop_cruROOp_string = "id";
-      CRUROOp_lo : updatedEntry_1_roop_cruROOp_string = "lo";
-      CRUROOp_hi : updatedEntry_1_roop_cruROOp_string = "hi";
-      default : updatedEntry_1_roop_cruROOp_string = "??";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_aluOp)
-      ALUOp_add : updatedEntry_2_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_2_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_2_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_2_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_2_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_2_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_2_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_2_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_2_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_2_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_2_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_2_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_2_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_2_uop_aluOp_string = "passb";
-      default : updatedEntry_2_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_bruOp)
-      BRUOp_nop : updatedEntry_2_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_2_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_2_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_2_uop_bruOp_string = "ncadd";
-      default : updatedEntry_2_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_2_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_2_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_2_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_2_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_2_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_2_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_2_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_roop_cruROOp)
-      CRUROOp_id : updatedEntry_2_roop_cruROOp_string = "id";
-      CRUROOp_lo : updatedEntry_2_roop_cruROOp_string = "lo";
-      CRUROOp_hi : updatedEntry_2_roop_cruROOp_string = "hi";
-      default : updatedEntry_2_roop_cruROOp_string = "??";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_aluOp)
-      ALUOp_add : updatedEntry_3_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_3_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_3_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_3_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_3_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_3_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_3_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_3_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_3_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_3_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_3_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_3_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_3_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_3_uop_aluOp_string = "passb";
-      default : updatedEntry_3_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_bruOp)
-      BRUOp_nop : updatedEntry_3_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_3_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_3_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_3_uop_bruOp_string = "ncadd";
-      default : updatedEntry_3_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_3_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_3_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_3_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_3_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_3_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_3_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_3_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_roop_cruROOp)
-      CRUROOp_id : updatedEntry_3_roop_cruROOp_string = "id";
-      CRUROOp_lo : updatedEntry_3_roop_cruROOp_string = "lo";
-      CRUROOp_hi : updatedEntry_3_roop_cruROOp_string = "hi";
-      default : updatedEntry_3_roop_cruROOp_string = "??";
-    endcase
-  end
-  always @(*) begin
     case(appendEntry_uop_aluOp)
       ALUOp_add : appendEntry_uop_aluOp_string = "add  ";
       ALUOp_sub : appendEntry_uop_aluOp_string = "sub  ";
@@ -18107,110 +17391,6 @@ module IssueQueue_1 (
   assign appendEntry_roop_cruROOp = io_input_payload_roop_cruROOp;
   assign appendEntry_srcReady_0 = ((io_input_payload_srcReady_0 || (|{(io_input_payload_psrc_0 == io_writebackSignal_4),{_zz_appendEntry_srcReady_0,{_zz_appendEntry_srcReady_0_1,_zz_appendEntry_srcReady_0_2}}})) || ((|{(_zz_appendEntry_srcReady_0_3 && io_earlyWakeup_7_valid),{_zz_appendEntry_srcReady_0_4,{_zz_appendEntry_srcReady_0_5,_zz_appendEntry_srcReady_0_6}}}) || ((io_input_payload_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
   assign appendEntry_srcReady_1 = ((io_input_payload_srcReady_1 || (|{(io_input_payload_psrc_1 == io_writebackSignal_4),{(io_input_payload_psrc_1 == io_writebackSignal_3),{_zz_appendEntry_srcReady_1,{_zz_appendEntry_srcReady_1_1,_zz_appendEntry_srcReady_1_2}}}})) || ((|{((io_input_payload_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_appendEntry_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_appendEntry_srcReady_1_4,{_zz_appendEntry_srcReady_1_5,_zz_appendEntry_srcReady_1_6}}}}) || ((io_input_payload_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  assign updatedEntry_0_valid = queue_0_valid;
-  assign updatedEntry_0_robIdx = queue_0_robIdx;
-  assign updatedEntry_0_branchInfo_predictPC = queue_0_branchInfo_predictPC;
-  assign updatedEntry_0_branchInfo_predictResult = queue_0_branchInfo_predictResult;
-  assign updatedEntry_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
-  assign updatedEntry_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
-  assign updatedEntry_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
-  assign updatedEntry_0_pc = queue_0_pc;
-  assign updatedEntry_0_prd = queue_0_prd;
-  assign updatedEntry_0_psrc_0 = queue_0_psrc_0;
-  assign updatedEntry_0_psrc_1 = queue_0_psrc_1;
-  assign updatedEntry_0_imm = queue_0_imm;
-  assign updatedEntry_0_uop_aluOp = queue_0_uop_aluOp;
-  assign updatedEntry_0_uop_bruOp = queue_0_uop_bruOp;
-  assign updatedEntry_0_roop_aluROOp = queue_0_roop_aluROOp;
-  assign updatedEntry_0_roop_cruROOp = queue_0_roop_cruROOp;
-  always @(*) begin
-    updatedEntry_0_srcReady_0 = queue_0_srcReady_0;
-    updatedEntry_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_0,{_zz_updatedEntry_0_srcReady_0_1,_zz_updatedEntry_0_srcReady_0_2}}}})) || ((|{((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_0_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_0_srcReady_0_4,{_zz_updatedEntry_0_srcReady_0_5,_zz_updatedEntry_0_srcReady_0_6}}}}) || ((queue_0_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_0_srcReady_1 = queue_0_srcReady_1;
-    updatedEntry_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_1,{_zz_updatedEntry_0_srcReady_1_1,_zz_updatedEntry_0_srcReady_1_2}}}})) || ((|{((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_0_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_0_srcReady_1_4,{_zz_updatedEntry_0_srcReady_1_5,_zz_updatedEntry_0_srcReady_1_6}}}}) || ((queue_0_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  assign updatedEntry_1_valid = queue_1_valid;
-  assign updatedEntry_1_robIdx = queue_1_robIdx;
-  assign updatedEntry_1_branchInfo_predictPC = queue_1_branchInfo_predictPC;
-  assign updatedEntry_1_branchInfo_predictResult = queue_1_branchInfo_predictResult;
-  assign updatedEntry_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
-  assign updatedEntry_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
-  assign updatedEntry_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
-  assign updatedEntry_1_pc = queue_1_pc;
-  assign updatedEntry_1_prd = queue_1_prd;
-  assign updatedEntry_1_psrc_0 = queue_1_psrc_0;
-  assign updatedEntry_1_psrc_1 = queue_1_psrc_1;
-  assign updatedEntry_1_imm = queue_1_imm;
-  assign updatedEntry_1_uop_aluOp = queue_1_uop_aluOp;
-  assign updatedEntry_1_uop_bruOp = queue_1_uop_bruOp;
-  assign updatedEntry_1_roop_aluROOp = queue_1_roop_aluROOp;
-  assign updatedEntry_1_roop_cruROOp = queue_1_roop_cruROOp;
-  always @(*) begin
-    updatedEntry_1_srcReady_0 = queue_1_srcReady_0;
-    updatedEntry_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_0,{_zz_updatedEntry_1_srcReady_0_1,_zz_updatedEntry_1_srcReady_0_2}}}})) || ((|{((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_1_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_1_srcReady_0_4,{_zz_updatedEntry_1_srcReady_0_5,_zz_updatedEntry_1_srcReady_0_6}}}}) || ((queue_1_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_1_srcReady_1 = queue_1_srcReady_1;
-    updatedEntry_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_1,{_zz_updatedEntry_1_srcReady_1_1,_zz_updatedEntry_1_srcReady_1_2}}}})) || ((|{((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_1_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_1_srcReady_1_4,{_zz_updatedEntry_1_srcReady_1_5,_zz_updatedEntry_1_srcReady_1_6}}}}) || ((queue_1_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  assign updatedEntry_2_valid = queue_2_valid;
-  assign updatedEntry_2_robIdx = queue_2_robIdx;
-  assign updatedEntry_2_branchInfo_predictPC = queue_2_branchInfo_predictPC;
-  assign updatedEntry_2_branchInfo_predictResult = queue_2_branchInfo_predictResult;
-  assign updatedEntry_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
-  assign updatedEntry_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
-  assign updatedEntry_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
-  assign updatedEntry_2_pc = queue_2_pc;
-  assign updatedEntry_2_prd = queue_2_prd;
-  assign updatedEntry_2_psrc_0 = queue_2_psrc_0;
-  assign updatedEntry_2_psrc_1 = queue_2_psrc_1;
-  assign updatedEntry_2_imm = queue_2_imm;
-  assign updatedEntry_2_uop_aluOp = queue_2_uop_aluOp;
-  assign updatedEntry_2_uop_bruOp = queue_2_uop_bruOp;
-  assign updatedEntry_2_roop_aluROOp = queue_2_roop_aluROOp;
-  assign updatedEntry_2_roop_cruROOp = queue_2_roop_cruROOp;
-  always @(*) begin
-    updatedEntry_2_srcReady_0 = queue_2_srcReady_0;
-    updatedEntry_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_0,{_zz_updatedEntry_2_srcReady_0_1,_zz_updatedEntry_2_srcReady_0_2}}}})) || ((|{((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_2_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_2_srcReady_0_4,{_zz_updatedEntry_2_srcReady_0_5,_zz_updatedEntry_2_srcReady_0_6}}}}) || ((queue_2_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_2_srcReady_1 = queue_2_srcReady_1;
-    updatedEntry_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_1,{_zz_updatedEntry_2_srcReady_1_1,_zz_updatedEntry_2_srcReady_1_2}}}})) || ((|{((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_2_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_2_srcReady_1_4,{_zz_updatedEntry_2_srcReady_1_5,_zz_updatedEntry_2_srcReady_1_6}}}}) || ((queue_2_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  assign updatedEntry_3_valid = queue_3_valid;
-  assign updatedEntry_3_robIdx = queue_3_robIdx;
-  assign updatedEntry_3_branchInfo_predictPC = queue_3_branchInfo_predictPC;
-  assign updatedEntry_3_branchInfo_predictResult = queue_3_branchInfo_predictResult;
-  assign updatedEntry_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
-  assign updatedEntry_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
-  assign updatedEntry_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
-  assign updatedEntry_3_pc = queue_3_pc;
-  assign updatedEntry_3_prd = queue_3_prd;
-  assign updatedEntry_3_psrc_0 = queue_3_psrc_0;
-  assign updatedEntry_3_psrc_1 = queue_3_psrc_1;
-  assign updatedEntry_3_imm = queue_3_imm;
-  assign updatedEntry_3_uop_aluOp = queue_3_uop_aluOp;
-  assign updatedEntry_3_uop_bruOp = queue_3_uop_bruOp;
-  assign updatedEntry_3_roop_aluROOp = queue_3_roop_aluROOp;
-  assign updatedEntry_3_roop_cruROOp = queue_3_roop_cruROOp;
-  always @(*) begin
-    updatedEntry_3_srcReady_0 = queue_3_srcReady_0;
-    updatedEntry_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_0,{_zz_updatedEntry_3_srcReady_0_1,_zz_updatedEntry_3_srcReady_0_2}}}})) || ((|{((queue_3_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_3_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_3_srcReady_0_4,{_zz_updatedEntry_3_srcReady_0_5,_zz_updatedEntry_3_srcReady_0_6}}}}) || ((queue_3_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_3_srcReady_1 = queue_3_srcReady_1;
-    updatedEntry_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_1,{_zz_updatedEntry_3_srcReady_1_1,_zz_updatedEntry_3_srcReady_1_2}}}})) || ((|{((queue_3_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_3_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_3_srcReady_1_4,{_zz_updatedEntry_3_srcReady_1_5,_zz_updatedEntry_3_srcReady_1_6}}}}) || ((queue_3_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
   always @(*) begin
     shiftAhead[0] = ((|readyToIssue[0 : 0]) && io_output_ready);
     shiftAhead[1] = ((|readyToIssue[1 : 0]) && io_output_ready);
@@ -18218,17 +17398,17 @@ module IssueQueue_1 (
     shiftAhead[3] = ((|readyToIssue[3 : 0]) && io_output_ready);
   end
 
-  assign when_IssueQueue_l81 = shiftAhead[0];
-  assign when_IssueQueue_l83 = writeVector[1];
+  assign when_IssueQueue_l73 = shiftAhead[0];
+  assign when_IssueQueue_l75 = writeVector[1];
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_1_valid;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_0_valid;
@@ -18237,14 +17417,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_1_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_0_robIdx;
@@ -18253,14 +17433,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_0_branchInfo_predictPC = queue_1_branchInfo_predictPC;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_0_branchInfo_predictPC = queue_0_branchInfo_predictPC;
@@ -18269,14 +17449,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_0_branchInfo_predictResult = queue_1_branchInfo_predictResult;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_0_branchInfo_predictResult = queue_0_branchInfo_predictResult;
@@ -18285,14 +17465,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_1_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
@@ -18301,14 +17481,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
@@ -18317,14 +17497,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
@@ -18333,14 +17513,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_1_pc;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_0_pc;
@@ -18349,14 +17529,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_1_prd;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_0_prd;
@@ -18365,14 +17545,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_1_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_0_psrc_0;
@@ -18381,14 +17561,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_1_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_0_psrc_1;
@@ -18397,14 +17577,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_1_imm;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_0_imm;
@@ -18413,14 +17593,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_0_uop_aluOp = queue_1_uop_aluOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_0_uop_aluOp = queue_0_uop_aluOp;
@@ -18429,14 +17609,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_0_uop_bruOp = queue_1_uop_bruOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_0_uop_bruOp = queue_0_uop_bruOp;
@@ -18445,14 +17625,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_0_roop_aluROOp = queue_1_roop_aluROOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_0_roop_aluROOp = queue_0_roop_aluROOp;
@@ -18461,14 +17641,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_0_roop_cruROOp = queue_1_roop_cruROOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_0_roop_cruROOp = queue_0_roop_cruROOp;
@@ -18477,49 +17657,53 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_1_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_0,{_zz_queueNext_0_srcReady_0_1,_zz_queueNext_0_srcReady_0_2}}}})) || ((|{((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_0_4,{_zz_queueNext_0_srcReady_0_5,_zz_queueNext_0_srcReady_0_6}}}}) || ((queue_0_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_0_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_0_7,{_zz_queueNext_0_srcReady_0_8,_zz_queueNext_0_srcReady_0_9}}}})) || ((|{((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_0_10 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_0_11,{_zz_queueNext_0_srcReady_0_12,_zz_queueNext_0_srcReady_0_13}}}}) || ((queue_0_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_1_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_1,{_zz_queueNext_0_srcReady_1_1,_zz_queueNext_0_srcReady_1_2}}}})) || ((|{((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_1_4,{_zz_queueNext_0_srcReady_1_5,_zz_queueNext_0_srcReady_1_6}}}}) || ((queue_0_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_0_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_1_7,{_zz_queueNext_0_srcReady_1_8,_zz_queueNext_0_srcReady_1_9}}}})) || ((|{((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_1_10 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_1_11,{_zz_queueNext_0_srcReady_1_12,_zz_queueNext_0_srcReady_1_13}}}}) || ((queue_0_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96 = writeVector[0];
-  assign when_IssueQueue_l81_1 = shiftAhead[1];
-  assign when_IssueQueue_l83_1 = writeVector[2];
+  assign when_IssueQueue_l93 = writeVector[0];
+  assign when_IssueQueue_l73_1 = shiftAhead[1];
+  assign when_IssueQueue_l75_1 = writeVector[2];
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_2_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_1_valid;
@@ -18528,14 +17712,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_2_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_1_robIdx;
@@ -18544,14 +17728,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_1_branchInfo_predictPC = queue_2_branchInfo_predictPC;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_1_branchInfo_predictPC = queue_1_branchInfo_predictPC;
@@ -18560,14 +17744,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_1_branchInfo_predictResult = queue_2_branchInfo_predictResult;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_1_branchInfo_predictResult = queue_1_branchInfo_predictResult;
@@ -18576,14 +17760,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_2_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
@@ -18592,14 +17776,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
@@ -18608,14 +17792,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
@@ -18624,14 +17808,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_2_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_1_pc;
@@ -18640,14 +17824,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_2_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_1_prd;
@@ -18656,14 +17840,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_2_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_1_psrc_0;
@@ -18672,14 +17856,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_2_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_1_psrc_1;
@@ -18688,14 +17872,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_2_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_1_imm;
@@ -18704,14 +17888,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_1_uop_aluOp = queue_2_uop_aluOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_1_uop_aluOp = queue_1_uop_aluOp;
@@ -18720,14 +17904,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_1_uop_bruOp = queue_2_uop_bruOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_1_uop_bruOp = queue_1_uop_bruOp;
@@ -18736,14 +17920,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_1_roop_aluROOp = queue_2_roop_aluROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_1_roop_aluROOp = queue_1_roop_aluROOp;
@@ -18752,14 +17936,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_1_roop_cruROOp = queue_2_roop_cruROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_1_roop_cruROOp = queue_1_roop_cruROOp;
@@ -18768,49 +17952,53 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_2_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_0,{_zz_queueNext_1_srcReady_0_1,_zz_queueNext_1_srcReady_0_2}}}})) || ((|{((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_0_4,{_zz_queueNext_1_srcReady_0_5,_zz_queueNext_1_srcReady_0_6}}}}) || ((queue_1_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_1_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_0_7,{_zz_queueNext_1_srcReady_0_8,_zz_queueNext_1_srcReady_0_9}}}})) || ((|{((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_0_10 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_0_11,{_zz_queueNext_1_srcReady_0_12,_zz_queueNext_1_srcReady_0_13}}}}) || ((queue_1_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_2_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_1,{_zz_queueNext_1_srcReady_1_1,_zz_queueNext_1_srcReady_1_2}}}})) || ((|{((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_1_4,{_zz_queueNext_1_srcReady_1_5,_zz_queueNext_1_srcReady_1_6}}}}) || ((queue_1_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_1_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_1_7,{_zz_queueNext_1_srcReady_1_8,_zz_queueNext_1_srcReady_1_9}}}})) || ((|{((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_1_10 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_1_11,{_zz_queueNext_1_srcReady_1_12,_zz_queueNext_1_srcReady_1_13}}}}) || ((queue_1_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96_1 = writeVector[1];
-  assign when_IssueQueue_l81_2 = shiftAhead[2];
-  assign when_IssueQueue_l83_2 = writeVector[3];
+  assign when_IssueQueue_l93_1 = writeVector[1];
+  assign when_IssueQueue_l73_2 = shiftAhead[2];
+  assign when_IssueQueue_l75_2 = writeVector[3];
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_3_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_2_valid;
@@ -18819,14 +18007,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_3_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_2_robIdx;
@@ -18835,14 +18023,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_2_branchInfo_predictPC = queue_3_branchInfo_predictPC;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_2_branchInfo_predictPC = queue_2_branchInfo_predictPC;
@@ -18851,14 +18039,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_2_branchInfo_predictResult = queue_3_branchInfo_predictResult;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_2_branchInfo_predictResult = queue_2_branchInfo_predictResult;
@@ -18867,14 +18055,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_3_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
@@ -18883,14 +18071,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
@@ -18899,14 +18087,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
@@ -18915,14 +18103,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_3_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_2_pc;
@@ -18931,14 +18119,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_3_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_2_prd;
@@ -18947,14 +18135,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_3_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_2_psrc_0;
@@ -18963,14 +18151,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_3_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_2_psrc_1;
@@ -18979,14 +18167,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_3_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_2_imm;
@@ -18995,14 +18183,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_2_uop_aluOp = queue_3_uop_aluOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_2_uop_aluOp = queue_2_uop_aluOp;
@@ -19011,14 +18199,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_2_uop_bruOp = queue_3_uop_bruOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_2_uop_bruOp = queue_2_uop_bruOp;
@@ -19027,14 +18215,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_2_roop_aluROOp = queue_3_roop_aluROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_2_roop_aluROOp = queue_2_roop_aluROOp;
@@ -19043,14 +18231,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_2_roop_cruROOp = queue_3_roop_cruROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_2_roop_cruROOp = queue_2_roop_cruROOp;
@@ -19059,49 +18247,53 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_3_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_0,{_zz_queueNext_2_srcReady_0_1,_zz_queueNext_2_srcReady_0_2}}}})) || ((|{((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_0_4,{_zz_queueNext_2_srcReady_0_5,_zz_queueNext_2_srcReady_0_6}}}}) || ((queue_2_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_2_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_0_7,{_zz_queueNext_2_srcReady_0_8,_zz_queueNext_2_srcReady_0_9}}}})) || ((|{((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_0_10 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_0_11,{_zz_queueNext_2_srcReady_0_12,_zz_queueNext_2_srcReady_0_13}}}}) || ((queue_2_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_3_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_1,{_zz_queueNext_2_srcReady_1_1,_zz_queueNext_2_srcReady_1_2}}}})) || ((|{((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_1_4,{_zz_queueNext_2_srcReady_1_5,_zz_queueNext_2_srcReady_1_6}}}}) || ((queue_2_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_2_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_1_7,{_zz_queueNext_2_srcReady_1_8,_zz_queueNext_2_srcReady_1_9}}}})) || ((|{((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_1_10 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_1_11,{_zz_queueNext_2_srcReady_1_12,_zz_queueNext_2_srcReady_1_13}}}}) || ((queue_2_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96_2 = writeVector[2];
-  assign when_IssueQueue_l81_3 = shiftAhead[3];
-  assign when_IssueQueue_l89 = writeVector[4];
+  assign when_IssueQueue_l93_2 = writeVector[2];
+  assign when_IssueQueue_l73_3 = shiftAhead[3];
+  assign when_IssueQueue_l86 = writeVector[4];
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = queue_3_valid;
@@ -19110,14 +18302,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = 5'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = queue_3_robIdx;
@@ -19126,14 +18318,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_3_branchInfo_predictPC = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_3_branchInfo_predictPC = queue_3_branchInfo_predictPC;
@@ -19142,14 +18334,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_3_branchInfo_predictResult = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_3_branchInfo_predictResult = queue_3_branchInfo_predictResult;
@@ -19158,14 +18350,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
@@ -19174,14 +18366,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
@@ -19190,14 +18382,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
@@ -19206,14 +18398,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = queue_3_pc;
@@ -19222,14 +18414,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = queue_3_prd;
@@ -19238,14 +18430,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = queue_3_psrc_0;
@@ -19254,14 +18446,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = queue_3_psrc_1;
@@ -19270,14 +18462,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = queue_3_imm;
@@ -19286,14 +18478,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_3_uop_aluOp = ALUOp_add;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_3_uop_aluOp = queue_3_uop_aluOp;
@@ -19302,14 +18494,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_3_uop_bruOp = BRUOp_nop;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_3_uop_bruOp = queue_3_uop_bruOp;
@@ -19318,14 +18510,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_3_roop_aluROOp = ALUROOp_reg_1;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_3_roop_aluROOp = queue_3_roop_aluROOp;
@@ -19334,14 +18526,14 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_3_roop_cruROOp = CRUROOp_id;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_roop_cruROOp = appendEntry_roop_cruROOp;
       end else begin
         queueNext_3_roop_cruROOp = queue_3_roop_cruROOp;
@@ -19350,38 +18542,40 @@ module IssueQueue_1 (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = queue_3_srcReady_0;
+        queueNext_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_0,{_zz_queueNext_3_srcReady_0_1,_zz_queueNext_3_srcReady_0_2}}}})) || ((|{((queue_3_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_3_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_3_srcReady_0_4,{_zz_queueNext_3_srcReady_0_5,_zz_queueNext_3_srcReady_0_6}}}}) || ((queue_3_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = queue_3_srcReady_1;
+        queueNext_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_1,{_zz_queueNext_3_srcReady_1_1,_zz_queueNext_3_srcReady_1_2}}}})) || ((|{((queue_3_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_3_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_3_srcReady_1_4,{_zz_queueNext_3_srcReady_1_5,_zz_queueNext_3_srcReady_1_6}}}}) || ((queue_3_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96_3 = writeVector[3];
+  assign when_IssueQueue_l93_3 = writeVector[3];
   always @(*) begin
     _zz_io_csrInQueue[0] = ((queue_0_roop_aluROOp == ALUROOp_csr) && queue_0_valid);
     _zz_io_csrInQueue[1] = ((queue_1_roop_aluROOp == ALUROOp_csr) && queue_1_valid);
@@ -19390,8 +18584,7 @@ module IssueQueue_1 (
   end
 
   assign io_csrInQueue = (|_zz_io_csrInQueue);
-  assign io_output_fire = (io_output_valid && io_output_ready);
-  assign io_input_ready = ((|emptyEntry[3 : 0]) || io_output_fire);
+  assign io_input_ready = (|emptyEntry[3 : 0]);
   assign _zz_issueEntry_valid = issueVector[3];
   assign _zz_issueEntry_valid_1 = (issueVector[1] || _zz_issueEntry_valid);
   assign _zz_issueEntry_valid_2 = (issueVector[2] || _zz_issueEntry_valid);
@@ -19431,6 +18624,7 @@ module IssueQueue_1 (
   assign io_output_payload_roop_aluROOp = issueEntry_roop_aluROOp;
   assign io_output_payload_roop_cruROOp = issueEntry_roop_cruROOp;
   assign io_wakeOut_payload = issueEntry_prd;
+  assign io_output_fire = (io_output_valid && io_output_ready);
   assign io_wakeOut_valid = io_output_fire;
   always @(posedge aclk) begin
     if(!cpuClockingArea_areaFlushReset_newReset) begin
@@ -19697,62 +18891,104 @@ module IssueQueue (
   wire                _zz_appendEntry_srcReady_1_4;
   wire       [0:0]    _zz_appendEntry_srcReady_1_5;
   wire       [3:0]    _zz_appendEntry_srcReady_1_6;
-  wire                _zz_updatedEntry_0_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_2;
-  wire                _zz_updatedEntry_0_srcReady_0_3;
-  wire                _zz_updatedEntry_0_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_0_srcReady_0_6;
-  wire                _zz_updatedEntry_0_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_2;
-  wire                _zz_updatedEntry_0_srcReady_1_3;
-  wire                _zz_updatedEntry_0_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_0_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_0_srcReady_1_6;
-  wire                _zz_updatedEntry_1_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_2;
-  wire                _zz_updatedEntry_1_srcReady_0_3;
-  wire                _zz_updatedEntry_1_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_1_srcReady_0_6;
-  wire                _zz_updatedEntry_1_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_2;
-  wire                _zz_updatedEntry_1_srcReady_1_3;
-  wire                _zz_updatedEntry_1_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_1_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_1_srcReady_1_6;
-  wire                _zz_updatedEntry_2_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_2;
-  wire                _zz_updatedEntry_2_srcReady_0_3;
-  wire                _zz_updatedEntry_2_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_2_srcReady_0_6;
-  wire                _zz_updatedEntry_2_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_2;
-  wire                _zz_updatedEntry_2_srcReady_1_3;
-  wire                _zz_updatedEntry_2_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_2_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_2_srcReady_1_6;
-  wire                _zz_updatedEntry_3_srcReady_0;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_2;
-  wire                _zz_updatedEntry_3_srcReady_0_3;
-  wire                _zz_updatedEntry_3_srcReady_0_4;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_0_5;
-  wire       [3:0]    _zz_updatedEntry_3_srcReady_0_6;
-  wire                _zz_updatedEntry_3_srcReady_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_1;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_2;
-  wire                _zz_updatedEntry_3_srcReady_1_3;
-  wire                _zz_updatedEntry_3_srcReady_1_4;
-  wire       [0:0]    _zz_updatedEntry_3_srcReady_1_5;
-  wire       [3:0]    _zz_updatedEntry_3_srcReady_1_6;
+  wire                _zz_queueNext_0_srcReady_0;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_2;
+  wire                _zz_queueNext_0_srcReady_0_3;
+  wire                _zz_queueNext_0_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_0_srcReady_0_6;
+  wire                _zz_queueNext_0_srcReady_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_2;
+  wire                _zz_queueNext_0_srcReady_1_3;
+  wire                _zz_queueNext_0_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_0_srcReady_1_6;
+  wire                _zz_queueNext_0_srcReady_0_7;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_8;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_9;
+  wire                _zz_queueNext_0_srcReady_0_10;
+  wire                _zz_queueNext_0_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_0_srcReady_0_12;
+  wire       [3:0]    _zz_queueNext_0_srcReady_0_13;
+  wire                _zz_queueNext_0_srcReady_1_7;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_8;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_9;
+  wire                _zz_queueNext_0_srcReady_1_10;
+  wire                _zz_queueNext_0_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_0_srcReady_1_12;
+  wire       [3:0]    _zz_queueNext_0_srcReady_1_13;
+  wire                _zz_queueNext_1_srcReady_0;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_2;
+  wire                _zz_queueNext_1_srcReady_0_3;
+  wire                _zz_queueNext_1_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_1_srcReady_0_6;
+  wire                _zz_queueNext_1_srcReady_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_2;
+  wire                _zz_queueNext_1_srcReady_1_3;
+  wire                _zz_queueNext_1_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_1_srcReady_1_6;
+  wire                _zz_queueNext_1_srcReady_0_7;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_8;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_9;
+  wire                _zz_queueNext_1_srcReady_0_10;
+  wire                _zz_queueNext_1_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_1_srcReady_0_12;
+  wire       [3:0]    _zz_queueNext_1_srcReady_0_13;
+  wire                _zz_queueNext_1_srcReady_1_7;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_8;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_9;
+  wire                _zz_queueNext_1_srcReady_1_10;
+  wire                _zz_queueNext_1_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_1_srcReady_1_12;
+  wire       [3:0]    _zz_queueNext_1_srcReady_1_13;
+  wire                _zz_queueNext_2_srcReady_0;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_2;
+  wire                _zz_queueNext_2_srcReady_0_3;
+  wire                _zz_queueNext_2_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_2_srcReady_0_6;
+  wire                _zz_queueNext_2_srcReady_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_2;
+  wire                _zz_queueNext_2_srcReady_1_3;
+  wire                _zz_queueNext_2_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_2_srcReady_1_6;
+  wire                _zz_queueNext_2_srcReady_0_7;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_8;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_9;
+  wire                _zz_queueNext_2_srcReady_0_10;
+  wire                _zz_queueNext_2_srcReady_0_11;
+  wire       [0:0]    _zz_queueNext_2_srcReady_0_12;
+  wire       [3:0]    _zz_queueNext_2_srcReady_0_13;
+  wire                _zz_queueNext_2_srcReady_1_7;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_8;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_9;
+  wire                _zz_queueNext_2_srcReady_1_10;
+  wire                _zz_queueNext_2_srcReady_1_11;
+  wire       [0:0]    _zz_queueNext_2_srcReady_1_12;
+  wire       [3:0]    _zz_queueNext_2_srcReady_1_13;
+  wire                _zz_queueNext_3_srcReady_0;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_2;
+  wire                _zz_queueNext_3_srcReady_0_3;
+  wire                _zz_queueNext_3_srcReady_0_4;
+  wire       [0:0]    _zz_queueNext_3_srcReady_0_5;
+  wire       [3:0]    _zz_queueNext_3_srcReady_0_6;
+  wire                _zz_queueNext_3_srcReady_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_1;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_2;
+  wire                _zz_queueNext_3_srcReady_1_3;
+  wire                _zz_queueNext_3_srcReady_1_4;
+  wire       [0:0]    _zz_queueNext_3_srcReady_1_5;
+  wire       [3:0]    _zz_queueNext_3_srcReady_1_6;
   reg                 _zz_issueEntry_valid_4;
   reg        [4:0]    _zz_issueEntry_robIdx;
   reg        [31:0]   _zz_issueEntry_branchInfo_predictPC;
@@ -19852,78 +19088,6 @@ module IssueQueue (
   wire       [4:0]    emptyEntry_ohFirst_input;
   wire       [4:0]    emptyEntry_ohFirst_masked;
   wire       [4:0]    writeVector;
-  wire                updatedEntry_0_valid;
-  wire       [4:0]    updatedEntry_0_robIdx;
-  wire       [31:0]   updatedEntry_0_branchInfo_predictPC;
-  wire                updatedEntry_0_branchInfo_predictResult;
-  wire                updatedEntry_0_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_0_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_0_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_0_pc;
-  wire       [5:0]    updatedEntry_0_prd;
-  wire       [5:0]    updatedEntry_0_psrc_0;
-  wire       [5:0]    updatedEntry_0_psrc_1;
-  wire       [31:0]   updatedEntry_0_imm;
-  wire       [3:0]    updatedEntry_0_uop_aluOp;
-  wire       [1:0]    updatedEntry_0_uop_bruOp;
-  wire       [1:0]    updatedEntry_0_uop_cruOp;
-  wire       [2:0]    updatedEntry_0_roop_aluROOp;
-  reg                 updatedEntry_0_srcReady_0;
-  reg                 updatedEntry_0_srcReady_1;
-  wire                updatedEntry_1_valid;
-  wire       [4:0]    updatedEntry_1_robIdx;
-  wire       [31:0]   updatedEntry_1_branchInfo_predictPC;
-  wire                updatedEntry_1_branchInfo_predictResult;
-  wire                updatedEntry_1_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_1_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_1_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_1_pc;
-  wire       [5:0]    updatedEntry_1_prd;
-  wire       [5:0]    updatedEntry_1_psrc_0;
-  wire       [5:0]    updatedEntry_1_psrc_1;
-  wire       [31:0]   updatedEntry_1_imm;
-  wire       [3:0]    updatedEntry_1_uop_aluOp;
-  wire       [1:0]    updatedEntry_1_uop_bruOp;
-  wire       [1:0]    updatedEntry_1_uop_cruOp;
-  wire       [2:0]    updatedEntry_1_roop_aluROOp;
-  reg                 updatedEntry_1_srcReady_0;
-  reg                 updatedEntry_1_srcReady_1;
-  wire                updatedEntry_2_valid;
-  wire       [4:0]    updatedEntry_2_robIdx;
-  wire       [31:0]   updatedEntry_2_branchInfo_predictPC;
-  wire                updatedEntry_2_branchInfo_predictResult;
-  wire                updatedEntry_2_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_2_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_2_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_2_pc;
-  wire       [5:0]    updatedEntry_2_prd;
-  wire       [5:0]    updatedEntry_2_psrc_0;
-  wire       [5:0]    updatedEntry_2_psrc_1;
-  wire       [31:0]   updatedEntry_2_imm;
-  wire       [3:0]    updatedEntry_2_uop_aluOp;
-  wire       [1:0]    updatedEntry_2_uop_bruOp;
-  wire       [1:0]    updatedEntry_2_uop_cruOp;
-  wire       [2:0]    updatedEntry_2_roop_aluROOp;
-  reg                 updatedEntry_2_srcReady_0;
-  reg                 updatedEntry_2_srcReady_1;
-  wire                updatedEntry_3_valid;
-  wire       [4:0]    updatedEntry_3_robIdx;
-  wire       [31:0]   updatedEntry_3_branchInfo_predictPC;
-  wire                updatedEntry_3_branchInfo_predictResult;
-  wire                updatedEntry_3_exceptionInfo_exception;
-  wire       [5:0]    updatedEntry_3_exceptionInfo_eCode;
-  wire       [0:0]    updatedEntry_3_exceptionInfo_eSubCode;
-  wire       [31:0]   updatedEntry_3_pc;
-  wire       [5:0]    updatedEntry_3_prd;
-  wire       [5:0]    updatedEntry_3_psrc_0;
-  wire       [5:0]    updatedEntry_3_psrc_1;
-  wire       [31:0]   updatedEntry_3_imm;
-  wire       [3:0]    updatedEntry_3_uop_aluOp;
-  wire       [1:0]    updatedEntry_3_uop_bruOp;
-  wire       [1:0]    updatedEntry_3_uop_cruOp;
-  wire       [2:0]    updatedEntry_3_roop_aluROOp;
-  reg                 updatedEntry_3_srcReady_0;
-  reg                 updatedEntry_3_srcReady_1;
   wire                appendEntry_valid;
   wire       [4:0]    appendEntry_robIdx;
   wire       [31:0]   appendEntry_branchInfo_predictPC;
@@ -20014,20 +19178,19 @@ module IssueQueue (
   reg        [2:0]    queueNext_3_roop_aluROOp;
   reg                 queueNext_3_srcReady_0;
   reg                 queueNext_3_srcReady_1;
-  wire                when_IssueQueue_l81;
-  wire                when_IssueQueue_l83;
-  wire                when_IssueQueue_l96;
-  wire                when_IssueQueue_l81_1;
-  wire                when_IssueQueue_l83_1;
-  wire                when_IssueQueue_l96_1;
-  wire                when_IssueQueue_l81_2;
-  wire                when_IssueQueue_l83_2;
-  wire                when_IssueQueue_l96_2;
-  wire                when_IssueQueue_l81_3;
-  wire                when_IssueQueue_l89;
-  wire                when_IssueQueue_l96_3;
+  wire                when_IssueQueue_l73;
+  wire                when_IssueQueue_l75;
+  wire                when_IssueQueue_l93;
+  wire                when_IssueQueue_l73_1;
+  wire                when_IssueQueue_l75_1;
+  wire                when_IssueQueue_l93_1;
+  wire                when_IssueQueue_l73_2;
+  wire                when_IssueQueue_l75_2;
+  wire                when_IssueQueue_l93_2;
+  wire                when_IssueQueue_l73_3;
+  wire                when_IssueQueue_l86;
+  wire                when_IssueQueue_l93_3;
   reg        [3:0]    _zz_io_csrInQueue;
-  wire                io_output_fire;
   wire                _zz_issueEntry_valid;
   wire                _zz_issueEntry_valid_1;
   wire                _zz_issueEntry_valid_2;
@@ -20050,6 +19213,7 @@ module IssueQueue (
   wire       [2:0]    issueEntry_roop_aluROOp;
   wire                issueEntry_srcReady_0;
   wire                issueEntry_srcReady_1;
+  wire                io_output_fire;
   `ifndef SYNTHESIS
   reg [39:0] io_input_payload_uop_aluOp_string;
   reg [39:0] io_input_payload_uop_bruOp_string;
@@ -20075,22 +19239,6 @@ module IssueQueue (
   reg [39:0] queue_3_uop_bruOp_string;
   reg [31:0] queue_3_uop_cruOp_string;
   reg [55:0] queue_3_roop_aluROOp_string;
-  reg [39:0] updatedEntry_0_uop_aluOp_string;
-  reg [39:0] updatedEntry_0_uop_bruOp_string;
-  reg [31:0] updatedEntry_0_uop_cruOp_string;
-  reg [55:0] updatedEntry_0_roop_aluROOp_string;
-  reg [39:0] updatedEntry_1_uop_aluOp_string;
-  reg [39:0] updatedEntry_1_uop_bruOp_string;
-  reg [31:0] updatedEntry_1_uop_cruOp_string;
-  reg [55:0] updatedEntry_1_roop_aluROOp_string;
-  reg [39:0] updatedEntry_2_uop_aluOp_string;
-  reg [39:0] updatedEntry_2_uop_bruOp_string;
-  reg [31:0] updatedEntry_2_uop_cruOp_string;
-  reg [55:0] updatedEntry_2_roop_aluROOp_string;
-  reg [39:0] updatedEntry_3_uop_aluOp_string;
-  reg [39:0] updatedEntry_3_uop_bruOp_string;
-  reg [31:0] updatedEntry_3_uop_cruOp_string;
-  reg [55:0] updatedEntry_3_roop_aluROOp_string;
   reg [39:0] appendEntry_uop_aluOp_string;
   reg [39:0] appendEntry_uop_bruOp_string;
   reg [31:0] appendEntry_uop_cruOp_string;
@@ -20138,62 +19286,104 @@ module IssueQueue (
   assign _zz_appendEntry_srcReady_1_4 = ((io_input_payload_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
   assign _zz_appendEntry_srcReady_1_5 = ((io_input_payload_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
   assign _zz_appendEntry_srcReady_1_6 = {((io_input_payload_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((io_input_payload_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((io_input_payload_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((io_input_payload_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_0_3 = (queue_0_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_0_srcReady_0_4 = ((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_0_srcReady_0_5 = ((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_0_srcReady_0_6 = {((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_0_srcReady_1_3 = (queue_0_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_0_srcReady_1_4 = ((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_0_srcReady_1_5 = ((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_0_srcReady_1_6 = {((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_0_3 = (queue_1_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_1_srcReady_0_4 = ((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_1_srcReady_0_5 = ((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_1_srcReady_0_6 = {((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_1_srcReady_1_3 = (queue_1_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_1_srcReady_1_4 = ((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_1_srcReady_1_5 = ((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_1_srcReady_1_6 = {((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_0_3 = (queue_2_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_2_srcReady_0_4 = ((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_2_srcReady_0_5 = ((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_2_srcReady_0_6 = {((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_2_srcReady_1_3 = (queue_2_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_2_srcReady_1_4 = ((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_2_srcReady_1_5 = ((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_2_srcReady_1_6 = {((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_0_3 = (queue_3_psrc_0 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_3_srcReady_0_4 = ((queue_3_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_3_srcReady_0_5 = ((queue_3_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_3_srcReady_0_6 = {((queue_3_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
-  assign _zz_updatedEntry_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
-  assign _zz_updatedEntry_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
-  assign _zz_updatedEntry_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
-  assign _zz_updatedEntry_3_srcReady_1_3 = (queue_3_psrc_1 == io_earlyWakeup_6_payload);
-  assign _zz_updatedEntry_3_srcReady_1_4 = ((queue_3_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
-  assign _zz_updatedEntry_3_srcReady_1_5 = ((queue_3_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
-  assign _zz_updatedEntry_3_srcReady_1_6 = {((queue_3_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_0 = (queue_0_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_0_1 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_2 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0_3 = (queue_0_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_0_4 = ((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_0_5 = ((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_0_6 = {((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_1 = (queue_0_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_1_1 = (queue_0_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_1_2 = (queue_0_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_1_3 = (queue_0_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_1_4 = ((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_1_5 = ((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_1_6 = {((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_0_7 = (queue_0_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_0_8 = (queue_0_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_0_9 = (queue_0_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_0_10 = (queue_0_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_0_11 = ((queue_0_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_0_12 = ((queue_0_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_0_13 = {((queue_0_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_0_srcReady_1_7 = (queue_0_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_0_srcReady_1_8 = (queue_0_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_0_srcReady_1_9 = (queue_0_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_0_srcReady_1_10 = (queue_0_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_0_srcReady_1_11 = ((queue_0_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_0_srcReady_1_12 = ((queue_0_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_0_srcReady_1_13 = {((queue_0_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_0_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_0_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_0_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_0 = (queue_1_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_0_1 = (queue_1_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_0_2 = (queue_1_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_0_3 = (queue_1_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_0_4 = ((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_0_5 = ((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_0_6 = {((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_1 = (queue_1_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_1_1 = (queue_1_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_1_2 = (queue_1_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_1_3 = (queue_1_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_1_4 = ((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_1_5 = ((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_1_6 = {((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_0_7 = (queue_1_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_0_8 = (queue_1_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_0_9 = (queue_1_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_0_10 = (queue_1_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_0_11 = ((queue_1_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_0_12 = ((queue_1_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_0_13 = {((queue_1_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_1_srcReady_1_7 = (queue_1_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_1_srcReady_1_8 = (queue_1_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_1_srcReady_1_9 = (queue_1_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_1_srcReady_1_10 = (queue_1_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_1_srcReady_1_11 = ((queue_1_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_1_srcReady_1_12 = ((queue_1_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_1_srcReady_1_13 = {((queue_1_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_1_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_1_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_1_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_0 = (queue_2_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_0_1 = (queue_2_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_0_2 = (queue_2_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_0_3 = (queue_2_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_0_4 = ((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_0_5 = ((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_0_6 = {((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_1 = (queue_2_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_1_1 = (queue_2_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_1_2 = (queue_2_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_1_3 = (queue_2_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_1_4 = ((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_1_5 = ((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_1_6 = {((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_0_7 = (queue_2_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_0_8 = (queue_2_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_0_9 = (queue_2_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_0_10 = (queue_2_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_0_11 = ((queue_2_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_0_12 = ((queue_2_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_0_13 = {((queue_2_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_2_srcReady_1_7 = (queue_2_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_2_srcReady_1_8 = (queue_2_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_2_srcReady_1_9 = (queue_2_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_2_srcReady_1_10 = (queue_2_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_2_srcReady_1_11 = ((queue_2_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_2_srcReady_1_12 = ((queue_2_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_2_srcReady_1_13 = {((queue_2_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_2_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_2_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_2_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_3_srcReady_0 = (queue_3_psrc_0 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_0_1 = (queue_3_psrc_0 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_0_2 = (queue_3_psrc_0 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_0_3 = (queue_3_psrc_0 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_3_srcReady_0_4 = ((queue_3_psrc_0 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_3_srcReady_0_5 = ((queue_3_psrc_0 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_3_srcReady_0_6 = {((queue_3_psrc_0 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_0 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_0 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_0 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
+  assign _zz_queueNext_3_srcReady_1 = (queue_3_psrc_1 == io_writebackSignal_2);
+  assign _zz_queueNext_3_srcReady_1_1 = (queue_3_psrc_1 == io_writebackSignal_1);
+  assign _zz_queueNext_3_srcReady_1_2 = (queue_3_psrc_1 == io_writebackSignal_0);
+  assign _zz_queueNext_3_srcReady_1_3 = (queue_3_psrc_1 == io_earlyWakeup_6_payload);
+  assign _zz_queueNext_3_srcReady_1_4 = ((queue_3_psrc_1 == io_earlyWakeup_5_payload) && io_earlyWakeup_5_valid);
+  assign _zz_queueNext_3_srcReady_1_5 = ((queue_3_psrc_1 == io_earlyWakeup_4_payload) && io_earlyWakeup_4_valid);
+  assign _zz_queueNext_3_srcReady_1_6 = {((queue_3_psrc_1 == io_earlyWakeup_3_payload) && io_earlyWakeup_3_valid),{((queue_3_psrc_1 == io_earlyWakeup_2_payload) && io_earlyWakeup_2_valid),{((queue_3_psrc_1 == io_earlyWakeup_1_payload) && io_earlyWakeup_1_valid),((queue_3_psrc_1 == io_earlyWakeup_0_payload) && io_earlyWakeup_0_valid)}}};
   always @(*) begin
     case(_zz_issueEntry_valid_3)
       2'b00 : begin
@@ -20563,194 +19753,6 @@ module IssueQueue (
     endcase
   end
   always @(*) begin
-    case(updatedEntry_0_uop_aluOp)
-      ALUOp_add : updatedEntry_0_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_0_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_0_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_0_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_0_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_0_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_0_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_0_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_0_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_0_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_0_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_0_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_0_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_0_uop_aluOp_string = "passb";
-      default : updatedEntry_0_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_0_uop_bruOp)
-      BRUOp_nop : updatedEntry_0_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_0_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_0_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_0_uop_bruOp_string = "ncadd";
-      default : updatedEntry_0_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_0_uop_cruOp)
-      CRUOp_nop : updatedEntry_0_uop_cruOp_string = "nop ";
-      CRUOp_pass : updatedEntry_0_uop_cruOp_string = "pass";
-      CRUOp_mask : updatedEntry_0_uop_cruOp_string = "mask";
-      default : updatedEntry_0_uop_cruOp_string = "????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_0_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_0_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_0_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_0_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_0_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_0_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_0_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_0_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_aluOp)
-      ALUOp_add : updatedEntry_1_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_1_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_1_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_1_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_1_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_1_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_1_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_1_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_1_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_1_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_1_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_1_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_1_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_1_uop_aluOp_string = "passb";
-      default : updatedEntry_1_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_bruOp)
-      BRUOp_nop : updatedEntry_1_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_1_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_1_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_1_uop_bruOp_string = "ncadd";
-      default : updatedEntry_1_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_uop_cruOp)
-      CRUOp_nop : updatedEntry_1_uop_cruOp_string = "nop ";
-      CRUOp_pass : updatedEntry_1_uop_cruOp_string = "pass";
-      CRUOp_mask : updatedEntry_1_uop_cruOp_string = "mask";
-      default : updatedEntry_1_uop_cruOp_string = "????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_1_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_1_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_1_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_1_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_1_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_1_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_1_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_1_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_aluOp)
-      ALUOp_add : updatedEntry_2_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_2_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_2_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_2_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_2_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_2_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_2_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_2_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_2_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_2_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_2_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_2_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_2_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_2_uop_aluOp_string = "passb";
-      default : updatedEntry_2_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_bruOp)
-      BRUOp_nop : updatedEntry_2_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_2_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_2_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_2_uop_bruOp_string = "ncadd";
-      default : updatedEntry_2_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_uop_cruOp)
-      CRUOp_nop : updatedEntry_2_uop_cruOp_string = "nop ";
-      CRUOp_pass : updatedEntry_2_uop_cruOp_string = "pass";
-      CRUOp_mask : updatedEntry_2_uop_cruOp_string = "mask";
-      default : updatedEntry_2_uop_cruOp_string = "????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_2_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_2_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_2_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_2_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_2_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_2_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_2_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_2_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_aluOp)
-      ALUOp_add : updatedEntry_3_uop_aluOp_string = "add  ";
-      ALUOp_sub : updatedEntry_3_uop_aluOp_string = "sub  ";
-      ALUOp_slt : updatedEntry_3_uop_aluOp_string = "slt  ";
-      ALUOp_sltu : updatedEntry_3_uop_aluOp_string = "sltu ";
-      ALUOp_eq : updatedEntry_3_uop_aluOp_string = "eq   ";
-      ALUOp_nor_1 : updatedEntry_3_uop_aluOp_string = "nor_1";
-      ALUOp_and_1 : updatedEntry_3_uop_aluOp_string = "and_1";
-      ALUOp_or_1 : updatedEntry_3_uop_aluOp_string = "or_1 ";
-      ALUOp_xor_1 : updatedEntry_3_uop_aluOp_string = "xor_1";
-      ALUOp_sll_1 : updatedEntry_3_uop_aluOp_string = "sll_1";
-      ALUOp_srl_1 : updatedEntry_3_uop_aluOp_string = "srl_1";
-      ALUOp_sra_1 : updatedEntry_3_uop_aluOp_string = "sra_1";
-      ALUOp_passa : updatedEntry_3_uop_aluOp_string = "passa";
-      ALUOp_passb : updatedEntry_3_uop_aluOp_string = "passb";
-      default : updatedEntry_3_uop_aluOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_bruOp)
-      BRUOp_nop : updatedEntry_3_uop_bruOp_string = "nop  ";
-      BRUOp_add : updatedEntry_3_uop_bruOp_string = "add  ";
-      BRUOp_cadd : updatedEntry_3_uop_bruOp_string = "cadd ";
-      BRUOp_ncadd : updatedEntry_3_uop_bruOp_string = "ncadd";
-      default : updatedEntry_3_uop_bruOp_string = "?????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_uop_cruOp)
-      CRUOp_nop : updatedEntry_3_uop_cruOp_string = "nop ";
-      CRUOp_pass : updatedEntry_3_uop_cruOp_string = "pass";
-      CRUOp_mask : updatedEntry_3_uop_cruOp_string = "mask";
-      default : updatedEntry_3_uop_cruOp_string = "????";
-    endcase
-  end
-  always @(*) begin
-    case(updatedEntry_3_roop_aluROOp)
-      ALUROOp_reg_1 : updatedEntry_3_roop_aluROOp_string = "reg_1  ";
-      ALUROOp_regimm : updatedEntry_3_roop_aluROOp_string = "regimm ";
-      ALUROOp_pcimm : updatedEntry_3_roop_aluROOp_string = "pcimm  ";
-      ALUROOp_csr : updatedEntry_3_roop_aluROOp_string = "csr    ";
-      ALUROOp_linkpc : updatedEntry_3_roop_aluROOp_string = "linkpc ";
-      ALUROOp_linkreg : updatedEntry_3_roop_aluROOp_string = "linkreg";
-      default : updatedEntry_3_roop_aluROOp_string = "???????";
-    endcase
-  end
-  always @(*) begin
     case(appendEntry_uop_aluOp)
       ALUOp_add : appendEntry_uop_aluOp_string = "add  ";
       ALUOp_sub : appendEntry_uop_aluOp_string = "sub  ";
@@ -21077,110 +20079,6 @@ module IssueQueue (
   assign appendEntry_roop_aluROOp = io_input_payload_roop_aluROOp;
   assign appendEntry_srcReady_0 = ((io_input_payload_srcReady_0 || (|{(io_input_payload_psrc_0 == io_writebackSignal_4),{_zz_appendEntry_srcReady_0,{_zz_appendEntry_srcReady_0_1,_zz_appendEntry_srcReady_0_2}}})) || ((|{(_zz_appendEntry_srcReady_0_3 && io_earlyWakeup_7_valid),{_zz_appendEntry_srcReady_0_4,{_zz_appendEntry_srcReady_0_5,_zz_appendEntry_srcReady_0_6}}}) || ((io_input_payload_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
   assign appendEntry_srcReady_1 = ((io_input_payload_srcReady_1 || (|{(io_input_payload_psrc_1 == io_writebackSignal_4),{(io_input_payload_psrc_1 == io_writebackSignal_3),{_zz_appendEntry_srcReady_1,{_zz_appendEntry_srcReady_1_1,_zz_appendEntry_srcReady_1_2}}}})) || ((|{((io_input_payload_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_appendEntry_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_appendEntry_srcReady_1_4,{_zz_appendEntry_srcReady_1_5,_zz_appendEntry_srcReady_1_6}}}}) || ((io_input_payload_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  assign updatedEntry_0_valid = queue_0_valid;
-  assign updatedEntry_0_robIdx = queue_0_robIdx;
-  assign updatedEntry_0_branchInfo_predictPC = queue_0_branchInfo_predictPC;
-  assign updatedEntry_0_branchInfo_predictResult = queue_0_branchInfo_predictResult;
-  assign updatedEntry_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
-  assign updatedEntry_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
-  assign updatedEntry_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
-  assign updatedEntry_0_pc = queue_0_pc;
-  assign updatedEntry_0_prd = queue_0_prd;
-  assign updatedEntry_0_psrc_0 = queue_0_psrc_0;
-  assign updatedEntry_0_psrc_1 = queue_0_psrc_1;
-  assign updatedEntry_0_imm = queue_0_imm;
-  assign updatedEntry_0_uop_aluOp = queue_0_uop_aluOp;
-  assign updatedEntry_0_uop_bruOp = queue_0_uop_bruOp;
-  assign updatedEntry_0_uop_cruOp = queue_0_uop_cruOp;
-  assign updatedEntry_0_roop_aluROOp = queue_0_roop_aluROOp;
-  always @(*) begin
-    updatedEntry_0_srcReady_0 = queue_0_srcReady_0;
-    updatedEntry_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_0,{_zz_updatedEntry_0_srcReady_0_1,_zz_updatedEntry_0_srcReady_0_2}}}})) || ((|{((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_0_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_0_srcReady_0_4,{_zz_updatedEntry_0_srcReady_0_5,_zz_updatedEntry_0_srcReady_0_6}}}}) || ((queue_0_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_0_srcReady_1 = queue_0_srcReady_1;
-    updatedEntry_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_0_srcReady_1,{_zz_updatedEntry_0_srcReady_1_1,_zz_updatedEntry_0_srcReady_1_2}}}})) || ((|{((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_0_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_0_srcReady_1_4,{_zz_updatedEntry_0_srcReady_1_5,_zz_updatedEntry_0_srcReady_1_6}}}}) || ((queue_0_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  assign updatedEntry_1_valid = queue_1_valid;
-  assign updatedEntry_1_robIdx = queue_1_robIdx;
-  assign updatedEntry_1_branchInfo_predictPC = queue_1_branchInfo_predictPC;
-  assign updatedEntry_1_branchInfo_predictResult = queue_1_branchInfo_predictResult;
-  assign updatedEntry_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
-  assign updatedEntry_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
-  assign updatedEntry_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
-  assign updatedEntry_1_pc = queue_1_pc;
-  assign updatedEntry_1_prd = queue_1_prd;
-  assign updatedEntry_1_psrc_0 = queue_1_psrc_0;
-  assign updatedEntry_1_psrc_1 = queue_1_psrc_1;
-  assign updatedEntry_1_imm = queue_1_imm;
-  assign updatedEntry_1_uop_aluOp = queue_1_uop_aluOp;
-  assign updatedEntry_1_uop_bruOp = queue_1_uop_bruOp;
-  assign updatedEntry_1_uop_cruOp = queue_1_uop_cruOp;
-  assign updatedEntry_1_roop_aluROOp = queue_1_roop_aluROOp;
-  always @(*) begin
-    updatedEntry_1_srcReady_0 = queue_1_srcReady_0;
-    updatedEntry_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_0,{_zz_updatedEntry_1_srcReady_0_1,_zz_updatedEntry_1_srcReady_0_2}}}})) || ((|{((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_1_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_1_srcReady_0_4,{_zz_updatedEntry_1_srcReady_0_5,_zz_updatedEntry_1_srcReady_0_6}}}}) || ((queue_1_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_1_srcReady_1 = queue_1_srcReady_1;
-    updatedEntry_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_1_srcReady_1,{_zz_updatedEntry_1_srcReady_1_1,_zz_updatedEntry_1_srcReady_1_2}}}})) || ((|{((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_1_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_1_srcReady_1_4,{_zz_updatedEntry_1_srcReady_1_5,_zz_updatedEntry_1_srcReady_1_6}}}}) || ((queue_1_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  assign updatedEntry_2_valid = queue_2_valid;
-  assign updatedEntry_2_robIdx = queue_2_robIdx;
-  assign updatedEntry_2_branchInfo_predictPC = queue_2_branchInfo_predictPC;
-  assign updatedEntry_2_branchInfo_predictResult = queue_2_branchInfo_predictResult;
-  assign updatedEntry_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
-  assign updatedEntry_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
-  assign updatedEntry_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
-  assign updatedEntry_2_pc = queue_2_pc;
-  assign updatedEntry_2_prd = queue_2_prd;
-  assign updatedEntry_2_psrc_0 = queue_2_psrc_0;
-  assign updatedEntry_2_psrc_1 = queue_2_psrc_1;
-  assign updatedEntry_2_imm = queue_2_imm;
-  assign updatedEntry_2_uop_aluOp = queue_2_uop_aluOp;
-  assign updatedEntry_2_uop_bruOp = queue_2_uop_bruOp;
-  assign updatedEntry_2_uop_cruOp = queue_2_uop_cruOp;
-  assign updatedEntry_2_roop_aluROOp = queue_2_roop_aluROOp;
-  always @(*) begin
-    updatedEntry_2_srcReady_0 = queue_2_srcReady_0;
-    updatedEntry_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_0,{_zz_updatedEntry_2_srcReady_0_1,_zz_updatedEntry_2_srcReady_0_2}}}})) || ((|{((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_2_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_2_srcReady_0_4,{_zz_updatedEntry_2_srcReady_0_5,_zz_updatedEntry_2_srcReady_0_6}}}}) || ((queue_2_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_2_srcReady_1 = queue_2_srcReady_1;
-    updatedEntry_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_2_srcReady_1,{_zz_updatedEntry_2_srcReady_1_1,_zz_updatedEntry_2_srcReady_1_2}}}})) || ((|{((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_2_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_2_srcReady_1_4,{_zz_updatedEntry_2_srcReady_1_5,_zz_updatedEntry_2_srcReady_1_6}}}}) || ((queue_2_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  assign updatedEntry_3_valid = queue_3_valid;
-  assign updatedEntry_3_robIdx = queue_3_robIdx;
-  assign updatedEntry_3_branchInfo_predictPC = queue_3_branchInfo_predictPC;
-  assign updatedEntry_3_branchInfo_predictResult = queue_3_branchInfo_predictResult;
-  assign updatedEntry_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
-  assign updatedEntry_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
-  assign updatedEntry_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
-  assign updatedEntry_3_pc = queue_3_pc;
-  assign updatedEntry_3_prd = queue_3_prd;
-  assign updatedEntry_3_psrc_0 = queue_3_psrc_0;
-  assign updatedEntry_3_psrc_1 = queue_3_psrc_1;
-  assign updatedEntry_3_imm = queue_3_imm;
-  assign updatedEntry_3_uop_aluOp = queue_3_uop_aluOp;
-  assign updatedEntry_3_uop_bruOp = queue_3_uop_bruOp;
-  assign updatedEntry_3_uop_cruOp = queue_3_uop_cruOp;
-  assign updatedEntry_3_roop_aluROOp = queue_3_roop_aluROOp;
-  always @(*) begin
-    updatedEntry_3_srcReady_0 = queue_3_srcReady_0;
-    updatedEntry_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_0,{_zz_updatedEntry_3_srcReady_0_1,_zz_updatedEntry_3_srcReady_0_2}}}})) || ((|{((queue_3_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_3_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_3_srcReady_0_4,{_zz_updatedEntry_3_srcReady_0_5,_zz_updatedEntry_3_srcReady_0_6}}}}) || ((queue_3_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
-  always @(*) begin
-    updatedEntry_3_srcReady_1 = queue_3_srcReady_1;
-    updatedEntry_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_updatedEntry_3_srcReady_1,{_zz_updatedEntry_3_srcReady_1_1,_zz_updatedEntry_3_srcReady_1_2}}}})) || ((|{((queue_3_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_updatedEntry_3_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_updatedEntry_3_srcReady_1_4,{_zz_updatedEntry_3_srcReady_1_5,_zz_updatedEntry_3_srcReady_1_6}}}}) || ((queue_3_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
-  end
-
   always @(*) begin
     shiftAhead[0] = ((|readyToIssue[0 : 0]) && io_output_ready);
     shiftAhead[1] = ((|readyToIssue[1 : 0]) && io_output_ready);
@@ -21188,17 +20086,17 @@ module IssueQueue (
     shiftAhead[3] = ((|readyToIssue[3 : 0]) && io_output_ready);
   end
 
-  assign when_IssueQueue_l81 = shiftAhead[0];
-  assign when_IssueQueue_l83 = writeVector[1];
+  assign when_IssueQueue_l73 = shiftAhead[0];
+  assign when_IssueQueue_l75 = writeVector[1];
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_1_valid;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_valid = appendEntry_valid;
       end else begin
         queueNext_0_valid = queue_0_valid;
@@ -21207,14 +20105,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_1_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_0_robIdx = queue_0_robIdx;
@@ -21223,14 +20121,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_0_branchInfo_predictPC = queue_1_branchInfo_predictPC;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_0_branchInfo_predictPC = queue_0_branchInfo_predictPC;
@@ -21239,14 +20137,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_0_branchInfo_predictResult = queue_1_branchInfo_predictResult;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_0_branchInfo_predictResult = queue_0_branchInfo_predictResult;
@@ -21255,14 +20153,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_1_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
@@ -21271,14 +20169,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
@@ -21287,14 +20185,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
@@ -21303,14 +20201,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_1_pc;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_pc = appendEntry_pc;
       end else begin
         queueNext_0_pc = queue_0_pc;
@@ -21319,14 +20217,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_1_prd;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_prd = appendEntry_prd;
       end else begin
         queueNext_0_prd = queue_0_prd;
@@ -21335,14 +20233,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_1_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_0_psrc_0 = queue_0_psrc_0;
@@ -21351,14 +20249,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_1_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_0_psrc_1 = queue_0_psrc_1;
@@ -21367,14 +20265,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_1_imm;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_imm = appendEntry_imm;
       end else begin
         queueNext_0_imm = queue_0_imm;
@@ -21383,14 +20281,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_0_uop_aluOp = queue_1_uop_aluOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_0_uop_aluOp = queue_0_uop_aluOp;
@@ -21399,14 +20297,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_0_uop_bruOp = queue_1_uop_bruOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_0_uop_bruOp = queue_0_uop_bruOp;
@@ -21415,14 +20313,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_0_uop_cruOp = queue_1_uop_cruOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_0_uop_cruOp = queue_0_uop_cruOp;
@@ -21431,14 +20329,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_0_roop_aluROOp = queue_1_roop_aluROOp;
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_0_roop_aluROOp = queue_0_roop_aluROOp;
@@ -21447,49 +20345,53 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_1_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_0,{_zz_queueNext_0_srcReady_0_1,_zz_queueNext_0_srcReady_0_2}}}})) || ((|{((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_0_4,{_zz_queueNext_0_srcReady_0_5,_zz_queueNext_0_srcReady_0_6}}}}) || ((queue_0_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_0_srcReady_0 = queue_0_srcReady_0;
+        queueNext_0_srcReady_0 = ((queue_0_srcReady_0 || (|{(queue_0_psrc_0 == io_writebackSignal_4),{(queue_0_psrc_0 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_0_7,{_zz_queueNext_0_srcReady_0_8,_zz_queueNext_0_srcReady_0_9}}}})) || ((|{((queue_0_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_0_10 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_0_11,{_zz_queueNext_0_srcReady_0_12,_zz_queueNext_0_srcReady_0_13}}}}) || ((queue_0_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81) begin
-      if(when_IssueQueue_l83) begin
+    if(when_IssueQueue_l73) begin
+      if(when_IssueQueue_l75) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_1_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_1,{_zz_queueNext_0_srcReady_1_1,_zz_queueNext_0_srcReady_1_2}}}})) || ((|{((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_1_4,{_zz_queueNext_0_srcReady_1_5,_zz_queueNext_0_srcReady_1_6}}}}) || ((queue_0_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96) begin
+      if(when_IssueQueue_l93) begin
         queueNext_0_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_0_srcReady_1 = queue_0_srcReady_1;
+        queueNext_0_srcReady_1 = ((queue_0_srcReady_1 || (|{(queue_0_psrc_1 == io_writebackSignal_4),{(queue_0_psrc_1 == io_writebackSignal_3),{_zz_queueNext_0_srcReady_1_7,{_zz_queueNext_0_srcReady_1_8,_zz_queueNext_0_srcReady_1_9}}}})) || ((|{((queue_0_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_0_srcReady_1_10 && io_earlyWakeup_6_valid),{_zz_queueNext_0_srcReady_1_11,{_zz_queueNext_0_srcReady_1_12,_zz_queueNext_0_srcReady_1_13}}}}) || ((queue_0_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96 = writeVector[0];
-  assign when_IssueQueue_l81_1 = shiftAhead[1];
-  assign when_IssueQueue_l83_1 = writeVector[2];
+  assign when_IssueQueue_l93 = writeVector[0];
+  assign when_IssueQueue_l73_1 = shiftAhead[1];
+  assign when_IssueQueue_l75_1 = writeVector[2];
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_2_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_valid = appendEntry_valid;
       end else begin
         queueNext_1_valid = queue_1_valid;
@@ -21498,14 +20400,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_2_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_1_robIdx = queue_1_robIdx;
@@ -21514,14 +20416,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_1_branchInfo_predictPC = queue_2_branchInfo_predictPC;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_1_branchInfo_predictPC = queue_1_branchInfo_predictPC;
@@ -21530,14 +20432,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_1_branchInfo_predictResult = queue_2_branchInfo_predictResult;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_1_branchInfo_predictResult = queue_1_branchInfo_predictResult;
@@ -21546,14 +20448,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_2_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
@@ -21562,14 +20464,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
@@ -21578,14 +20480,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
@@ -21594,14 +20496,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_2_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_pc = appendEntry_pc;
       end else begin
         queueNext_1_pc = queue_1_pc;
@@ -21610,14 +20512,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_2_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_prd = appendEntry_prd;
       end else begin
         queueNext_1_prd = queue_1_prd;
@@ -21626,14 +20528,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_2_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_1_psrc_0 = queue_1_psrc_0;
@@ -21642,14 +20544,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_2_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_1_psrc_1 = queue_1_psrc_1;
@@ -21658,14 +20560,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_2_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_imm = appendEntry_imm;
       end else begin
         queueNext_1_imm = queue_1_imm;
@@ -21674,14 +20576,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_1_uop_aluOp = queue_2_uop_aluOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_1_uop_aluOp = queue_1_uop_aluOp;
@@ -21690,14 +20592,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_1_uop_bruOp = queue_2_uop_bruOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_1_uop_bruOp = queue_1_uop_bruOp;
@@ -21706,14 +20608,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_1_uop_cruOp = queue_2_uop_cruOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_1_uop_cruOp = queue_1_uop_cruOp;
@@ -21722,14 +20624,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_1_roop_aluROOp = queue_2_roop_aluROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_1_roop_aluROOp = queue_1_roop_aluROOp;
@@ -21738,49 +20640,53 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_2_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_0,{_zz_queueNext_1_srcReady_0_1,_zz_queueNext_1_srcReady_0_2}}}})) || ((|{((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_0_4,{_zz_queueNext_1_srcReady_0_5,_zz_queueNext_1_srcReady_0_6}}}}) || ((queue_1_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_1_srcReady_0 = queue_1_srcReady_0;
+        queueNext_1_srcReady_0 = ((queue_1_srcReady_0 || (|{(queue_1_psrc_0 == io_writebackSignal_4),{(queue_1_psrc_0 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_0_7,{_zz_queueNext_1_srcReady_0_8,_zz_queueNext_1_srcReady_0_9}}}})) || ((|{((queue_1_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_0_10 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_0_11,{_zz_queueNext_1_srcReady_0_12,_zz_queueNext_1_srcReady_0_13}}}}) || ((queue_1_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_1) begin
-      if(when_IssueQueue_l83_1) begin
+    if(when_IssueQueue_l73_1) begin
+      if(when_IssueQueue_l75_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_2_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_1,{_zz_queueNext_1_srcReady_1_1,_zz_queueNext_1_srcReady_1_2}}}})) || ((|{((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_1_4,{_zz_queueNext_1_srcReady_1_5,_zz_queueNext_1_srcReady_1_6}}}}) || ((queue_1_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_1) begin
+      if(when_IssueQueue_l93_1) begin
         queueNext_1_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_1_srcReady_1 = queue_1_srcReady_1;
+        queueNext_1_srcReady_1 = ((queue_1_srcReady_1 || (|{(queue_1_psrc_1 == io_writebackSignal_4),{(queue_1_psrc_1 == io_writebackSignal_3),{_zz_queueNext_1_srcReady_1_7,{_zz_queueNext_1_srcReady_1_8,_zz_queueNext_1_srcReady_1_9}}}})) || ((|{((queue_1_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_1_srcReady_1_10 && io_earlyWakeup_6_valid),{_zz_queueNext_1_srcReady_1_11,{_zz_queueNext_1_srcReady_1_12,_zz_queueNext_1_srcReady_1_13}}}}) || ((queue_1_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96_1 = writeVector[1];
-  assign when_IssueQueue_l81_2 = shiftAhead[2];
-  assign when_IssueQueue_l83_2 = writeVector[3];
+  assign when_IssueQueue_l93_1 = writeVector[1];
+  assign when_IssueQueue_l73_2 = shiftAhead[2];
+  assign when_IssueQueue_l75_2 = writeVector[3];
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_3_valid;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_valid = appendEntry_valid;
       end else begin
         queueNext_2_valid = queue_2_valid;
@@ -21789,14 +20695,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_3_robIdx;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_2_robIdx = queue_2_robIdx;
@@ -21805,14 +20711,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_2_branchInfo_predictPC = queue_3_branchInfo_predictPC;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_2_branchInfo_predictPC = queue_2_branchInfo_predictPC;
@@ -21821,14 +20727,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_2_branchInfo_predictResult = queue_3_branchInfo_predictResult;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_2_branchInfo_predictResult = queue_2_branchInfo_predictResult;
@@ -21837,14 +20743,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_3_exceptionInfo_exception;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_2_exceptionInfo_exception = queue_2_exceptionInfo_exception;
@@ -21853,14 +20759,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_2_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
@@ -21869,14 +20775,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_2_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
@@ -21885,14 +20791,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_3_pc;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_pc = appendEntry_pc;
       end else begin
         queueNext_2_pc = queue_2_pc;
@@ -21901,14 +20807,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_3_prd;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_prd = appendEntry_prd;
       end else begin
         queueNext_2_prd = queue_2_prd;
@@ -21917,14 +20823,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_3_psrc_0;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_2_psrc_0 = queue_2_psrc_0;
@@ -21933,14 +20839,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_3_psrc_1;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_2_psrc_1 = queue_2_psrc_1;
@@ -21949,14 +20855,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_3_imm;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_imm = appendEntry_imm;
       end else begin
         queueNext_2_imm = queue_2_imm;
@@ -21965,14 +20871,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_2_uop_aluOp = queue_3_uop_aluOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_2_uop_aluOp = queue_2_uop_aluOp;
@@ -21981,14 +20887,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_2_uop_bruOp = queue_3_uop_bruOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_2_uop_bruOp = queue_2_uop_bruOp;
@@ -21997,14 +20903,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_2_uop_cruOp = queue_3_uop_cruOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_2_uop_cruOp = queue_2_uop_cruOp;
@@ -22013,14 +20919,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_2_roop_aluROOp = queue_3_roop_aluROOp;
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_2_roop_aluROOp = queue_2_roop_aluROOp;
@@ -22029,49 +20935,53 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_3_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_0,{_zz_queueNext_2_srcReady_0_1,_zz_queueNext_2_srcReady_0_2}}}})) || ((|{((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_0_4,{_zz_queueNext_2_srcReady_0_5,_zz_queueNext_2_srcReady_0_6}}}}) || ((queue_2_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_2_srcReady_0 = queue_2_srcReady_0;
+        queueNext_2_srcReady_0 = ((queue_2_srcReady_0 || (|{(queue_2_psrc_0 == io_writebackSignal_4),{(queue_2_psrc_0 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_0_7,{_zz_queueNext_2_srcReady_0_8,_zz_queueNext_2_srcReady_0_9}}}})) || ((|{((queue_2_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_0_10 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_0_11,{_zz_queueNext_2_srcReady_0_12,_zz_queueNext_2_srcReady_0_13}}}}) || ((queue_2_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_2) begin
-      if(when_IssueQueue_l83_2) begin
+    if(when_IssueQueue_l73_2) begin
+      if(when_IssueQueue_l75_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_3_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_1,{_zz_queueNext_2_srcReady_1_1,_zz_queueNext_2_srcReady_1_2}}}})) || ((|{((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_1_4,{_zz_queueNext_2_srcReady_1_5,_zz_queueNext_2_srcReady_1_6}}}}) || ((queue_2_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end else begin
-      if(when_IssueQueue_l96_2) begin
+      if(when_IssueQueue_l93_2) begin
         queueNext_2_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_2_srcReady_1 = queue_2_srcReady_1;
+        queueNext_2_srcReady_1 = ((queue_2_srcReady_1 || (|{(queue_2_psrc_1 == io_writebackSignal_4),{(queue_2_psrc_1 == io_writebackSignal_3),{_zz_queueNext_2_srcReady_1_7,{_zz_queueNext_2_srcReady_1_8,_zz_queueNext_2_srcReady_1_9}}}})) || ((|{((queue_2_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_2_srcReady_1_10 && io_earlyWakeup_6_valid),{_zz_queueNext_2_srcReady_1_11,{_zz_queueNext_2_srcReady_1_12,_zz_queueNext_2_srcReady_1_13}}}}) || ((queue_2_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96_2 = writeVector[2];
-  assign when_IssueQueue_l81_3 = shiftAhead[3];
-  assign when_IssueQueue_l89 = writeVector[4];
+  assign when_IssueQueue_l93_2 = writeVector[2];
+  assign when_IssueQueue_l73_3 = shiftAhead[3];
+  assign when_IssueQueue_l86 = writeVector[4];
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_valid = appendEntry_valid;
       end else begin
         queueNext_3_valid = queue_3_valid;
@@ -22080,14 +20990,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = 5'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_robIdx = appendEntry_robIdx;
       end else begin
         queueNext_3_robIdx = queue_3_robIdx;
@@ -22096,14 +21006,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_3_branchInfo_predictPC = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchInfo_predictPC = appendEntry_branchInfo_predictPC;
       end else begin
         queueNext_3_branchInfo_predictPC = queue_3_branchInfo_predictPC;
@@ -22112,14 +21022,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_3_branchInfo_predictResult = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_branchInfo_predictResult = appendEntry_branchInfo_predictResult;
       end else begin
         queueNext_3_branchInfo_predictResult = queue_3_branchInfo_predictResult;
@@ -22128,14 +21038,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_exception = appendEntry_exceptionInfo_exception;
       end else begin
         queueNext_3_exceptionInfo_exception = queue_3_exceptionInfo_exception;
@@ -22144,14 +21054,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eCode = appendEntry_exceptionInfo_eCode;
       end else begin
         queueNext_3_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
@@ -22160,14 +21070,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_exceptionInfo_eSubCode = appendEntry_exceptionInfo_eSubCode;
       end else begin
         queueNext_3_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
@@ -22176,14 +21086,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_pc = appendEntry_pc;
       end else begin
         queueNext_3_pc = queue_3_pc;
@@ -22192,14 +21102,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_prd = appendEntry_prd;
       end else begin
         queueNext_3_prd = queue_3_prd;
@@ -22208,14 +21118,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_0 = appendEntry_psrc_0;
       end else begin
         queueNext_3_psrc_0 = queue_3_psrc_0;
@@ -22224,14 +21134,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = 6'h00;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_psrc_1 = appendEntry_psrc_1;
       end else begin
         queueNext_3_psrc_1 = queue_3_psrc_1;
@@ -22240,14 +21150,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = 32'h00000000;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_imm = appendEntry_imm;
       end else begin
         queueNext_3_imm = queue_3_imm;
@@ -22256,14 +21166,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_3_uop_aluOp = ALUOp_add;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_aluOp = appendEntry_uop_aluOp;
       end else begin
         queueNext_3_uop_aluOp = queue_3_uop_aluOp;
@@ -22272,14 +21182,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_3_uop_bruOp = BRUOp_nop;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_bruOp = appendEntry_uop_bruOp;
       end else begin
         queueNext_3_uop_bruOp = queue_3_uop_bruOp;
@@ -22288,14 +21198,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_3_uop_cruOp = CRUOp_nop;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_uop_cruOp = appendEntry_uop_cruOp;
       end else begin
         queueNext_3_uop_cruOp = queue_3_uop_cruOp;
@@ -22304,14 +21214,14 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_3_roop_aluROOp = ALUROOp_reg_1;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_roop_aluROOp = appendEntry_roop_aluROOp;
       end else begin
         queueNext_3_roop_aluROOp = queue_3_roop_aluROOp;
@@ -22320,38 +21230,40 @@ module IssueQueue (
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_0 = appendEntry_srcReady_0;
       end else begin
         queueNext_3_srcReady_0 = queue_3_srcReady_0;
+        queueNext_3_srcReady_0 = ((queue_3_srcReady_0 || (|{(queue_3_psrc_0 == io_writebackSignal_4),{(queue_3_psrc_0 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_0,{_zz_queueNext_3_srcReady_0_1,_zz_queueNext_3_srcReady_0_2}}}})) || ((|{((queue_3_psrc_0 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_3_srcReady_0_3 && io_earlyWakeup_6_valid),{_zz_queueNext_3_srcReady_0_4,{_zz_queueNext_3_srcReady_0_5,_zz_queueNext_3_srcReady_0_6}}}}) || ((queue_3_psrc_0 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
   always @(*) begin
-    if(when_IssueQueue_l81_3) begin
-      if(when_IssueQueue_l89) begin
+    if(when_IssueQueue_l73_3) begin
+      if(when_IssueQueue_l86) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = 1'b0;
       end
     end else begin
-      if(when_IssueQueue_l96_3) begin
+      if(when_IssueQueue_l93_3) begin
         queueNext_3_srcReady_1 = appendEntry_srcReady_1;
       end else begin
         queueNext_3_srcReady_1 = queue_3_srcReady_1;
+        queueNext_3_srcReady_1 = ((queue_3_srcReady_1 || (|{(queue_3_psrc_1 == io_writebackSignal_4),{(queue_3_psrc_1 == io_writebackSignal_3),{_zz_queueNext_3_srcReady_1,{_zz_queueNext_3_srcReady_1_1,_zz_queueNext_3_srcReady_1_2}}}})) || ((|{((queue_3_psrc_1 == io_earlyWakeup_7_payload) && io_earlyWakeup_7_valid),{(_zz_queueNext_3_srcReady_1_3 && io_earlyWakeup_6_valid),{_zz_queueNext_3_srcReady_1_4,{_zz_queueNext_3_srcReady_1_5,_zz_queueNext_3_srcReady_1_6}}}}) || ((queue_3_psrc_1 == io_wakeOut_payload) && io_wakeOut_valid)));
       end
     end
   end
 
-  assign when_IssueQueue_l96_3 = writeVector[3];
+  assign when_IssueQueue_l93_3 = writeVector[3];
   always @(*) begin
     _zz_io_csrInQueue[0] = ((queue_0_roop_aluROOp == ALUROOp_csr) && queue_0_valid);
     _zz_io_csrInQueue[1] = ((queue_1_roop_aluROOp == ALUROOp_csr) && queue_1_valid);
@@ -22360,8 +21272,7 @@ module IssueQueue (
   end
 
   assign io_csrInQueue = (|_zz_io_csrInQueue);
-  assign io_output_fire = (io_output_valid && io_output_ready);
-  assign io_input_ready = ((|emptyEntry[3 : 0]) || io_output_fire);
+  assign io_input_ready = (|emptyEntry[3 : 0]);
   assign _zz_issueEntry_valid = issueVector[3];
   assign _zz_issueEntry_valid_1 = (issueVector[1] || _zz_issueEntry_valid);
   assign _zz_issueEntry_valid_2 = (issueVector[2] || _zz_issueEntry_valid);
@@ -22401,6 +21312,7 @@ module IssueQueue (
   assign io_output_payload_uop_cruOp = issueEntry_uop_cruOp;
   assign io_output_payload_roop_aluROOp = issueEntry_roop_aluROOp;
   assign io_wakeOut_payload = issueEntry_prd;
+  assign io_output_fire = (io_output_valid && io_output_ready);
   assign io_wakeOut_valid = io_output_fire;
   always @(posedge aclk) begin
     if(!cpuClockingArea_areaFlushReset_newReset) begin
@@ -24315,7 +23227,7 @@ module InstrQueue (
   input  wire [0:0]    io_in_info_1_exceptionInfo_eSubCode,
   input  wire [31:0]   io_in_info_1_pc,
   input  wire [1:0]    io_out_allowMask,
-  output reg  [1:0]    io_out_availMask,
+  output wire [1:0]    io_out_availMask,
   output wire [31:0]   io_out_info_0_inst,
   output wire [31:0]   io_out_info_0_branchInfo_predictPC,
   output wire          io_out_info_0_branchInfo_predictResult,
@@ -24356,29 +23268,41 @@ module InstrQueue (
   wire       [2:0]    _zz_tail_0;
   reg                 _zz_allowMask_1;
   wire       [2:0]    _zz_tail_1;
-  reg        [31:0]   _zz__zz_io_out_info_0_inst;
-  reg        [31:0]   _zz_io_out_info_0_branchInfo_predictPC;
-  reg                 _zz_io_out_info_0_branchInfo_predictResult;
-  reg                 _zz_io_out_info_0_exceptionInfo_exception;
-  reg        [5:0]    _zz_io_out_info_0_exceptionInfo_eCode;
-  reg        [0:0]    _zz_io_out_info_0_exceptionInfo_eSubCode;
-  reg        [31:0]   _zz_io_out_info_0_pc;
-  wire       [0:0]    _zz__zz_io_out_dispatchInfo_0_ard;
-  wire       [4:0]    _zz_when_InstrQueue_l119_2;
-  wire       [0:0]    _zz_when_InstrQueue_l119_3;
-  reg                 _zz_io_out_availMask;
+  wire       [2:0]    _zz__zz_infoOut_0_inst;
+  reg        [31:0]   _zz_infoOut_0_inst_1;
+  reg        [31:0]   _zz_infoOut_0_branchInfo_predictPC;
+  reg                 _zz_infoOut_0_branchInfo_predictResult;
+  reg                 _zz_infoOut_0_exceptionInfo_exception;
+  reg        [5:0]    _zz_infoOut_0_exceptionInfo_eCode;
+  reg        [0:0]    _zz_infoOut_0_exceptionInfo_eSubCode;
+  reg        [31:0]   _zz_infoOut_0_pc;
+  reg        [31:0]   _zz__zz_when_InstrQueue_l128;
+  wire       [2:0]    _zz__zz_when_InstrQueue_l128_1;
+  wire       [2:0]    _zz__zz_when_InstrQueue_l128_2;
+  wire       [0:0]    _zz__zz_dispatchInfoOut_0_ard;
+  wire       [4:0]    _zz_when_InstrQueue_l128_4;
+  wire       [0:0]    _zz_when_InstrQueue_l128_5;
+  reg                 _zz_availMaskOut;
+  wire       [2:0]    _zz_availMaskOut_1;
+  wire       [2:0]    _zz_availMaskOut_2;
   wire       [2:0]    _zz_head_0;
-  reg        [31:0]   _zz__zz_io_out_info_1_inst;
-  reg        [31:0]   _zz_io_out_info_1_branchInfo_predictPC;
-  reg                 _zz_io_out_info_1_branchInfo_predictResult;
-  reg                 _zz_io_out_info_1_exceptionInfo_exception;
-  reg        [5:0]    _zz_io_out_info_1_exceptionInfo_eCode;
-  reg        [0:0]    _zz_io_out_info_1_exceptionInfo_eSubCode;
-  reg        [31:0]   _zz_io_out_info_1_pc;
-  wire       [0:0]    _zz__zz_io_out_dispatchInfo_1_ard;
-  wire       [4:0]    _zz_when_InstrQueue_l119_1_1;
-  wire       [0:0]    _zz_when_InstrQueue_l119_1_2;
-  reg                 _zz_io_out_availMask_1;
+  wire       [2:0]    _zz__zz_infoOut_1_inst;
+  reg        [31:0]   _zz_infoOut_1_inst_1;
+  reg        [31:0]   _zz_infoOut_1_branchInfo_predictPC;
+  reg                 _zz_infoOut_1_branchInfo_predictResult;
+  reg                 _zz_infoOut_1_exceptionInfo_exception;
+  reg        [5:0]    _zz_infoOut_1_exceptionInfo_eCode;
+  reg        [0:0]    _zz_infoOut_1_exceptionInfo_eSubCode;
+  reg        [31:0]   _zz_infoOut_1_pc;
+  reg        [31:0]   _zz__zz_when_InstrQueue_l128_2_1;
+  wire       [2:0]    _zz__zz_when_InstrQueue_l128_2_2;
+  wire       [2:0]    _zz__zz_when_InstrQueue_l128_2_3;
+  wire       [0:0]    _zz__zz_dispatchInfoOut_1_ard;
+  wire       [4:0]    _zz_when_InstrQueue_l128_1_1;
+  wire       [0:0]    _zz_when_InstrQueue_l128_1_2;
+  reg                 _zz_availMaskOut_3;
+  wire       [2:0]    _zz_availMaskOut_4;
+  wire       [2:0]    _zz_availMaskOut_5;
   wire       [2:0]    _zz_head_1;
   reg        [31:0]   queue_0_inst;
   reg        [31:0]   queue_0_branchInfo_predictPC;
@@ -24448,10 +23372,33 @@ module InstrQueue (
   reg        [2:0]    head_1;
   reg        [2:0]    tail_0;
   reg        [2:0]    tail_1;
+  reg        [31:0]   infoOut_0_inst;
+  reg        [31:0]   infoOut_0_branchInfo_predictPC;
+  reg                 infoOut_0_branchInfo_predictResult;
+  reg                 infoOut_0_exceptionInfo_exception;
+  reg        [5:0]    infoOut_0_exceptionInfo_eCode;
+  reg        [0:0]    infoOut_0_exceptionInfo_eSubCode;
+  reg        [31:0]   infoOut_0_pc;
+  reg        [31:0]   infoOut_1_inst;
+  reg        [31:0]   infoOut_1_branchInfo_predictPC;
+  reg                 infoOut_1_branchInfo_predictResult;
+  reg                 infoOut_1_exceptionInfo_exception;
+  reg        [5:0]    infoOut_1_exceptionInfo_eCode;
+  reg        [0:0]    infoOut_1_exceptionInfo_eSubCode;
+  reg        [31:0]   infoOut_1_pc;
+  reg        [2:0]    dispatchInfoOut_0_fuType;
+  reg        [4:0]    dispatchInfoOut_0_ard;
+  reg        [4:0]    dispatchInfoOut_0_asrc_0;
+  reg        [4:0]    dispatchInfoOut_0_asrc_1;
+  reg        [2:0]    dispatchInfoOut_1_fuType;
+  reg        [4:0]    dispatchInfoOut_1_ard;
+  reg        [4:0]    dispatchInfoOut_1_asrc_0;
+  reg        [4:0]    dispatchInfoOut_1_asrc_1;
+  reg        [1:0]    availMaskOut;
   wire       [1:0]    fetchNum;
   wire       [1:0]    dispatchNum;
   reg        [1:0]    allowMask;
-  wire                when_InstrQueue_l33;
+  wire                when_InstrQueue_l38;
   wire       [7:0]    _zz_1;
   wire                _zz_2;
   wire                _zz_3;
@@ -24461,7 +23408,7 @@ module InstrQueue (
   wire                _zz_7;
   wire                _zz_8;
   wire                _zz_9;
-  wire                when_InstrQueue_l33_1;
+  wire                when_InstrQueue_l38_1;
   wire       [7:0]    _zz_10;
   wire                _zz_11;
   wire                _zz_12;
@@ -24471,26 +23418,28 @@ module InstrQueue (
   wire                _zz_16;
   wire                _zz_17;
   wire                _zz_18;
-  wire       [31:0]   _zz_io_out_info_0_inst;
-  reg        [2:0]    _zz_io_out_dispatchInfo_0_fuType;
-  reg        [4:0]    _zz_io_out_dispatchInfo_0_ard;
-  reg        [4:0]    _zz_io_out_dispatchInfo_0_asrc_0;
-  reg        [4:0]    _zz_io_out_dispatchInfo_0_asrc_1;
-  wire       [4:0]    _zz_io_out_dispatchInfo_0_ard_1;
-  wire       [4:0]    _zz_when_InstrQueue_l119;
-  wire       [4:0]    _zz_io_out_dispatchInfo_0_asrc_1_1;
-  wire       [0:0]    _zz_io_out_dispatchInfo_0_ard_2;
-  wire                when_InstrQueue_l119;
-  wire       [31:0]   _zz_io_out_info_1_inst;
-  reg        [2:0]    _zz_io_out_dispatchInfo_1_fuType;
-  reg        [4:0]    _zz_io_out_dispatchInfo_1_ard;
-  reg        [4:0]    _zz_io_out_dispatchInfo_1_asrc_0;
-  reg        [4:0]    _zz_io_out_dispatchInfo_1_asrc_1;
-  wire       [4:0]    _zz_io_out_dispatchInfo_1_ard_1;
-  wire       [4:0]    _zz_when_InstrQueue_l119_1;
-  wire       [4:0]    _zz_io_out_dispatchInfo_1_asrc_1_1;
-  wire       [0:0]    _zz_io_out_dispatchInfo_1_ard_2;
-  wire                when_InstrQueue_l119_1;
+  wire       [2:0]    _zz_infoOut_0_inst;
+  wire       [31:0]   _zz_when_InstrQueue_l128;
+  reg        [2:0]    _zz_dispatchInfoOut_0_fuType;
+  reg        [4:0]    _zz_dispatchInfoOut_0_ard;
+  reg        [4:0]    _zz_dispatchInfoOut_0_asrc_0;
+  reg        [4:0]    _zz_dispatchInfoOut_0_asrc_1;
+  wire       [4:0]    _zz_dispatchInfoOut_0_ard_1;
+  wire       [4:0]    _zz_when_InstrQueue_l128_1;
+  wire       [4:0]    _zz_dispatchInfoOut_0_asrc_1_1;
+  wire       [0:0]    _zz_dispatchInfoOut_0_ard_2;
+  wire                when_InstrQueue_l128;
+  wire       [2:0]    _zz_infoOut_1_inst;
+  wire       [31:0]   _zz_when_InstrQueue_l128_2;
+  reg        [2:0]    _zz_dispatchInfoOut_1_fuType;
+  reg        [4:0]    _zz_dispatchInfoOut_1_ard;
+  reg        [4:0]    _zz_dispatchInfoOut_1_asrc_0;
+  reg        [4:0]    _zz_dispatchInfoOut_1_asrc_1;
+  wire       [4:0]    _zz_dispatchInfoOut_1_ard_1;
+  wire       [4:0]    _zz_when_InstrQueue_l128_3;
+  wire       [4:0]    _zz_dispatchInfoOut_1_asrc_1_1;
+  wire       [0:0]    _zz_dispatchInfoOut_1_ard_2;
+  wire                when_InstrQueue_l128_1;
   reg        [1:0]    _zz_valid_0;
   reg        [1:0]    _zz_valid_0_1;
   reg        [1:0]    _zz_valid_1;
@@ -24510,20 +23459,32 @@ module InstrQueue (
   `ifndef SYNTHESIS
   reg [55:0] io_out_dispatchInfo_0_fuType_string;
   reg [55:0] io_out_dispatchInfo_1_fuType_string;
-  reg [55:0] _zz_io_out_dispatchInfo_0_fuType_string;
-  reg [55:0] _zz_io_out_dispatchInfo_1_fuType_string;
+  reg [55:0] dispatchInfoOut_0_fuType_string;
+  reg [55:0] dispatchInfoOut_1_fuType_string;
+  reg [55:0] _zz_dispatchInfoOut_0_fuType_string;
+  reg [55:0] _zz_dispatchInfoOut_1_fuType_string;
   `endif
 
 
   assign _zz_tail_0 = {1'd0, fetchNum};
   assign _zz_tail_1 = {1'd0, fetchNum};
-  assign _zz__zz_io_out_dispatchInfo_0_ard = 1'b1;
-  assign _zz_when_InstrQueue_l119_3 = 1'b1;
-  assign _zz_when_InstrQueue_l119_2 = {4'd0, _zz_when_InstrQueue_l119_3};
+  assign _zz__zz_infoOut_0_inst = {1'd0, dispatchNum};
+  assign _zz__zz_when_InstrQueue_l128_1 = (head_0 + _zz__zz_when_InstrQueue_l128_2);
+  assign _zz__zz_when_InstrQueue_l128_2 = {1'd0, dispatchNum};
+  assign _zz__zz_dispatchInfoOut_0_ard = 1'b1;
+  assign _zz_when_InstrQueue_l128_5 = 1'b1;
+  assign _zz_when_InstrQueue_l128_4 = {4'd0, _zz_when_InstrQueue_l128_5};
+  assign _zz_availMaskOut_1 = (head_0 + _zz_availMaskOut_2);
+  assign _zz_availMaskOut_2 = {1'd0, dispatchNum};
   assign _zz_head_0 = {1'd0, dispatchNum};
-  assign _zz__zz_io_out_dispatchInfo_1_ard = 1'b1;
-  assign _zz_when_InstrQueue_l119_1_2 = 1'b1;
-  assign _zz_when_InstrQueue_l119_1_1 = {4'd0, _zz_when_InstrQueue_l119_1_2};
+  assign _zz__zz_infoOut_1_inst = {1'd0, dispatchNum};
+  assign _zz__zz_when_InstrQueue_l128_2_2 = (head_1 + _zz__zz_when_InstrQueue_l128_2_3);
+  assign _zz__zz_when_InstrQueue_l128_2_3 = {1'd0, dispatchNum};
+  assign _zz__zz_dispatchInfoOut_1_ard = 1'b1;
+  assign _zz_when_InstrQueue_l128_1_2 = 1'b1;
+  assign _zz_when_InstrQueue_l128_1_1 = {4'd0, _zz_when_InstrQueue_l128_1_2};
+  assign _zz_availMaskOut_4 = (head_1 + _zz_availMaskOut_5);
+  assign _zz_availMaskOut_5 = {1'd0, dispatchNum};
   assign _zz_head_1 = {1'd0, dispatchNum};
   assign _zz_fetchNum_1 = {io_in_allowMask[1],io_in_allowMask[0]};
   assign _zz_dispatchNum_1 = {io_out_allowMask[1],io_out_allowMask[0]};
@@ -24572,172 +23533,208 @@ module InstrQueue (
   end
 
   always @(*) begin
-    case(head_0)
+    case(_zz_infoOut_0_inst)
       3'b000 : begin
-        _zz__zz_io_out_info_0_inst = queue_0_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_0_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_0_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_0_pc;
-        _zz_io_out_availMask = valid_0;
+        _zz_infoOut_0_inst_1 = queue_0_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_0_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_0_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_0_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_0_pc;
       end
       3'b001 : begin
-        _zz__zz_io_out_info_0_inst = queue_1_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_1_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_1_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_1_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_1_pc;
-        _zz_io_out_availMask = valid_1;
+        _zz_infoOut_0_inst_1 = queue_1_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_1_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_1_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_1_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_1_pc;
       end
       3'b010 : begin
-        _zz__zz_io_out_info_0_inst = queue_2_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_2_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_2_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_2_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_2_pc;
-        _zz_io_out_availMask = valid_2;
+        _zz_infoOut_0_inst_1 = queue_2_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_2_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_2_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_2_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_2_pc;
       end
       3'b011 : begin
-        _zz__zz_io_out_info_0_inst = queue_3_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_3_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_3_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_3_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_3_pc;
-        _zz_io_out_availMask = valid_3;
+        _zz_infoOut_0_inst_1 = queue_3_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_3_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_3_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_3_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_3_pc;
       end
       3'b100 : begin
-        _zz__zz_io_out_info_0_inst = queue_4_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_4_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_4_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_4_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_4_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_4_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_4_pc;
-        _zz_io_out_availMask = valid_4;
+        _zz_infoOut_0_inst_1 = queue_4_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_4_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_4_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_4_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_4_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_4_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_4_pc;
       end
       3'b101 : begin
-        _zz__zz_io_out_info_0_inst = queue_5_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_5_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_5_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_5_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_5_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_5_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_5_pc;
-        _zz_io_out_availMask = valid_5;
+        _zz_infoOut_0_inst_1 = queue_5_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_5_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_5_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_5_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_5_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_5_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_5_pc;
       end
       3'b110 : begin
-        _zz__zz_io_out_info_0_inst = queue_6_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_6_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_6_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_6_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_6_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_6_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_6_pc;
-        _zz_io_out_availMask = valid_6;
+        _zz_infoOut_0_inst_1 = queue_6_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_6_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_6_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_6_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_6_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_6_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_6_pc;
       end
       default : begin
-        _zz__zz_io_out_info_0_inst = queue_7_inst;
-        _zz_io_out_info_0_branchInfo_predictPC = queue_7_branchInfo_predictPC;
-        _zz_io_out_info_0_branchInfo_predictResult = queue_7_branchInfo_predictResult;
-        _zz_io_out_info_0_exceptionInfo_exception = queue_7_exceptionInfo_exception;
-        _zz_io_out_info_0_exceptionInfo_eCode = queue_7_exceptionInfo_eCode;
-        _zz_io_out_info_0_exceptionInfo_eSubCode = queue_7_exceptionInfo_eSubCode;
-        _zz_io_out_info_0_pc = queue_7_pc;
-        _zz_io_out_availMask = valid_7;
+        _zz_infoOut_0_inst_1 = queue_7_inst;
+        _zz_infoOut_0_branchInfo_predictPC = queue_7_branchInfo_predictPC;
+        _zz_infoOut_0_branchInfo_predictResult = queue_7_branchInfo_predictResult;
+        _zz_infoOut_0_exceptionInfo_exception = queue_7_exceptionInfo_exception;
+        _zz_infoOut_0_exceptionInfo_eCode = queue_7_exceptionInfo_eCode;
+        _zz_infoOut_0_exceptionInfo_eSubCode = queue_7_exceptionInfo_eSubCode;
+        _zz_infoOut_0_pc = queue_7_pc;
       end
     endcase
   end
 
   always @(*) begin
-    case(head_1)
+    case(_zz__zz_when_InstrQueue_l128_1)
+      3'b000 : _zz__zz_when_InstrQueue_l128 = queue_0_inst;
+      3'b001 : _zz__zz_when_InstrQueue_l128 = queue_1_inst;
+      3'b010 : _zz__zz_when_InstrQueue_l128 = queue_2_inst;
+      3'b011 : _zz__zz_when_InstrQueue_l128 = queue_3_inst;
+      3'b100 : _zz__zz_when_InstrQueue_l128 = queue_4_inst;
+      3'b101 : _zz__zz_when_InstrQueue_l128 = queue_5_inst;
+      3'b110 : _zz__zz_when_InstrQueue_l128 = queue_6_inst;
+      default : _zz__zz_when_InstrQueue_l128 = queue_7_inst;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_availMaskOut_1)
+      3'b000 : _zz_availMaskOut = valid_0;
+      3'b001 : _zz_availMaskOut = valid_1;
+      3'b010 : _zz_availMaskOut = valid_2;
+      3'b011 : _zz_availMaskOut = valid_3;
+      3'b100 : _zz_availMaskOut = valid_4;
+      3'b101 : _zz_availMaskOut = valid_5;
+      3'b110 : _zz_availMaskOut = valid_6;
+      default : _zz_availMaskOut = valid_7;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_infoOut_1_inst)
       3'b000 : begin
-        _zz__zz_io_out_info_1_inst = queue_0_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_0_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_0_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_0_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_0_pc;
-        _zz_io_out_availMask_1 = valid_0;
+        _zz_infoOut_1_inst_1 = queue_0_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_0_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_0_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_0_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_0_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_0_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_0_pc;
       end
       3'b001 : begin
-        _zz__zz_io_out_info_1_inst = queue_1_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_1_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_1_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_1_pc;
-        _zz_io_out_availMask_1 = valid_1;
+        _zz_infoOut_1_inst_1 = queue_1_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_1_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_1_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_1_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_1_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_1_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_1_pc;
       end
       3'b010 : begin
-        _zz__zz_io_out_info_1_inst = queue_2_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_2_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_2_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_2_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_2_pc;
-        _zz_io_out_availMask_1 = valid_2;
+        _zz_infoOut_1_inst_1 = queue_2_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_2_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_2_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_2_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_2_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_2_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_2_pc;
       end
       3'b011 : begin
-        _zz__zz_io_out_info_1_inst = queue_3_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_3_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_3_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_3_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_3_pc;
-        _zz_io_out_availMask_1 = valid_3;
+        _zz_infoOut_1_inst_1 = queue_3_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_3_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_3_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_3_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_3_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_3_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_3_pc;
       end
       3'b100 : begin
-        _zz__zz_io_out_info_1_inst = queue_4_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_4_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_4_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_4_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_4_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_4_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_4_pc;
-        _zz_io_out_availMask_1 = valid_4;
+        _zz_infoOut_1_inst_1 = queue_4_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_4_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_4_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_4_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_4_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_4_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_4_pc;
       end
       3'b101 : begin
-        _zz__zz_io_out_info_1_inst = queue_5_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_5_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_5_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_5_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_5_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_5_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_5_pc;
-        _zz_io_out_availMask_1 = valid_5;
+        _zz_infoOut_1_inst_1 = queue_5_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_5_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_5_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_5_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_5_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_5_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_5_pc;
       end
       3'b110 : begin
-        _zz__zz_io_out_info_1_inst = queue_6_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_6_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_6_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_6_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_6_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_6_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_6_pc;
-        _zz_io_out_availMask_1 = valid_6;
+        _zz_infoOut_1_inst_1 = queue_6_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_6_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_6_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_6_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_6_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_6_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_6_pc;
       end
       default : begin
-        _zz__zz_io_out_info_1_inst = queue_7_inst;
-        _zz_io_out_info_1_branchInfo_predictPC = queue_7_branchInfo_predictPC;
-        _zz_io_out_info_1_branchInfo_predictResult = queue_7_branchInfo_predictResult;
-        _zz_io_out_info_1_exceptionInfo_exception = queue_7_exceptionInfo_exception;
-        _zz_io_out_info_1_exceptionInfo_eCode = queue_7_exceptionInfo_eCode;
-        _zz_io_out_info_1_exceptionInfo_eSubCode = queue_7_exceptionInfo_eSubCode;
-        _zz_io_out_info_1_pc = queue_7_pc;
-        _zz_io_out_availMask_1 = valid_7;
+        _zz_infoOut_1_inst_1 = queue_7_inst;
+        _zz_infoOut_1_branchInfo_predictPC = queue_7_branchInfo_predictPC;
+        _zz_infoOut_1_branchInfo_predictResult = queue_7_branchInfo_predictResult;
+        _zz_infoOut_1_exceptionInfo_exception = queue_7_exceptionInfo_exception;
+        _zz_infoOut_1_exceptionInfo_eCode = queue_7_exceptionInfo_eCode;
+        _zz_infoOut_1_exceptionInfo_eSubCode = queue_7_exceptionInfo_eSubCode;
+        _zz_infoOut_1_pc = queue_7_pc;
       end
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz__zz_when_InstrQueue_l128_2_2)
+      3'b000 : _zz__zz_when_InstrQueue_l128_2_1 = queue_0_inst;
+      3'b001 : _zz__zz_when_InstrQueue_l128_2_1 = queue_1_inst;
+      3'b010 : _zz__zz_when_InstrQueue_l128_2_1 = queue_2_inst;
+      3'b011 : _zz__zz_when_InstrQueue_l128_2_1 = queue_3_inst;
+      3'b100 : _zz__zz_when_InstrQueue_l128_2_1 = queue_4_inst;
+      3'b101 : _zz__zz_when_InstrQueue_l128_2_1 = queue_5_inst;
+      3'b110 : _zz__zz_when_InstrQueue_l128_2_1 = queue_6_inst;
+      default : _zz__zz_when_InstrQueue_l128_2_1 = queue_7_inst;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_availMaskOut_4)
+      3'b000 : _zz_availMaskOut_3 = valid_0;
+      3'b001 : _zz_availMaskOut_3 = valid_1;
+      3'b010 : _zz_availMaskOut_3 = valid_2;
+      3'b011 : _zz_availMaskOut_3 = valid_3;
+      3'b100 : _zz_availMaskOut_3 = valid_4;
+      3'b101 : _zz_availMaskOut_3 = valid_5;
+      3'b110 : _zz_availMaskOut_3 = valid_6;
+      default : _zz_availMaskOut_3 = valid_7;
     endcase
   end
 
@@ -24765,25 +23762,47 @@ module InstrQueue (
     endcase
   end
   always @(*) begin
-    case(_zz_io_out_dispatchInfo_0_fuType)
-      FUType_alu : _zz_io_out_dispatchInfo_0_fuType_string = "alu    ";
-      FUType_csr : _zz_io_out_dispatchInfo_0_fuType_string = "csr    ";
-      FUType_counter : _zz_io_out_dispatchInfo_0_fuType_string = "counter";
-      FUType_lsu : _zz_io_out_dispatchInfo_0_fuType_string = "lsu    ";
-      FUType_mulu : _zz_io_out_dispatchInfo_0_fuType_string = "mulu   ";
-      FUType_divu : _zz_io_out_dispatchInfo_0_fuType_string = "divu   ";
-      default : _zz_io_out_dispatchInfo_0_fuType_string = "???????";
+    case(dispatchInfoOut_0_fuType)
+      FUType_alu : dispatchInfoOut_0_fuType_string = "alu    ";
+      FUType_csr : dispatchInfoOut_0_fuType_string = "csr    ";
+      FUType_counter : dispatchInfoOut_0_fuType_string = "counter";
+      FUType_lsu : dispatchInfoOut_0_fuType_string = "lsu    ";
+      FUType_mulu : dispatchInfoOut_0_fuType_string = "mulu   ";
+      FUType_divu : dispatchInfoOut_0_fuType_string = "divu   ";
+      default : dispatchInfoOut_0_fuType_string = "???????";
     endcase
   end
   always @(*) begin
-    case(_zz_io_out_dispatchInfo_1_fuType)
-      FUType_alu : _zz_io_out_dispatchInfo_1_fuType_string = "alu    ";
-      FUType_csr : _zz_io_out_dispatchInfo_1_fuType_string = "csr    ";
-      FUType_counter : _zz_io_out_dispatchInfo_1_fuType_string = "counter";
-      FUType_lsu : _zz_io_out_dispatchInfo_1_fuType_string = "lsu    ";
-      FUType_mulu : _zz_io_out_dispatchInfo_1_fuType_string = "mulu   ";
-      FUType_divu : _zz_io_out_dispatchInfo_1_fuType_string = "divu   ";
-      default : _zz_io_out_dispatchInfo_1_fuType_string = "???????";
+    case(dispatchInfoOut_1_fuType)
+      FUType_alu : dispatchInfoOut_1_fuType_string = "alu    ";
+      FUType_csr : dispatchInfoOut_1_fuType_string = "csr    ";
+      FUType_counter : dispatchInfoOut_1_fuType_string = "counter";
+      FUType_lsu : dispatchInfoOut_1_fuType_string = "lsu    ";
+      FUType_mulu : dispatchInfoOut_1_fuType_string = "mulu   ";
+      FUType_divu : dispatchInfoOut_1_fuType_string = "divu   ";
+      default : dispatchInfoOut_1_fuType_string = "???????";
+    endcase
+  end
+  always @(*) begin
+    case(_zz_dispatchInfoOut_0_fuType)
+      FUType_alu : _zz_dispatchInfoOut_0_fuType_string = "alu    ";
+      FUType_csr : _zz_dispatchInfoOut_0_fuType_string = "csr    ";
+      FUType_counter : _zz_dispatchInfoOut_0_fuType_string = "counter";
+      FUType_lsu : _zz_dispatchInfoOut_0_fuType_string = "lsu    ";
+      FUType_mulu : _zz_dispatchInfoOut_0_fuType_string = "mulu   ";
+      FUType_divu : _zz_dispatchInfoOut_0_fuType_string = "divu   ";
+      default : _zz_dispatchInfoOut_0_fuType_string = "???????";
+    endcase
+  end
+  always @(*) begin
+    case(_zz_dispatchInfoOut_1_fuType)
+      FUType_alu : _zz_dispatchInfoOut_1_fuType_string = "alu    ";
+      FUType_csr : _zz_dispatchInfoOut_1_fuType_string = "csr    ";
+      FUType_counter : _zz_dispatchInfoOut_1_fuType_string = "counter";
+      FUType_lsu : _zz_dispatchInfoOut_1_fuType_string = "lsu    ";
+      FUType_mulu : _zz_dispatchInfoOut_1_fuType_string = "mulu   ";
+      FUType_divu : _zz_dispatchInfoOut_1_fuType_string = "divu   ";
+      default : _zz_dispatchInfoOut_1_fuType_string = "???????";
     endcase
   end
   `endif
@@ -24796,7 +23815,7 @@ module InstrQueue (
     allowMask[1] = (! _zz_allowMask_1);
   end
 
-  assign when_InstrQueue_l33 = io_in_allowMask[0];
+  assign when_InstrQueue_l38 = io_in_allowMask[0];
   assign _zz_1 = ({7'd0,1'b1} <<< tail_0);
   assign _zz_2 = _zz_1[0];
   assign _zz_3 = _zz_1[1];
@@ -24806,7 +23825,7 @@ module InstrQueue (
   assign _zz_7 = _zz_1[5];
   assign _zz_8 = _zz_1[6];
   assign _zz_9 = _zz_1[7];
-  assign when_InstrQueue_l33_1 = io_in_allowMask[1];
+  assign when_InstrQueue_l38_1 = io_in_allowMask[1];
   assign _zz_10 = ({7'd0,1'b1} <<< tail_1);
   assign _zz_11 = _zz_10[0];
   assign _zz_12 = _zz_10[1];
@@ -24816,54 +23835,48 @@ module InstrQueue (
   assign _zz_16 = _zz_10[5];
   assign _zz_17 = _zz_10[6];
   assign _zz_18 = _zz_10[7];
-  assign _zz_io_out_info_0_inst = _zz__zz_io_out_info_0_inst;
-  assign io_out_info_0_inst = _zz_io_out_info_0_inst;
-  assign io_out_info_0_branchInfo_predictPC = _zz_io_out_info_0_branchInfo_predictPC;
-  assign io_out_info_0_branchInfo_predictResult = _zz_io_out_info_0_branchInfo_predictResult;
-  assign io_out_info_0_exceptionInfo_exception = _zz_io_out_info_0_exceptionInfo_exception;
-  assign io_out_info_0_exceptionInfo_eCode = _zz_io_out_info_0_exceptionInfo_eCode;
-  assign io_out_info_0_exceptionInfo_eSubCode = _zz_io_out_info_0_exceptionInfo_eSubCode;
-  assign io_out_info_0_pc = _zz_io_out_info_0_pc;
-  assign _zz_io_out_dispatchInfo_0_ard_1 = _zz_io_out_info_0_inst[4 : 0];
-  assign _zz_when_InstrQueue_l119 = _zz_io_out_info_0_inst[9 : 5];
-  assign _zz_io_out_dispatchInfo_0_asrc_1_1 = _zz_io_out_info_0_inst[14 : 10];
-  assign _zz_io_out_dispatchInfo_0_ard_2 = 1'b0;
+  assign _zz_infoOut_0_inst = (head_0 + _zz__zz_infoOut_0_inst);
+  assign _zz_when_InstrQueue_l128 = _zz__zz_when_InstrQueue_l128;
+  assign _zz_dispatchInfoOut_0_ard_1 = _zz_when_InstrQueue_l128[4 : 0];
+  assign _zz_when_InstrQueue_l128_1 = _zz_when_InstrQueue_l128[9 : 5];
+  assign _zz_dispatchInfoOut_0_asrc_1_1 = _zz_when_InstrQueue_l128[14 : 10];
+  assign _zz_dispatchInfoOut_0_ard_2 = 1'b0;
   always @(*) begin
-    _zz_io_out_dispatchInfo_0_ard = {4'd0, _zz_io_out_dispatchInfo_0_ard_2};
-    casez(_zz_io_out_info_0_inst)
+    _zz_dispatchInfoOut_0_ard = {4'd0, _zz_dispatchInfoOut_0_ard_2};
+    casez(_zz_when_InstrQueue_l128)
       32'b0000000000000000011000?????00000 : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_ard = _zz_when_InstrQueue_l128_1;
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b00000000001010100???????????????, 32'b00000000001010110???????????????, 32'b00000110010010000011100000000000, 32'b00000110010010001???????????????, 32'b010100?????????????????????????? : begin
       end
       32'b0001010?????????????????????????, 32'b0001110????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b010101?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = {4'd0, _zz__zz_io_out_dispatchInfo_0_ard};
+        _zz_dispatchInfoOut_0_ard = {4'd0, _zz__zz_dispatchInfoOut_0_ard};
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
       end
       32'b00000100???????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b0000011000??????????????????????, 32'b00000110010010011???????????????, 32'b0010101011?????????????????????? : begin
       end
@@ -24872,7 +23885,7 @@ module InstrQueue (
       32'b00000110010010011??????????????? : begin
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_ard = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
       end
@@ -24882,17 +23895,17 @@ module InstrQueue (
   end
 
   always @(*) begin
-    _zz_io_out_dispatchInfo_0_asrc_0 = {4'd0, _zz_io_out_dispatchInfo_0_ard_2};
-    casez(_zz_io_out_info_0_inst)
+    _zz_dispatchInfoOut_0_asrc_0 = {4'd0, _zz_dispatchInfoOut_0_ard_2};
+    casez(_zz_when_InstrQueue_l128)
       32'b0000000000000000011000?????00000 : begin
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b00000000001010100???????????????, 32'b00000000001010110???????????????, 32'b00000110010010000011100000000000, 32'b00000110010010001???????????????, 32'b010100?????????????????????????? : begin
       end
@@ -24901,33 +23914,33 @@ module InstrQueue (
       32'b010101?????????????????????????? : begin
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b00000100???????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b0000011000??????????????????????, 32'b00000110010010011???????????????, 32'b0010101011?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b00000110010010000010100000000000, 32'b00000110010010000010110000000000, 32'b00000110010010000011000000000000, 32'b00000110010010000011010000000000, 32'b00111000011100100???????????????, 32'b00111000011100101??????????????? : begin
       end
       32'b00000110010010011??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_0 = _zz_when_InstrQueue_l119;
+        _zz_dispatchInfoOut_0_asrc_0 = _zz_when_InstrQueue_l128_1;
       end
       default : begin
       end
@@ -24935,14 +23948,14 @@ module InstrQueue (
   end
 
   always @(*) begin
-    _zz_io_out_dispatchInfo_0_asrc_1 = {4'd0, _zz_io_out_dispatchInfo_0_ard_2};
-    casez(_zz_io_out_info_0_inst)
+    _zz_dispatchInfoOut_0_asrc_1 = {4'd0, _zz_dispatchInfoOut_0_ard_2};
+    casez(_zz_when_InstrQueue_l128)
       32'b0000000000000000011000?????00000 : begin
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_asrc_1_1;
+        _zz_dispatchInfoOut_0_asrc_1 = _zz_dispatchInfoOut_0_asrc_1_1;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
       end
@@ -24953,18 +23966,18 @@ module InstrQueue (
       32'b010101?????????????????????????? : begin
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_asrc_1 = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b00000100???????????????????????? : begin
-        if(when_InstrQueue_l119) begin
-          _zz_io_out_dispatchInfo_0_asrc_1 = _zz_when_InstrQueue_l119;
+        if(when_InstrQueue_l128) begin
+          _zz_dispatchInfoOut_0_asrc_1 = _zz_when_InstrQueue_l128_1;
         end
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_asrc_1_1;
+        _zz_dispatchInfoOut_0_asrc_1 = _zz_dispatchInfoOut_0_asrc_1_1;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_asrc_1_1;
+        _zz_dispatchInfoOut_0_asrc_1 = _zz_dispatchInfoOut_0_asrc_1_1;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
       end
@@ -24973,13 +23986,13 @@ module InstrQueue (
       32'b00000110010010000010100000000000, 32'b00000110010010000010110000000000, 32'b00000110010010000011000000000000, 32'b00000110010010000011010000000000, 32'b00111000011100100???????????????, 32'b00111000011100101??????????????? : begin
       end
       32'b00000110010010011??????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_asrc_1_1;
+        _zz_dispatchInfoOut_0_asrc_1 = _zz_dispatchInfoOut_0_asrc_1_1;
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_asrc_1 = _zz_dispatchInfoOut_0_ard_1;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_ard_1;
+        _zz_dispatchInfoOut_0_asrc_1 = _zz_dispatchInfoOut_0_ard_1;
       end
       default : begin
       end
@@ -24987,122 +24000,107 @@ module InstrQueue (
   end
 
   always @(*) begin
-    casez(_zz_io_out_info_0_inst)
+    casez(_zz_when_InstrQueue_l128)
       32'b0000000000000000011000?????00000 : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_counter;
+        _zz_dispatchInfoOut_0_fuType = FUType_counter;
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_counter;
+        _zz_dispatchInfoOut_0_fuType = FUType_counter;
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_alu;
+        _zz_dispatchInfoOut_0_fuType = FUType_alu;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_alu;
+        _zz_dispatchInfoOut_0_fuType = FUType_alu;
       end
       32'b00000000001010100???????????????, 32'b00000000001010110???????????????, 32'b00000110010010000011100000000000, 32'b00000110010010001???????????????, 32'b010100?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_alu;
+        _zz_dispatchInfoOut_0_fuType = FUType_alu;
       end
       32'b0001010?????????????????????????, 32'b0001110????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_alu;
+        _zz_dispatchInfoOut_0_fuType = FUType_alu;
       end
       32'b010101?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_alu;
+        _zz_dispatchInfoOut_0_fuType = FUType_alu;
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_alu;
+        _zz_dispatchInfoOut_0_fuType = FUType_alu;
       end
       32'b00000100???????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_csr;
+        _zz_dispatchInfoOut_0_fuType = FUType_csr;
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_mulu;
+        _zz_dispatchInfoOut_0_fuType = FUType_mulu;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_divu;
+        _zz_dispatchInfoOut_0_fuType = FUType_divu;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_0_fuType = FUType_lsu;
       end
       32'b0000011000??????????????????????, 32'b00000110010010011???????????????, 32'b0010101011?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_0_fuType = FUType_lsu;
       end
       32'b00000110010010000010100000000000, 32'b00000110010010000010110000000000, 32'b00000110010010000011000000000000, 32'b00000110010010000011010000000000, 32'b00111000011100100???????????????, 32'b00111000011100101??????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_0_fuType = FUType_lsu;
       end
       32'b00000110010010011??????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_0_fuType = FUType_lsu;
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_0_fuType = FUType_lsu;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_0_fuType = FUType_lsu;
       end
       default : begin
-        _zz_io_out_dispatchInfo_0_fuType = FUType_alu;
+        _zz_dispatchInfoOut_0_fuType = FUType_alu;
       end
     endcase
   end
 
-  assign when_InstrQueue_l119 = ((_zz_when_InstrQueue_l119 != 5'h00) && (_zz_when_InstrQueue_l119 != _zz_when_InstrQueue_l119_2));
-  assign io_out_dispatchInfo_0_fuType = _zz_io_out_dispatchInfo_0_fuType;
-  assign io_out_dispatchInfo_0_ard = _zz_io_out_dispatchInfo_0_ard;
-  assign io_out_dispatchInfo_0_asrc_0 = _zz_io_out_dispatchInfo_0_asrc_0;
-  assign io_out_dispatchInfo_0_asrc_1 = _zz_io_out_dispatchInfo_0_asrc_1;
+  assign when_InstrQueue_l128 = ((_zz_when_InstrQueue_l128_1 != 5'h00) && (_zz_when_InstrQueue_l128_1 != _zz_when_InstrQueue_l128_4));
+  assign _zz_infoOut_1_inst = (head_1 + _zz__zz_infoOut_1_inst);
+  assign _zz_when_InstrQueue_l128_2 = _zz__zz_when_InstrQueue_l128_2_1;
+  assign _zz_dispatchInfoOut_1_ard_1 = _zz_when_InstrQueue_l128_2[4 : 0];
+  assign _zz_when_InstrQueue_l128_3 = _zz_when_InstrQueue_l128_2[9 : 5];
+  assign _zz_dispatchInfoOut_1_asrc_1_1 = _zz_when_InstrQueue_l128_2[14 : 10];
+  assign _zz_dispatchInfoOut_1_ard_2 = 1'b0;
   always @(*) begin
-    io_out_availMask[0] = _zz_io_out_availMask;
-    io_out_availMask[1] = _zz_io_out_availMask_1;
-  end
-
-  assign _zz_io_out_info_1_inst = _zz__zz_io_out_info_1_inst;
-  assign io_out_info_1_inst = _zz_io_out_info_1_inst;
-  assign io_out_info_1_branchInfo_predictPC = _zz_io_out_info_1_branchInfo_predictPC;
-  assign io_out_info_1_branchInfo_predictResult = _zz_io_out_info_1_branchInfo_predictResult;
-  assign io_out_info_1_exceptionInfo_exception = _zz_io_out_info_1_exceptionInfo_exception;
-  assign io_out_info_1_exceptionInfo_eCode = _zz_io_out_info_1_exceptionInfo_eCode;
-  assign io_out_info_1_exceptionInfo_eSubCode = _zz_io_out_info_1_exceptionInfo_eSubCode;
-  assign io_out_info_1_pc = _zz_io_out_info_1_pc;
-  assign _zz_io_out_dispatchInfo_1_ard_1 = _zz_io_out_info_1_inst[4 : 0];
-  assign _zz_when_InstrQueue_l119_1 = _zz_io_out_info_1_inst[9 : 5];
-  assign _zz_io_out_dispatchInfo_1_asrc_1_1 = _zz_io_out_info_1_inst[14 : 10];
-  assign _zz_io_out_dispatchInfo_1_ard_2 = 1'b0;
-  always @(*) begin
-    _zz_io_out_dispatchInfo_1_ard = {4'd0, _zz_io_out_dispatchInfo_1_ard_2};
-    casez(_zz_io_out_info_1_inst)
+    _zz_dispatchInfoOut_1_ard = {4'd0, _zz_dispatchInfoOut_1_ard_2};
+    casez(_zz_when_InstrQueue_l128_2)
       32'b0000000000000000011000?????00000 : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_ard = _zz_when_InstrQueue_l128_3;
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b00000000001010100???????????????, 32'b00000000001010110???????????????, 32'b00000110010010000011100000000000, 32'b00000110010010001???????????????, 32'b010100?????????????????????????? : begin
       end
       32'b0001010?????????????????????????, 32'b0001110????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b010101?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = {4'd0, _zz__zz_io_out_dispatchInfo_1_ard};
+        _zz_dispatchInfoOut_1_ard = {4'd0, _zz__zz_dispatchInfoOut_1_ard};
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
       end
       32'b00000100???????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b0000011000??????????????????????, 32'b00000110010010011???????????????, 32'b0010101011?????????????????????? : begin
       end
@@ -25111,7 +24109,7 @@ module InstrQueue (
       32'b00000110010010011??????????????? : begin
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_ard = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
       end
@@ -25121,17 +24119,17 @@ module InstrQueue (
   end
 
   always @(*) begin
-    _zz_io_out_dispatchInfo_1_asrc_0 = {4'd0, _zz_io_out_dispatchInfo_1_ard_2};
-    casez(_zz_io_out_info_1_inst)
+    _zz_dispatchInfoOut_1_asrc_0 = {4'd0, _zz_dispatchInfoOut_1_ard_2};
+    casez(_zz_when_InstrQueue_l128_2)
       32'b0000000000000000011000?????00000 : begin
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b00000000001010100???????????????, 32'b00000000001010110???????????????, 32'b00000110010010000011100000000000, 32'b00000110010010001???????????????, 32'b010100?????????????????????????? : begin
       end
@@ -25140,33 +24138,33 @@ module InstrQueue (
       32'b010101?????????????????????????? : begin
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b00000100???????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b0000011000??????????????????????, 32'b00000110010010011???????????????, 32'b0010101011?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b00000110010010000010100000000000, 32'b00000110010010000010110000000000, 32'b00000110010010000011000000000000, 32'b00000110010010000011010000000000, 32'b00111000011100100???????????????, 32'b00111000011100101??????????????? : begin
       end
       32'b00000110010010011??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_0 = _zz_when_InstrQueue_l119_1;
+        _zz_dispatchInfoOut_1_asrc_0 = _zz_when_InstrQueue_l128_3;
       end
       default : begin
       end
@@ -25174,14 +24172,14 @@ module InstrQueue (
   end
 
   always @(*) begin
-    _zz_io_out_dispatchInfo_1_asrc_1 = {4'd0, _zz_io_out_dispatchInfo_1_ard_2};
-    casez(_zz_io_out_info_1_inst)
+    _zz_dispatchInfoOut_1_asrc_1 = {4'd0, _zz_dispatchInfoOut_1_ard_2};
+    casez(_zz_when_InstrQueue_l128_2)
       32'b0000000000000000011000?????00000 : begin
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_asrc_1_1;
+        _zz_dispatchInfoOut_1_asrc_1 = _zz_dispatchInfoOut_1_asrc_1_1;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
       end
@@ -25192,18 +24190,18 @@ module InstrQueue (
       32'b010101?????????????????????????? : begin
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_asrc_1 = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b00000100???????????????????????? : begin
-        if(when_InstrQueue_l119_1) begin
-          _zz_io_out_dispatchInfo_1_asrc_1 = _zz_when_InstrQueue_l119_1;
+        if(when_InstrQueue_l128_1) begin
+          _zz_dispatchInfoOut_1_asrc_1 = _zz_when_InstrQueue_l128_3;
         end
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_asrc_1_1;
+        _zz_dispatchInfoOut_1_asrc_1 = _zz_dispatchInfoOut_1_asrc_1_1;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_asrc_1_1;
+        _zz_dispatchInfoOut_1_asrc_1 = _zz_dispatchInfoOut_1_asrc_1_1;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
       end
@@ -25212,13 +24210,13 @@ module InstrQueue (
       32'b00000110010010000010100000000000, 32'b00000110010010000010110000000000, 32'b00000110010010000011000000000000, 32'b00000110010010000011010000000000, 32'b00111000011100100???????????????, 32'b00111000011100101??????????????? : begin
       end
       32'b00000110010010011??????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_asrc_1_1;
+        _zz_dispatchInfoOut_1_asrc_1 = _zz_dispatchInfoOut_1_asrc_1_1;
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_asrc_1 = _zz_dispatchInfoOut_1_ard_1;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_ard_1;
+        _zz_dispatchInfoOut_1_asrc_1 = _zz_dispatchInfoOut_1_ard_1;
       end
       default : begin
       end
@@ -25226,69 +24224,65 @@ module InstrQueue (
   end
 
   always @(*) begin
-    casez(_zz_io_out_info_1_inst)
+    casez(_zz_when_InstrQueue_l128_2)
       32'b0000000000000000011000?????00000 : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_counter;
+        _zz_dispatchInfoOut_1_fuType = FUType_counter;
       end
       32'b000000000000000001100000000?????, 32'b000000000000000001100100000????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_counter;
+        _zz_dispatchInfoOut_1_fuType = FUType_counter;
       end
       32'b00000000000100000???????????????, 32'b00000000000100010???????????????, 32'b00000000000100100???????????????, 32'b00000000000100101???????????????, 32'b00000000000101000???????????????, 32'b00000000000101001???????????????, 32'b00000000000101010???????????????, 32'b00000000000101011???????????????, 32'b00000000000101110???????????????, 32'b00000000000101111???????????????, 32'b00000000000110000??????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_alu;
+        _zz_dispatchInfoOut_1_fuType = FUType_alu;
       end
       32'b0000001010??????????????????????, 32'b0000001000??????????????????????, 32'b0000001001??????????????????????, 32'b0000001101??????????????????????, 32'b0000001110??????????????????????, 32'b0000001111??????????????????????, 32'b00000000010000001???????????????, 32'b00000000010001001???????????????, 32'b00000000010010001???????????????, 32'b010011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_alu;
+        _zz_dispatchInfoOut_1_fuType = FUType_alu;
       end
       32'b00000000001010100???????????????, 32'b00000000001010110???????????????, 32'b00000110010010000011100000000000, 32'b00000110010010001???????????????, 32'b010100?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_alu;
+        _zz_dispatchInfoOut_1_fuType = FUType_alu;
       end
       32'b0001010?????????????????????????, 32'b0001110????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_alu;
+        _zz_dispatchInfoOut_1_fuType = FUType_alu;
       end
       32'b010101?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_alu;
+        _zz_dispatchInfoOut_1_fuType = FUType_alu;
       end
       32'b010110??????????????????????????, 32'b010111??????????????????????????, 32'b011000??????????????????????????, 32'b011001??????????????????????????, 32'b011010??????????????????????????, 32'b011011?????????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_alu;
+        _zz_dispatchInfoOut_1_fuType = FUType_alu;
       end
       32'b00000100???????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_csr;
+        _zz_dispatchInfoOut_1_fuType = FUType_csr;
       end
       32'b00000000000111000???????????????, 32'b00000000000111001???????????????, 32'b00000000000111010??????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_mulu;
+        _zz_dispatchInfoOut_1_fuType = FUType_mulu;
       end
       32'b00000000001000000???????????????, 32'b00000000001000001???????????????, 32'b00000000001000010???????????????, 32'b00000000001000011??????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_divu;
+        _zz_dispatchInfoOut_1_fuType = FUType_divu;
       end
       32'b00100000????????????????????????, 32'b0010100000??????????????????????, 32'b0010101000??????????????????????, 32'b0010100001??????????????????????, 32'b0010101001?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_1_fuType = FUType_lsu;
       end
       32'b0000011000??????????????????????, 32'b00000110010010011???????????????, 32'b0010101011?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_1_fuType = FUType_lsu;
       end
       32'b00000110010010000010100000000000, 32'b00000110010010000010110000000000, 32'b00000110010010000011000000000000, 32'b00000110010010000011010000000000, 32'b00111000011100100???????????????, 32'b00111000011100101??????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_1_fuType = FUType_lsu;
       end
       32'b00000110010010011??????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_1_fuType = FUType_lsu;
       end
       32'b00100001???????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_1_fuType = FUType_lsu;
       end
       32'b0010100100??????????????????????, 32'b0010100101??????????????????????, 32'b0010100110?????????????????????? : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_lsu;
+        _zz_dispatchInfoOut_1_fuType = FUType_lsu;
       end
       default : begin
-        _zz_io_out_dispatchInfo_1_fuType = FUType_alu;
+        _zz_dispatchInfoOut_1_fuType = FUType_alu;
       end
     endcase
   end
 
-  assign when_InstrQueue_l119_1 = ((_zz_when_InstrQueue_l119_1 != 5'h00) && (_zz_when_InstrQueue_l119_1 != _zz_when_InstrQueue_l119_1_1));
-  assign io_out_dispatchInfo_1_fuType = _zz_io_out_dispatchInfo_1_fuType;
-  assign io_out_dispatchInfo_1_ard = _zz_io_out_dispatchInfo_1_ard;
-  assign io_out_dispatchInfo_1_asrc_0 = _zz_io_out_dispatchInfo_1_asrc_0;
-  assign io_out_dispatchInfo_1_asrc_1 = _zz_io_out_dispatchInfo_1_asrc_1;
+  assign when_InstrQueue_l128_1 = ((_zz_when_InstrQueue_l128_3 != 5'h00) && (_zz_when_InstrQueue_l128_3 != _zz_when_InstrQueue_l128_1_1));
   always @(*) begin
     _zz_valid_0[0] = ((tail_0 == 3'b000) && io_in_allowMask[0]);
     _zz_valid_0[1] = ((tail_1 == 3'b000) && io_in_allowMask[1]);
@@ -25369,6 +24363,29 @@ module InstrQueue (
     _zz_valid_7_1[1] = ((head_1 == 3'b111) && io_out_allowMask[1]);
   end
 
+  assign io_out_info_0_inst = infoOut_0_inst;
+  assign io_out_info_0_branchInfo_predictPC = infoOut_0_branchInfo_predictPC;
+  assign io_out_info_0_branchInfo_predictResult = infoOut_0_branchInfo_predictResult;
+  assign io_out_info_0_exceptionInfo_exception = infoOut_0_exceptionInfo_exception;
+  assign io_out_info_0_exceptionInfo_eCode = infoOut_0_exceptionInfo_eCode;
+  assign io_out_info_0_exceptionInfo_eSubCode = infoOut_0_exceptionInfo_eSubCode;
+  assign io_out_info_0_pc = infoOut_0_pc;
+  assign io_out_info_1_inst = infoOut_1_inst;
+  assign io_out_info_1_branchInfo_predictPC = infoOut_1_branchInfo_predictPC;
+  assign io_out_info_1_branchInfo_predictResult = infoOut_1_branchInfo_predictResult;
+  assign io_out_info_1_exceptionInfo_exception = infoOut_1_exceptionInfo_exception;
+  assign io_out_info_1_exceptionInfo_eCode = infoOut_1_exceptionInfo_eCode;
+  assign io_out_info_1_exceptionInfo_eSubCode = infoOut_1_exceptionInfo_eSubCode;
+  assign io_out_info_1_pc = infoOut_1_pc;
+  assign io_out_dispatchInfo_0_fuType = dispatchInfoOut_0_fuType;
+  assign io_out_dispatchInfo_0_ard = dispatchInfoOut_0_ard;
+  assign io_out_dispatchInfo_0_asrc_0 = dispatchInfoOut_0_asrc_0;
+  assign io_out_dispatchInfo_0_asrc_1 = dispatchInfoOut_0_asrc_1;
+  assign io_out_dispatchInfo_1_fuType = dispatchInfoOut_1_fuType;
+  assign io_out_dispatchInfo_1_ard = dispatchInfoOut_1_ard;
+  assign io_out_dispatchInfo_1_asrc_0 = dispatchInfoOut_1_asrc_0;
+  assign io_out_dispatchInfo_1_asrc_1 = dispatchInfoOut_1_asrc_1;
+  assign io_out_availMask = availMaskOut;
   always @(posedge aclk) begin
     if(!cpuClockingArea_areaFlushReset_newReset) begin
       valid_0 <= 1'b0;
@@ -25383,10 +24400,13 @@ module InstrQueue (
       head_1 <= 3'b001;
       tail_0 <= 3'b000;
       tail_1 <= 3'b001;
+      availMaskOut <= 2'b00;
     end else begin
       tail_0 <= (tail_0 + _zz_tail_0);
       tail_1 <= (tail_1 + _zz_tail_1);
+      availMaskOut[0] <= _zz_availMaskOut;
       head_0 <= (head_0 + _zz_head_0);
+      availMaskOut[1] <= _zz_availMaskOut_3;
       head_1 <= (head_1 + _zz_head_1);
       valid_0 <= ((|_zz_valid_0_1) ? 1'b0 : (valid_0 || (|_zz_valid_0)));
       valid_1 <= ((|_zz_valid_1_1) ? 1'b0 : (valid_1 || (|_zz_valid_1)));
@@ -25400,7 +24420,7 @@ module InstrQueue (
   end
 
   always @(posedge aclk) begin
-    if(when_InstrQueue_l33) begin
+    if(when_InstrQueue_l38) begin
       if(_zz_2) begin
         queue_0_inst <= io_in_info_0_inst;
       end
@@ -25570,7 +24590,7 @@ module InstrQueue (
         queue_7_pc <= io_in_info_0_pc;
       end
     end
-    if(when_InstrQueue_l33_1) begin
+    if(when_InstrQueue_l38_1) begin
       if(_zz_11) begin
         queue_0_inst <= io_in_info_1_inst;
       end
@@ -25740,6 +24760,28 @@ module InstrQueue (
         queue_7_pc <= io_in_info_1_pc;
       end
     end
+    infoOut_0_inst <= _zz_infoOut_0_inst_1;
+    infoOut_0_branchInfo_predictPC <= _zz_infoOut_0_branchInfo_predictPC;
+    infoOut_0_branchInfo_predictResult <= _zz_infoOut_0_branchInfo_predictResult;
+    infoOut_0_exceptionInfo_exception <= _zz_infoOut_0_exceptionInfo_exception;
+    infoOut_0_exceptionInfo_eCode <= _zz_infoOut_0_exceptionInfo_eCode;
+    infoOut_0_exceptionInfo_eSubCode <= _zz_infoOut_0_exceptionInfo_eSubCode;
+    infoOut_0_pc <= _zz_infoOut_0_pc;
+    dispatchInfoOut_0_fuType <= _zz_dispatchInfoOut_0_fuType;
+    dispatchInfoOut_0_ard <= _zz_dispatchInfoOut_0_ard;
+    dispatchInfoOut_0_asrc_0 <= _zz_dispatchInfoOut_0_asrc_0;
+    dispatchInfoOut_0_asrc_1 <= _zz_dispatchInfoOut_0_asrc_1;
+    infoOut_1_inst <= _zz_infoOut_1_inst_1;
+    infoOut_1_branchInfo_predictPC <= _zz_infoOut_1_branchInfo_predictPC;
+    infoOut_1_branchInfo_predictResult <= _zz_infoOut_1_branchInfo_predictResult;
+    infoOut_1_exceptionInfo_exception <= _zz_infoOut_1_exceptionInfo_exception;
+    infoOut_1_exceptionInfo_eCode <= _zz_infoOut_1_exceptionInfo_eCode;
+    infoOut_1_exceptionInfo_eSubCode <= _zz_infoOut_1_exceptionInfo_eSubCode;
+    infoOut_1_pc <= _zz_infoOut_1_pc;
+    dispatchInfoOut_1_fuType <= _zz_dispatchInfoOut_1_fuType;
+    dispatchInfoOut_1_ard <= _zz_dispatchInfoOut_1_ard;
+    dispatchInfoOut_1_asrc_0 <= _zz_dispatchInfoOut_1_asrc_0;
+    dispatchInfoOut_1_asrc_1 <= _zz_dispatchInfoOut_1_asrc_1;
   end
 
 
@@ -28007,7 +27049,7 @@ module ROB (
   reg        [1:0]    ertnMask;
   reg        [1:0]    normalExceptionMask;
   reg        [1:0]    tlbrExceptionMask;
-  reg        [1:0]    falseTakenMask;
+  reg        [1:0]    lostTakenMask;
   wire       [31:0]   retirePC_0;
   wire       [31:0]   retirePC_1;
   wire       [4:0]    retireEROBIdx_0;
@@ -28028,7 +27070,7 @@ module ROB (
   wire                ertn;
   wire                normalException;
   wire                tlbrException;
-  wire                falseTaken;
+  wire                lostTaken;
   wire       [31:0]   snpc;
   wire       [31:0]   targetPC;
   wire                noPPRDMaskMid_0_0;
@@ -33847,7 +32889,7 @@ module ROB (
   assign ertn = (|(ertnMask & retireMask));
   assign normalException = ((_zz_retireEPC ? normalExceptionMask[0] : normalExceptionMask[1]) || idleEn);
   assign tlbrException = (_zz_retireEPC ? tlbrExceptionMask[0] : tlbrExceptionMask[1]);
-  assign falseTaken = (_zz_retireEPC ? falseTakenMask[0] : falseTakenMask[1]);
+  assign lostTaken = (_zz_retireEPC ? lostTakenMask[0] : lostTakenMask[1]);
   assign snpc = (_zz_retireEPC ? retireSNPC_0 : retireSNPC_1);
   assign targetPC = (_zz_retireEPC ? retireTargetPC_0 : retireTargetPC_1);
   assign noPPRDMaskMid_0_0 = noPPRDMask[0];
@@ -33897,8 +32939,8 @@ module ROB (
   end
 
   always @(*) begin
-    falseTakenMask[0] = ((_zz_retireMask && (! _zz_stage_updateBPU_0_taken)) && _zz_stage_updateBPU_0_predictFail);
-    falseTakenMask[1] = ((_zz_retireMask_3 && (! _zz_stage_updateBPU_1_taken)) && _zz_stage_updateBPU_1_predictFail);
+    lostTakenMask[0] = ((_zz_retireMask && _zz_stage_updateBPU_0_taken) && _zz_stage_updateBPU_0_predictFail);
+    lostTakenMask[1] = ((_zz_retireMask_3 && _zz_stage_updateBPU_1_taken) && _zz_stage_updateBPU_1_predictFail);
   end
 
   assign retirePC_0 = _zz_retirePC_0;
@@ -33945,7 +32987,7 @@ module ROB (
   assign stage_retireECode = retireRealECode;
   assign stage_retireESubCode = retireRealESubCode;
   assign stage_flush = flush;
-  assign stage_redirectPC = (normalException ? io_csrCtrl_eentry : (tlbrException ? io_csrCtrl_tlbrentry : (ertn ? io_csrCtrl_era : (falseTaken ? snpc : targetPC))));
+  assign stage_redirectPC = (normalException ? io_csrCtrl_eentry : (tlbrException ? io_csrCtrl_tlbrentry : (ertn ? io_csrCtrl_era : (lostTaken ? targetPC : snpc))));
   assign io_dispatch_availMask = stageReg_availROBMask;
   assign io_retireARAT_0_ard = stageReg_retireARAT_0_ard;
   assign io_retireARAT_0_prd = stageReg_retireARAT_0_prd;
@@ -43479,9 +42521,9 @@ module DCache (
   assign tagRead_3 = tag_3_rd_data;
   assign miss = ((stage2In_valid && stage2In_payload_lsCtrlBundle_normalMemOp) && (! ((|hit) || exceptionInfo_exception)));
   assign _zz_exceptionInfo_exception = (stage2In_payload_exceptionInfo_exception || (! stage2In_payload_checkTLBException));
-  assign exceptionInfo_exception = (_zz_exceptionInfo_exception ? stage1Out_payload_exceptionInfo_exception : exceptionInfo2_exception);
-  assign exceptionInfo_eCode = (_zz_exceptionInfo_exception ? stage1Out_payload_exceptionInfo_eCode : exceptionInfo2_eCode);
-  assign exceptionInfo_eSubCode = (_zz_exceptionInfo_exception ? stage1Out_payload_exceptionInfo_eSubCode : exceptionInfo2_eSubCode);
+  assign exceptionInfo_exception = (_zz_exceptionInfo_exception ? stage2In_payload_exceptionInfo_exception : exceptionInfo2_exception);
+  assign exceptionInfo_eCode = (_zz_exceptionInfo_exception ? stage2In_payload_exceptionInfo_eCode : exceptionInfo2_eCode);
+  assign exceptionInfo_eSubCode = (_zz_exceptionInfo_exception ? stage2In_payload_exceptionInfo_eSubCode : exceptionInfo2_eSubCode);
   assign noStructuralHazard = (((! axiLoad) && ((! miss) || missBufferAvail)) && ((! stage2In_payload_lsCtrlBundle_store) || writeBufferAvail));
   always @(*) begin
     axiFinish = 1'b0;
