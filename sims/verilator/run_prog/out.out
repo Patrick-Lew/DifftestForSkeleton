@@ -1,0 +1,345 @@
+In file included from Vsimu_top__Syms.h:17,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024root.h:14:1: error: ISO C++ forbids declaration of ‘VL_MODULE’ with no type [-fpermissive]
+   14 | VL_MODULE(Vsimu_top___024root) {
+      | ^~~~~~~~~
+Vsimu_top___024root.h:14:11: error: ‘<anonymous>’ has incomplete type
+   14 | VL_MODULE(Vsimu_top___024root) {
+      |           ^~~~~~~~~~~~~~~~~~~
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:16:7: note: forward declaration of ‘class Vsimu_top___024root’
+   16 | class Vsimu_top___024root;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from Vsimu_top__Syms.h:17,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024root.h: In function ‘int VL_MODULE(Vsimu_top___024root)’:
+Vsimu_top___024root.h:15:3: error: expected primary-expression before ‘public’
+   15 |   public:
+      |   ^~~~~~
+In file included from Vsimu_top__Syms.h:17,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024root.h:4246:5: error: abstract declarator ‘VL_MODULE(Vsimu_top___024root)::<unnamed struct>’ used as declaration
+ 4246 |     };
+      |     ^
+Vsimu_top___024root.h:5076:5: error: abstract declarator ‘VL_MODULE(Vsimu_top___024root)::<unnamed struct>’ used as declaration
+ 5076 |     };
+      |     ^
+Vsimu_top___024root.h:5082:41: error: invalid use of incomplete type ‘class Vsimu_top___024root’
+ 5082 |     Vsimu_top___024root(const char* name);
+      |                                         ^
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:16:7: note: forward declaration of ‘class Vsimu_top___024root’
+   16 | class Vsimu_top___024root;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from Vsimu_top__Syms.h:17,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024root.h:5082:24: error: expected primary-expression before ‘(’ token
+ 5082 |     Vsimu_top___024root(const char* name);
+      |                        ^
+Vsimu_top___024root.h:5082:25: error: expected primary-expression before ‘const’
+ 5082 |     Vsimu_top___024root(const char* name);
+      |                         ^~~~~
+Vsimu_top___024root.h:5083:26: error: invalid use of incomplete type ‘class Vsimu_top___024root’
+ 5083 |     ~Vsimu_top___024root();
+      |                          ^
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:16:7: note: forward declaration of ‘class Vsimu_top___024root’
+   16 | class Vsimu_top___024root;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from /usr/local/share/verilator/include/verilated.h:35,
+                 from Vsimu_top.h:11,
+                 from Vsimu_top.cpp:4:
+/usr/local/share/verilator/include/verilatedos.h:422:27: error: invalid use of incomplete type ‘class Vsimu_top___024root’
+  422 |     Type(const Type& other) = delete; \
+      |                           ^
+Vsimu_top___024root.h:5084:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+ 5084 |     VL_UNCOPYABLE(Vsimu_top___024root);
+      |     ^~~~~~~~~~~~~
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:16:7: note: forward declaration of ‘class Vsimu_top___024root’
+   16 | class Vsimu_top___024root;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from /usr/local/share/verilator/include/verilated.h:35,
+                 from Vsimu_top.h:11,
+                 from Vsimu_top.cpp:4:
+/usr/local/share/verilator/include/verilatedos.h:422:9: error: expected primary-expression before ‘(’ token
+  422 |     Type(const Type& other) = delete; \
+      |         ^
+Vsimu_top___024root.h:5084:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+ 5084 |     VL_UNCOPYABLE(Vsimu_top___024root);
+      |     ^~~~~~~~~~~~~
+/usr/local/share/verilator/include/verilatedos.h:422:10: error: expected primary-expression before ‘const’
+  422 |     Type(const Type& other) = delete; \
+      |          ^~~~~
+Vsimu_top___024root.h:5084:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+ 5084 |     VL_UNCOPYABLE(Vsimu_top___024root);
+      |     ^~~~~~~~~~~~~
+/usr/local/share/verilator/include/verilatedos.h:422:37: error: expected primary-expression before ‘;’ token
+  422 |     Type(const Type& other) = delete; \
+      |                                     ^
+Vsimu_top___024root.h:5084:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+ 5084 |     VL_UNCOPYABLE(Vsimu_top___024root);
+      |     ^~~~~~~~~~~~~
+/usr/local/share/verilator/include/verilatedos.h:423:11: error: ‘Vsimu_top___024root& operator=(const Vsimu_top___024root&)’ must be a non-static member function
+  423 |     Type& operator=(const Type&) = delete
+      |           ^~~~~~~~
+Vsimu_top___024root.h:5084:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+ 5084 |     VL_UNCOPYABLE(Vsimu_top___024root);
+      |     ^~~~~~~~~~~~~
+In file included from Vsimu_top__Syms.h:17,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024root.h:5090:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ 5090 | } VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+      | ^
+In file included from /usr/local/share/verilator/include/verilated.h:35,
+                 from Vsimu_top.h:11,
+                 from Vsimu_top.cpp:4:
+Vsimu_top___024root.h: At global scope:
+/usr/local/share/verilator/include/verilatedos.h:41:71: error: declaration does not declare anything [-fpermissive]
+   41 | # define VL_ATTR_ALIGNED(alignment) __attribute__((aligned(alignment)))
+      |                                                                       ^
+Vsimu_top___024root.h:5090:3: note: in expansion of macro ‘VL_ATTR_ALIGNED’
+ 5090 | } VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+      |   ^~~~~~~~~~~~~~~
+In file included from Vsimu_top__Syms.h:18,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024unit.h:12:1: error: ISO C++ forbids declaration of ‘VL_MODULE’ with no type [-fpermissive]
+   12 | VL_MODULE(Vsimu_top___024unit) {
+      | ^~~~~~~~~
+Vsimu_top___024unit.h:12:11: error: ‘<anonymous>’ has incomplete type
+   12 | VL_MODULE(Vsimu_top___024unit) {
+      |           ^~~~~~~~~~~~~~~~~~~
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:18:7: note: forward declaration of ‘class Vsimu_top___024unit’
+   18 | class Vsimu_top___024unit;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from Vsimu_top__Syms.h:18,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024unit.h: In function ‘int VL_MODULE(Vsimu_top___024unit)’:
+Vsimu_top___024unit.h:13:3: error: expected primary-expression before ‘public’
+   13 |   public:
+      |   ^~~~~~
+Vsimu_top___024unit.h:19:41: error: invalid use of incomplete type ‘class Vsimu_top___024unit’
+   19 |     Vsimu_top___024unit(const char* name);
+      |                                         ^
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:18:7: note: forward declaration of ‘class Vsimu_top___024unit’
+   18 | class Vsimu_top___024unit;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from Vsimu_top__Syms.h:18,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024unit.h:19:24: error: expected primary-expression before ‘(’ token
+   19 |     Vsimu_top___024unit(const char* name);
+      |                        ^
+Vsimu_top___024unit.h:19:25: error: expected primary-expression before ‘const’
+   19 |     Vsimu_top___024unit(const char* name);
+      |                         ^~~~~
+Vsimu_top___024unit.h:20:26: error: invalid use of incomplete type ‘class Vsimu_top___024unit’
+   20 |     ~Vsimu_top___024unit();
+      |                          ^
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:18:7: note: forward declaration of ‘class Vsimu_top___024unit’
+   18 | class Vsimu_top___024unit;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from /usr/local/share/verilator/include/verilated.h:35,
+                 from Vsimu_top.h:11,
+                 from Vsimu_top.cpp:4:
+/usr/local/share/verilator/include/verilatedos.h:422:27: error: invalid use of incomplete type ‘class Vsimu_top___024unit’
+  422 |     Type(const Type& other) = delete; \
+      |                           ^
+Vsimu_top___024unit.h:21:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+   21 |     VL_UNCOPYABLE(Vsimu_top___024unit);
+      |     ^~~~~~~~~~~~~
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:18:7: note: forward declaration of ‘class Vsimu_top___024unit’
+   18 | class Vsimu_top___024unit;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from /usr/local/share/verilator/include/verilated.h:35,
+                 from Vsimu_top.h:11,
+                 from Vsimu_top.cpp:4:
+/usr/local/share/verilator/include/verilatedos.h:422:9: error: expected primary-expression before ‘(’ token
+  422 |     Type(const Type& other) = delete; \
+      |         ^
+Vsimu_top___024unit.h:21:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+   21 |     VL_UNCOPYABLE(Vsimu_top___024unit);
+      |     ^~~~~~~~~~~~~
+/usr/local/share/verilator/include/verilatedos.h:422:10: error: expected primary-expression before ‘const’
+  422 |     Type(const Type& other) = delete; \
+      |          ^~~~~
+Vsimu_top___024unit.h:21:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+   21 |     VL_UNCOPYABLE(Vsimu_top___024unit);
+      |     ^~~~~~~~~~~~~
+/usr/local/share/verilator/include/verilatedos.h:422:37: error: expected primary-expression before ‘;’ token
+  422 |     Type(const Type& other) = delete; \
+      |                                     ^
+Vsimu_top___024unit.h:21:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+   21 |     VL_UNCOPYABLE(Vsimu_top___024unit);
+      |     ^~~~~~~~~~~~~
+/usr/local/share/verilator/include/verilatedos.h:423:11: error: ‘Vsimu_top___024unit& operator=(const Vsimu_top___024unit&)’ must be a non-static member function
+  423 |     Type& operator=(const Type&) = delete
+      |           ^~~~~~~~
+Vsimu_top___024unit.h:21:5: note: in expansion of macro ‘VL_UNCOPYABLE’
+   21 |     VL_UNCOPYABLE(Vsimu_top___024unit);
+      |     ^~~~~~~~~~~~~
+In file included from Vsimu_top__Syms.h:18,
+                 from Vsimu_top.cpp:5:
+Vsimu_top___024unit.h:27:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   27 | } VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+      | ^
+In file included from /usr/local/share/verilator/include/verilated.h:35,
+                 from Vsimu_top.h:11,
+                 from Vsimu_top.cpp:4:
+Vsimu_top___024unit.h: At global scope:
+/usr/local/share/verilator/include/verilatedos.h:41:71: error: declaration does not declare anything [-fpermissive]
+   41 | # define VL_ATTR_ALIGNED(alignment) __attribute__((aligned(alignment)))
+      |                                                                       ^
+Vsimu_top___024unit.h:27:3: note: in expansion of macro ‘VL_ATTR_ALIGNED’
+   27 | } VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+      |   ^~~~~~~~~~~~~~~
+In file included from Vsimu_top.cpp:5:
+Vsimu_top__Syms.h:32:36: error: field ‘TOP’ has incomplete type ‘Vsimu_top___024root’
+   32 |     Vsimu_top___024root            TOP;
+      |                                    ^~~
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:16:7: note: forward declaration of ‘class Vsimu_top___024root’
+   16 | class Vsimu_top___024root;
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from Vsimu_top.cpp:5:
+Vsimu_top__Syms.h:33:36: error: field ‘TOP____024unit’ has incomplete type ‘Vsimu_top___024unit’
+   33 |     Vsimu_top___024unit            TOP____024unit;
+      |                                    ^~~~~~~~~~~~~~
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:18:7: note: forward declaration of ‘class Vsimu_top___024unit’
+   18 | class Vsimu_top___024unit;
+      |       ^~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp: In constructor ‘Vsimu_top::Vsimu_top(VerilatedContext*, const char*)’:
+Vsimu_top.cpp:14:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   14 |     , clock{vlSymsp->TOP.clock}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:15:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   15 |     , aclk{vlSymsp->TOP.aclk}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:16:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   16 |     , coreid{vlSymsp->TOP.coreid}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:17:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   17 |     , valid{vlSymsp->TOP.valid}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:18:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   18 |     , code{vlSymsp->TOP.code}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:19:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   19 |     , aresetn{vlSymsp->TOP.aresetn}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:20:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   20 |     , enable_delay{vlSymsp->TOP.enable_delay}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:21:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   21 |     , ram_ren{vlSymsp->TOP.ram_ren}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:22:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   22 |     , ram_wen{vlSymsp->TOP.ram_wen}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:23:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   23 |     , debug0_wb_rf_wen{vlSymsp->TOP.debug0_wb_rf_wen}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:24:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   24 |     , debug0_wb_rf_wnum{vlSymsp->TOP.debug0_wb_rf_wnum}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:25:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   25 |     , open_trace{vlSymsp->TOP.open_trace}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:26:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   26 |     , num_monitor{vlSymsp->TOP.num_monitor}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:27:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   27 |     , confreg_uart_data{vlSymsp->TOP.confreg_uart_data}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:28:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   28 |     , write_uart_valid{vlSymsp->TOP.write_uart_valid}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:29:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   29 |     , uart_rx{vlSymsp->TOP.uart_rx}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:30:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   30 |     , uart_tx{vlSymsp->TOP.uart_tx}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:31:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   31 |     , led_rg0{vlSymsp->TOP.led_rg0}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:32:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   32 |     , led_rg1{vlSymsp->TOP.led_rg1}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:33:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   33 |     , num_csn{vlSymsp->TOP.num_csn}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:34:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   34 |     , num_a_g{vlSymsp->TOP.num_a_g}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:35:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   35 |     , __SYM__switch{vlSymsp->TOP.__SYM__switch}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:36:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   36 |     , btn_key_col{vlSymsp->TOP.btn_key_col}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:37:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   37 |     , btn_key_row{vlSymsp->TOP.btn_key_row}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:38:7: error: invalid initialization of non-const reference of type ‘CData&’ {aka ‘unsigned char&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   38 |     , btn_step{vlSymsp->TOP.btn_step}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:39:7: error: invalid initialization of non-const reference of type ‘SData&’ {aka ‘short unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   39 |     , led{vlSymsp->TOP.led}
+      |       ^~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:40:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   40 |     , random_seed{vlSymsp->TOP.random_seed}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:41:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   41 |     , ram_raddr{vlSymsp->TOP.ram_raddr}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:42:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   42 |     , ram_rdata{vlSymsp->TOP.ram_rdata}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:43:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   43 |     , ram_waddr{vlSymsp->TOP.ram_waddr}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:44:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   44 |     , ram_wdata{vlSymsp->TOP.ram_wdata}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:45:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   45 |     , debug0_wb_pc{vlSymsp->TOP.debug0_wb_pc}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:46:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   46 |     , debug0_wb_rf_wdata{vlSymsp->TOP.debug0_wb_rf_wdata}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:47:7: error: invalid initialization of non-const reference of type ‘IData&’ {aka ‘unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   47 |     , num_data{vlSymsp->TOP.num_data}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:48:7: error: invalid initialization of non-const reference of type ‘VlWide<4>&’ from an rvalue of type ‘<brace-enclosed initializer list>’
+   48 |     , uart_ctr_bus{vlSymsp->TOP.uart_ctr_bus}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:49:7: error: invalid initialization of non-const reference of type ‘QData&’ {aka ‘long unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   49 |     , pc{vlSymsp->TOP.pc}
+      |       ^~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:50:7: error: invalid initialization of non-const reference of type ‘QData&’ {aka ‘long unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   50 |     , cycleCnt{vlSymsp->TOP.cycleCnt}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:51:7: error: invalid initialization of non-const reference of type ‘QData&’ {aka ‘long unsigned int&’} from an rvalue of type ‘<brace-enclosed initializer list>’
+   51 |     , instrCnt{vlSymsp->TOP.instrCnt}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:52:7: error: cannot convert ‘<brace-enclosed initializer list>’ to ‘Vsimu_top___024unit* const’ in initialization
+   52 |     , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp:53:7: error: cannot convert ‘<brace-enclosed initializer list>’ to ‘Vsimu_top___024root* const’ in initialization
+   53 |     , rootp{&(vlSymsp->TOP)}
+      |       ^~~~~~~~~~~~~~~~~~~~~~
+Vsimu_top.cpp: In function ‘void trace_init(void*, VerilatedFst*, uint32_t)’:
+Vsimu_top.cpp:140:70: error: invalid use of incomplete type ‘class Vsimu_top___024root’
+  140 |     Vsimu_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+      |                                                                      ^~
+In file included from Vsimu_top.cpp:4:
+Vsimu_top.h:16:7: note: forward declaration of ‘class Vsimu_top___024root’
+   16 | class Vsimu_top___024root;
+      |       ^~~~~~~~~~~~~~~~~~~
+make[1]: *** [/usr/local/share/verilator/include/verilated.mk:239: Vsimu_top.o] Error 1
+make: *** [Makefile:229: verilator] Error 2

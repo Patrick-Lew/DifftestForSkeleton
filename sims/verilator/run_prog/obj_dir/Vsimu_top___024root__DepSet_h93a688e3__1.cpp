@@ -10276,172 +10276,148 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__13(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__fifo_ram[0U] = 0U;
         vlSelf->simu_top__DOT__soc__DOT__AXI_SLAVE_MUX__DOT__rd_fifo__DOT__fifo_ram[1U] = 0U;
     }
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_3_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_3_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventInst_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventInst_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventIntrNO_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventIntrNO_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventExcpValid_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventExcpValid_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventEret_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventEret_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventEPC_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventEPC_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventCause_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventCause_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_2_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_2_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_0_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_0_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_1_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_1_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventPAddr_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventPAddr_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventValid_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventValid_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventVAddr_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventVAddr_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventPAddr_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventPAddr_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventData_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventData_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventVAddr_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventVAddr_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventValid_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventValid_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestSkip_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCount_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWen_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdest_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_4_2;
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_4_1 
-        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT___zz_DifftestDelayBundle_DifftestWdata_4_2;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_3 = 3U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_3 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestSkip_3 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_3 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_3 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_3 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCount_3 = 0ULL;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_3 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_3 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_3 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWen_3 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_3 
+        = (QData)((IData)(((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_rValid)
+                            ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_io_commitROBEntries_3_pc_1
+                            : 0U)));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdata_3 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_rData_data));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdest_3 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_rData_prd;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventInst = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventIntrNO 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__uart0_int) 
+           << 1U);
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventExcpValid 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireTLBRException;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventEret 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireERTN;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventEPC 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireEPC));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestExcpEventCause 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT__stageReg_retireECode;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_2 = 2U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_2 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestSkip_2 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_2 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_2 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_2 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCount_2 = 0ULL;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_2 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_2 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdata_2 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_rData_data));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdest_2 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_rData_prd;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_2 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWen_2 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_2 
+        = (QData)((IData)(((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_rValid)
+                            ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_io_commitROBEntries_2_pc_1
+                            : 0U)));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_0 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_0 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestSkip_0 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_0 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_0 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_0 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCount_0 = 0ULL;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_0 
+        = ((4U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob_io_commitROBEntries_0_specialOp)) 
+           | (7U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob_io_commitROBEntries_0_specialOp)));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_0 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr_io_swRead_value;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdata_0 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_rData_data));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdest_0 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_rData_prd;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_0 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWen_0 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_0 
+        = (QData)((IData)(((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_rValid)
+                            ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_io_commitROBEntries_0_pc_1
+                            : 0U)));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_1 = 1U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_1 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestSkip_1 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_1 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_1 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_1 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_1 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_1 
+        = (8U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob_io_commitROBEntries_1_specialOp));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCount_1 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_rData_data));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdata_1 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_rData_data));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdest_1 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_rData_prd;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_1 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWen_1 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_1 
+        = (QData)((IData)(((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_rValid)
+                            ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_io_commitROBEntries_1_pc_1
+                            : 0U)));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventPAddr 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU_io_PAddr));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventValid 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsCtrlBundle_load)
+            ? (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsCtrlBundle_lsMask)
+            : 0U);
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestLoadEventVAddr 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_vaddr));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventPAddr 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU_io_PAddr));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventData 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_storeData));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventVAddr 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_vaddr));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestStoreEventValid 
+        = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsCtrlBundle_store)
+            ? (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_fuLSU__DOT__stage1Out_thrown_rData_lsCtrlBundle_lsMask)
+            : 0U);
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitInstr_4 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestSkip_4 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsCount_4 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCount_4 = 0ULL;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrRstat_4 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestCsrData_4 = 0U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitIndex_4 = 4U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestTlbFillIndex_4 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__invCounter_value;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitValid_4 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_fuLSU_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWen_4 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_fuLSU_io_output_rValid;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestInstrCommitPC_4 
+        = (QData)((IData)(((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_fuLSU_io_output_rValid)
+                            ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_rob__DOT___zz_io_commitROBEntries_4_pc_1
+                            : 0U)));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdest_4 
+        = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_fuLSU_io_output_rData_prd;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestIsTlbFill_4 
+        = (4U == (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_memService__DOT__tlbOp_1));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT___zz_DifftestDelayBundle_DifftestWdata_4 
+        = (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_fuLSU_io_output_rData_data));
     vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_swRead_value_89 
         = ((IData)(vlSelf->aresetn) ? vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_csr__DOT___zz_io_swRead_value_112
             : 0U);
@@ -10679,6 +10655,10 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__13(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueLSU_io_output_rData_pc 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueLSU__DOT___zz_issueEntry_pc;
     }
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_roMULU_io_toFU_ready) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roMULU_io_toFU_rData_pc 
+            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueMULU_io_output_rData_pc;
+    }
     if (vlSelf->aresetn) {
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__delayed_modem_signals 
             = (3U | ((8U & ((~ ((IData)(vlSelf->simu_top__DOT__soc__DOT__UART_RI) 
@@ -10696,9 +10676,9 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__13(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__delayed_modem_signals = 0U;
         vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__uart0__DOT__regs__DOT__mcr = 0U;
     }
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__counter_willIncrement = 0U;
-    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1) {
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__counter_willIncrement = 1U;
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT___zz_when_DIVU_l29 = 0U;
+    if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__when_DIVU_l26) {
+        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT___zz_when_DIVU_l29 = 1U;
     }
     vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__NAND_CE_pre_o 
         = ((0xcU & (IData)(vlSelf->simu_top__DOT__soc__DOT__APB_DEV__DOT__nand_module__DOT__NAND__DOT__NAND_CE_pre_o)) 
@@ -10880,7 +10860,7 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__13(Vsimu_top___024root* v
                                  ? 4U : 1U));
     vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__io_input_fire 
         = ((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roDIVU_io_toFU_rValid) 
-           & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__block_1)));
+           & (~ (IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuDIVU__DOT__when_DIVU_l26)));
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_newReset) {
         if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_ready) {
             vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_issueQueueDIVU_io_output_rValid 
@@ -10895,14 +10875,12 @@ VL_INLINE_OPT void Vsimu_top___024root___sequent__TOP__13(Vsimu_top___024root* v
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_src2 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roMULU_io_toFU_rData_src2;
     }
-    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__resu 
-        = ((QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_src1)) 
-           * (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__stage12_rData_src2)));
+    vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT___zz_io_output_payload_data_4 
+        = ((QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT___zz_io_output_payload_data_2)) 
+           * (QData)((IData)(vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT___zz_io_output_payload_data_3)));
     if (vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU_io_input_ready) {
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_src1 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roMULU_io_toFU_rData_src1;
-        vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_pc 
-            = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roMULU_io_toFU_rData_pc;
         vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__cpuClockingArea_areaFlushReset_fuMULU__DOT__io_input_rData_uop_muluOp 
             = vlSelf->simu_top__DOT__soc__DOT__cpu__DOT__mycpu__DOT__toplevel_cpuClockingArea_areaFlushReset_roMULU_io_toFU_rData_uop_muluOp;
     }

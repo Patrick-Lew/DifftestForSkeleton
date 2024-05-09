@@ -1,3 +1,9 @@
+// Generator : SpinalHDL v1.10.1    git head : 2527c7c6b0fb0f95e5e1a5722a0be732b364ce43
+// Component : mycpu
+// Git hash  : 1d24377502d7f67a35669179122703483db37ec0
+
+`timescale 1ns/1ps
+
 module mycpu (
   input  wire          aclk,
   input  wire          aresetn,
@@ -354,90 +360,7 @@ module mycpu (
   output reg  [63:0]   _zz_DifftestDelayBundle_DifftestStoreEventData,
   output reg  [7:0]    _zz_DifftestDelayBundle_DifftestLoadEventValid,
   output reg  [63:0]   _zz_DifftestDelayBundle_DifftestLoadEventPAddr,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestLoadEventVAddr,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_1,
-  output reg           _zz_DifftestDelayBundle_DifftestInstrCommitValid_0_1,
-  output reg           _zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1,
-  output reg           _zz_DifftestDelayBundle_DifftestInstrCommitValid_2_1,
-  output reg           _zz_DifftestDelayBundle_DifftestInstrCommitValid_3_1,
-  output reg           _zz_DifftestDelayBundle_DifftestInstrCommitValid_4_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_0_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_1_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_2_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_3_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_4_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_1,
-  output reg           _zz_DifftestDelayBundle_DifftestSkip_0_1,
-  output reg           _zz_DifftestDelayBundle_DifftestSkip_1_1,
-  output reg           _zz_DifftestDelayBundle_DifftestSkip_2_1,
-  output reg           _zz_DifftestDelayBundle_DifftestSkip_3_1,
-  output reg           _zz_DifftestDelayBundle_DifftestSkip_4_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsTlbFill_0_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsTlbFill_1_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsTlbFill_2_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsTlbFill_3_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsTlbFill_4_1,
-  output reg  [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_0_1,
-  output reg  [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_1_1,
-  output reg  [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_2_1,
-  output reg  [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_3_1,
-  output reg  [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_4_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsCount_0_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsCount_1_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsCount_2_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsCount_3_1,
-  output reg           _zz_DifftestDelayBundle_DifftestIsCount_4_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestCount_0_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestCount_1_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestCount_2_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestCount_3_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestCount_4_1,
-  output reg           _zz_DifftestDelayBundle_DifftestWen_0_1,
-  output reg           _zz_DifftestDelayBundle_DifftestWen_1_1,
-  output reg           _zz_DifftestDelayBundle_DifftestWen_2_1,
-  output reg           _zz_DifftestDelayBundle_DifftestWen_3_1,
-  output reg           _zz_DifftestDelayBundle_DifftestWen_4_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestWdest_0_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestWdest_1_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestWdest_2_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestWdest_3_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestWdest_4_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestWdata_0_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestWdata_1_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestWdata_2_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestWdata_3_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestWdata_4_1,
-  output reg           _zz_DifftestDelayBundle_DifftestCsrRstat_0_1,
-  output reg           _zz_DifftestDelayBundle_DifftestCsrRstat_1_1,
-  output reg           _zz_DifftestDelayBundle_DifftestCsrRstat_2_1,
-  output reg           _zz_DifftestDelayBundle_DifftestCsrRstat_3_1,
-  output reg           _zz_DifftestDelayBundle_DifftestCsrRstat_4_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_0_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_1_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_2_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_3_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_4_1,
-  output reg           _zz_DifftestDelayBundle_DifftestExcpEventExcpValid_1,
-  output reg           _zz_DifftestDelayBundle_DifftestExcpEventEret_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestExcpEventIntrNO_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestExcpEventCause_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestExcpEventEPC_1,
-  output reg  [31:0]   _zz_DifftestDelayBundle_DifftestExcpEventInst_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestStoreEventValid_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestStoreEventPAddr_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestStoreEventVAddr_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestStoreEventData_1,
-  output reg  [7:0]    _zz_DifftestDelayBundle_DifftestLoadEventValid_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestLoadEventPAddr_1,
-  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestLoadEventVAddr_1
+  output reg  [63:0]   _zz_DifftestDelayBundle_DifftestLoadEventVAddr
 );
   localparam ALUOp_add = 4'd0;
   localparam ALUOp_sub = 4'd1;
@@ -2000,89 +1923,6 @@ module mycpu (
   reg        [5:0]    toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eCode;
   reg        [0:0]    toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eSubCode;
   wire                when_Stream_l369_14;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_2;
-  reg                 _zz_DifftestDelayBundle_DifftestInstrCommitValid_0_2;
-  reg                 _zz_DifftestDelayBundle_DifftestInstrCommitValid_1_2;
-  reg                 _zz_DifftestDelayBundle_DifftestInstrCommitValid_2_2;
-  reg                 _zz_DifftestDelayBundle_DifftestInstrCommitValid_3_2;
-  reg                 _zz_DifftestDelayBundle_DifftestInstrCommitValid_4_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_0_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_1_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_2_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_3_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestInstrCommitPC_4_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_2;
-  reg                 _zz_DifftestDelayBundle_DifftestSkip_0_2;
-  reg                 _zz_DifftestDelayBundle_DifftestSkip_1_2;
-  reg                 _zz_DifftestDelayBundle_DifftestSkip_2_2;
-  reg                 _zz_DifftestDelayBundle_DifftestSkip_3_2;
-  reg                 _zz_DifftestDelayBundle_DifftestSkip_4_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsTlbFill_0_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsTlbFill_1_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsTlbFill_2_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsTlbFill_3_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsTlbFill_4_2;
-  reg        [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_0_2;
-  reg        [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_1_2;
-  reg        [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_2_2;
-  reg        [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_3_2;
-  reg        [4:0]    _zz_DifftestDelayBundle_DifftestTlbFillIndex_4_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsCount_0_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsCount_1_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsCount_2_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsCount_3_2;
-  reg                 _zz_DifftestDelayBundle_DifftestIsCount_4_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestCount_0_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestCount_1_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestCount_2_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestCount_3_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestCount_4_2;
-  reg                 _zz_DifftestDelayBundle_DifftestWen_0_2;
-  reg                 _zz_DifftestDelayBundle_DifftestWen_1_2;
-  reg                 _zz_DifftestDelayBundle_DifftestWen_2_2;
-  reg                 _zz_DifftestDelayBundle_DifftestWen_3_2;
-  reg                 _zz_DifftestDelayBundle_DifftestWen_4_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestWdest_0_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestWdest_1_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestWdest_2_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestWdest_3_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestWdest_4_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestWdata_0_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestWdata_1_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestWdata_2_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestWdata_3_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestWdata_4_2;
-  reg                 _zz_DifftestDelayBundle_DifftestCsrRstat_0_2;
-  reg                 _zz_DifftestDelayBundle_DifftestCsrRstat_1_2;
-  reg                 _zz_DifftestDelayBundle_DifftestCsrRstat_2_2;
-  reg                 _zz_DifftestDelayBundle_DifftestCsrRstat_3_2;
-  reg                 _zz_DifftestDelayBundle_DifftestCsrRstat_4_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_0_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_1_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_2_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_3_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestCsrData_4_2;
-  reg                 _zz_DifftestDelayBundle_DifftestExcpEventExcpValid_2;
-  reg                 _zz_DifftestDelayBundle_DifftestExcpEventEret_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestExcpEventIntrNO_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestExcpEventCause_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestExcpEventEPC_2;
-  reg        [31:0]   _zz_DifftestDelayBundle_DifftestExcpEventInst_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestStoreEventValid_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestStoreEventPAddr_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestStoreEventVAddr_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestStoreEventData_2;
-  reg        [7:0]    _zz_DifftestDelayBundle_DifftestLoadEventValid_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestLoadEventPAddr_2;
-  reg        [63:0]   _zz_DifftestDelayBundle_DifftestLoadEventVAddr_2;
   `ifndef SYNTHESIS
   reg [39:0] toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_m2sPipe_payload_uop_aluOp_string;
   reg [39:0] toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_m2sPipe_payload_uop_bruOp_string;
@@ -7231,89 +7071,89 @@ module mycpu (
   assign DifftestBundle_DifftestCSRRegStateTLBRENTRY = {32'd0, cpuClockingArea_csr_io_diffCSRBundle_tlbrentry};
   assign DifftestBundle_DifftestCSRRegStateDMW0 = {32'd0, cpuClockingArea_csr_io_diffCSRBundle_dmw0};
   assign DifftestBundle_DifftestCSRRegStateDMW1 = {32'd0, cpuClockingArea_csr_io_diffCSRBundle_dmw1};
-  assign DifftestDelayBundle_DifftestInstrCommitIndex_0 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_1;
-  assign DifftestDelayBundle_DifftestInstrCommitIndex_1 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_1;
-  assign DifftestDelayBundle_DifftestInstrCommitIndex_2 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_1;
-  assign DifftestDelayBundle_DifftestInstrCommitIndex_3 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_1;
-  assign DifftestDelayBundle_DifftestInstrCommitIndex_4 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_1;
-  assign DifftestDelayBundle_DifftestInstrCommitValid_0 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_0_1;
-  assign DifftestDelayBundle_DifftestInstrCommitValid_1 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1;
-  assign DifftestDelayBundle_DifftestInstrCommitValid_2 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_2_1;
-  assign DifftestDelayBundle_DifftestInstrCommitValid_3 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_3_1;
-  assign DifftestDelayBundle_DifftestInstrCommitValid_4 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_4_1;
-  assign DifftestDelayBundle_DifftestInstrCommitPC_0 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_0_1;
-  assign DifftestDelayBundle_DifftestInstrCommitPC_1 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_1_1;
-  assign DifftestDelayBundle_DifftestInstrCommitPC_2 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_2_1;
-  assign DifftestDelayBundle_DifftestInstrCommitPC_3 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_3_1;
-  assign DifftestDelayBundle_DifftestInstrCommitPC_4 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_4_1;
-  assign DifftestDelayBundle_DifftestInstrCommitInstr_0 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_1;
-  assign DifftestDelayBundle_DifftestInstrCommitInstr_1 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_1;
-  assign DifftestDelayBundle_DifftestInstrCommitInstr_2 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_1;
-  assign DifftestDelayBundle_DifftestInstrCommitInstr_3 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_1;
-  assign DifftestDelayBundle_DifftestInstrCommitInstr_4 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_1;
-  assign DifftestDelayBundle_DifftestSkip_0 = _zz_DifftestDelayBundle_DifftestSkip_0_1;
-  assign DifftestDelayBundle_DifftestSkip_1 = _zz_DifftestDelayBundle_DifftestSkip_1_1;
-  assign DifftestDelayBundle_DifftestSkip_2 = _zz_DifftestDelayBundle_DifftestSkip_2_1;
-  assign DifftestDelayBundle_DifftestSkip_3 = _zz_DifftestDelayBundle_DifftestSkip_3_1;
-  assign DifftestDelayBundle_DifftestSkip_4 = _zz_DifftestDelayBundle_DifftestSkip_4_1;
-  assign DifftestDelayBundle_DifftestIsTlbFill_0 = _zz_DifftestDelayBundle_DifftestIsTlbFill_0_1;
-  assign DifftestDelayBundle_DifftestIsTlbFill_1 = _zz_DifftestDelayBundle_DifftestIsTlbFill_1_1;
-  assign DifftestDelayBundle_DifftestIsTlbFill_2 = _zz_DifftestDelayBundle_DifftestIsTlbFill_2_1;
-  assign DifftestDelayBundle_DifftestIsTlbFill_3 = _zz_DifftestDelayBundle_DifftestIsTlbFill_3_1;
-  assign DifftestDelayBundle_DifftestIsTlbFill_4 = _zz_DifftestDelayBundle_DifftestIsTlbFill_4_1;
-  assign DifftestDelayBundle_DifftestTlbFillIndex_0 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_0_1;
-  assign DifftestDelayBundle_DifftestTlbFillIndex_1 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_1_1;
-  assign DifftestDelayBundle_DifftestTlbFillIndex_2 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_2_1;
-  assign DifftestDelayBundle_DifftestTlbFillIndex_3 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_3_1;
-  assign DifftestDelayBundle_DifftestTlbFillIndex_4 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_4_1;
-  assign DifftestDelayBundle_DifftestIsCount_0 = _zz_DifftestDelayBundle_DifftestIsCount_0_1;
-  assign DifftestDelayBundle_DifftestIsCount_1 = _zz_DifftestDelayBundle_DifftestIsCount_1_1;
-  assign DifftestDelayBundle_DifftestIsCount_2 = _zz_DifftestDelayBundle_DifftestIsCount_2_1;
-  assign DifftestDelayBundle_DifftestIsCount_3 = _zz_DifftestDelayBundle_DifftestIsCount_3_1;
-  assign DifftestDelayBundle_DifftestIsCount_4 = _zz_DifftestDelayBundle_DifftestIsCount_4_1;
-  assign DifftestDelayBundle_DifftestCount_0 = _zz_DifftestDelayBundle_DifftestCount_0_1;
-  assign DifftestDelayBundle_DifftestCount_1 = _zz_DifftestDelayBundle_DifftestCount_1_1;
-  assign DifftestDelayBundle_DifftestCount_2 = _zz_DifftestDelayBundle_DifftestCount_2_1;
-  assign DifftestDelayBundle_DifftestCount_3 = _zz_DifftestDelayBundle_DifftestCount_3_1;
-  assign DifftestDelayBundle_DifftestCount_4 = _zz_DifftestDelayBundle_DifftestCount_4_1;
-  assign DifftestDelayBundle_DifftestWen_0 = _zz_DifftestDelayBundle_DifftestWen_0_1;
-  assign DifftestDelayBundle_DifftestWen_1 = _zz_DifftestDelayBundle_DifftestWen_1_1;
-  assign DifftestDelayBundle_DifftestWen_2 = _zz_DifftestDelayBundle_DifftestWen_2_1;
-  assign DifftestDelayBundle_DifftestWen_3 = _zz_DifftestDelayBundle_DifftestWen_3_1;
-  assign DifftestDelayBundle_DifftestWen_4 = _zz_DifftestDelayBundle_DifftestWen_4_1;
-  assign DifftestDelayBundle_DifftestWdest_0 = _zz_DifftestDelayBundle_DifftestWdest_0_1;
-  assign DifftestDelayBundle_DifftestWdest_1 = _zz_DifftestDelayBundle_DifftestWdest_1_1;
-  assign DifftestDelayBundle_DifftestWdest_2 = _zz_DifftestDelayBundle_DifftestWdest_2_1;
-  assign DifftestDelayBundle_DifftestWdest_3 = _zz_DifftestDelayBundle_DifftestWdest_3_1;
-  assign DifftestDelayBundle_DifftestWdest_4 = _zz_DifftestDelayBundle_DifftestWdest_4_1;
-  assign DifftestDelayBundle_DifftestWdata_0 = _zz_DifftestDelayBundle_DifftestWdata_0_1;
-  assign DifftestDelayBundle_DifftestWdata_1 = _zz_DifftestDelayBundle_DifftestWdata_1_1;
-  assign DifftestDelayBundle_DifftestWdata_2 = _zz_DifftestDelayBundle_DifftestWdata_2_1;
-  assign DifftestDelayBundle_DifftestWdata_3 = _zz_DifftestDelayBundle_DifftestWdata_3_1;
-  assign DifftestDelayBundle_DifftestWdata_4 = _zz_DifftestDelayBundle_DifftestWdata_4_1;
-  assign DifftestDelayBundle_DifftestCsrRstat_0 = _zz_DifftestDelayBundle_DifftestCsrRstat_0_1;
-  assign DifftestDelayBundle_DifftestCsrRstat_1 = _zz_DifftestDelayBundle_DifftestCsrRstat_1_1;
-  assign DifftestDelayBundle_DifftestCsrRstat_2 = _zz_DifftestDelayBundle_DifftestCsrRstat_2_1;
-  assign DifftestDelayBundle_DifftestCsrRstat_3 = _zz_DifftestDelayBundle_DifftestCsrRstat_3_1;
-  assign DifftestDelayBundle_DifftestCsrRstat_4 = _zz_DifftestDelayBundle_DifftestCsrRstat_4_1;
-  assign DifftestDelayBundle_DifftestCsrData_0 = _zz_DifftestDelayBundle_DifftestCsrData_0_1;
-  assign DifftestDelayBundle_DifftestCsrData_1 = _zz_DifftestDelayBundle_DifftestCsrData_1_1;
-  assign DifftestDelayBundle_DifftestCsrData_2 = _zz_DifftestDelayBundle_DifftestCsrData_2_1;
-  assign DifftestDelayBundle_DifftestCsrData_3 = _zz_DifftestDelayBundle_DifftestCsrData_3_1;
-  assign DifftestDelayBundle_DifftestCsrData_4 = _zz_DifftestDelayBundle_DifftestCsrData_4_1;
-  assign DifftestDelayBundle_DifftestExcpEventExcpValid = _zz_DifftestDelayBundle_DifftestExcpEventExcpValid_1;
-  assign DifftestDelayBundle_DifftestExcpEventEret = _zz_DifftestDelayBundle_DifftestExcpEventEret_1;
-  assign DifftestDelayBundle_DifftestExcpEventIntrNO = _zz_DifftestDelayBundle_DifftestExcpEventIntrNO_1;
-  assign DifftestDelayBundle_DifftestExcpEventCause = _zz_DifftestDelayBundle_DifftestExcpEventCause_1;
-  assign DifftestDelayBundle_DifftestExcpEventEPC = _zz_DifftestDelayBundle_DifftestExcpEventEPC_1;
-  assign DifftestDelayBundle_DifftestExcpEventInst = _zz_DifftestDelayBundle_DifftestExcpEventInst_1;
-  assign DifftestDelayBundle_DifftestStoreEventValid = _zz_DifftestDelayBundle_DifftestStoreEventValid_1;
-  assign DifftestDelayBundle_DifftestStoreEventPAddr = _zz_DifftestDelayBundle_DifftestStoreEventPAddr_1;
-  assign DifftestDelayBundle_DifftestStoreEventVAddr = _zz_DifftestDelayBundle_DifftestStoreEventVAddr_1;
-  assign DifftestDelayBundle_DifftestStoreEventData = _zz_DifftestDelayBundle_DifftestStoreEventData_1;
-  assign DifftestDelayBundle_DifftestLoadEventValid = _zz_DifftestDelayBundle_DifftestLoadEventValid_1;
-  assign DifftestDelayBundle_DifftestLoadEventPAddr = _zz_DifftestDelayBundle_DifftestLoadEventPAddr_1;
-  assign DifftestDelayBundle_DifftestLoadEventVAddr = _zz_DifftestDelayBundle_DifftestLoadEventVAddr_1;
+  assign DifftestDelayBundle_DifftestInstrCommitIndex_0 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0;
+  assign DifftestDelayBundle_DifftestInstrCommitIndex_1 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1;
+  assign DifftestDelayBundle_DifftestInstrCommitIndex_2 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2;
+  assign DifftestDelayBundle_DifftestInstrCommitIndex_3 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3;
+  assign DifftestDelayBundle_DifftestInstrCommitIndex_4 = _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4;
+  assign DifftestDelayBundle_DifftestInstrCommitValid_0 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_0;
+  assign DifftestDelayBundle_DifftestInstrCommitValid_1 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_1;
+  assign DifftestDelayBundle_DifftestInstrCommitValid_2 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_2;
+  assign DifftestDelayBundle_DifftestInstrCommitValid_3 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_3;
+  assign DifftestDelayBundle_DifftestInstrCommitValid_4 = _zz_DifftestDelayBundle_DifftestInstrCommitValid_4;
+  assign DifftestDelayBundle_DifftestInstrCommitPC_0 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_0;
+  assign DifftestDelayBundle_DifftestInstrCommitPC_1 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_1;
+  assign DifftestDelayBundle_DifftestInstrCommitPC_2 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_2;
+  assign DifftestDelayBundle_DifftestInstrCommitPC_3 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_3;
+  assign DifftestDelayBundle_DifftestInstrCommitPC_4 = _zz_DifftestDelayBundle_DifftestInstrCommitPC_4;
+  assign DifftestDelayBundle_DifftestInstrCommitInstr_0 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0;
+  assign DifftestDelayBundle_DifftestInstrCommitInstr_1 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1;
+  assign DifftestDelayBundle_DifftestInstrCommitInstr_2 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2;
+  assign DifftestDelayBundle_DifftestInstrCommitInstr_3 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3;
+  assign DifftestDelayBundle_DifftestInstrCommitInstr_4 = _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4;
+  assign DifftestDelayBundle_DifftestSkip_0 = _zz_DifftestDelayBundle_DifftestSkip_0;
+  assign DifftestDelayBundle_DifftestSkip_1 = _zz_DifftestDelayBundle_DifftestSkip_1;
+  assign DifftestDelayBundle_DifftestSkip_2 = _zz_DifftestDelayBundle_DifftestSkip_2;
+  assign DifftestDelayBundle_DifftestSkip_3 = _zz_DifftestDelayBundle_DifftestSkip_3;
+  assign DifftestDelayBundle_DifftestSkip_4 = _zz_DifftestDelayBundle_DifftestSkip_4;
+  assign DifftestDelayBundle_DifftestIsTlbFill_0 = _zz_DifftestDelayBundle_DifftestIsTlbFill_0;
+  assign DifftestDelayBundle_DifftestIsTlbFill_1 = _zz_DifftestDelayBundle_DifftestIsTlbFill_1;
+  assign DifftestDelayBundle_DifftestIsTlbFill_2 = _zz_DifftestDelayBundle_DifftestIsTlbFill_2;
+  assign DifftestDelayBundle_DifftestIsTlbFill_3 = _zz_DifftestDelayBundle_DifftestIsTlbFill_3;
+  assign DifftestDelayBundle_DifftestIsTlbFill_4 = _zz_DifftestDelayBundle_DifftestIsTlbFill_4;
+  assign DifftestDelayBundle_DifftestTlbFillIndex_0 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_0;
+  assign DifftestDelayBundle_DifftestTlbFillIndex_1 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_1;
+  assign DifftestDelayBundle_DifftestTlbFillIndex_2 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_2;
+  assign DifftestDelayBundle_DifftestTlbFillIndex_3 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_3;
+  assign DifftestDelayBundle_DifftestTlbFillIndex_4 = _zz_DifftestDelayBundle_DifftestTlbFillIndex_4;
+  assign DifftestDelayBundle_DifftestIsCount_0 = _zz_DifftestDelayBundle_DifftestIsCount_0;
+  assign DifftestDelayBundle_DifftestIsCount_1 = _zz_DifftestDelayBundle_DifftestIsCount_1;
+  assign DifftestDelayBundle_DifftestIsCount_2 = _zz_DifftestDelayBundle_DifftestIsCount_2;
+  assign DifftestDelayBundle_DifftestIsCount_3 = _zz_DifftestDelayBundle_DifftestIsCount_3;
+  assign DifftestDelayBundle_DifftestIsCount_4 = _zz_DifftestDelayBundle_DifftestIsCount_4;
+  assign DifftestDelayBundle_DifftestCount_0 = _zz_DifftestDelayBundle_DifftestCount_0;
+  assign DifftestDelayBundle_DifftestCount_1 = _zz_DifftestDelayBundle_DifftestCount_1;
+  assign DifftestDelayBundle_DifftestCount_2 = _zz_DifftestDelayBundle_DifftestCount_2;
+  assign DifftestDelayBundle_DifftestCount_3 = _zz_DifftestDelayBundle_DifftestCount_3;
+  assign DifftestDelayBundle_DifftestCount_4 = _zz_DifftestDelayBundle_DifftestCount_4;
+  assign DifftestDelayBundle_DifftestWen_0 = _zz_DifftestDelayBundle_DifftestWen_0;
+  assign DifftestDelayBundle_DifftestWen_1 = _zz_DifftestDelayBundle_DifftestWen_1;
+  assign DifftestDelayBundle_DifftestWen_2 = _zz_DifftestDelayBundle_DifftestWen_2;
+  assign DifftestDelayBundle_DifftestWen_3 = _zz_DifftestDelayBundle_DifftestWen_3;
+  assign DifftestDelayBundle_DifftestWen_4 = _zz_DifftestDelayBundle_DifftestWen_4;
+  assign DifftestDelayBundle_DifftestWdest_0 = _zz_DifftestDelayBundle_DifftestWdest_0;
+  assign DifftestDelayBundle_DifftestWdest_1 = _zz_DifftestDelayBundle_DifftestWdest_1;
+  assign DifftestDelayBundle_DifftestWdest_2 = _zz_DifftestDelayBundle_DifftestWdest_2;
+  assign DifftestDelayBundle_DifftestWdest_3 = _zz_DifftestDelayBundle_DifftestWdest_3;
+  assign DifftestDelayBundle_DifftestWdest_4 = _zz_DifftestDelayBundle_DifftestWdest_4;
+  assign DifftestDelayBundle_DifftestWdata_0 = _zz_DifftestDelayBundle_DifftestWdata_0;
+  assign DifftestDelayBundle_DifftestWdata_1 = _zz_DifftestDelayBundle_DifftestWdata_1;
+  assign DifftestDelayBundle_DifftestWdata_2 = _zz_DifftestDelayBundle_DifftestWdata_2;
+  assign DifftestDelayBundle_DifftestWdata_3 = _zz_DifftestDelayBundle_DifftestWdata_3;
+  assign DifftestDelayBundle_DifftestWdata_4 = _zz_DifftestDelayBundle_DifftestWdata_4;
+  assign DifftestDelayBundle_DifftestCsrRstat_0 = _zz_DifftestDelayBundle_DifftestCsrRstat_0;
+  assign DifftestDelayBundle_DifftestCsrRstat_1 = _zz_DifftestDelayBundle_DifftestCsrRstat_1;
+  assign DifftestDelayBundle_DifftestCsrRstat_2 = _zz_DifftestDelayBundle_DifftestCsrRstat_2;
+  assign DifftestDelayBundle_DifftestCsrRstat_3 = _zz_DifftestDelayBundle_DifftestCsrRstat_3;
+  assign DifftestDelayBundle_DifftestCsrRstat_4 = _zz_DifftestDelayBundle_DifftestCsrRstat_4;
+  assign DifftestDelayBundle_DifftestCsrData_0 = _zz_DifftestDelayBundle_DifftestCsrData_0;
+  assign DifftestDelayBundle_DifftestCsrData_1 = _zz_DifftestDelayBundle_DifftestCsrData_1;
+  assign DifftestDelayBundle_DifftestCsrData_2 = _zz_DifftestDelayBundle_DifftestCsrData_2;
+  assign DifftestDelayBundle_DifftestCsrData_3 = _zz_DifftestDelayBundle_DifftestCsrData_3;
+  assign DifftestDelayBundle_DifftestCsrData_4 = _zz_DifftestDelayBundle_DifftestCsrData_4;
+  assign DifftestDelayBundle_DifftestExcpEventExcpValid = _zz_DifftestDelayBundle_DifftestExcpEventExcpValid;
+  assign DifftestDelayBundle_DifftestExcpEventEret = _zz_DifftestDelayBundle_DifftestExcpEventEret;
+  assign DifftestDelayBundle_DifftestExcpEventIntrNO = _zz_DifftestDelayBundle_DifftestExcpEventIntrNO;
+  assign DifftestDelayBundle_DifftestExcpEventCause = _zz_DifftestDelayBundle_DifftestExcpEventCause;
+  assign DifftestDelayBundle_DifftestExcpEventEPC = _zz_DifftestDelayBundle_DifftestExcpEventEPC;
+  assign DifftestDelayBundle_DifftestExcpEventInst = _zz_DifftestDelayBundle_DifftestExcpEventInst;
+  assign DifftestDelayBundle_DifftestStoreEventValid = _zz_DifftestDelayBundle_DifftestStoreEventValid;
+  assign DifftestDelayBundle_DifftestStoreEventPAddr = _zz_DifftestDelayBundle_DifftestStoreEventPAddr;
+  assign DifftestDelayBundle_DifftestStoreEventVAddr = _zz_DifftestDelayBundle_DifftestStoreEventVAddr;
+  assign DifftestDelayBundle_DifftestStoreEventData = _zz_DifftestDelayBundle_DifftestStoreEventData;
+  assign DifftestDelayBundle_DifftestLoadEventValid = _zz_DifftestDelayBundle_DifftestLoadEventValid;
+  assign DifftestDelayBundle_DifftestLoadEventPAddr = _zz_DifftestDelayBundle_DifftestLoadEventPAddr;
+  assign DifftestDelayBundle_DifftestLoadEventVAddr = _zz_DifftestDelayBundle_DifftestLoadEventVAddr;
   assign arid = cpuClockingArea_arbiter_io_out_arid;
   assign araddr = cpuClockingArea_arbiter_io_out_araddr;
   assign arlen = cpuClockingArea_arbiter_io_out_arlen;
@@ -7708,172 +7548,6 @@ module mycpu (
     _zz_DifftestDelayBundle_DifftestLoadEventValid <= DifftestBundle_DifftestLoadEventValid;
     _zz_DifftestDelayBundle_DifftestLoadEventPAddr <= DifftestBundle_DifftestLoadEventPAddr;
     _zz_DifftestDelayBundle_DifftestLoadEventVAddr <= DifftestBundle_DifftestLoadEventVAddr;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_0_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_0;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_1_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_1;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_2_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_3_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_3;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_4_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_4;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_0_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_0;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_1_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_1;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_2_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_3_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_3;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_4_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_4;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_2 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4;
-    _zz_DifftestDelayBundle_DifftestSkip_0_2 <= _zz_DifftestDelayBundle_DifftestSkip_0;
-    _zz_DifftestDelayBundle_DifftestSkip_1_2 <= _zz_DifftestDelayBundle_DifftestSkip_1;
-    _zz_DifftestDelayBundle_DifftestSkip_2_2 <= _zz_DifftestDelayBundle_DifftestSkip_2;
-    _zz_DifftestDelayBundle_DifftestSkip_3_2 <= _zz_DifftestDelayBundle_DifftestSkip_3;
-    _zz_DifftestDelayBundle_DifftestSkip_4_2 <= _zz_DifftestDelayBundle_DifftestSkip_4;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_0_2 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_0;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_1_2 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_1;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_2_2 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_2;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_3_2 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_3;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_4_2 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_4;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_0_2 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_0;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_1_2 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_1;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_2_2 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_2;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_3_2 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_3;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_4_2 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_4;
-    _zz_DifftestDelayBundle_DifftestIsCount_0_2 <= _zz_DifftestDelayBundle_DifftestIsCount_0;
-    _zz_DifftestDelayBundle_DifftestIsCount_1_2 <= _zz_DifftestDelayBundle_DifftestIsCount_1;
-    _zz_DifftestDelayBundle_DifftestIsCount_2_2 <= _zz_DifftestDelayBundle_DifftestIsCount_2;
-    _zz_DifftestDelayBundle_DifftestIsCount_3_2 <= _zz_DifftestDelayBundle_DifftestIsCount_3;
-    _zz_DifftestDelayBundle_DifftestIsCount_4_2 <= _zz_DifftestDelayBundle_DifftestIsCount_4;
-    _zz_DifftestDelayBundle_DifftestCount_0_2 <= _zz_DifftestDelayBundle_DifftestCount_0;
-    _zz_DifftestDelayBundle_DifftestCount_1_2 <= _zz_DifftestDelayBundle_DifftestCount_1;
-    _zz_DifftestDelayBundle_DifftestCount_2_2 <= _zz_DifftestDelayBundle_DifftestCount_2;
-    _zz_DifftestDelayBundle_DifftestCount_3_2 <= _zz_DifftestDelayBundle_DifftestCount_3;
-    _zz_DifftestDelayBundle_DifftestCount_4_2 <= _zz_DifftestDelayBundle_DifftestCount_4;
-    _zz_DifftestDelayBundle_DifftestWen_0_2 <= _zz_DifftestDelayBundle_DifftestWen_0;
-    _zz_DifftestDelayBundle_DifftestWen_1_2 <= _zz_DifftestDelayBundle_DifftestWen_1;
-    _zz_DifftestDelayBundle_DifftestWen_2_2 <= _zz_DifftestDelayBundle_DifftestWen_2;
-    _zz_DifftestDelayBundle_DifftestWen_3_2 <= _zz_DifftestDelayBundle_DifftestWen_3;
-    _zz_DifftestDelayBundle_DifftestWen_4_2 <= _zz_DifftestDelayBundle_DifftestWen_4;
-    _zz_DifftestDelayBundle_DifftestWdest_0_2 <= _zz_DifftestDelayBundle_DifftestWdest_0;
-    _zz_DifftestDelayBundle_DifftestWdest_1_2 <= _zz_DifftestDelayBundle_DifftestWdest_1;
-    _zz_DifftestDelayBundle_DifftestWdest_2_2 <= _zz_DifftestDelayBundle_DifftestWdest_2;
-    _zz_DifftestDelayBundle_DifftestWdest_3_2 <= _zz_DifftestDelayBundle_DifftestWdest_3;
-    _zz_DifftestDelayBundle_DifftestWdest_4_2 <= _zz_DifftestDelayBundle_DifftestWdest_4;
-    _zz_DifftestDelayBundle_DifftestWdata_0_2 <= _zz_DifftestDelayBundle_DifftestWdata_0;
-    _zz_DifftestDelayBundle_DifftestWdata_1_2 <= _zz_DifftestDelayBundle_DifftestWdata_1;
-    _zz_DifftestDelayBundle_DifftestWdata_2_2 <= _zz_DifftestDelayBundle_DifftestWdata_2;
-    _zz_DifftestDelayBundle_DifftestWdata_3_2 <= _zz_DifftestDelayBundle_DifftestWdata_3;
-    _zz_DifftestDelayBundle_DifftestWdata_4_2 <= _zz_DifftestDelayBundle_DifftestWdata_4;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_0_2 <= _zz_DifftestDelayBundle_DifftestCsrRstat_0;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_1_2 <= _zz_DifftestDelayBundle_DifftestCsrRstat_1;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_2_2 <= _zz_DifftestDelayBundle_DifftestCsrRstat_2;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_3_2 <= _zz_DifftestDelayBundle_DifftestCsrRstat_3;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_4_2 <= _zz_DifftestDelayBundle_DifftestCsrRstat_4;
-    _zz_DifftestDelayBundle_DifftestCsrData_0_2 <= _zz_DifftestDelayBundle_DifftestCsrData_0;
-    _zz_DifftestDelayBundle_DifftestCsrData_1_2 <= _zz_DifftestDelayBundle_DifftestCsrData_1;
-    _zz_DifftestDelayBundle_DifftestCsrData_2_2 <= _zz_DifftestDelayBundle_DifftestCsrData_2;
-    _zz_DifftestDelayBundle_DifftestCsrData_3_2 <= _zz_DifftestDelayBundle_DifftestCsrData_3;
-    _zz_DifftestDelayBundle_DifftestCsrData_4_2 <= _zz_DifftestDelayBundle_DifftestCsrData_4;
-    _zz_DifftestDelayBundle_DifftestExcpEventExcpValid_2 <= _zz_DifftestDelayBundle_DifftestExcpEventExcpValid;
-    _zz_DifftestDelayBundle_DifftestExcpEventEret_2 <= _zz_DifftestDelayBundle_DifftestExcpEventEret;
-    _zz_DifftestDelayBundle_DifftestExcpEventIntrNO_2 <= _zz_DifftestDelayBundle_DifftestExcpEventIntrNO;
-    _zz_DifftestDelayBundle_DifftestExcpEventCause_2 <= _zz_DifftestDelayBundle_DifftestExcpEventCause;
-    _zz_DifftestDelayBundle_DifftestExcpEventEPC_2 <= _zz_DifftestDelayBundle_DifftestExcpEventEPC;
-    _zz_DifftestDelayBundle_DifftestExcpEventInst_2 <= _zz_DifftestDelayBundle_DifftestExcpEventInst;
-    _zz_DifftestDelayBundle_DifftestStoreEventValid_2 <= _zz_DifftestDelayBundle_DifftestStoreEventValid;
-    _zz_DifftestDelayBundle_DifftestStoreEventPAddr_2 <= _zz_DifftestDelayBundle_DifftestStoreEventPAddr;
-    _zz_DifftestDelayBundle_DifftestStoreEventVAddr_2 <= _zz_DifftestDelayBundle_DifftestStoreEventVAddr;
-    _zz_DifftestDelayBundle_DifftestStoreEventData_2 <= _zz_DifftestDelayBundle_DifftestStoreEventData;
-    _zz_DifftestDelayBundle_DifftestLoadEventValid_2 <= _zz_DifftestDelayBundle_DifftestLoadEventValid;
-    _zz_DifftestDelayBundle_DifftestLoadEventPAddr_2 <= _zz_DifftestDelayBundle_DifftestLoadEventPAddr;
-    _zz_DifftestDelayBundle_DifftestLoadEventVAddr_2 <= _zz_DifftestDelayBundle_DifftestLoadEventVAddr;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_2_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_3_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitIndex_4_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_0_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_0_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_1_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_1_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_2_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_2_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_3_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_3_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitValid_4_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitValid_4_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_0_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_0_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_1_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_1_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_2_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_2_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_3_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_3_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitPC_4_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitPC_4_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_0_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_1_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_2_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_3_2;
-    _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_1 <= _zz_DifftestDelayBundle_DifftestInstrCommitInstr_4_2;
-    _zz_DifftestDelayBundle_DifftestSkip_0_1 <= _zz_DifftestDelayBundle_DifftestSkip_0_2;
-    _zz_DifftestDelayBundle_DifftestSkip_1_1 <= _zz_DifftestDelayBundle_DifftestSkip_1_2;
-    _zz_DifftestDelayBundle_DifftestSkip_2_1 <= _zz_DifftestDelayBundle_DifftestSkip_2_2;
-    _zz_DifftestDelayBundle_DifftestSkip_3_1 <= _zz_DifftestDelayBundle_DifftestSkip_3_2;
-    _zz_DifftestDelayBundle_DifftestSkip_4_1 <= _zz_DifftestDelayBundle_DifftestSkip_4_2;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_0_1 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_0_2;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_1_1 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_1_2;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_2_1 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_2_2;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_3_1 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_3_2;
-    _zz_DifftestDelayBundle_DifftestIsTlbFill_4_1 <= _zz_DifftestDelayBundle_DifftestIsTlbFill_4_2;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_0_1 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_0_2;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_1_1 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_1_2;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_2_1 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_2_2;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_3_1 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_3_2;
-    _zz_DifftestDelayBundle_DifftestTlbFillIndex_4_1 <= _zz_DifftestDelayBundle_DifftestTlbFillIndex_4_2;
-    _zz_DifftestDelayBundle_DifftestIsCount_0_1 <= _zz_DifftestDelayBundle_DifftestIsCount_0_2;
-    _zz_DifftestDelayBundle_DifftestIsCount_1_1 <= _zz_DifftestDelayBundle_DifftestIsCount_1_2;
-    _zz_DifftestDelayBundle_DifftestIsCount_2_1 <= _zz_DifftestDelayBundle_DifftestIsCount_2_2;
-    _zz_DifftestDelayBundle_DifftestIsCount_3_1 <= _zz_DifftestDelayBundle_DifftestIsCount_3_2;
-    _zz_DifftestDelayBundle_DifftestIsCount_4_1 <= _zz_DifftestDelayBundle_DifftestIsCount_4_2;
-    _zz_DifftestDelayBundle_DifftestCount_0_1 <= _zz_DifftestDelayBundle_DifftestCount_0_2;
-    _zz_DifftestDelayBundle_DifftestCount_1_1 <= _zz_DifftestDelayBundle_DifftestCount_1_2;
-    _zz_DifftestDelayBundle_DifftestCount_2_1 <= _zz_DifftestDelayBundle_DifftestCount_2_2;
-    _zz_DifftestDelayBundle_DifftestCount_3_1 <= _zz_DifftestDelayBundle_DifftestCount_3_2;
-    _zz_DifftestDelayBundle_DifftestCount_4_1 <= _zz_DifftestDelayBundle_DifftestCount_4_2;
-    _zz_DifftestDelayBundle_DifftestWen_0_1 <= _zz_DifftestDelayBundle_DifftestWen_0_2;
-    _zz_DifftestDelayBundle_DifftestWen_1_1 <= _zz_DifftestDelayBundle_DifftestWen_1_2;
-    _zz_DifftestDelayBundle_DifftestWen_2_1 <= _zz_DifftestDelayBundle_DifftestWen_2_2;
-    _zz_DifftestDelayBundle_DifftestWen_3_1 <= _zz_DifftestDelayBundle_DifftestWen_3_2;
-    _zz_DifftestDelayBundle_DifftestWen_4_1 <= _zz_DifftestDelayBundle_DifftestWen_4_2;
-    _zz_DifftestDelayBundle_DifftestWdest_0_1 <= _zz_DifftestDelayBundle_DifftestWdest_0_2;
-    _zz_DifftestDelayBundle_DifftestWdest_1_1 <= _zz_DifftestDelayBundle_DifftestWdest_1_2;
-    _zz_DifftestDelayBundle_DifftestWdest_2_1 <= _zz_DifftestDelayBundle_DifftestWdest_2_2;
-    _zz_DifftestDelayBundle_DifftestWdest_3_1 <= _zz_DifftestDelayBundle_DifftestWdest_3_2;
-    _zz_DifftestDelayBundle_DifftestWdest_4_1 <= _zz_DifftestDelayBundle_DifftestWdest_4_2;
-    _zz_DifftestDelayBundle_DifftestWdata_0_1 <= _zz_DifftestDelayBundle_DifftestWdata_0_2;
-    _zz_DifftestDelayBundle_DifftestWdata_1_1 <= _zz_DifftestDelayBundle_DifftestWdata_1_2;
-    _zz_DifftestDelayBundle_DifftestWdata_2_1 <= _zz_DifftestDelayBundle_DifftestWdata_2_2;
-    _zz_DifftestDelayBundle_DifftestWdata_3_1 <= _zz_DifftestDelayBundle_DifftestWdata_3_2;
-    _zz_DifftestDelayBundle_DifftestWdata_4_1 <= _zz_DifftestDelayBundle_DifftestWdata_4_2;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_0_1 <= _zz_DifftestDelayBundle_DifftestCsrRstat_0_2;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_1_1 <= _zz_DifftestDelayBundle_DifftestCsrRstat_1_2;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_2_1 <= _zz_DifftestDelayBundle_DifftestCsrRstat_2_2;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_3_1 <= _zz_DifftestDelayBundle_DifftestCsrRstat_3_2;
-    _zz_DifftestDelayBundle_DifftestCsrRstat_4_1 <= _zz_DifftestDelayBundle_DifftestCsrRstat_4_2;
-    _zz_DifftestDelayBundle_DifftestCsrData_0_1 <= _zz_DifftestDelayBundle_DifftestCsrData_0_2;
-    _zz_DifftestDelayBundle_DifftestCsrData_1_1 <= _zz_DifftestDelayBundle_DifftestCsrData_1_2;
-    _zz_DifftestDelayBundle_DifftestCsrData_2_1 <= _zz_DifftestDelayBundle_DifftestCsrData_2_2;
-    _zz_DifftestDelayBundle_DifftestCsrData_3_1 <= _zz_DifftestDelayBundle_DifftestCsrData_3_2;
-    _zz_DifftestDelayBundle_DifftestCsrData_4_1 <= _zz_DifftestDelayBundle_DifftestCsrData_4_2;
-    _zz_DifftestDelayBundle_DifftestExcpEventExcpValid_1 <= _zz_DifftestDelayBundle_DifftestExcpEventExcpValid_2;
-    _zz_DifftestDelayBundle_DifftestExcpEventEret_1 <= _zz_DifftestDelayBundle_DifftestExcpEventEret_2;
-    _zz_DifftestDelayBundle_DifftestExcpEventIntrNO_1 <= _zz_DifftestDelayBundle_DifftestExcpEventIntrNO_2;
-    _zz_DifftestDelayBundle_DifftestExcpEventCause_1 <= _zz_DifftestDelayBundle_DifftestExcpEventCause_2;
-    _zz_DifftestDelayBundle_DifftestExcpEventEPC_1 <= _zz_DifftestDelayBundle_DifftestExcpEventEPC_2;
-    _zz_DifftestDelayBundle_DifftestExcpEventInst_1 <= _zz_DifftestDelayBundle_DifftestExcpEventInst_2;
-    _zz_DifftestDelayBundle_DifftestStoreEventValid_1 <= _zz_DifftestDelayBundle_DifftestStoreEventValid_2;
-    _zz_DifftestDelayBundle_DifftestStoreEventPAddr_1 <= _zz_DifftestDelayBundle_DifftestStoreEventPAddr_2;
-    _zz_DifftestDelayBundle_DifftestStoreEventVAddr_1 <= _zz_DifftestDelayBundle_DifftestStoreEventVAddr_2;
-    _zz_DifftestDelayBundle_DifftestStoreEventData_1 <= _zz_DifftestDelayBundle_DifftestStoreEventData_2;
-    _zz_DifftestDelayBundle_DifftestLoadEventValid_1 <= _zz_DifftestDelayBundle_DifftestLoadEventValid_2;
-    _zz_DifftestDelayBundle_DifftestLoadEventPAddr_1 <= _zz_DifftestDelayBundle_DifftestLoadEventPAddr_2;
-    _zz_DifftestDelayBundle_DifftestLoadEventVAddr_1 <= _zz_DifftestDelayBundle_DifftestLoadEventVAddr_2;
   end
 
 
@@ -7970,30 +7644,29 @@ module DIVU (
   localparam DIVUOp_mod_1 = 2'd2;
   localparam DIVUOp_modu = 2'd3;
 
-  wire       [5:0]    _zz_counter_valueNext;
-  wire       [0:0]    _zz_counter_valueNext_1;
+  wire       [5:0]    _zz__zz_when_DIVU_l29_1;
+  wire       [0:0]    _zz__zz_when_DIVU_l29_1_1;
   wire       [31:0]   _zz_io_output_payload_data;
   wire       [31:0]   _zz_io_output_payload_data_1;
   wire       [31:0]   _zz_io_output_payload_data_2;
   wire       [31:0]   _zz_io_output_payload_data_3;
   wire       [31:0]   _zz_io_output_payload_data_4;
   wire       [31:0]   _zz_io_output_payload_data_5;
-  reg                 block_1;
-  reg                 counter_willIncrement;
-  wire                counter_willClear;
-  reg        [5:0]    counter_valueNext;
-  reg        [5:0]    counter_value;
-  wire                counter_willOverflowIfInc;
-  wire                counter_willOverflow;
+  reg                 when_DIVU_l26;
+  reg                 _zz_when_DIVU_l29;
+  reg        [5:0]    _zz_when_DIVU_l29_1;
+  reg        [5:0]    _zz_when_DIVU_l29_2;
+  wire                _zz_when_DIVU_l29_3;
+  wire                _zz_1;
   wire                io_input_fire;
-  wire                when_DIVU_l26;
+  wire                when_DIVU_l29;
   `ifndef SYNTHESIS
   reg [39:0] io_input_payload_uop_divuOp_string;
   `endif
 
 
-  assign _zz_counter_valueNext_1 = counter_willIncrement;
-  assign _zz_counter_valueNext = {5'd0, _zz_counter_valueNext_1};
+  assign _zz__zz_when_DIVU_l29_1_1 = _zz_when_DIVU_l29;
+  assign _zz__zz_when_DIVU_l29_1 = {5'd0, _zz__zz_when_DIVU_l29_1_1};
   assign _zz_io_output_payload_data = ($signed(_zz_io_output_payload_data_1) / $signed(_zz_io_output_payload_data_2));
   assign _zz_io_output_payload_data_1 = io_input_payload_src1;
   assign _zz_io_output_payload_data_2 = io_input_payload_src2;
@@ -8013,36 +7686,35 @@ module DIVU (
   `endif
 
   always @(*) begin
-    counter_willIncrement = 1'b0;
-    if(block_1) begin
-      counter_willIncrement = 1'b1;
+    _zz_when_DIVU_l29 = 1'b0;
+    if(when_DIVU_l26) begin
+      _zz_when_DIVU_l29 = 1'b1;
     end
   end
 
-  assign counter_willClear = 1'b0;
-  assign counter_willOverflowIfInc = (counter_value == 6'h20);
-  assign counter_willOverflow = (counter_willOverflowIfInc && counter_willIncrement);
+  assign _zz_when_DIVU_l29_3 = (_zz_when_DIVU_l29_2 == 6'h20);
+  assign _zz_1 = (_zz_when_DIVU_l29_3 && _zz_when_DIVU_l29);
   always @(*) begin
-    if(counter_willOverflow) begin
-      counter_valueNext = 6'h00;
+    if(_zz_1) begin
+      _zz_when_DIVU_l29_1 = 6'h00;
     end else begin
-      counter_valueNext = (counter_value + _zz_counter_valueNext);
+      _zz_when_DIVU_l29_1 = (_zz_when_DIVU_l29_2 + _zz__zz_when_DIVU_l29_1);
     end
-    if(counter_willClear) begin
-      counter_valueNext = 6'h00;
+    if(1'b0) begin
+      _zz_when_DIVU_l29_1 = 6'h00;
     end
   end
 
-  assign io_input_ready = (! block_1);
+  assign io_input_ready = (! when_DIVU_l26);
   always @(*) begin
     io_output_valid = 1'b0;
-    if(when_DIVU_l26) begin
+    if(when_DIVU_l29) begin
       io_output_valid = 1'b1;
     end
   end
 
   assign io_input_fire = (io_input_valid && io_input_ready);
-  assign when_DIVU_l26 = (counter_willOverflowIfInc || (block_1 && io_input_payload_exceptionInfo_exception));
+  assign when_DIVU_l29 = (_zz_when_DIVU_l29_3 || (when_DIVU_l26 && io_input_payload_exceptionInfo_exception));
   assign io_output_payload_robIdx = io_input_payload_robIdx;
   assign io_output_payload_prd = io_input_payload_prd;
   assign io_output_payload_branchResult_targetPC = io_input_payload_branchResult_targetPC;
@@ -8070,16 +7742,16 @@ module DIVU (
 
   always @(posedge aclk) begin
     if(!cpuClockingArea_areaFlushReset_newReset) begin
-      block_1 <= 1'b0;
-      counter_value <= 6'h00;
+      when_DIVU_l26 <= 1'b0;
+      _zz_when_DIVU_l29_2 <= 6'h00;
     end else begin
-      counter_value <= counter_valueNext;
-      block_1 <= block_1;
+      _zz_when_DIVU_l29_2 <= _zz_when_DIVU_l29_1;
+      when_DIVU_l26 <= when_DIVU_l26;
       if(io_input_fire) begin
-        block_1 <= 1'b1;
+        when_DIVU_l26 <= 1'b1;
       end
-      if(when_DIVU_l26) begin
-        block_1 <= 1'b0;
+      if(when_DIVU_l29) begin
+        when_DIVU_l26 <= 1'b0;
       end
     end
   end
@@ -8129,23 +7801,14 @@ module MULU (
   localparam MULUOp_mulhi = 2'd1;
   localparam MULUOp_mulhiu = 2'd2;
 
-  wire       [31:0]   _zz_ress;
-  wire       [31:0]   _zz_ress_1;
-  wire       [31:0]   _zz_res;
-  wire                stage12_valid;
-  reg                 stage12_ready;
-  wire       [31:0]   stage12_payload_src1;
-  wire       [31:0]   stage12_payload_src2;
-  wire       [4:0]    stage12_payload_robIdx;
-  wire       [31:0]   stage12_payload_branchResult_targetPC;
-  wire                stage12_payload_branchResult_branchResult;
-  wire                stage12_payload_branchResult_predictFail;
-  wire                stage12_payload_exceptionInfo_exception;
-  wire       [5:0]    stage12_payload_exceptionInfo_eCode;
-  wire       [0:0]    stage12_payload_exceptionInfo_eSubCode;
-  wire       [31:0]   stage12_payload_pc;
-  wire       [5:0]    stage12_payload_prd;
-  wire       [1:0]    stage12_payload_uop_muluOp;
+  wire       [31:0]   _zz__zz_io_output_payload_data_5;
+  wire       [63:0]   _zz__zz_io_output_payload_data_5_1;
+  wire       [31:0]   _zz__zz_io_output_payload_data_5_2;
+  wire       [31:0]   _zz__zz_io_output_payload_data_5_3;
+  wire                _zz_io_wakeOut_1_valid;
+  reg                 _zz_io_input_m2sPipe_ready;
+  wire       [5:0]    _zz_io_wakeOut_1_payload;
+  wire       [1:0]    _zz_1;
   wire                io_input_m2sPipe_valid;
   wire                io_input_m2sPipe_ready;
   wire       [31:0]   io_input_m2sPipe_payload_src1;
@@ -8174,65 +7837,43 @@ module MULU (
   reg        [5:0]    io_input_rData_prd;
   reg        [1:0]    io_input_rData_uop_muluOp;
   wire                when_Stream_l369;
-  wire                stage23_valid;
-  wire                stage23_ready;
-  wire       [31:0]   stage23_payload_src1;
-  wire       [31:0]   stage23_payload_src2;
-  wire       [4:0]    stage23_payload_robIdx;
-  wire       [31:0]   stage23_payload_branchResult_targetPC;
-  wire                stage23_payload_branchResult_branchResult;
-  wire                stage23_payload_branchResult_predictFail;
-  wire                stage23_payload_exceptionInfo_exception;
-  wire       [5:0]    stage23_payload_exceptionInfo_eCode;
-  wire       [0:0]    stage23_payload_exceptionInfo_eSubCode;
-  wire       [31:0]   stage23_payload_pc;
-  wire       [5:0]    stage23_payload_prd;
-  wire       [1:0]    stage23_payload_uop_muluOp;
-  wire                stage12_m2sPipe_valid;
-  wire                stage12_m2sPipe_ready;
-  wire       [31:0]   stage12_m2sPipe_payload_src1;
-  wire       [31:0]   stage12_m2sPipe_payload_src2;
-  wire       [4:0]    stage12_m2sPipe_payload_robIdx;
-  wire       [31:0]   stage12_m2sPipe_payload_branchResult_targetPC;
-  wire                stage12_m2sPipe_payload_branchResult_branchResult;
-  wire                stage12_m2sPipe_payload_branchResult_predictFail;
-  wire                stage12_m2sPipe_payload_exceptionInfo_exception;
-  wire       [5:0]    stage12_m2sPipe_payload_exceptionInfo_eCode;
-  wire       [0:0]    stage12_m2sPipe_payload_exceptionInfo_eSubCode;
-  wire       [31:0]   stage12_m2sPipe_payload_pc;
-  wire       [5:0]    stage12_m2sPipe_payload_prd;
-  wire       [1:0]    stage12_m2sPipe_payload_uop_muluOp;
-  reg                 stage12_rValid;
-  reg        [31:0]   stage12_rData_src1;
-  reg        [31:0]   stage12_rData_src2;
-  reg        [4:0]    stage12_rData_robIdx;
-  reg        [31:0]   stage12_rData_branchResult_targetPC;
-  reg                 stage12_rData_branchResult_branchResult;
-  reg                 stage12_rData_branchResult_predictFail;
-  reg                 stage12_rData_exceptionInfo_exception;
-  reg        [5:0]    stage12_rData_exceptionInfo_eCode;
-  reg        [0:0]    stage12_rData_exceptionInfo_eSubCode;
-  reg        [31:0]   stage12_rData_pc;
-  reg        [5:0]    stage12_rData_prd;
-  reg        [1:0]    stage12_rData_uop_muluOp;
+  wire                _zz_io_output_valid;
+  wire       [31:0]   _zz_io_output_payload_data;
+  wire       [31:0]   _zz_io_output_payload_data_1;
+  wire       [5:0]    _zz_io_output_payload_prd;
+  wire       [1:0]    _zz_2;
+  wire                _zz_when_Stream_l369;
+  wire       [1:0]    _zz_3;
+  reg                 _zz_when_Stream_l369_1;
+  reg        [31:0]   _zz_io_output_payload_data_2;
+  reg        [31:0]   _zz_io_output_payload_data_3;
+  reg        [4:0]    _zz_io_output_payload_robIdx;
+  reg        [31:0]   _zz_io_output_payload_branchResult_targetPC;
+  reg                 _zz_io_output_payload_branchResult_branchResult;
+  reg                 _zz_io_output_payload_branchResult_predictFail;
+  reg                 _zz_io_output_payload_exceptionInfo_exception;
+  reg        [5:0]    _zz_io_output_payload_exceptionInfo_eCode;
+  reg        [0:0]    _zz_io_output_payload_exceptionInfo_eSubCode;
+  reg        [5:0]    _zz_io_output_payload_prd_1;
+  reg        [1:0]    _zz_4;
   wire                when_Stream_l369_1;
-  wire       [63:0]   resu;
-  wire       [63:0]   ress;
-  reg        [31:0]   res;
+  wire       [63:0]   _zz_io_output_payload_data_4;
+  reg        [31:0]   _zz_io_output_payload_data_5;
   `ifndef SYNTHESIS
   reg [47:0] io_input_payload_uop_muluOp_string;
-  reg [47:0] stage12_payload_uop_muluOp_string;
+  reg [47:0] _zz_1_string;
   reg [47:0] io_input_m2sPipe_payload_uop_muluOp_string;
   reg [47:0] io_input_rData_uop_muluOp_string;
-  reg [47:0] stage23_payload_uop_muluOp_string;
-  reg [47:0] stage12_m2sPipe_payload_uop_muluOp_string;
-  reg [47:0] stage12_rData_uop_muluOp_string;
+  reg [47:0] _zz_2_string;
+  reg [47:0] _zz_3_string;
+  reg [47:0] _zz_4_string;
   `endif
 
 
-  assign _zz_ress = stage23_payload_src1;
-  assign _zz_ress_1 = stage23_payload_src2;
-  assign _zz_res = ress[63 : 32];
+  assign _zz__zz_io_output_payload_data_5_1 = ($signed(_zz__zz_io_output_payload_data_5_2) * $signed(_zz__zz_io_output_payload_data_5_3));
+  assign _zz__zz_io_output_payload_data_5 = _zz__zz_io_output_payload_data_5_1[63 : 32];
+  assign _zz__zz_io_output_payload_data_5_2 = _zz_io_output_payload_data;
+  assign _zz__zz_io_output_payload_data_5_3 = _zz_io_output_payload_data_1;
   `ifndef SYNTHESIS
   always @(*) begin
     case(io_input_payload_uop_muluOp)
@@ -8243,11 +7884,11 @@ module MULU (
     endcase
   end
   always @(*) begin
-    case(stage12_payload_uop_muluOp)
-      MULUOp_mullo : stage12_payload_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : stage12_payload_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : stage12_payload_uop_muluOp_string = "mulhiu";
-      default : stage12_payload_uop_muluOp_string = "??????";
+    case(_zz_1)
+      MULUOp_mullo : _zz_1_string = "mullo ";
+      MULUOp_mulhi : _zz_1_string = "mulhi ";
+      MULUOp_mulhiu : _zz_1_string = "mulhiu";
+      default : _zz_1_string = "??????";
     endcase
   end
   always @(*) begin
@@ -8267,27 +7908,27 @@ module MULU (
     endcase
   end
   always @(*) begin
-    case(stage23_payload_uop_muluOp)
-      MULUOp_mullo : stage23_payload_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : stage23_payload_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : stage23_payload_uop_muluOp_string = "mulhiu";
-      default : stage23_payload_uop_muluOp_string = "??????";
+    case(_zz_2)
+      MULUOp_mullo : _zz_2_string = "mullo ";
+      MULUOp_mulhi : _zz_2_string = "mulhi ";
+      MULUOp_mulhiu : _zz_2_string = "mulhiu";
+      default : _zz_2_string = "??????";
     endcase
   end
   always @(*) begin
-    case(stage12_m2sPipe_payload_uop_muluOp)
-      MULUOp_mullo : stage12_m2sPipe_payload_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : stage12_m2sPipe_payload_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : stage12_m2sPipe_payload_uop_muluOp_string = "mulhiu";
-      default : stage12_m2sPipe_payload_uop_muluOp_string = "??????";
+    case(_zz_3)
+      MULUOp_mullo : _zz_3_string = "mullo ";
+      MULUOp_mulhi : _zz_3_string = "mulhi ";
+      MULUOp_mulhiu : _zz_3_string = "mulhiu";
+      default : _zz_3_string = "??????";
     endcase
   end
   always @(*) begin
-    case(stage12_rData_uop_muluOp)
-      MULUOp_mullo : stage12_rData_uop_muluOp_string = "mullo ";
-      MULUOp_mulhi : stage12_rData_uop_muluOp_string = "mulhi ";
-      MULUOp_mulhiu : stage12_rData_uop_muluOp_string = "mulhiu";
-      default : stage12_rData_uop_muluOp_string = "??????";
+    case(_zz_4)
+      MULUOp_mullo : _zz_4_string = "mullo ";
+      MULUOp_mulhi : _zz_4_string = "mulhi ";
+      MULUOp_mulhiu : _zz_4_string = "mulhiu";
+      default : _zz_4_string = "??????";
     endcase
   end
   `endif
@@ -8313,101 +7954,69 @@ module MULU (
   assign io_input_m2sPipe_payload_pc = io_input_rData_pc;
   assign io_input_m2sPipe_payload_prd = io_input_rData_prd;
   assign io_input_m2sPipe_payload_uop_muluOp = io_input_rData_uop_muluOp;
-  assign stage12_valid = io_input_m2sPipe_valid;
-  assign io_input_m2sPipe_ready = stage12_ready;
-  assign stage12_payload_src1 = io_input_m2sPipe_payload_src1;
-  assign stage12_payload_src2 = io_input_m2sPipe_payload_src2;
-  assign stage12_payload_robIdx = io_input_m2sPipe_payload_robIdx;
-  assign stage12_payload_branchResult_targetPC = io_input_m2sPipe_payload_branchResult_targetPC;
-  assign stage12_payload_branchResult_branchResult = io_input_m2sPipe_payload_branchResult_branchResult;
-  assign stage12_payload_branchResult_predictFail = io_input_m2sPipe_payload_branchResult_predictFail;
-  assign stage12_payload_exceptionInfo_exception = io_input_m2sPipe_payload_exceptionInfo_exception;
-  assign stage12_payload_exceptionInfo_eCode = io_input_m2sPipe_payload_exceptionInfo_eCode;
-  assign stage12_payload_exceptionInfo_eSubCode = io_input_m2sPipe_payload_exceptionInfo_eSubCode;
-  assign stage12_payload_pc = io_input_m2sPipe_payload_pc;
-  assign stage12_payload_prd = io_input_m2sPipe_payload_prd;
-  assign stage12_payload_uop_muluOp = io_input_m2sPipe_payload_uop_muluOp;
+  assign _zz_io_wakeOut_1_valid = io_input_m2sPipe_valid;
+  assign io_input_m2sPipe_ready = _zz_io_input_m2sPipe_ready;
+  assign _zz_io_wakeOut_1_payload = io_input_m2sPipe_payload_prd;
+  assign _zz_1 = io_input_m2sPipe_payload_uop_muluOp;
   always @(*) begin
-    stage12_ready = stage12_m2sPipe_ready;
+    _zz_io_input_m2sPipe_ready = io_output_ready;
     if(when_Stream_l369_1) begin
-      stage12_ready = 1'b1;
+      _zz_io_input_m2sPipe_ready = 1'b1;
     end
   end
 
-  assign when_Stream_l369_1 = (! stage12_m2sPipe_valid);
-  assign stage12_m2sPipe_valid = stage12_rValid;
-  assign stage12_m2sPipe_payload_src1 = stage12_rData_src1;
-  assign stage12_m2sPipe_payload_src2 = stage12_rData_src2;
-  assign stage12_m2sPipe_payload_robIdx = stage12_rData_robIdx;
-  assign stage12_m2sPipe_payload_branchResult_targetPC = stage12_rData_branchResult_targetPC;
-  assign stage12_m2sPipe_payload_branchResult_branchResult = stage12_rData_branchResult_branchResult;
-  assign stage12_m2sPipe_payload_branchResult_predictFail = stage12_rData_branchResult_predictFail;
-  assign stage12_m2sPipe_payload_exceptionInfo_exception = stage12_rData_exceptionInfo_exception;
-  assign stage12_m2sPipe_payload_exceptionInfo_eCode = stage12_rData_exceptionInfo_eCode;
-  assign stage12_m2sPipe_payload_exceptionInfo_eSubCode = stage12_rData_exceptionInfo_eSubCode;
-  assign stage12_m2sPipe_payload_pc = stage12_rData_pc;
-  assign stage12_m2sPipe_payload_prd = stage12_rData_prd;
-  assign stage12_m2sPipe_payload_uop_muluOp = stage12_rData_uop_muluOp;
-  assign stage23_valid = stage12_m2sPipe_valid;
-  assign stage12_m2sPipe_ready = stage23_ready;
-  assign stage23_payload_src1 = stage12_m2sPipe_payload_src1;
-  assign stage23_payload_src2 = stage12_m2sPipe_payload_src2;
-  assign stage23_payload_robIdx = stage12_m2sPipe_payload_robIdx;
-  assign stage23_payload_branchResult_targetPC = stage12_m2sPipe_payload_branchResult_targetPC;
-  assign stage23_payload_branchResult_branchResult = stage12_m2sPipe_payload_branchResult_branchResult;
-  assign stage23_payload_branchResult_predictFail = stage12_m2sPipe_payload_branchResult_predictFail;
-  assign stage23_payload_exceptionInfo_exception = stage12_m2sPipe_payload_exceptionInfo_exception;
-  assign stage23_payload_exceptionInfo_eCode = stage12_m2sPipe_payload_exceptionInfo_eCode;
-  assign stage23_payload_exceptionInfo_eSubCode = stage12_m2sPipe_payload_exceptionInfo_eSubCode;
-  assign stage23_payload_pc = stage12_m2sPipe_payload_pc;
-  assign stage23_payload_prd = stage12_m2sPipe_payload_prd;
-  assign stage23_payload_uop_muluOp = stage12_m2sPipe_payload_uop_muluOp;
-  assign resu = (stage23_payload_src1 * stage23_payload_src2);
-  assign ress = ($signed(_zz_ress) * $signed(_zz_ress_1));
-  assign io_forward_valid = (stage23_valid && (stage23_payload_prd != 6'h00));
-  assign io_forward_payload_idx = stage23_payload_prd;
-  assign io_forward_payload_payload = res;
-  assign io_output_valid = stage23_valid;
-  assign stage23_ready = io_output_ready;
-  assign io_output_payload_robIdx = stage23_payload_robIdx;
-  assign io_output_payload_data = res;
-  assign io_output_payload_prd = stage23_payload_prd;
-  assign io_output_payload_branchResult_targetPC = stage23_payload_branchResult_targetPC;
-  assign io_output_payload_branchResult_branchResult = stage23_payload_branchResult_branchResult;
-  assign io_output_payload_branchResult_predictFail = stage23_payload_branchResult_predictFail;
-  assign io_output_payload_exceptionInfo_exception = stage23_payload_exceptionInfo_exception;
-  assign io_output_payload_exceptionInfo_eCode = stage23_payload_exceptionInfo_eCode;
-  assign io_output_payload_exceptionInfo_eSubCode = stage23_payload_exceptionInfo_eSubCode;
+  assign when_Stream_l369_1 = (! _zz_when_Stream_l369);
+  assign _zz_when_Stream_l369 = _zz_when_Stream_l369_1;
+  assign _zz_3 = _zz_4;
+  assign _zz_io_output_valid = _zz_when_Stream_l369;
+  assign _zz_io_output_payload_data = _zz_io_output_payload_data_2;
+  assign _zz_io_output_payload_data_1 = _zz_io_output_payload_data_3;
+  assign _zz_io_output_payload_prd = _zz_io_output_payload_prd_1;
+  assign _zz_2 = _zz_3;
+  assign _zz_io_output_payload_data_4 = (_zz_io_output_payload_data * _zz_io_output_payload_data_1);
+  assign io_forward_valid = (_zz_io_output_valid && (_zz_io_output_payload_prd != 6'h00));
+  assign io_forward_payload_idx = _zz_io_output_payload_prd;
+  assign io_forward_payload_payload = _zz_io_output_payload_data_5;
+  assign io_output_valid = _zz_io_output_valid;
+  assign io_output_payload_robIdx = _zz_io_output_payload_robIdx;
+  assign io_output_payload_data = _zz_io_output_payload_data_5;
+  assign io_output_payload_prd = _zz_io_output_payload_prd;
+  assign io_output_payload_branchResult_targetPC = _zz_io_output_payload_branchResult_targetPC;
+  assign io_output_payload_branchResult_branchResult = _zz_io_output_payload_branchResult_branchResult;
+  assign io_output_payload_branchResult_predictFail = _zz_io_output_payload_branchResult_predictFail;
+  assign io_output_payload_exceptionInfo_exception = _zz_io_output_payload_exceptionInfo_exception;
+  assign io_output_payload_exceptionInfo_eCode = _zz_io_output_payload_exceptionInfo_eCode;
+  assign io_output_payload_exceptionInfo_eSubCode = _zz_io_output_payload_exceptionInfo_eSubCode;
   always @(*) begin
-    case(stage23_payload_uop_muluOp)
+    case(_zz_2)
       MULUOp_mullo : begin
-        res = resu[31 : 0];
+        _zz_io_output_payload_data_5 = _zz_io_output_payload_data_4[31 : 0];
       end
       MULUOp_mulhi : begin
-        res = _zz_res;
+        _zz_io_output_payload_data_5 = _zz__zz_io_output_payload_data_5;
       end
       default : begin
-        res = resu[63 : 32];
+        _zz_io_output_payload_data_5 = _zz_io_output_payload_data_4[63 : 32];
       end
     endcase
   end
 
   assign io_wakeOut_0_valid = io_input_valid;
   assign io_wakeOut_0_payload = io_input_payload_prd;
-  assign io_wakeOut_1_valid = stage12_valid;
-  assign io_wakeOut_1_payload = stage12_payload_prd;
-  assign io_wakeOut_2_valid = stage23_valid;
-  assign io_wakeOut_2_payload = stage23_payload_prd;
+  assign io_wakeOut_1_valid = _zz_io_wakeOut_1_valid;
+  assign io_wakeOut_1_payload = _zz_io_wakeOut_1_payload;
+  assign io_wakeOut_2_valid = _zz_io_output_valid;
+  assign io_wakeOut_2_payload = _zz_io_output_payload_prd;
   always @(posedge aclk) begin
     if(!cpuClockingArea_areaFlushReset_newReset) begin
       io_input_rValid <= 1'b0;
-      stage12_rValid <= 1'b0;
+      _zz_when_Stream_l369_1 <= 1'b0;
     end else begin
       if(io_input_ready) begin
         io_input_rValid <= io_input_valid;
       end
-      if(stage12_ready) begin
-        stage12_rValid <= stage12_valid;
+      if(_zz_io_input_m2sPipe_ready) begin
+        _zz_when_Stream_l369_1 <= _zz_io_wakeOut_1_valid;
       end
     end
   end
@@ -8427,19 +8036,18 @@ module MULU (
       io_input_rData_prd <= io_input_payload_prd;
       io_input_rData_uop_muluOp <= io_input_payload_uop_muluOp;
     end
-    if(stage12_ready) begin
-      stage12_rData_src1 <= stage12_payload_src1;
-      stage12_rData_src2 <= stage12_payload_src2;
-      stage12_rData_robIdx <= stage12_payload_robIdx;
-      stage12_rData_branchResult_targetPC <= stage12_payload_branchResult_targetPC;
-      stage12_rData_branchResult_branchResult <= stage12_payload_branchResult_branchResult;
-      stage12_rData_branchResult_predictFail <= stage12_payload_branchResult_predictFail;
-      stage12_rData_exceptionInfo_exception <= stage12_payload_exceptionInfo_exception;
-      stage12_rData_exceptionInfo_eCode <= stage12_payload_exceptionInfo_eCode;
-      stage12_rData_exceptionInfo_eSubCode <= stage12_payload_exceptionInfo_eSubCode;
-      stage12_rData_pc <= stage12_payload_pc;
-      stage12_rData_prd <= stage12_payload_prd;
-      stage12_rData_uop_muluOp <= stage12_payload_uop_muluOp;
+    if(_zz_io_input_m2sPipe_ready) begin
+      _zz_io_output_payload_data_2 <= io_input_m2sPipe_payload_src1;
+      _zz_io_output_payload_data_3 <= io_input_m2sPipe_payload_src2;
+      _zz_io_output_payload_robIdx <= io_input_m2sPipe_payload_robIdx;
+      _zz_io_output_payload_branchResult_targetPC <= io_input_m2sPipe_payload_branchResult_targetPC;
+      _zz_io_output_payload_branchResult_branchResult <= io_input_m2sPipe_payload_branchResult_branchResult;
+      _zz_io_output_payload_branchResult_predictFail <= io_input_m2sPipe_payload_branchResult_predictFail;
+      _zz_io_output_payload_exceptionInfo_exception <= io_input_m2sPipe_payload_exceptionInfo_exception;
+      _zz_io_output_payload_exceptionInfo_eCode <= io_input_m2sPipe_payload_exceptionInfo_eCode;
+      _zz_io_output_payload_exceptionInfo_eSubCode <= io_input_m2sPipe_payload_exceptionInfo_eSubCode;
+      _zz_io_output_payload_prd_1 <= _zz_io_wakeOut_1_payload;
+      _zz_4 <= _zz_1;
     end
   end
 
@@ -26633,7 +26241,7 @@ module ROB (
   reg        [1:0]    _zz_rob_31_valid;
   reg        [4:0]    _zz_rob_31_isComplete;
   reg        [1:0]    _zz_rob_31_isComplete_1;
-  wire                when_ROB_l76;
+  wire                when_ROB_l75;
   wire       [31:0]   _zz_1;
   wire                _zz_2;
   wire                _zz_3;
@@ -26667,7 +26275,7 @@ module ROB (
   wire                _zz_31;
   wire                _zz_32;
   wire                _zz_33;
-  wire                when_ROB_l76_1;
+  wire                when_ROB_l75_1;
   wire       [31:0]   _zz_34;
   wire                _zz_35;
   wire                _zz_36;
@@ -31948,7 +31556,7 @@ module ROB (
     _zz_rob_31_isComplete_1[1] = ((head_1 == 5'h1f) && retireMask[1]);
   end
 
-  assign when_ROB_l76 = io_dispatch_allowMask[0];
+  assign when_ROB_l75 = io_dispatch_allowMask[0];
   assign _zz_1 = ({31'd0,1'b1} <<< tail_0);
   assign _zz_2 = _zz_1[0];
   assign _zz_3 = _zz_1[1];
@@ -31982,7 +31590,7 @@ module ROB (
   assign _zz_31 = _zz_1[29];
   assign _zz_32 = _zz_1[30];
   assign _zz_33 = _zz_1[31];
-  assign when_ROB_l76_1 = io_dispatch_allowMask[1];
+  assign when_ROB_l75_1 = io_dispatch_allowMask[1];
   assign _zz_34 = ({31'd0,1'b1} <<< tail_1);
   assign _zz_35 = _zz_34[0];
   assign _zz_36 = _zz_34[1];
@@ -33551,7 +33159,7 @@ module ROB (
       rob_30_isComplete <= (((|_zz_rob_30_isComplete_1) || io_flush) ? 1'b0 : (rob_30_isComplete || (|_zz_rob_30_isComplete)));
       rob_31_valid <= (((|_zz_rob_31_isComplete_1) || io_flush) ? 1'b0 : (rob_31_valid || (|_zz_rob_31_valid)));
       rob_31_isComplete <= (((|_zz_rob_31_isComplete_1) || io_flush) ? 1'b0 : (rob_31_isComplete || (|_zz_rob_31_isComplete)));
-      if(when_ROB_l76) begin
+      if(when_ROB_l75) begin
         if(_zz_2) begin
           rob_0_pc <= io_dispatch_pc_0;
         end
@@ -34034,7 +33642,7 @@ module ROB (
         end
       end
       tail_0 <= (io_flush ? 5'h00 : _zz_tail_0);
-      if(when_ROB_l76_1) begin
+      if(when_ROB_l75_1) begin
         if(_zz_35) begin
           rob_0_pc <= io_dispatch_pc_1;
         end
