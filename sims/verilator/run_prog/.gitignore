@@ -1,0 +1,7 @@
+log/
+obj/
+obj_dir/
+tmp/
+config-generator.mak
+output
+!.gitignore
