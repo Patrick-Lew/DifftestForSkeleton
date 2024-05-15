@@ -77,6 +77,10 @@ int Difftest::step(vluint64_t &main_time) {
 #ifdef SIMU_TRACE
 #ifdef PRINT_CLK_TIME
         //display();
+         if(dut.commit[idx_commit].pc==0x1c032478 && dut.commit[idx_commit].valid){
+            display();
+            printf("now pc is 0x1c032478\n");
+        }
         fprintf(trace_out, "[%010ldns] mycpu : pc = %08x, inst = %08x, reg = %02d, val = %08x\n",
             main_time, dut.commit[idx_commit].pc, dut.commit[idx_commit].inst, dut.commit[idx_commit].wen ? dut.commit[idx_commit].wdest : 0, dut.commit[idx_commit].wdata);
 #else
@@ -104,6 +108,8 @@ int Difftest::step(vluint64_t &main_time) {
     dead_clock_enable = dut.excp.excp_valid || dut.commit[idx_commit - 1].inst != 0x06488000u;
     dead_clock = 0;
 #endif
+
+
 
 #ifndef TRACE_COMP
     if (idx_commit > 0 && dut.commit[idx_commit - 1].pc == END_PC || dut.excp.exceptionPC == END_PC) {

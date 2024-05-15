@@ -69,7 +69,7 @@ echo "  --trace-tail-size size	simu trace tail clock size(default: 100000)
 } 
 
 THREAD=1
-TRACE_COMP=n
+TRACE_COMP=y
 RUN_FUNC=n
 RUN_C=n 
 OUTPUT_PC_INFO=n

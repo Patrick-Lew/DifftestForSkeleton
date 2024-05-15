@@ -1,6 +1,6 @@
 // Generator : SpinalHDL v1.10.1    git head : 2527c7c6b0fb0f95e5e1a5722a0be732b364ce43
 // Component : mycpu
-// Git hash  : 1d24377502d7f67a35669179122703483db37ec0
+// Git hash  : ae9b1ab5a2e7c656bebfe3941064db40a1026201
 
 `timescale 1ns/1ps
 
@@ -49,37 +49,37 @@ module mycpu (
   output wire [4:0]    debug0_wb_rf_wnum,
   output wire [31:0]   debug0_wb_rf_wdata,
   output wire [31:0]   DaRAT_val_0,
-  output wire [31:0]   DaRAT_val_1,
-  output wire [31:0]   DaRAT_val_2,
-  output wire [31:0]   DaRAT_val_3,
-  output wire [31:0]   DaRAT_val_4,
-  output wire [31:0]   DaRAT_val_5,
-  output wire [31:0]   DaRAT_val_6,
-  output wire [31:0]   DaRAT_val_7,
-  output wire [31:0]   DaRAT_val_8,
-  output wire [31:0]   DaRAT_val_9,
-  output wire [31:0]   DaRAT_val_10,
-  output wire [31:0]   DaRAT_val_11,
-  output wire [31:0]   DaRAT_val_12,
-  output wire [31:0]   DaRAT_val_13,
-  output wire [31:0]   DaRAT_val_14,
-  output wire [31:0]   DaRAT_val_15,
-  output wire [31:0]   DaRAT_val_16,
-  output wire [31:0]   DaRAT_val_17,
-  output wire [31:0]   DaRAT_val_18,
-  output wire [31:0]   DaRAT_val_19,
-  output wire [31:0]   DaRAT_val_20,
-  output wire [31:0]   DaRAT_val_21,
-  output wire [31:0]   DaRAT_val_22,
-  output wire [31:0]   DaRAT_val_23,
-  output wire [31:0]   DaRAT_val_24,
-  output wire [31:0]   DaRAT_val_25,
-  output wire [31:0]   DaRAT_val_26,
-  output wire [31:0]   DaRAT_val_27,
-  output wire [31:0]   DaRAT_val_28,
-  output wire [31:0]   DaRAT_val_29,
-  output wire [31:0]   DaRAT_val_30,
-  output wire [31:0]   DaRAT_val_31,
+  output reg  [31:0]   DaRAT_val_1,
+  output reg  [31:0]   DaRAT_val_2,
+  output reg  [31:0]   DaRAT_val_3,
+  output reg  [31:0]   DaRAT_val_4,
+  output reg  [31:0]   DaRAT_val_5,
+  output reg  [31:0]   DaRAT_val_6,
+  output reg  [31:0]   DaRAT_val_7,
+  output reg  [31:0]   DaRAT_val_8,
+  output reg  [31:0]   DaRAT_val_9,
+  output reg  [31:0]   DaRAT_val_10,
+  output reg  [31:0]   DaRAT_val_11,
+  output reg  [31:0]   DaRAT_val_12,
+  output reg  [31:0]   DaRAT_val_13,
+  output reg  [31:0]   DaRAT_val_14,
+  output reg  [31:0]   DaRAT_val_15,
+  output reg  [31:0]   DaRAT_val_16,
+  output reg  [31:0]   DaRAT_val_17,
+  output reg  [31:0]   DaRAT_val_18,
+  output reg  [31:0]   DaRAT_val_19,
+  output reg  [31:0]   DaRAT_val_20,
+  output reg  [31:0]   DaRAT_val_21,
+  output reg  [31:0]   DaRAT_val_22,
+  output reg  [31:0]   DaRAT_val_23,
+  output reg  [31:0]   DaRAT_val_24,
+  output reg  [31:0]   DaRAT_val_25,
+  output reg  [31:0]   DaRAT_val_26,
+  output reg  [31:0]   DaRAT_val_27,
+  output reg  [31:0]   DaRAT_val_28,
+  output reg  [31:0]   DaRAT_val_29,
+  output reg  [31:0]   DaRAT_val_30,
+  output reg  [31:0]   DaRAT_val_31,
   input  wire          break_point,
   input  wire          infor_flag,
   input  wire [4:0]    reg_num,
@@ -421,6 +421,9 @@ module mycpu (
   localparam TLBOp_write = 3'd3;
   localparam TLBOp_fill = 3'd4;
   localparam TLBOp_inv = 3'd5;
+  localparam LSUSizeOp_byte_1 = 4'd1;
+  localparam LSUSizeOp_halfword = 4'd3;
+  localparam LSUSizeOp_word = 4'd15;
   localparam ROBSpecialOp_nop = 4'd0;
   localparam ROBSpecialOp_bpuUpdate = 4'd1;
   localparam ROBSpecialOp_lsuAction = 4'd2;
@@ -430,9 +433,6 @@ module mycpu (
   localparam ROBSpecialOp_idle = 4'd6;
   localparam ROBSpecialOp_readCSR = 4'd7;
   localparam ROBSpecialOp_readCNT = 4'd8;
-  localparam LSUSizeOp_byte_1 = 4'd1;
-  localparam LSUSizeOp_halfword = 4'd3;
-  localparam LSUSizeOp_word = 4'd15;
   localparam FUType_alu = 3'd0;
   localparam FUType_csr = 3'd1;
   localparam FUType_counter = 3'd2;
@@ -890,6 +890,26 @@ module mycpu (
   wire       [5:0]    cpuClockingArea_rob_io_commitROBEntries_4_exceptionInfo_eCode;
   wire       [0:0]    cpuClockingArea_rob_io_commitROBEntries_4_exceptionInfo_eSubCode;
   wire                cpuClockingArea_rob_io_commitROBEntries_4_valid;
+  wire                cpuClockingArea_rob_io_retireValid_0;
+  wire                cpuClockingArea_rob_io_retireValid_1;
+  wire                cpuClockingArea_rob_io_retireIsReadCnt_0;
+  wire                cpuClockingArea_rob_io_retireIsReadCnt_1;
+  wire                cpuClockingArea_rob_io_retireCsrRstat_0;
+  wire                cpuClockingArea_rob_io_retireCsrRstat_1;
+  wire       [31:0]   cpuClockingArea_rob_io_retireWdata_0;
+  wire       [31:0]   cpuClockingArea_rob_io_retireWdata_1;
+  wire       [31:0]   cpuClockingArea_rob_io_retirePC_0;
+  wire       [31:0]   cpuClockingArea_rob_io_retirePC_1;
+  wire                cpuClockingArea_rob_io_retireWen_0;
+  wire                cpuClockingArea_rob_io_retireWen_1;
+  wire       [4:0]    cpuClockingArea_rob_io_retireARATidx_0;
+  wire       [4:0]    cpuClockingArea_rob_io_retireARATidx_1;
+  wire       [5:0]    cpuClockingArea_rob_io_retirePRATidx_0;
+  wire       [5:0]    cpuClockingArea_rob_io_retirePRATidx_1;
+  wire                cpuClockingArea_rob_retireIsReadCnt_0;
+  wire                cpuClockingArea_rob_retireIsReadCnt_1;
+  wire                cpuClockingArea_rob_retireCsrRstat_0;
+  wire                cpuClockingArea_rob_retireCsrRstat_1;
   wire                cpuClockingArea_csr_io_interrupt;
   wire       [1:0]    cpuClockingArea_csr__zz_when_Cache_l83;
   wire       [31:0]   cpuClockingArea_csr_io_counter_id;
@@ -1421,8 +1441,10 @@ module mycpu (
   wire                cpuClockingArea_areaFlushReset_commitLSU_io_forward_valid;
   wire       [5:0]    cpuClockingArea_areaFlushReset_commitLSU_io_forward_payload_idx;
   wire       [31:0]   cpuClockingArea_areaFlushReset_commitLSU_io_forward_payload_payload;
-  reg        [31:0]   _zz_DaRAT_val_1;
-  wire       [5:0]    _zz_DaRAT_val_1_1;
+  reg        [31:0]   _zz_DaRAT_val_1_2;
+  wire       [5:0]    _zz_DaRAT_val_1_3;
+  reg        [31:0]   _zz__zz_DaRAT_val_1;
+  reg        [31:0]   _zz__zz_DaRAT_val_1_1;
   reg        [31:0]   _zz_DaRAT_val_2;
   wire       [5:0]    _zz_DaRAT_val_2_1;
   reg        [31:0]   _zz_DaRAT_val_3;
@@ -1483,18 +1505,76 @@ module mycpu (
   wire       [5:0]    _zz_DaRAT_val_30_1;
   reg        [31:0]   _zz_DaRAT_val_31;
   wire       [5:0]    _zz_DaRAT_val_31_1;
-  wire       [31:0]   _zz_DifftestBundle_DifftestInstrCommitPC_0;
-  wire       [31:0]   _zz_DifftestBundle_DifftestInstrCommitPC_1;
-  wire       [31:0]   _zz_DifftestBundle_DifftestInstrCommitPC_2;
-  wire       [31:0]   _zz_DifftestBundle_DifftestInstrCommitPC_3;
-  wire       [31:0]   _zz_DifftestBundle_DifftestInstrCommitPC_4;
-  wire       [1:0]    _zz_DifftestBundle_DifftestTlbFillIndex_4;
+  reg        [31:0]   _zz_DaRAT_val_1_4;
+  wire       [5:0]    _zz_DaRAT_val_1_5;
+  reg        [31:0]   _zz_DaRAT_val_2_2;
+  wire       [5:0]    _zz_DaRAT_val_2_3;
+  reg        [31:0]   _zz_DaRAT_val_3_2;
+  wire       [5:0]    _zz_DaRAT_val_3_3;
+  reg        [31:0]   _zz_DaRAT_val_4_2;
+  wire       [5:0]    _zz_DaRAT_val_4_3;
+  reg        [31:0]   _zz_DaRAT_val_5_2;
+  wire       [5:0]    _zz_DaRAT_val_5_3;
+  reg        [31:0]   _zz_DaRAT_val_6_2;
+  wire       [5:0]    _zz_DaRAT_val_6_3;
+  reg        [31:0]   _zz_DaRAT_val_7_2;
+  wire       [5:0]    _zz_DaRAT_val_7_3;
+  reg        [31:0]   _zz_DaRAT_val_8_2;
+  wire       [5:0]    _zz_DaRAT_val_8_3;
+  reg        [31:0]   _zz_DaRAT_val_9_2;
+  wire       [5:0]    _zz_DaRAT_val_9_3;
+  reg        [31:0]   _zz_DaRAT_val_10_2;
+  wire       [5:0]    _zz_DaRAT_val_10_3;
+  reg        [31:0]   _zz_DaRAT_val_11_2;
+  wire       [5:0]    _zz_DaRAT_val_11_3;
+  reg        [31:0]   _zz_DaRAT_val_12_2;
+  wire       [5:0]    _zz_DaRAT_val_12_3;
+  reg        [31:0]   _zz_DaRAT_val_13_2;
+  wire       [5:0]    _zz_DaRAT_val_13_3;
+  reg        [31:0]   _zz_DaRAT_val_14_2;
+  wire       [5:0]    _zz_DaRAT_val_14_3;
+  reg        [31:0]   _zz_DaRAT_val_15_2;
+  wire       [5:0]    _zz_DaRAT_val_15_3;
+  reg        [31:0]   _zz_DaRAT_val_16_2;
+  wire       [5:0]    _zz_DaRAT_val_16_3;
+  reg        [31:0]   _zz_DaRAT_val_17_2;
+  wire       [5:0]    _zz_DaRAT_val_17_3;
+  reg        [31:0]   _zz_DaRAT_val_18_2;
+  wire       [5:0]    _zz_DaRAT_val_18_3;
+  reg        [31:0]   _zz_DaRAT_val_19_2;
+  wire       [5:0]    _zz_DaRAT_val_19_3;
+  reg        [31:0]   _zz_DaRAT_val_20_2;
+  wire       [5:0]    _zz_DaRAT_val_20_3;
+  reg        [31:0]   _zz_DaRAT_val_21_2;
+  wire       [5:0]    _zz_DaRAT_val_21_3;
+  reg        [31:0]   _zz_DaRAT_val_22_2;
+  wire       [5:0]    _zz_DaRAT_val_22_3;
+  reg        [31:0]   _zz_DaRAT_val_23_2;
+  wire       [5:0]    _zz_DaRAT_val_23_3;
+  reg        [31:0]   _zz_DaRAT_val_24_2;
+  wire       [5:0]    _zz_DaRAT_val_24_3;
+  reg        [31:0]   _zz_DaRAT_val_25_2;
+  wire       [5:0]    _zz_DaRAT_val_25_3;
+  reg        [31:0]   _zz_DaRAT_val_26_2;
+  wire       [5:0]    _zz_DaRAT_val_26_3;
+  reg        [31:0]   _zz_DaRAT_val_27_2;
+  wire       [5:0]    _zz_DaRAT_val_27_3;
+  reg        [31:0]   _zz_DaRAT_val_28_2;
+  wire       [5:0]    _zz_DaRAT_val_28_3;
+  reg        [31:0]   _zz_DaRAT_val_29_2;
+  wire       [5:0]    _zz_DaRAT_val_29_3;
+  reg        [31:0]   _zz_DaRAT_val_30_2;
+  wire       [5:0]    _zz_DaRAT_val_30_3;
+  reg        [31:0]   _zz_DaRAT_val_31_2;
+  wire       [5:0]    _zz_DaRAT_val_31_3;
+  wire       [1:0]    _zz_DifftestBundle_DifftestTlbFillIndex_0;
+  wire       [1:0]    _zz_DifftestBundle_DifftestTlbFillIndex_1;
+  wire       [31:0]   _zz_DifftestBundle_DifftestCount_0;
   wire       [31:0]   _zz_DifftestBundle_DifftestCount_1;
-  wire       [31:0]   _zz_DifftestBundle_DifftestWdata_0;
-  wire       [31:0]   _zz_DifftestBundle_DifftestWdata_1;
-  wire       [31:0]   _zz_DifftestBundle_DifftestWdata_2;
-  wire       [31:0]   _zz_DifftestBundle_DifftestWdata_3;
-  wire       [31:0]   _zz_DifftestBundle_DifftestWdata_4;
+  reg        [31:0]   _zz_DifftestBundle_DifftestWdata_0;
+  wire       [5:0]    _zz_DifftestBundle_DifftestWdata_0_1;
+  reg        [31:0]   _zz_DifftestBundle_DifftestWdata_1;
+  wire       [5:0]    _zz_DifftestBundle_DifftestWdata_1_1;
   wire       [31:0]   _zz_DifftestBundle_DifftestExcpEventEPC;
   wire                cpuClockingArea_areaFlushReset_newReset;
   wire                toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_m2sPipe_valid;
@@ -1923,6 +2003,139 @@ module mycpu (
   reg        [5:0]    toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eCode;
   reg        [0:0]    toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eSubCode;
   wire                when_Stream_l369_14;
+  reg        [4:0]    cpuClockingArea_areaFlushReset_retirePortValue1;
+  reg        [4:0]    cpuClockingArea_areaFlushReset_retirePortValue2;
+  reg        [5:0]    cpuClockingArea_areaFlushReset_retirePortPidx1;
+  reg        [5:0]    cpuClockingArea_areaFlushReset_retirePortPidx2;
+  wire                when_SkeletonDebug_l253;
+  wire                when_SkeletonDebug_l254;
+  wire                when_SkeletonDebug_l263;
+  wire                when_SkeletonDebug_l275;
+  wire                when_SkeletonDebug_l279;
+  wire       [31:0]   _zz_DaRAT_val_1;
+  wire       [31:0]   _zz_DaRAT_val_1_1;
+  wire                when_SkeletonDebug_l275_1;
+  wire                when_SkeletonDebug_l279_1;
+  wire                when_SkeletonDebug_l275_2;
+  wire                when_SkeletonDebug_l279_2;
+  wire                when_SkeletonDebug_l275_3;
+  wire                when_SkeletonDebug_l279_3;
+  wire                when_SkeletonDebug_l275_4;
+  wire                when_SkeletonDebug_l279_4;
+  wire                when_SkeletonDebug_l275_5;
+  wire                when_SkeletonDebug_l279_5;
+  wire                when_SkeletonDebug_l275_6;
+  wire                when_SkeletonDebug_l279_6;
+  wire                when_SkeletonDebug_l275_7;
+  wire                when_SkeletonDebug_l279_7;
+  wire                when_SkeletonDebug_l275_8;
+  wire                when_SkeletonDebug_l279_8;
+  wire                when_SkeletonDebug_l275_9;
+  wire                when_SkeletonDebug_l279_9;
+  wire                when_SkeletonDebug_l275_10;
+  wire                when_SkeletonDebug_l279_10;
+  wire                when_SkeletonDebug_l275_11;
+  wire                when_SkeletonDebug_l279_11;
+  wire                when_SkeletonDebug_l275_12;
+  wire                when_SkeletonDebug_l279_12;
+  wire                when_SkeletonDebug_l275_13;
+  wire                when_SkeletonDebug_l279_13;
+  wire                when_SkeletonDebug_l275_14;
+  wire                when_SkeletonDebug_l279_14;
+  wire                when_SkeletonDebug_l275_15;
+  wire                when_SkeletonDebug_l279_15;
+  wire                when_SkeletonDebug_l275_16;
+  wire                when_SkeletonDebug_l279_16;
+  wire                when_SkeletonDebug_l275_17;
+  wire                when_SkeletonDebug_l279_17;
+  wire                when_SkeletonDebug_l275_18;
+  wire                when_SkeletonDebug_l279_18;
+  wire                when_SkeletonDebug_l275_19;
+  wire                when_SkeletonDebug_l279_19;
+  wire                when_SkeletonDebug_l275_20;
+  wire                when_SkeletonDebug_l279_20;
+  wire                when_SkeletonDebug_l275_21;
+  wire                when_SkeletonDebug_l279_21;
+  wire                when_SkeletonDebug_l275_22;
+  wire                when_SkeletonDebug_l279_22;
+  wire                when_SkeletonDebug_l275_23;
+  wire                when_SkeletonDebug_l279_23;
+  wire                when_SkeletonDebug_l275_24;
+  wire                when_SkeletonDebug_l279_24;
+  wire                when_SkeletonDebug_l275_25;
+  wire                when_SkeletonDebug_l279_25;
+  wire                when_SkeletonDebug_l275_26;
+  wire                when_SkeletonDebug_l279_26;
+  wire                when_SkeletonDebug_l275_27;
+  wire                when_SkeletonDebug_l279_27;
+  wire                when_SkeletonDebug_l275_28;
+  wire                when_SkeletonDebug_l279_28;
+  wire                when_SkeletonDebug_l275_29;
+  wire                when_SkeletonDebug_l279_29;
+  wire                when_SkeletonDebug_l275_30;
+  wire                when_SkeletonDebug_l279_30;
+  wire                when_SkeletonDebug_l292;
+  wire                when_SkeletonDebug_l295;
+  wire                when_SkeletonDebug_l292_1;
+  wire                when_SkeletonDebug_l295_1;
+  wire                when_SkeletonDebug_l292_2;
+  wire                when_SkeletonDebug_l295_2;
+  wire                when_SkeletonDebug_l292_3;
+  wire                when_SkeletonDebug_l295_3;
+  wire                when_SkeletonDebug_l292_4;
+  wire                when_SkeletonDebug_l295_4;
+  wire                when_SkeletonDebug_l292_5;
+  wire                when_SkeletonDebug_l295_5;
+  wire                when_SkeletonDebug_l292_6;
+  wire                when_SkeletonDebug_l295_6;
+  wire                when_SkeletonDebug_l292_7;
+  wire                when_SkeletonDebug_l295_7;
+  wire                when_SkeletonDebug_l292_8;
+  wire                when_SkeletonDebug_l295_8;
+  wire                when_SkeletonDebug_l292_9;
+  wire                when_SkeletonDebug_l295_9;
+  wire                when_SkeletonDebug_l292_10;
+  wire                when_SkeletonDebug_l295_10;
+  wire                when_SkeletonDebug_l292_11;
+  wire                when_SkeletonDebug_l295_11;
+  wire                when_SkeletonDebug_l292_12;
+  wire                when_SkeletonDebug_l295_12;
+  wire                when_SkeletonDebug_l292_13;
+  wire                when_SkeletonDebug_l295_13;
+  wire                when_SkeletonDebug_l292_14;
+  wire                when_SkeletonDebug_l295_14;
+  wire                when_SkeletonDebug_l292_15;
+  wire                when_SkeletonDebug_l295_15;
+  wire                when_SkeletonDebug_l292_16;
+  wire                when_SkeletonDebug_l295_16;
+  wire                when_SkeletonDebug_l292_17;
+  wire                when_SkeletonDebug_l295_17;
+  wire                when_SkeletonDebug_l292_18;
+  wire                when_SkeletonDebug_l295_18;
+  wire                when_SkeletonDebug_l292_19;
+  wire                when_SkeletonDebug_l295_19;
+  wire                when_SkeletonDebug_l292_20;
+  wire                when_SkeletonDebug_l295_20;
+  wire                when_SkeletonDebug_l292_21;
+  wire                when_SkeletonDebug_l295_21;
+  wire                when_SkeletonDebug_l292_22;
+  wire                when_SkeletonDebug_l295_22;
+  wire                when_SkeletonDebug_l292_23;
+  wire                when_SkeletonDebug_l295_23;
+  wire                when_SkeletonDebug_l292_24;
+  wire                when_SkeletonDebug_l295_24;
+  wire                when_SkeletonDebug_l292_25;
+  wire                when_SkeletonDebug_l295_25;
+  wire                when_SkeletonDebug_l292_26;
+  wire                when_SkeletonDebug_l295_26;
+  wire                when_SkeletonDebug_l292_27;
+  wire                when_SkeletonDebug_l295_27;
+  wire                when_SkeletonDebug_l292_28;
+  wire                when_SkeletonDebug_l295_28;
+  wire                when_SkeletonDebug_l292_29;
+  wire                when_SkeletonDebug_l295_29;
+  wire                when_SkeletonDebug_l292_30;
+  wire                when_SkeletonDebug_l295_30;
   `ifndef SYNTHESIS
   reg [39:0] toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_m2sPipe_payload_uop_aluOp_string;
   reg [39:0] toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_m2sPipe_payload_uop_bruOp_string;
@@ -1967,20 +2180,12 @@ module mycpu (
   `endif
 
 
-  assign _zz_DifftestBundle_DifftestInstrCommitPC_0 = cpuClockingArea_rob_io_commitROBEntries_0_pc;
-  assign _zz_DifftestBundle_DifftestInstrCommitPC_1 = cpuClockingArea_rob_io_commitROBEntries_1_pc;
-  assign _zz_DifftestBundle_DifftestInstrCommitPC_2 = cpuClockingArea_rob_io_commitROBEntries_2_pc;
-  assign _zz_DifftestBundle_DifftestInstrCommitPC_3 = cpuClockingArea_rob_io_commitROBEntries_3_pc;
-  assign _zz_DifftestBundle_DifftestInstrCommitPC_4 = cpuClockingArea_rob_io_commitROBEntries_4_pc;
-  assign _zz_DifftestBundle_DifftestTlbFillIndex_4 = cpuClockingArea_memService_io_TLBCtrl_index;
-  assign _zz_DifftestBundle_DifftestCount_1 = toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_m2sPipe_payload_data;
-  assign _zz_DifftestBundle_DifftestWdata_0 = toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_m2sPipe_payload_data;
-  assign _zz_DifftestBundle_DifftestWdata_1 = toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_m2sPipe_payload_data;
-  assign _zz_DifftestBundle_DifftestWdata_2 = toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_m2sPipe_payload_data;
-  assign _zz_DifftestBundle_DifftestWdata_3 = toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_m2sPipe_payload_data;
-  assign _zz_DifftestBundle_DifftestWdata_4 = toplevel_cpuClockingArea_fuLSU_io_output_m2sPipe_payload_data;
+  assign _zz_DifftestBundle_DifftestTlbFillIndex_0 = cpuClockingArea_memService_io_TLBCtrl_index;
+  assign _zz_DifftestBundle_DifftestTlbFillIndex_1 = cpuClockingArea_memService_io_TLBCtrl_index;
+  assign _zz_DifftestBundle_DifftestCount_0 = cpuClockingArea_areaFlushReset_commitALU1_io_prf_data;
+  assign _zz_DifftestBundle_DifftestCount_1 = cpuClockingArea_areaFlushReset_commitALU1_io_prf_data;
   assign _zz_DifftestBundle_DifftestExcpEventEPC = cpuClockingArea_rob_io_csrCtrl_epc;
-  assign _zz_DaRAT_val_1_1 = cpuClockingArea_aRAT_io_recoveryPort_1;
+  assign _zz_DaRAT_val_1_3 = cpuClockingArea_aRAT_io_recoveryPort_1;
   assign _zz_DaRAT_val_2_1 = cpuClockingArea_aRAT_io_recoveryPort_2;
   assign _zz_DaRAT_val_3_1 = cpuClockingArea_aRAT_io_recoveryPort_3;
   assign _zz_DaRAT_val_4_1 = cpuClockingArea_aRAT_io_recoveryPort_4;
@@ -2011,6 +2216,39 @@ module mycpu (
   assign _zz_DaRAT_val_29_1 = cpuClockingArea_aRAT_io_recoveryPort_29;
   assign _zz_DaRAT_val_30_1 = cpuClockingArea_aRAT_io_recoveryPort_30;
   assign _zz_DaRAT_val_31_1 = cpuClockingArea_aRAT_io_recoveryPort_31;
+  assign _zz_DaRAT_val_1_5 = cpuClockingArea_aRAT_io_recoveryPort_1;
+  assign _zz_DaRAT_val_2_3 = cpuClockingArea_aRAT_io_recoveryPort_2;
+  assign _zz_DaRAT_val_3_3 = cpuClockingArea_aRAT_io_recoveryPort_3;
+  assign _zz_DaRAT_val_4_3 = cpuClockingArea_aRAT_io_recoveryPort_4;
+  assign _zz_DaRAT_val_5_3 = cpuClockingArea_aRAT_io_recoveryPort_5;
+  assign _zz_DaRAT_val_6_3 = cpuClockingArea_aRAT_io_recoveryPort_6;
+  assign _zz_DaRAT_val_7_3 = cpuClockingArea_aRAT_io_recoveryPort_7;
+  assign _zz_DaRAT_val_8_3 = cpuClockingArea_aRAT_io_recoveryPort_8;
+  assign _zz_DaRAT_val_9_3 = cpuClockingArea_aRAT_io_recoveryPort_9;
+  assign _zz_DaRAT_val_10_3 = cpuClockingArea_aRAT_io_recoveryPort_10;
+  assign _zz_DaRAT_val_11_3 = cpuClockingArea_aRAT_io_recoveryPort_11;
+  assign _zz_DaRAT_val_12_3 = cpuClockingArea_aRAT_io_recoveryPort_12;
+  assign _zz_DaRAT_val_13_3 = cpuClockingArea_aRAT_io_recoveryPort_13;
+  assign _zz_DaRAT_val_14_3 = cpuClockingArea_aRAT_io_recoveryPort_14;
+  assign _zz_DaRAT_val_15_3 = cpuClockingArea_aRAT_io_recoveryPort_15;
+  assign _zz_DaRAT_val_16_3 = cpuClockingArea_aRAT_io_recoveryPort_16;
+  assign _zz_DaRAT_val_17_3 = cpuClockingArea_aRAT_io_recoveryPort_17;
+  assign _zz_DaRAT_val_18_3 = cpuClockingArea_aRAT_io_recoveryPort_18;
+  assign _zz_DaRAT_val_19_3 = cpuClockingArea_aRAT_io_recoveryPort_19;
+  assign _zz_DaRAT_val_20_3 = cpuClockingArea_aRAT_io_recoveryPort_20;
+  assign _zz_DaRAT_val_21_3 = cpuClockingArea_aRAT_io_recoveryPort_21;
+  assign _zz_DaRAT_val_22_3 = cpuClockingArea_aRAT_io_recoveryPort_22;
+  assign _zz_DaRAT_val_23_3 = cpuClockingArea_aRAT_io_recoveryPort_23;
+  assign _zz_DaRAT_val_24_3 = cpuClockingArea_aRAT_io_recoveryPort_24;
+  assign _zz_DaRAT_val_25_3 = cpuClockingArea_aRAT_io_recoveryPort_25;
+  assign _zz_DaRAT_val_26_3 = cpuClockingArea_aRAT_io_recoveryPort_26;
+  assign _zz_DaRAT_val_27_3 = cpuClockingArea_aRAT_io_recoveryPort_27;
+  assign _zz_DaRAT_val_28_3 = cpuClockingArea_aRAT_io_recoveryPort_28;
+  assign _zz_DaRAT_val_29_3 = cpuClockingArea_aRAT_io_recoveryPort_29;
+  assign _zz_DaRAT_val_30_3 = cpuClockingArea_aRAT_io_recoveryPort_30;
+  assign _zz_DaRAT_val_31_3 = cpuClockingArea_aRAT_io_recoveryPort_31;
+  assign _zz_DifftestBundle_DifftestWdata_0_1 = cpuClockingArea_rob_io_retireARAT_0_prd;
+  assign _zz_DifftestBundle_DifftestWdata_1_1 = cpuClockingArea_rob_io_retireARAT_1_prd;
   AXIArbiter cpuClockingArea_arbiter (
     .io_out_arid       (cpuClockingArea_arbiter_io_out_arid[3:0]     ), //o
     .io_out_araddr     (cpuClockingArea_arbiter_io_out_araddr[31:0]  ), //o
@@ -2832,6 +3070,26 @@ module mycpu (
     .io_commitROBEntries_4_exceptionInfo_eCode       (cpuClockingArea_rob_io_commitROBEntries_4_exceptionInfo_eCode[5:0]          ), //o
     .io_commitROBEntries_4_exceptionInfo_eSubCode    (cpuClockingArea_rob_io_commitROBEntries_4_exceptionInfo_eSubCode            ), //o
     .io_commitROBEntries_4_valid                     (cpuClockingArea_rob_io_commitROBEntries_4_valid                             ), //o
+    .io_retireValid_0                                (cpuClockingArea_rob_io_retireValid_0                                        ), //o
+    .io_retireValid_1                                (cpuClockingArea_rob_io_retireValid_1                                        ), //o
+    .io_retireIsReadCnt_0                            (cpuClockingArea_rob_io_retireIsReadCnt_0                                    ), //o
+    .io_retireIsReadCnt_1                            (cpuClockingArea_rob_io_retireIsReadCnt_1                                    ), //o
+    .io_retireCsrRstat_0                             (cpuClockingArea_rob_io_retireCsrRstat_0                                     ), //o
+    .io_retireCsrRstat_1                             (cpuClockingArea_rob_io_retireCsrRstat_1                                     ), //o
+    .io_retireWdata_0                                (cpuClockingArea_rob_io_retireWdata_0[31:0]                                  ), //o
+    .io_retireWdata_1                                (cpuClockingArea_rob_io_retireWdata_1[31:0]                                  ), //o
+    .io_retirePC_0                                   (cpuClockingArea_rob_io_retirePC_0[31:0]                                     ), //o
+    .io_retirePC_1                                   (cpuClockingArea_rob_io_retirePC_1[31:0]                                     ), //o
+    .io_retireWen_0                                  (cpuClockingArea_rob_io_retireWen_0                                          ), //o
+    .io_retireWen_1                                  (cpuClockingArea_rob_io_retireWen_1                                          ), //o
+    .io_retireARATidx_0                              (cpuClockingArea_rob_io_retireARATidx_0[4:0]                                 ), //o
+    .io_retireARATidx_1                              (cpuClockingArea_rob_io_retireARATidx_1[4:0]                                 ), //o
+    .io_retirePRATidx_0                              (cpuClockingArea_rob_io_retirePRATidx_0[5:0]                                 ), //o
+    .io_retirePRATidx_1                              (cpuClockingArea_rob_io_retirePRATidx_1[5:0]                                 ), //o
+    .retireIsReadCnt_0                               (cpuClockingArea_rob_retireIsReadCnt_0                                       ), //o
+    .retireIsReadCnt_1                               (cpuClockingArea_rob_retireIsReadCnt_1                                       ), //o
+    .retireCsrRstat_0                                (cpuClockingArea_rob_retireCsrRstat_0                                        ), //o
+    .retireCsrRstat_1                                (cpuClockingArea_rob_retireCsrRstat_1                                        ), //o
     .aclk                                            (aclk                                                                        ), //i
     .aresetn                                         (aresetn                                                                     )  //i
   );
@@ -3980,71 +4238,209 @@ module mycpu (
     .io_forward_payload_payload                 (cpuClockingArea_areaFlushReset_commitLSU_io_forward_payload_payload[31:0]           )  //o
   );
   always @(*) begin
-    case(_zz_DaRAT_val_1_1)
-      6'b000000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_0;
-      6'b000001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_1;
-      6'b000010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_2;
-      6'b000011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_3;
-      6'b000100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_4;
-      6'b000101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_5;
-      6'b000110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_6;
-      6'b000111 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_7;
-      6'b001000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_8;
-      6'b001001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_9;
-      6'b001010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_10;
-      6'b001011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_11;
-      6'b001100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_12;
-      6'b001101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_13;
-      6'b001110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_14;
-      6'b001111 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_15;
-      6'b010000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_16;
-      6'b010001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_17;
-      6'b010010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_18;
-      6'b010011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_19;
-      6'b010100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_20;
-      6'b010101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_21;
-      6'b010110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_22;
-      6'b010111 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_23;
-      6'b011000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_24;
-      6'b011001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_25;
-      6'b011010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_26;
-      6'b011011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_27;
-      6'b011100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_28;
-      6'b011101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_29;
-      6'b011110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_30;
-      6'b011111 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_31;
-      6'b100000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_32;
-      6'b100001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_33;
-      6'b100010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_34;
-      6'b100011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_35;
-      6'b100100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_36;
-      6'b100101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_37;
-      6'b100110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_38;
-      6'b100111 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_39;
-      6'b101000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_40;
-      6'b101001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_41;
-      6'b101010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_42;
-      6'b101011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_43;
-      6'b101100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_44;
-      6'b101101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_45;
-      6'b101110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_46;
-      6'b101111 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_47;
-      6'b110000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_48;
-      6'b110001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_49;
-      6'b110010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_50;
-      6'b110011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_51;
-      6'b110100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_52;
-      6'b110101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_53;
-      6'b110110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_54;
-      6'b110111 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_55;
-      6'b111000 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_56;
-      6'b111001 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_57;
-      6'b111010 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_58;
-      6'b111011 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_59;
-      6'b111100 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_60;
-      6'b111101 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_61;
-      6'b111110 : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_62;
-      default : _zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_63;
+    case(_zz_DaRAT_val_1_3)
+      6'b000000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_1_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(cpuClockingArea_areaFlushReset_retirePortPidx1)
+      6'b000000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz__zz_DaRAT_val_1 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(cpuClockingArea_areaFlushReset_retirePortPidx2)
+      6'b000000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz__zz_DaRAT_val_1_1 = cpuClockingArea_prf_io_debugRegs_63;
     endcase
   end
 
@@ -6118,6 +6514,2283 @@ module mycpu (
     endcase
   end
 
+  always @(*) begin
+    case(_zz_DaRAT_val_1_5)
+      6'b000000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_1_4 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_2_3)
+      6'b000000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_2_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_3_3)
+      6'b000000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_3_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_4_3)
+      6'b000000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_4_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_5_3)
+      6'b000000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_5_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_6_3)
+      6'b000000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_6_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_7_3)
+      6'b000000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_7_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_8_3)
+      6'b000000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_8_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_9_3)
+      6'b000000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_9_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_10_3)
+      6'b000000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_10_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_11_3)
+      6'b000000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_11_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_12_3)
+      6'b000000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_12_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_13_3)
+      6'b000000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_13_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_14_3)
+      6'b000000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_14_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_15_3)
+      6'b000000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_15_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_16_3)
+      6'b000000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_16_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_17_3)
+      6'b000000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_17_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_18_3)
+      6'b000000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_18_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_19_3)
+      6'b000000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_19_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_20_3)
+      6'b000000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_20_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_21_3)
+      6'b000000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_21_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_22_3)
+      6'b000000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_22_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_23_3)
+      6'b000000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_23_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_24_3)
+      6'b000000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_24_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_25_3)
+      6'b000000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_25_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_26_3)
+      6'b000000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_26_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_27_3)
+      6'b000000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_27_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_28_3)
+      6'b000000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_28_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_29_3)
+      6'b000000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_29_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_30_3)
+      6'b000000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_30_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DaRAT_val_31_3)
+      6'b000000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DaRAT_val_31_2 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DifftestBundle_DifftestWdata_0_1)
+      6'b000000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DifftestBundle_DifftestWdata_0 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
+  always @(*) begin
+    case(_zz_DifftestBundle_DifftestWdata_1_1)
+      6'b000000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_0;
+      6'b000001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_1;
+      6'b000010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_2;
+      6'b000011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_3;
+      6'b000100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_4;
+      6'b000101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_5;
+      6'b000110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_6;
+      6'b000111 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_7;
+      6'b001000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_8;
+      6'b001001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_9;
+      6'b001010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_10;
+      6'b001011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_11;
+      6'b001100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_12;
+      6'b001101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_13;
+      6'b001110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_14;
+      6'b001111 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_15;
+      6'b010000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_16;
+      6'b010001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_17;
+      6'b010010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_18;
+      6'b010011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_19;
+      6'b010100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_20;
+      6'b010101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_21;
+      6'b010110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_22;
+      6'b010111 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_23;
+      6'b011000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_24;
+      6'b011001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_25;
+      6'b011010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_26;
+      6'b011011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_27;
+      6'b011100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_28;
+      6'b011101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_29;
+      6'b011110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_30;
+      6'b011111 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_31;
+      6'b100000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_32;
+      6'b100001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_33;
+      6'b100010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_34;
+      6'b100011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_35;
+      6'b100100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_36;
+      6'b100101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_37;
+      6'b100110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_38;
+      6'b100111 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_39;
+      6'b101000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_40;
+      6'b101001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_41;
+      6'b101010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_42;
+      6'b101011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_43;
+      6'b101100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_44;
+      6'b101101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_45;
+      6'b101110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_46;
+      6'b101111 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_47;
+      6'b110000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_48;
+      6'b110001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_49;
+      6'b110010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_50;
+      6'b110011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_51;
+      6'b110100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_52;
+      6'b110101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_53;
+      6'b110110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_54;
+      6'b110111 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_55;
+      6'b111000 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_56;
+      6'b111001 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_57;
+      6'b111010 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_58;
+      6'b111011 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_59;
+      6'b111100 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_60;
+      6'b111101 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_61;
+      6'b111110 : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_62;
+      default : _zz_DifftestBundle_DifftestWdata_1 = cpuClockingArea_prf_io_debugRegs_63;
+    endcase
+  end
+
   `ifndef SYNTHESIS
   always @(*) begin
     case(toplevel_cpuClockingArea_areaFlushReset_issueQueueALU0_io_output_m2sPipe_payload_uop_aluOp)
@@ -6930,53 +9603,890 @@ module mycpu (
   assign toplevel_cpuClockingArea_fuLSU_io_output_m2sPipe_payload_exceptionInfo_eCode = toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eCode;
   assign toplevel_cpuClockingArea_fuLSU_io_output_m2sPipe_payload_exceptionInfo_eSubCode = toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eSubCode;
   assign toplevel_cpuClockingArea_fuLSU_io_output_m2sPipe_ready = cpuClockingArea_areaFlushReset_commitLSU_io_input_ready;
-  assign DaRAT_val_1 = _zz_DaRAT_val_1;
-  assign DaRAT_val_2 = _zz_DaRAT_val_2;
-  assign DaRAT_val_3 = _zz_DaRAT_val_3;
-  assign DaRAT_val_4 = _zz_DaRAT_val_4;
-  assign DaRAT_val_5 = _zz_DaRAT_val_5;
-  assign DaRAT_val_6 = _zz_DaRAT_val_6;
-  assign DaRAT_val_7 = _zz_DaRAT_val_7;
-  assign DaRAT_val_8 = _zz_DaRAT_val_8;
-  assign DaRAT_val_9 = _zz_DaRAT_val_9;
-  assign DaRAT_val_10 = _zz_DaRAT_val_10;
-  assign DaRAT_val_11 = _zz_DaRAT_val_11;
-  assign DaRAT_val_12 = _zz_DaRAT_val_12;
-  assign DaRAT_val_13 = _zz_DaRAT_val_13;
-  assign DaRAT_val_14 = _zz_DaRAT_val_14;
-  assign DaRAT_val_15 = _zz_DaRAT_val_15;
-  assign DaRAT_val_16 = _zz_DaRAT_val_16;
-  assign DaRAT_val_17 = _zz_DaRAT_val_17;
-  assign DaRAT_val_18 = _zz_DaRAT_val_18;
-  assign DaRAT_val_19 = _zz_DaRAT_val_19;
-  assign DaRAT_val_20 = _zz_DaRAT_val_20;
-  assign DaRAT_val_21 = _zz_DaRAT_val_21;
-  assign DaRAT_val_22 = _zz_DaRAT_val_22;
-  assign DaRAT_val_23 = _zz_DaRAT_val_23;
-  assign DaRAT_val_24 = _zz_DaRAT_val_24;
-  assign DaRAT_val_25 = _zz_DaRAT_val_25;
-  assign DaRAT_val_26 = _zz_DaRAT_val_26;
-  assign DaRAT_val_27 = _zz_DaRAT_val_27;
-  assign DaRAT_val_28 = _zz_DaRAT_val_28;
-  assign DaRAT_val_29 = _zz_DaRAT_val_29;
-  assign DaRAT_val_30 = _zz_DaRAT_val_30;
-  assign DaRAT_val_31 = _zz_DaRAT_val_31;
+  assign when_SkeletonDebug_l253 = ((cpuClockingArea_rob_io_retireWen_0 == 1'b1) || (cpuClockingArea_rob_io_retireWen_1 == 1'b1));
+  assign when_SkeletonDebug_l254 = (cpuClockingArea_rob_io_retireWen_0 == 1'b1);
+  assign when_SkeletonDebug_l263 = (cpuClockingArea_rob_io_retireWen_1 == 1'b1);
+  assign when_SkeletonDebug_l275 = ((5'h01 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h01 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275) begin
+        DaRAT_val_1 = _zz_DaRAT_val_1_2;
+      end else begin
+        if(when_SkeletonDebug_l279) begin
+          DaRAT_val_1 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_1 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292) begin
+        DaRAT_val_1 = _zz_DaRAT_val_1_4;
+      end else begin
+        if(when_SkeletonDebug_l295) begin
+          DaRAT_val_1 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_1 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279 = (5'h01 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign _zz_DaRAT_val_1 = _zz__zz_DaRAT_val_1;
+  assign _zz_DaRAT_val_1_1 = _zz__zz_DaRAT_val_1_1;
+  assign when_SkeletonDebug_l275_1 = ((5'h02 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h02 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_1) begin
+        DaRAT_val_2 = _zz_DaRAT_val_2;
+      end else begin
+        if(when_SkeletonDebug_l279_1) begin
+          DaRAT_val_2 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_2 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_1) begin
+        DaRAT_val_2 = _zz_DaRAT_val_2_2;
+      end else begin
+        if(when_SkeletonDebug_l295_1) begin
+          DaRAT_val_2 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_2 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_1 = (5'h02 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_2 = ((5'h03 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h03 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_2) begin
+        DaRAT_val_3 = _zz_DaRAT_val_3;
+      end else begin
+        if(when_SkeletonDebug_l279_2) begin
+          DaRAT_val_3 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_3 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_2) begin
+        DaRAT_val_3 = _zz_DaRAT_val_3_2;
+      end else begin
+        if(when_SkeletonDebug_l295_2) begin
+          DaRAT_val_3 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_3 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_2 = (5'h03 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_3 = ((5'h04 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h04 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_3) begin
+        DaRAT_val_4 = _zz_DaRAT_val_4;
+      end else begin
+        if(when_SkeletonDebug_l279_3) begin
+          DaRAT_val_4 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_4 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_3) begin
+        DaRAT_val_4 = _zz_DaRAT_val_4_2;
+      end else begin
+        if(when_SkeletonDebug_l295_3) begin
+          DaRAT_val_4 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_4 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_3 = (5'h04 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_4 = ((5'h05 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h05 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_4) begin
+        DaRAT_val_5 = _zz_DaRAT_val_5;
+      end else begin
+        if(when_SkeletonDebug_l279_4) begin
+          DaRAT_val_5 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_5 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_4) begin
+        DaRAT_val_5 = _zz_DaRAT_val_5_2;
+      end else begin
+        if(when_SkeletonDebug_l295_4) begin
+          DaRAT_val_5 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_5 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_4 = (5'h05 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_5 = ((5'h06 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h06 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_5) begin
+        DaRAT_val_6 = _zz_DaRAT_val_6;
+      end else begin
+        if(when_SkeletonDebug_l279_5) begin
+          DaRAT_val_6 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_6 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_5) begin
+        DaRAT_val_6 = _zz_DaRAT_val_6_2;
+      end else begin
+        if(when_SkeletonDebug_l295_5) begin
+          DaRAT_val_6 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_6 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_5 = (5'h06 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_6 = ((5'h07 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h07 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_6) begin
+        DaRAT_val_7 = _zz_DaRAT_val_7;
+      end else begin
+        if(when_SkeletonDebug_l279_6) begin
+          DaRAT_val_7 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_7 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_6) begin
+        DaRAT_val_7 = _zz_DaRAT_val_7_2;
+      end else begin
+        if(when_SkeletonDebug_l295_6) begin
+          DaRAT_val_7 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_7 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_6 = (5'h07 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_7 = ((5'h08 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h08 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_7) begin
+        DaRAT_val_8 = _zz_DaRAT_val_8;
+      end else begin
+        if(when_SkeletonDebug_l279_7) begin
+          DaRAT_val_8 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_8 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_7) begin
+        DaRAT_val_8 = _zz_DaRAT_val_8_2;
+      end else begin
+        if(when_SkeletonDebug_l295_7) begin
+          DaRAT_val_8 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_8 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_7 = (5'h08 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_8 = ((5'h09 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h09 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_8) begin
+        DaRAT_val_9 = _zz_DaRAT_val_9;
+      end else begin
+        if(when_SkeletonDebug_l279_8) begin
+          DaRAT_val_9 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_9 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_8) begin
+        DaRAT_val_9 = _zz_DaRAT_val_9_2;
+      end else begin
+        if(when_SkeletonDebug_l295_8) begin
+          DaRAT_val_9 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_9 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_8 = (5'h09 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_9 = ((5'h0a != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0a != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_9) begin
+        DaRAT_val_10 = _zz_DaRAT_val_10;
+      end else begin
+        if(when_SkeletonDebug_l279_9) begin
+          DaRAT_val_10 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_10 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_9) begin
+        DaRAT_val_10 = _zz_DaRAT_val_10_2;
+      end else begin
+        if(when_SkeletonDebug_l295_9) begin
+          DaRAT_val_10 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_10 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_9 = (5'h0a == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_10 = ((5'h0b != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0b != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_10) begin
+        DaRAT_val_11 = _zz_DaRAT_val_11;
+      end else begin
+        if(when_SkeletonDebug_l279_10) begin
+          DaRAT_val_11 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_11 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_10) begin
+        DaRAT_val_11 = _zz_DaRAT_val_11_2;
+      end else begin
+        if(when_SkeletonDebug_l295_10) begin
+          DaRAT_val_11 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_11 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_10 = (5'h0b == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_11 = ((5'h0c != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0c != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_11) begin
+        DaRAT_val_12 = _zz_DaRAT_val_12;
+      end else begin
+        if(when_SkeletonDebug_l279_11) begin
+          DaRAT_val_12 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_12 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_11) begin
+        DaRAT_val_12 = _zz_DaRAT_val_12_2;
+      end else begin
+        if(when_SkeletonDebug_l295_11) begin
+          DaRAT_val_12 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_12 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_11 = (5'h0c == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_12 = ((5'h0d != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0d != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_12) begin
+        DaRAT_val_13 = _zz_DaRAT_val_13;
+      end else begin
+        if(when_SkeletonDebug_l279_12) begin
+          DaRAT_val_13 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_13 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_12) begin
+        DaRAT_val_13 = _zz_DaRAT_val_13_2;
+      end else begin
+        if(when_SkeletonDebug_l295_12) begin
+          DaRAT_val_13 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_13 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_12 = (5'h0d == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_13 = ((5'h0e != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0e != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_13) begin
+        DaRAT_val_14 = _zz_DaRAT_val_14;
+      end else begin
+        if(when_SkeletonDebug_l279_13) begin
+          DaRAT_val_14 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_14 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_13) begin
+        DaRAT_val_14 = _zz_DaRAT_val_14_2;
+      end else begin
+        if(when_SkeletonDebug_l295_13) begin
+          DaRAT_val_14 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_14 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_13 = (5'h0e == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_14 = ((5'h0f != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0f != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_14) begin
+        DaRAT_val_15 = _zz_DaRAT_val_15;
+      end else begin
+        if(when_SkeletonDebug_l279_14) begin
+          DaRAT_val_15 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_15 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_14) begin
+        DaRAT_val_15 = _zz_DaRAT_val_15_2;
+      end else begin
+        if(when_SkeletonDebug_l295_14) begin
+          DaRAT_val_15 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_15 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_14 = (5'h0f == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_15 = ((5'h10 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h10 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_15) begin
+        DaRAT_val_16 = _zz_DaRAT_val_16;
+      end else begin
+        if(when_SkeletonDebug_l279_15) begin
+          DaRAT_val_16 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_16 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_15) begin
+        DaRAT_val_16 = _zz_DaRAT_val_16_2;
+      end else begin
+        if(when_SkeletonDebug_l295_15) begin
+          DaRAT_val_16 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_16 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_15 = (5'h10 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_16 = ((5'h11 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h11 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_16) begin
+        DaRAT_val_17 = _zz_DaRAT_val_17;
+      end else begin
+        if(when_SkeletonDebug_l279_16) begin
+          DaRAT_val_17 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_17 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_16) begin
+        DaRAT_val_17 = _zz_DaRAT_val_17_2;
+      end else begin
+        if(when_SkeletonDebug_l295_16) begin
+          DaRAT_val_17 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_17 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_16 = (5'h11 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_17 = ((5'h12 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h12 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_17) begin
+        DaRAT_val_18 = _zz_DaRAT_val_18;
+      end else begin
+        if(when_SkeletonDebug_l279_17) begin
+          DaRAT_val_18 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_18 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_17) begin
+        DaRAT_val_18 = _zz_DaRAT_val_18_2;
+      end else begin
+        if(when_SkeletonDebug_l295_17) begin
+          DaRAT_val_18 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_18 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_17 = (5'h12 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_18 = ((5'h13 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h13 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_18) begin
+        DaRAT_val_19 = _zz_DaRAT_val_19;
+      end else begin
+        if(when_SkeletonDebug_l279_18) begin
+          DaRAT_val_19 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_19 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_18) begin
+        DaRAT_val_19 = _zz_DaRAT_val_19_2;
+      end else begin
+        if(when_SkeletonDebug_l295_18) begin
+          DaRAT_val_19 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_19 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_18 = (5'h13 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_19 = ((5'h14 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h14 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_19) begin
+        DaRAT_val_20 = _zz_DaRAT_val_20;
+      end else begin
+        if(when_SkeletonDebug_l279_19) begin
+          DaRAT_val_20 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_20 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_19) begin
+        DaRAT_val_20 = _zz_DaRAT_val_20_2;
+      end else begin
+        if(when_SkeletonDebug_l295_19) begin
+          DaRAT_val_20 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_20 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_19 = (5'h14 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_20 = ((5'h15 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h15 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_20) begin
+        DaRAT_val_21 = _zz_DaRAT_val_21;
+      end else begin
+        if(when_SkeletonDebug_l279_20) begin
+          DaRAT_val_21 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_21 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_20) begin
+        DaRAT_val_21 = _zz_DaRAT_val_21_2;
+      end else begin
+        if(when_SkeletonDebug_l295_20) begin
+          DaRAT_val_21 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_21 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_20 = (5'h15 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_21 = ((5'h16 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h16 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_21) begin
+        DaRAT_val_22 = _zz_DaRAT_val_22;
+      end else begin
+        if(when_SkeletonDebug_l279_21) begin
+          DaRAT_val_22 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_22 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_21) begin
+        DaRAT_val_22 = _zz_DaRAT_val_22_2;
+      end else begin
+        if(when_SkeletonDebug_l295_21) begin
+          DaRAT_val_22 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_22 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_21 = (5'h16 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_22 = ((5'h17 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h17 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_22) begin
+        DaRAT_val_23 = _zz_DaRAT_val_23;
+      end else begin
+        if(when_SkeletonDebug_l279_22) begin
+          DaRAT_val_23 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_23 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_22) begin
+        DaRAT_val_23 = _zz_DaRAT_val_23_2;
+      end else begin
+        if(when_SkeletonDebug_l295_22) begin
+          DaRAT_val_23 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_23 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_22 = (5'h17 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_23 = ((5'h18 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h18 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_23) begin
+        DaRAT_val_24 = _zz_DaRAT_val_24;
+      end else begin
+        if(when_SkeletonDebug_l279_23) begin
+          DaRAT_val_24 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_24 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_23) begin
+        DaRAT_val_24 = _zz_DaRAT_val_24_2;
+      end else begin
+        if(when_SkeletonDebug_l295_23) begin
+          DaRAT_val_24 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_24 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_23 = (5'h18 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_24 = ((5'h19 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h19 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_24) begin
+        DaRAT_val_25 = _zz_DaRAT_val_25;
+      end else begin
+        if(when_SkeletonDebug_l279_24) begin
+          DaRAT_val_25 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_25 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_24) begin
+        DaRAT_val_25 = _zz_DaRAT_val_25_2;
+      end else begin
+        if(when_SkeletonDebug_l295_24) begin
+          DaRAT_val_25 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_25 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_24 = (5'h19 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_25 = ((5'h1a != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1a != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_25) begin
+        DaRAT_val_26 = _zz_DaRAT_val_26;
+      end else begin
+        if(when_SkeletonDebug_l279_25) begin
+          DaRAT_val_26 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_26 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_25) begin
+        DaRAT_val_26 = _zz_DaRAT_val_26_2;
+      end else begin
+        if(when_SkeletonDebug_l295_25) begin
+          DaRAT_val_26 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_26 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_25 = (5'h1a == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_26 = ((5'h1b != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1b != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_26) begin
+        DaRAT_val_27 = _zz_DaRAT_val_27;
+      end else begin
+        if(when_SkeletonDebug_l279_26) begin
+          DaRAT_val_27 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_27 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_26) begin
+        DaRAT_val_27 = _zz_DaRAT_val_27_2;
+      end else begin
+        if(when_SkeletonDebug_l295_26) begin
+          DaRAT_val_27 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_27 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_26 = (5'h1b == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_27 = ((5'h1c != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1c != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_27) begin
+        DaRAT_val_28 = _zz_DaRAT_val_28;
+      end else begin
+        if(when_SkeletonDebug_l279_27) begin
+          DaRAT_val_28 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_28 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_27) begin
+        DaRAT_val_28 = _zz_DaRAT_val_28_2;
+      end else begin
+        if(when_SkeletonDebug_l295_27) begin
+          DaRAT_val_28 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_28 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_27 = (5'h1c == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_28 = ((5'h1d != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1d != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_28) begin
+        DaRAT_val_29 = _zz_DaRAT_val_29;
+      end else begin
+        if(when_SkeletonDebug_l279_28) begin
+          DaRAT_val_29 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_29 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_28) begin
+        DaRAT_val_29 = _zz_DaRAT_val_29_2;
+      end else begin
+        if(when_SkeletonDebug_l295_28) begin
+          DaRAT_val_29 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_29 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_28 = (5'h1d == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_29 = ((5'h1e != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1e != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_29) begin
+        DaRAT_val_30 = _zz_DaRAT_val_30;
+      end else begin
+        if(when_SkeletonDebug_l279_29) begin
+          DaRAT_val_30 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_30 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_29) begin
+        DaRAT_val_30 = _zz_DaRAT_val_30_2;
+      end else begin
+        if(when_SkeletonDebug_l295_29) begin
+          DaRAT_val_30 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_30 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_29 = (5'h1e == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l275_30 = ((5'h1f != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1f != cpuClockingArea_areaFlushReset_retirePortValue2));
+  always @(*) begin
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l275_30) begin
+        DaRAT_val_31 = _zz_DaRAT_val_31;
+      end else begin
+        if(when_SkeletonDebug_l279_30) begin
+          DaRAT_val_31 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_31 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end else begin
+      if(when_SkeletonDebug_l292_30) begin
+        DaRAT_val_31 = _zz_DaRAT_val_31_2;
+      end else begin
+        if(when_SkeletonDebug_l295_30) begin
+          DaRAT_val_31 = _zz_DaRAT_val_1;
+        end else begin
+          DaRAT_val_31 = _zz_DaRAT_val_1_1;
+        end
+      end
+    end
+  end
+
+  assign when_SkeletonDebug_l279_30 = (5'h1f == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292 = ((5'h01 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h01 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295 = (5'h01 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_1 = ((5'h02 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h02 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_1 = (5'h02 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_2 = ((5'h03 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h03 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_2 = (5'h03 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_3 = ((5'h04 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h04 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_3 = (5'h04 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_4 = ((5'h05 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h05 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_4 = (5'h05 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_5 = ((5'h06 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h06 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_5 = (5'h06 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_6 = ((5'h07 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h07 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_6 = (5'h07 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_7 = ((5'h08 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h08 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_7 = (5'h08 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_8 = ((5'h09 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h09 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_8 = (5'h09 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_9 = ((5'h0a != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0a != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_9 = (5'h0a == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_10 = ((5'h0b != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0b != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_10 = (5'h0b == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_11 = ((5'h0c != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0c != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_11 = (5'h0c == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_12 = ((5'h0d != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0d != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_12 = (5'h0d == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_13 = ((5'h0e != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0e != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_13 = (5'h0e == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_14 = ((5'h0f != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h0f != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_14 = (5'h0f == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_15 = ((5'h10 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h10 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_15 = (5'h10 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_16 = ((5'h11 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h11 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_16 = (5'h11 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_17 = ((5'h12 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h12 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_17 = (5'h12 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_18 = ((5'h13 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h13 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_18 = (5'h13 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_19 = ((5'h14 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h14 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_19 = (5'h14 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_20 = ((5'h15 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h15 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_20 = (5'h15 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_21 = ((5'h16 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h16 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_21 = (5'h16 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_22 = ((5'h17 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h17 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_22 = (5'h17 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_23 = ((5'h18 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h18 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_23 = (5'h18 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_24 = ((5'h19 != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h19 != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_24 = (5'h19 == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_25 = ((5'h1a != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1a != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_25 = (5'h1a == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_26 = ((5'h1b != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1b != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_26 = (5'h1b == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_27 = ((5'h1c != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1c != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_27 = (5'h1c == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_28 = ((5'h1d != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1d != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_28 = (5'h1d == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_29 = ((5'h1e != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1e != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_29 = (5'h1e == cpuClockingArea_areaFlushReset_retirePortValue1);
+  assign when_SkeletonDebug_l292_30 = ((5'h1f != cpuClockingArea_areaFlushReset_retirePortValue1) && (5'h1f != cpuClockingArea_areaFlushReset_retirePortValue2));
+  assign when_SkeletonDebug_l295_30 = (5'h1f == cpuClockingArea_areaFlushReset_retirePortValue1);
   assign DaRAT_val_0 = 32'h00000000;
   assign DifftestBundle_DifftestInstrCommitIndex_0 = 8'h00;
   assign DifftestBundle_DifftestInstrCommitIndex_1 = 8'h01;
   assign DifftestBundle_DifftestInstrCommitIndex_2 = 8'h02;
   assign DifftestBundle_DifftestInstrCommitIndex_3 = 8'h03;
   assign DifftestBundle_DifftestInstrCommitIndex_4 = 8'h04;
-  assign DifftestBundle_DifftestInstrCommitValid_0 = cpuClockingArea_areaFlushReset_commitALU0_io_rob_valid;
-  assign DifftestBundle_DifftestInstrCommitValid_1 = cpuClockingArea_areaFlushReset_commitALU1_io_rob_valid;
-  assign DifftestBundle_DifftestInstrCommitValid_2 = cpuClockingArea_areaFlushReset_commitMULU_io_rob_valid;
-  assign DifftestBundle_DifftestInstrCommitValid_3 = cpuClockingArea_areaFlushReset_commitDIVU_io_rob_valid;
-  assign DifftestBundle_DifftestInstrCommitValid_4 = cpuClockingArea_areaFlushReset_commitLSU_io_rob_valid;
-  assign DifftestBundle_DifftestInstrCommitPC_0 = {32'd0, _zz_DifftestBundle_DifftestInstrCommitPC_0};
-  assign DifftestBundle_DifftestInstrCommitPC_1 = {32'd0, _zz_DifftestBundle_DifftestInstrCommitPC_1};
-  assign DifftestBundle_DifftestInstrCommitPC_2 = {32'd0, _zz_DifftestBundle_DifftestInstrCommitPC_2};
-  assign DifftestBundle_DifftestInstrCommitPC_3 = {32'd0, _zz_DifftestBundle_DifftestInstrCommitPC_3};
-  assign DifftestBundle_DifftestInstrCommitPC_4 = {32'd0, _zz_DifftestBundle_DifftestInstrCommitPC_4};
+  assign DifftestBundle_DifftestInstrCommitValid_0 = cpuClockingArea_rob_io_retireValid_0;
+  assign DifftestBundle_DifftestInstrCommitValid_1 = cpuClockingArea_rob_io_retireValid_1;
+  assign DifftestBundle_DifftestInstrCommitValid_2 = 1'b0;
+  assign DifftestBundle_DifftestInstrCommitValid_3 = 1'b0;
+  assign DifftestBundle_DifftestInstrCommitValid_4 = 1'b0;
   assign DifftestBundle_DifftestInstrCommitInstr_0 = 32'h00000000;
   assign DifftestBundle_DifftestInstrCommitInstr_1 = 32'h00000000;
   assign DifftestBundle_DifftestInstrCommitInstr_2 = 32'h00000000;
@@ -6987,45 +10497,50 @@ module mycpu (
   assign DifftestBundle_DifftestSkip_2 = 1'b0;
   assign DifftestBundle_DifftestSkip_3 = 1'b0;
   assign DifftestBundle_DifftestSkip_4 = 1'b0;
-  assign DifftestBundle_DifftestIsTlbFill_4 = (cpuClockingArea_memService_io_TLBCtrl_op == TLBOp_fill);
-  assign DifftestBundle_DifftestTlbFillIndex_4 = {3'd0, _zz_DifftestBundle_DifftestTlbFillIndex_4};
-  assign DifftestBundle_DifftestIsTlbFill_0 = 1'b0;
-  assign DifftestBundle_DifftestTlbFillIndex_0 = 5'h00;
-  assign DifftestBundle_DifftestIsTlbFill_1 = 1'b0;
-  assign DifftestBundle_DifftestTlbFillIndex_1 = 5'h00;
+  assign DifftestBundle_DifftestIsTlbFill_0 = (cpuClockingArea_memService_io_TLBCtrl_op == TLBOp_fill);
+  assign DifftestBundle_DifftestIsTlbFill_1 = (cpuClockingArea_memService_io_TLBCtrl_op == TLBOp_fill);
   assign DifftestBundle_DifftestIsTlbFill_2 = 1'b0;
-  assign DifftestBundle_DifftestTlbFillIndex_2 = 5'h00;
   assign DifftestBundle_DifftestIsTlbFill_3 = 1'b0;
+  assign DifftestBundle_DifftestIsTlbFill_4 = 1'b0;
+  assign DifftestBundle_DifftestTlbFillIndex_0 = {3'd0, _zz_DifftestBundle_DifftestTlbFillIndex_0};
+  assign DifftestBundle_DifftestTlbFillIndex_1 = {3'd0, _zz_DifftestBundle_DifftestTlbFillIndex_1};
+  assign DifftestBundle_DifftestTlbFillIndex_2 = 5'h00;
   assign DifftestBundle_DifftestTlbFillIndex_3 = 5'h00;
-  assign DifftestBundle_DifftestIsCount_1 = (cpuClockingArea_rob_io_commitROBEntries_1_specialOp == ROBSpecialOp_readCNT);
-  assign DifftestBundle_DifftestCount_1 = {32'd0, _zz_DifftestBundle_DifftestCount_1};
+  assign DifftestBundle_DifftestTlbFillIndex_4 = 5'h00;
+  assign DifftestBundle_DifftestIsCount_0 = cpuClockingArea_rob_io_retireIsReadCnt_0;
+  assign DifftestBundle_DifftestIsCount_1 = cpuClockingArea_rob_io_retireIsReadCnt_1;
   assign DifftestBundle_DifftestIsCount_2 = 1'b0;
-  assign DifftestBundle_DifftestCount_2 = 64'h0000000000000000;
   assign DifftestBundle_DifftestIsCount_3 = 1'b0;
-  assign DifftestBundle_DifftestCount_3 = 64'h0000000000000000;
   assign DifftestBundle_DifftestIsCount_4 = 1'b0;
+  assign DifftestBundle_DifftestCount_0 = {32'd0, _zz_DifftestBundle_DifftestCount_0};
+  assign DifftestBundle_DifftestCount_1 = {32'd0, _zz_DifftestBundle_DifftestCount_1};
+  assign DifftestBundle_DifftestCount_2 = 64'h0000000000000000;
+  assign DifftestBundle_DifftestCount_3 = 64'h0000000000000000;
   assign DifftestBundle_DifftestCount_4 = 64'h0000000000000000;
-  assign DifftestBundle_DifftestIsCount_0 = 1'b0;
-  assign DifftestBundle_DifftestCount_0 = 64'h0000000000000000;
-  assign DifftestBundle_DifftestWen_0 = toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_m2sPipe_valid;
-  assign DifftestBundle_DifftestWen_1 = toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_m2sPipe_valid;
-  assign DifftestBundle_DifftestWen_2 = toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_m2sPipe_valid;
-  assign DifftestBundle_DifftestWen_3 = toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_m2sPipe_valid;
-  assign DifftestBundle_DifftestWen_4 = toplevel_cpuClockingArea_fuLSU_io_output_m2sPipe_valid;
+  assign DifftestBundle_DifftestInstrCommitPC_0 = {32'd0, cpuClockingArea_rob_io_retirePC_0};
+  assign DifftestBundle_DifftestInstrCommitPC_1 = {32'd0, cpuClockingArea_rob_io_retirePC_1};
+  assign DifftestBundle_DifftestInstrCommitPC_2 = 64'h0000000000000000;
+  assign DifftestBundle_DifftestInstrCommitPC_3 = 64'h0000000000000000;
+  assign DifftestBundle_DifftestInstrCommitPC_4 = 64'h0000000000000000;
+  assign DifftestBundle_DifftestWen_0 = cpuClockingArea_rob_io_retireWen_0;
+  assign DifftestBundle_DifftestWen_1 = cpuClockingArea_rob_io_retireWen_1;
+  assign DifftestBundle_DifftestWen_2 = 1'b0;
+  assign DifftestBundle_DifftestWen_3 = 1'b0;
+  assign DifftestBundle_DifftestWen_4 = 1'b0;
   assign DifftestBundle_DifftestWdata_0 = {32'd0, _zz_DifftestBundle_DifftestWdata_0};
   assign DifftestBundle_DifftestWdata_1 = {32'd0, _zz_DifftestBundle_DifftestWdata_1};
-  assign DifftestBundle_DifftestWdata_2 = {32'd0, _zz_DifftestBundle_DifftestWdata_2};
-  assign DifftestBundle_DifftestWdata_3 = {32'd0, _zz_DifftestBundle_DifftestWdata_3};
-  assign DifftestBundle_DifftestWdata_4 = {32'd0, _zz_DifftestBundle_DifftestWdata_4};
-  assign DifftestBundle_DifftestWdest_0 = {2'd0, toplevel_cpuClockingArea_areaFlushReset_fuALU0_io_output_m2sPipe_payload_prd};
-  assign DifftestBundle_DifftestWdest_1 = {2'd0, toplevel_cpuClockingArea_areaFlushReset_fuALU1_io_output_m2sPipe_payload_prd};
-  assign DifftestBundle_DifftestWdest_2 = {2'd0, toplevel_cpuClockingArea_areaFlushReset_fuMULU_io_output_m2sPipe_payload_prd};
-  assign DifftestBundle_DifftestWdest_3 = {2'd0, toplevel_cpuClockingArea_areaFlushReset_fuDIVU_io_output_m2sPipe_payload_prd};
-  assign DifftestBundle_DifftestWdest_4 = {2'd0, toplevel_cpuClockingArea_fuLSU_io_output_m2sPipe_payload_prd};
-  assign DifftestBundle_DifftestCsrRstat_0 = ((cpuClockingArea_rob_io_commitROBEntries_0_specialOp == ROBSpecialOp_writeCSR) || (cpuClockingArea_rob_io_commitROBEntries_0_specialOp == ROBSpecialOp_readCSR));
+  assign DifftestBundle_DifftestWdata_2 = 64'h0000000000000000;
+  assign DifftestBundle_DifftestWdata_3 = 64'h0000000000000000;
+  assign DifftestBundle_DifftestWdata_4 = 64'h0000000000000000;
+  assign DifftestBundle_DifftestWdest_0 = {2'd0, cpuClockingArea_rob_io_retireARAT_0_prd};
+  assign DifftestBundle_DifftestWdest_1 = {2'd0, cpuClockingArea_rob_io_retireARAT_1_prd};
+  assign DifftestBundle_DifftestWdest_2 = 8'h00;
+  assign DifftestBundle_DifftestWdest_3 = 8'h00;
+  assign DifftestBundle_DifftestWdest_4 = 8'h00;
+  assign DifftestBundle_DifftestCsrRstat_0 = cpuClockingArea_rob_io_retireCsrRstat_0;
   assign DifftestBundle_DifftestCsrData_0 = cpuClockingArea_csr_io_swRead_value;
-  assign DifftestBundle_DifftestCsrRstat_1 = 1'b0;
-  assign DifftestBundle_DifftestCsrData_1 = 32'h00000000;
+  assign DifftestBundle_DifftestCsrRstat_1 = cpuClockingArea_rob_io_retireCsrRstat_1;
+  assign DifftestBundle_DifftestCsrData_1 = cpuClockingArea_csr_io_swRead_value;
   assign DifftestBundle_DifftestCsrRstat_2 = 1'b0;
   assign DifftestBundle_DifftestCsrData_2 = 32'h00000000;
   assign DifftestBundle_DifftestCsrRstat_3 = 1'b0;
@@ -7464,6 +10979,302 @@ module mycpu (
       toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_exception <= cpuClockingArea_fuLSU_io_output_payload_exceptionInfo_exception;
       toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eCode <= cpuClockingArea_fuLSU_io_output_payload_exceptionInfo_eCode;
       toplevel_cpuClockingArea_fuLSU_io_output_rData_exceptionInfo_eSubCode <= cpuClockingArea_fuLSU_io_output_payload_exceptionInfo_eSubCode;
+    end
+    if(when_SkeletonDebug_l253) begin
+      if(when_SkeletonDebug_l254) begin
+        cpuClockingArea_areaFlushReset_retirePortValue1 <= cpuClockingArea_rob_io_retireARATidx_0;
+        cpuClockingArea_areaFlushReset_retirePortPidx1 <= cpuClockingArea_rob_io_retirePRATidx_0;
+      end else begin
+        cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+        cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+      end
+      if(when_SkeletonDebug_l263) begin
+        cpuClockingArea_areaFlushReset_retirePortValue2 <= cpuClockingArea_rob_io_retireARATidx_1;
+        cpuClockingArea_areaFlushReset_retirePortPidx2 <= cpuClockingArea_rob_io_retirePRATidx_1;
+      end else begin
+        cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+        cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+      end
+    end else begin
+      if(!when_SkeletonDebug_l292) begin
+        if(when_SkeletonDebug_l295) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_1) begin
+        if(when_SkeletonDebug_l295_1) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_2) begin
+        if(when_SkeletonDebug_l295_2) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_3) begin
+        if(when_SkeletonDebug_l295_3) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_4) begin
+        if(when_SkeletonDebug_l295_4) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_5) begin
+        if(when_SkeletonDebug_l295_5) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_6) begin
+        if(when_SkeletonDebug_l295_6) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_7) begin
+        if(when_SkeletonDebug_l295_7) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_8) begin
+        if(when_SkeletonDebug_l295_8) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_9) begin
+        if(when_SkeletonDebug_l295_9) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_10) begin
+        if(when_SkeletonDebug_l295_10) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_11) begin
+        if(when_SkeletonDebug_l295_11) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_12) begin
+        if(when_SkeletonDebug_l295_12) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_13) begin
+        if(when_SkeletonDebug_l295_13) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_14) begin
+        if(when_SkeletonDebug_l295_14) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_15) begin
+        if(when_SkeletonDebug_l295_15) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_16) begin
+        if(when_SkeletonDebug_l295_16) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_17) begin
+        if(when_SkeletonDebug_l295_17) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_18) begin
+        if(when_SkeletonDebug_l295_18) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_19) begin
+        if(when_SkeletonDebug_l295_19) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_20) begin
+        if(when_SkeletonDebug_l295_20) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_21) begin
+        if(when_SkeletonDebug_l295_21) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_22) begin
+        if(when_SkeletonDebug_l295_22) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_23) begin
+        if(when_SkeletonDebug_l295_23) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_24) begin
+        if(when_SkeletonDebug_l295_24) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_25) begin
+        if(when_SkeletonDebug_l295_25) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_26) begin
+        if(when_SkeletonDebug_l295_26) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_27) begin
+        if(when_SkeletonDebug_l295_27) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_28) begin
+        if(when_SkeletonDebug_l295_28) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_29) begin
+        if(when_SkeletonDebug_l295_29) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
+      if(!when_SkeletonDebug_l292_30) begin
+        if(when_SkeletonDebug_l295_30) begin
+          cpuClockingArea_areaFlushReset_retirePortValue1 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx1 <= 6'h00;
+        end else begin
+          cpuClockingArea_areaFlushReset_retirePortValue2 <= 5'h00;
+          cpuClockingArea_areaFlushReset_retirePortPidx2 <= 6'h00;
+        end
+      end
     end
     _zz_DifftestDelayBundle_DifftestInstrCommitIndex_0 <= DifftestBundle_DifftestInstrCommitIndex_0;
     _zz_DifftestDelayBundle_DifftestInstrCommitIndex_1 <= DifftestBundle_DifftestInstrCommitIndex_1;
@@ -8246,7 +12057,7 @@ module ALU_1 (
         io_output_payload_branchResult_branchResult = io_output_payload_data[0];
       end
       BRUOp_ncadd : begin
-        io_output_payload_branchResult_branchResult = io_output_payload_data[0];
+        io_output_payload_branchResult_branchResult = (! io_output_payload_data[0]);
       end
       default : begin
         io_output_payload_branchResult_branchResult = 1'b0;
@@ -8467,7 +12278,7 @@ module ALU (
         io_output_payload_branchResult_branchResult = io_output_payload_data[0];
       end
       BRUOp_ncadd : begin
-        io_output_payload_branchResult_branchResult = io_output_payload_data[0];
+        io_output_payload_branchResult_branchResult = (! io_output_payload_data[0]);
       end
       default : begin
         io_output_payload_branchResult_branchResult = 1'b0;
@@ -25533,6 +29344,26 @@ module ROB (
   output reg  [5:0]    io_commitROBEntries_4_exceptionInfo_eCode,
   output reg  [0:0]    io_commitROBEntries_4_exceptionInfo_eSubCode,
   output reg           io_commitROBEntries_4_valid,
+  output wire          io_retireValid_0,
+  output wire          io_retireValid_1,
+  output wire          io_retireIsReadCnt_0,
+  output wire          io_retireIsReadCnt_1,
+  output wire          io_retireCsrRstat_0,
+  output wire          io_retireCsrRstat_1,
+  output wire [31:0]   io_retireWdata_0,
+  output wire [31:0]   io_retireWdata_1,
+  output wire [31:0]   io_retirePC_0,
+  output wire [31:0]   io_retirePC_1,
+  output wire          io_retireWen_0,
+  output wire          io_retireWen_1,
+  output wire [4:0]    io_retireARATidx_0,
+  output wire [4:0]    io_retireARATidx_1,
+  output wire [5:0]    io_retirePRATidx_0,
+  output wire [5:0]    io_retirePRATidx_1,
+  output wire          retireIsReadCnt_0,
+  output wire          retireIsReadCnt_1,
+  output wire          retireCsrRstat_0,
+  output wire          retireCsrRstat_1,
   input  wire          aclk,
   input  wire          aresetn
 );
@@ -25548,7 +29379,7 @@ module ROB (
 
   reg        [31:0]   _zz__zz_retirePC_0;
   reg        [5:0]    _zz__zz_noPPRDMask;
-  reg        [3:0]    _zz__zz_stage_updateBPU_0_isJumpInst;
+  reg        [3:0]    _zz__zz_io_retireIsReadCnt_0;
   reg                 _zz__zz_retireMask;
   reg                 _zz__zz_stage_updateBPU_0_taken;
   reg                 _zz__zz_stage_updateBPU_0_predictFail;
@@ -25567,7 +29398,7 @@ module ROB (
   wire       [4:0]    _zz_stage_availROBMask_4;
   wire       [4:0]    _zz_stage_availROBMask_5;
   reg        [31:0]   _zz__zz_retirePC_1;
-  reg        [3:0]    _zz__zz_stage_updateBPU_1_isJumpInst;
+  reg        [3:0]    _zz__zz_io_retireIsReadCnt_1;
   reg                 _zz__zz_retireMask_3;
   reg                 _zz__zz_stage_updateBPU_1_taken;
   reg                 _zz__zz_stage_updateBPU_1_predictFail;
@@ -26125,7 +29956,7 @@ module ROB (
   wire                flush;
   wire       [31:0]   _zz_retirePC_0;
   wire       [5:0]    _zz_noPPRDMask;
-  wire       [3:0]    _zz_stage_updateBPU_0_isJumpInst;
+  wire       [3:0]    _zz_io_retireIsReadCnt_0;
   wire                _zz_retireMask;
   wire                _zz_stage_updateBPU_0_taken;
   wire                _zz_stage_updateBPU_0_predictFail;
@@ -26135,9 +29966,11 @@ module ROB (
   wire                _zz_retireMask_2;
   wire                idleEn;
   wire       [1:0]    dispatchNum;
+  wire                _zz_io_retireValid_0;
+  wire                _zz_io_retireValid_1;
   wire       [1:0]    retireNum;
   wire       [31:0]   _zz_retirePC_1;
-  wire       [3:0]    _zz_stage_updateBPU_1_isJumpInst;
+  wire       [3:0]    _zz_io_retireIsReadCnt_1;
   wire                _zz_retireMask_3;
   wire                _zz_stage_updateBPU_1_taken;
   wire                _zz_stage_updateBPU_1_predictFail;
@@ -26241,7 +30074,7 @@ module ROB (
   reg        [1:0]    _zz_rob_31_valid;
   reg        [4:0]    _zz_rob_31_isComplete;
   reg        [1:0]    _zz_rob_31_isComplete_1;
-  wire                when_ROB_l75;
+  wire                when_ROB_l86;
   wire       [31:0]   _zz_1;
   wire                _zz_2;
   wire                _zz_3;
@@ -26275,7 +30108,7 @@ module ROB (
   wire                _zz_31;
   wire                _zz_32;
   wire                _zz_33;
-  wire                when_ROB_l75_1;
+  wire                when_ROB_l86_1;
   wire       [31:0]   _zz_34;
   wire                _zz_35;
   wire                _zz_36;
@@ -26766,8 +30599,8 @@ module ROB (
   reg [71:0] rob_29_specialOp_string;
   reg [71:0] rob_30_specialOp_string;
   reg [71:0] rob_31_specialOp_string;
-  reg [71:0] _zz_stage_updateBPU_0_isJumpInst_string;
-  reg [71:0] _zz_stage_updateBPU_1_isJumpInst_string;
+  reg [71:0] _zz_io_retireIsReadCnt_0_string;
+  reg [71:0] _zz_io_retireIsReadCnt_1_string;
   reg [71:0] _zz_io_commitROBEntries_0_specialOp_string;
   reg [71:0] _zz_io_commitROBEntries_1_specialOp_string;
   reg [71:0] _zz_io_commitROBEntries_2_specialOp_string;
@@ -26795,14 +30628,14 @@ module ROB (
   assign _zz_noPPRDMaskMid_1_1 = {noPPRDMaskMid_0_1,noPPRDMaskMid_0_0};
   assign _zz_freePRFIdxMid_1_1 = {noPPRDMaskMid_0_1,noPPRDMaskMid_0_0};
   assign _zz_dispatchNum_1 = {io_dispatch_allowMask[1],io_dispatch_allowMask[0]};
-  assign _zz_retireNum_1 = {retireMask[1],retireMask[0]};
+  assign _zz_retireNum_1 = {_zz_io_retireValid_1,_zz_io_retireValid_0};
   assign _zz_stage_freePRFNum_2 = {_zz_stage_freePRFNum[1],_zz_stage_freePRFNum[0]};
   always @(*) begin
     case(head_0)
       5'b00000 : begin
         _zz__zz_retirePC_0 = rob_0_pc;
         _zz__zz_noPPRDMask = rob_0_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_0_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_0_specialOp;
         _zz__zz_retireMask = rob_0_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_0_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_0_branchResult_predictFail;
@@ -26817,7 +30650,7 @@ module ROB (
       5'b00001 : begin
         _zz__zz_retirePC_0 = rob_1_pc;
         _zz__zz_noPPRDMask = rob_1_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_1_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_1_specialOp;
         _zz__zz_retireMask = rob_1_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_1_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_1_branchResult_predictFail;
@@ -26832,7 +30665,7 @@ module ROB (
       5'b00010 : begin
         _zz__zz_retirePC_0 = rob_2_pc;
         _zz__zz_noPPRDMask = rob_2_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_2_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_2_specialOp;
         _zz__zz_retireMask = rob_2_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_2_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_2_branchResult_predictFail;
@@ -26847,7 +30680,7 @@ module ROB (
       5'b00011 : begin
         _zz__zz_retirePC_0 = rob_3_pc;
         _zz__zz_noPPRDMask = rob_3_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_3_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_3_specialOp;
         _zz__zz_retireMask = rob_3_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_3_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_3_branchResult_predictFail;
@@ -26862,7 +30695,7 @@ module ROB (
       5'b00100 : begin
         _zz__zz_retirePC_0 = rob_4_pc;
         _zz__zz_noPPRDMask = rob_4_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_4_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_4_specialOp;
         _zz__zz_retireMask = rob_4_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_4_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_4_branchResult_predictFail;
@@ -26877,7 +30710,7 @@ module ROB (
       5'b00101 : begin
         _zz__zz_retirePC_0 = rob_5_pc;
         _zz__zz_noPPRDMask = rob_5_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_5_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_5_specialOp;
         _zz__zz_retireMask = rob_5_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_5_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_5_branchResult_predictFail;
@@ -26892,7 +30725,7 @@ module ROB (
       5'b00110 : begin
         _zz__zz_retirePC_0 = rob_6_pc;
         _zz__zz_noPPRDMask = rob_6_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_6_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_6_specialOp;
         _zz__zz_retireMask = rob_6_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_6_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_6_branchResult_predictFail;
@@ -26907,7 +30740,7 @@ module ROB (
       5'b00111 : begin
         _zz__zz_retirePC_0 = rob_7_pc;
         _zz__zz_noPPRDMask = rob_7_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_7_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_7_specialOp;
         _zz__zz_retireMask = rob_7_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_7_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_7_branchResult_predictFail;
@@ -26922,7 +30755,7 @@ module ROB (
       5'b01000 : begin
         _zz__zz_retirePC_0 = rob_8_pc;
         _zz__zz_noPPRDMask = rob_8_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_8_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_8_specialOp;
         _zz__zz_retireMask = rob_8_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_8_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_8_branchResult_predictFail;
@@ -26937,7 +30770,7 @@ module ROB (
       5'b01001 : begin
         _zz__zz_retirePC_0 = rob_9_pc;
         _zz__zz_noPPRDMask = rob_9_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_9_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_9_specialOp;
         _zz__zz_retireMask = rob_9_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_9_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_9_branchResult_predictFail;
@@ -26952,7 +30785,7 @@ module ROB (
       5'b01010 : begin
         _zz__zz_retirePC_0 = rob_10_pc;
         _zz__zz_noPPRDMask = rob_10_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_10_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_10_specialOp;
         _zz__zz_retireMask = rob_10_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_10_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_10_branchResult_predictFail;
@@ -26967,7 +30800,7 @@ module ROB (
       5'b01011 : begin
         _zz__zz_retirePC_0 = rob_11_pc;
         _zz__zz_noPPRDMask = rob_11_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_11_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_11_specialOp;
         _zz__zz_retireMask = rob_11_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_11_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_11_branchResult_predictFail;
@@ -26982,7 +30815,7 @@ module ROB (
       5'b01100 : begin
         _zz__zz_retirePC_0 = rob_12_pc;
         _zz__zz_noPPRDMask = rob_12_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_12_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_12_specialOp;
         _zz__zz_retireMask = rob_12_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_12_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_12_branchResult_predictFail;
@@ -26997,7 +30830,7 @@ module ROB (
       5'b01101 : begin
         _zz__zz_retirePC_0 = rob_13_pc;
         _zz__zz_noPPRDMask = rob_13_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_13_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_13_specialOp;
         _zz__zz_retireMask = rob_13_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_13_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_13_branchResult_predictFail;
@@ -27012,7 +30845,7 @@ module ROB (
       5'b01110 : begin
         _zz__zz_retirePC_0 = rob_14_pc;
         _zz__zz_noPPRDMask = rob_14_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_14_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_14_specialOp;
         _zz__zz_retireMask = rob_14_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_14_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_14_branchResult_predictFail;
@@ -27027,7 +30860,7 @@ module ROB (
       5'b01111 : begin
         _zz__zz_retirePC_0 = rob_15_pc;
         _zz__zz_noPPRDMask = rob_15_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_15_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_15_specialOp;
         _zz__zz_retireMask = rob_15_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_15_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_15_branchResult_predictFail;
@@ -27042,7 +30875,7 @@ module ROB (
       5'b10000 : begin
         _zz__zz_retirePC_0 = rob_16_pc;
         _zz__zz_noPPRDMask = rob_16_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_16_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_16_specialOp;
         _zz__zz_retireMask = rob_16_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_16_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_16_branchResult_predictFail;
@@ -27057,7 +30890,7 @@ module ROB (
       5'b10001 : begin
         _zz__zz_retirePC_0 = rob_17_pc;
         _zz__zz_noPPRDMask = rob_17_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_17_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_17_specialOp;
         _zz__zz_retireMask = rob_17_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_17_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_17_branchResult_predictFail;
@@ -27072,7 +30905,7 @@ module ROB (
       5'b10010 : begin
         _zz__zz_retirePC_0 = rob_18_pc;
         _zz__zz_noPPRDMask = rob_18_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_18_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_18_specialOp;
         _zz__zz_retireMask = rob_18_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_18_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_18_branchResult_predictFail;
@@ -27087,7 +30920,7 @@ module ROB (
       5'b10011 : begin
         _zz__zz_retirePC_0 = rob_19_pc;
         _zz__zz_noPPRDMask = rob_19_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_19_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_19_specialOp;
         _zz__zz_retireMask = rob_19_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_19_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_19_branchResult_predictFail;
@@ -27102,7 +30935,7 @@ module ROB (
       5'b10100 : begin
         _zz__zz_retirePC_0 = rob_20_pc;
         _zz__zz_noPPRDMask = rob_20_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_20_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_20_specialOp;
         _zz__zz_retireMask = rob_20_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_20_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_20_branchResult_predictFail;
@@ -27117,7 +30950,7 @@ module ROB (
       5'b10101 : begin
         _zz__zz_retirePC_0 = rob_21_pc;
         _zz__zz_noPPRDMask = rob_21_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_21_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_21_specialOp;
         _zz__zz_retireMask = rob_21_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_21_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_21_branchResult_predictFail;
@@ -27132,7 +30965,7 @@ module ROB (
       5'b10110 : begin
         _zz__zz_retirePC_0 = rob_22_pc;
         _zz__zz_noPPRDMask = rob_22_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_22_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_22_specialOp;
         _zz__zz_retireMask = rob_22_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_22_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_22_branchResult_predictFail;
@@ -27147,7 +30980,7 @@ module ROB (
       5'b10111 : begin
         _zz__zz_retirePC_0 = rob_23_pc;
         _zz__zz_noPPRDMask = rob_23_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_23_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_23_specialOp;
         _zz__zz_retireMask = rob_23_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_23_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_23_branchResult_predictFail;
@@ -27162,7 +30995,7 @@ module ROB (
       5'b11000 : begin
         _zz__zz_retirePC_0 = rob_24_pc;
         _zz__zz_noPPRDMask = rob_24_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_24_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_24_specialOp;
         _zz__zz_retireMask = rob_24_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_24_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_24_branchResult_predictFail;
@@ -27177,7 +31010,7 @@ module ROB (
       5'b11001 : begin
         _zz__zz_retirePC_0 = rob_25_pc;
         _zz__zz_noPPRDMask = rob_25_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_25_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_25_specialOp;
         _zz__zz_retireMask = rob_25_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_25_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_25_branchResult_predictFail;
@@ -27192,7 +31025,7 @@ module ROB (
       5'b11010 : begin
         _zz__zz_retirePC_0 = rob_26_pc;
         _zz__zz_noPPRDMask = rob_26_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_26_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_26_specialOp;
         _zz__zz_retireMask = rob_26_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_26_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_26_branchResult_predictFail;
@@ -27207,7 +31040,7 @@ module ROB (
       5'b11011 : begin
         _zz__zz_retirePC_0 = rob_27_pc;
         _zz__zz_noPPRDMask = rob_27_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_27_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_27_specialOp;
         _zz__zz_retireMask = rob_27_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_27_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_27_branchResult_predictFail;
@@ -27222,7 +31055,7 @@ module ROB (
       5'b11100 : begin
         _zz__zz_retirePC_0 = rob_28_pc;
         _zz__zz_noPPRDMask = rob_28_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_28_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_28_specialOp;
         _zz__zz_retireMask = rob_28_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_28_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_28_branchResult_predictFail;
@@ -27237,7 +31070,7 @@ module ROB (
       5'b11101 : begin
         _zz__zz_retirePC_0 = rob_29_pc;
         _zz__zz_noPPRDMask = rob_29_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_29_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_29_specialOp;
         _zz__zz_retireMask = rob_29_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_29_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_29_branchResult_predictFail;
@@ -27252,7 +31085,7 @@ module ROB (
       5'b11110 : begin
         _zz__zz_retirePC_0 = rob_30_pc;
         _zz__zz_noPPRDMask = rob_30_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_30_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_30_specialOp;
         _zz__zz_retireMask = rob_30_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_30_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_30_branchResult_predictFail;
@@ -27267,7 +31100,7 @@ module ROB (
       default : begin
         _zz__zz_retirePC_0 = rob_31_pc;
         _zz__zz_noPPRDMask = rob_31_pprd;
-        _zz__zz_stage_updateBPU_0_isJumpInst = rob_31_specialOp;
+        _zz__zz_io_retireIsReadCnt_0 = rob_31_specialOp;
         _zz__zz_retireMask = rob_31_isComplete;
         _zz__zz_stage_updateBPU_0_taken = rob_31_branchResult_branchResult;
         _zz__zz_stage_updateBPU_0_predictFail = rob_31_branchResult_predictFail;
@@ -27378,7 +31211,7 @@ module ROB (
     case(head_1)
       5'b00000 : begin
         _zz__zz_retirePC_1 = rob_0_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_0_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_0_specialOp;
         _zz__zz_retireMask_3 = rob_0_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_0_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_0_branchResult_predictFail;
@@ -27393,7 +31226,7 @@ module ROB (
       end
       5'b00001 : begin
         _zz__zz_retirePC_1 = rob_1_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_1_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_1_specialOp;
         _zz__zz_retireMask_3 = rob_1_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_1_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_1_branchResult_predictFail;
@@ -27408,7 +31241,7 @@ module ROB (
       end
       5'b00010 : begin
         _zz__zz_retirePC_1 = rob_2_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_2_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_2_specialOp;
         _zz__zz_retireMask_3 = rob_2_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_2_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_2_branchResult_predictFail;
@@ -27423,7 +31256,7 @@ module ROB (
       end
       5'b00011 : begin
         _zz__zz_retirePC_1 = rob_3_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_3_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_3_specialOp;
         _zz__zz_retireMask_3 = rob_3_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_3_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_3_branchResult_predictFail;
@@ -27438,7 +31271,7 @@ module ROB (
       end
       5'b00100 : begin
         _zz__zz_retirePC_1 = rob_4_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_4_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_4_specialOp;
         _zz__zz_retireMask_3 = rob_4_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_4_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_4_branchResult_predictFail;
@@ -27453,7 +31286,7 @@ module ROB (
       end
       5'b00101 : begin
         _zz__zz_retirePC_1 = rob_5_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_5_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_5_specialOp;
         _zz__zz_retireMask_3 = rob_5_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_5_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_5_branchResult_predictFail;
@@ -27468,7 +31301,7 @@ module ROB (
       end
       5'b00110 : begin
         _zz__zz_retirePC_1 = rob_6_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_6_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_6_specialOp;
         _zz__zz_retireMask_3 = rob_6_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_6_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_6_branchResult_predictFail;
@@ -27483,7 +31316,7 @@ module ROB (
       end
       5'b00111 : begin
         _zz__zz_retirePC_1 = rob_7_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_7_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_7_specialOp;
         _zz__zz_retireMask_3 = rob_7_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_7_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_7_branchResult_predictFail;
@@ -27498,7 +31331,7 @@ module ROB (
       end
       5'b01000 : begin
         _zz__zz_retirePC_1 = rob_8_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_8_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_8_specialOp;
         _zz__zz_retireMask_3 = rob_8_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_8_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_8_branchResult_predictFail;
@@ -27513,7 +31346,7 @@ module ROB (
       end
       5'b01001 : begin
         _zz__zz_retirePC_1 = rob_9_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_9_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_9_specialOp;
         _zz__zz_retireMask_3 = rob_9_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_9_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_9_branchResult_predictFail;
@@ -27528,7 +31361,7 @@ module ROB (
       end
       5'b01010 : begin
         _zz__zz_retirePC_1 = rob_10_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_10_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_10_specialOp;
         _zz__zz_retireMask_3 = rob_10_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_10_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_10_branchResult_predictFail;
@@ -27543,7 +31376,7 @@ module ROB (
       end
       5'b01011 : begin
         _zz__zz_retirePC_1 = rob_11_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_11_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_11_specialOp;
         _zz__zz_retireMask_3 = rob_11_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_11_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_11_branchResult_predictFail;
@@ -27558,7 +31391,7 @@ module ROB (
       end
       5'b01100 : begin
         _zz__zz_retirePC_1 = rob_12_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_12_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_12_specialOp;
         _zz__zz_retireMask_3 = rob_12_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_12_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_12_branchResult_predictFail;
@@ -27573,7 +31406,7 @@ module ROB (
       end
       5'b01101 : begin
         _zz__zz_retirePC_1 = rob_13_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_13_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_13_specialOp;
         _zz__zz_retireMask_3 = rob_13_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_13_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_13_branchResult_predictFail;
@@ -27588,7 +31421,7 @@ module ROB (
       end
       5'b01110 : begin
         _zz__zz_retirePC_1 = rob_14_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_14_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_14_specialOp;
         _zz__zz_retireMask_3 = rob_14_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_14_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_14_branchResult_predictFail;
@@ -27603,7 +31436,7 @@ module ROB (
       end
       5'b01111 : begin
         _zz__zz_retirePC_1 = rob_15_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_15_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_15_specialOp;
         _zz__zz_retireMask_3 = rob_15_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_15_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_15_branchResult_predictFail;
@@ -27618,7 +31451,7 @@ module ROB (
       end
       5'b10000 : begin
         _zz__zz_retirePC_1 = rob_16_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_16_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_16_specialOp;
         _zz__zz_retireMask_3 = rob_16_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_16_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_16_branchResult_predictFail;
@@ -27633,7 +31466,7 @@ module ROB (
       end
       5'b10001 : begin
         _zz__zz_retirePC_1 = rob_17_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_17_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_17_specialOp;
         _zz__zz_retireMask_3 = rob_17_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_17_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_17_branchResult_predictFail;
@@ -27648,7 +31481,7 @@ module ROB (
       end
       5'b10010 : begin
         _zz__zz_retirePC_1 = rob_18_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_18_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_18_specialOp;
         _zz__zz_retireMask_3 = rob_18_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_18_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_18_branchResult_predictFail;
@@ -27663,7 +31496,7 @@ module ROB (
       end
       5'b10011 : begin
         _zz__zz_retirePC_1 = rob_19_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_19_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_19_specialOp;
         _zz__zz_retireMask_3 = rob_19_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_19_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_19_branchResult_predictFail;
@@ -27678,7 +31511,7 @@ module ROB (
       end
       5'b10100 : begin
         _zz__zz_retirePC_1 = rob_20_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_20_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_20_specialOp;
         _zz__zz_retireMask_3 = rob_20_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_20_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_20_branchResult_predictFail;
@@ -27693,7 +31526,7 @@ module ROB (
       end
       5'b10101 : begin
         _zz__zz_retirePC_1 = rob_21_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_21_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_21_specialOp;
         _zz__zz_retireMask_3 = rob_21_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_21_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_21_branchResult_predictFail;
@@ -27708,7 +31541,7 @@ module ROB (
       end
       5'b10110 : begin
         _zz__zz_retirePC_1 = rob_22_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_22_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_22_specialOp;
         _zz__zz_retireMask_3 = rob_22_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_22_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_22_branchResult_predictFail;
@@ -27723,7 +31556,7 @@ module ROB (
       end
       5'b10111 : begin
         _zz__zz_retirePC_1 = rob_23_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_23_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_23_specialOp;
         _zz__zz_retireMask_3 = rob_23_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_23_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_23_branchResult_predictFail;
@@ -27738,7 +31571,7 @@ module ROB (
       end
       5'b11000 : begin
         _zz__zz_retirePC_1 = rob_24_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_24_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_24_specialOp;
         _zz__zz_retireMask_3 = rob_24_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_24_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_24_branchResult_predictFail;
@@ -27753,7 +31586,7 @@ module ROB (
       end
       5'b11001 : begin
         _zz__zz_retirePC_1 = rob_25_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_25_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_25_specialOp;
         _zz__zz_retireMask_3 = rob_25_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_25_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_25_branchResult_predictFail;
@@ -27768,7 +31601,7 @@ module ROB (
       end
       5'b11010 : begin
         _zz__zz_retirePC_1 = rob_26_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_26_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_26_specialOp;
         _zz__zz_retireMask_3 = rob_26_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_26_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_26_branchResult_predictFail;
@@ -27783,7 +31616,7 @@ module ROB (
       end
       5'b11011 : begin
         _zz__zz_retirePC_1 = rob_27_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_27_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_27_specialOp;
         _zz__zz_retireMask_3 = rob_27_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_27_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_27_branchResult_predictFail;
@@ -27798,7 +31631,7 @@ module ROB (
       end
       5'b11100 : begin
         _zz__zz_retirePC_1 = rob_28_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_28_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_28_specialOp;
         _zz__zz_retireMask_3 = rob_28_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_28_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_28_branchResult_predictFail;
@@ -27813,7 +31646,7 @@ module ROB (
       end
       5'b11101 : begin
         _zz__zz_retirePC_1 = rob_29_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_29_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_29_specialOp;
         _zz__zz_retireMask_3 = rob_29_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_29_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_29_branchResult_predictFail;
@@ -27828,7 +31661,7 @@ module ROB (
       end
       5'b11110 : begin
         _zz__zz_retirePC_1 = rob_30_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_30_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_30_specialOp;
         _zz__zz_retireMask_3 = rob_30_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_30_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_30_branchResult_predictFail;
@@ -27843,7 +31676,7 @@ module ROB (
       end
       default : begin
         _zz__zz_retirePC_1 = rob_31_pc;
-        _zz__zz_stage_updateBPU_1_isJumpInst = rob_31_specialOp;
+        _zz__zz_io_retireIsReadCnt_1 = rob_31_specialOp;
         _zz__zz_retireMask_3 = rob_31_isComplete;
         _zz__zz_stage_updateBPU_1_taken = rob_31_branchResult_branchResult;
         _zz__zz_stage_updateBPU_1_predictFail = rob_31_branchResult_predictFail;
@@ -30841,31 +34674,31 @@ module ROB (
     endcase
   end
   always @(*) begin
-    case(_zz_stage_updateBPU_0_isJumpInst)
-      ROBSpecialOp_nop : _zz_stage_updateBPU_0_isJumpInst_string = "nop      ";
-      ROBSpecialOp_bpuUpdate : _zz_stage_updateBPU_0_isJumpInst_string = "bpuUpdate";
-      ROBSpecialOp_lsuAction : _zz_stage_updateBPU_0_isJumpInst_string = "lsuAction";
-      ROBSpecialOp_ll : _zz_stage_updateBPU_0_isJumpInst_string = "ll       ";
-      ROBSpecialOp_writeCSR : _zz_stage_updateBPU_0_isJumpInst_string = "writeCSR ";
-      ROBSpecialOp_ertn : _zz_stage_updateBPU_0_isJumpInst_string = "ertn     ";
-      ROBSpecialOp_idle : _zz_stage_updateBPU_0_isJumpInst_string = "idle     ";
-      ROBSpecialOp_readCSR : _zz_stage_updateBPU_0_isJumpInst_string = "readCSR  ";
-      ROBSpecialOp_readCNT : _zz_stage_updateBPU_0_isJumpInst_string = "readCNT  ";
-      default : _zz_stage_updateBPU_0_isJumpInst_string = "?????????";
+    case(_zz_io_retireIsReadCnt_0)
+      ROBSpecialOp_nop : _zz_io_retireIsReadCnt_0_string = "nop      ";
+      ROBSpecialOp_bpuUpdate : _zz_io_retireIsReadCnt_0_string = "bpuUpdate";
+      ROBSpecialOp_lsuAction : _zz_io_retireIsReadCnt_0_string = "lsuAction";
+      ROBSpecialOp_ll : _zz_io_retireIsReadCnt_0_string = "ll       ";
+      ROBSpecialOp_writeCSR : _zz_io_retireIsReadCnt_0_string = "writeCSR ";
+      ROBSpecialOp_ertn : _zz_io_retireIsReadCnt_0_string = "ertn     ";
+      ROBSpecialOp_idle : _zz_io_retireIsReadCnt_0_string = "idle     ";
+      ROBSpecialOp_readCSR : _zz_io_retireIsReadCnt_0_string = "readCSR  ";
+      ROBSpecialOp_readCNT : _zz_io_retireIsReadCnt_0_string = "readCNT  ";
+      default : _zz_io_retireIsReadCnt_0_string = "?????????";
     endcase
   end
   always @(*) begin
-    case(_zz_stage_updateBPU_1_isJumpInst)
-      ROBSpecialOp_nop : _zz_stage_updateBPU_1_isJumpInst_string = "nop      ";
-      ROBSpecialOp_bpuUpdate : _zz_stage_updateBPU_1_isJumpInst_string = "bpuUpdate";
-      ROBSpecialOp_lsuAction : _zz_stage_updateBPU_1_isJumpInst_string = "lsuAction";
-      ROBSpecialOp_ll : _zz_stage_updateBPU_1_isJumpInst_string = "ll       ";
-      ROBSpecialOp_writeCSR : _zz_stage_updateBPU_1_isJumpInst_string = "writeCSR ";
-      ROBSpecialOp_ertn : _zz_stage_updateBPU_1_isJumpInst_string = "ertn     ";
-      ROBSpecialOp_idle : _zz_stage_updateBPU_1_isJumpInst_string = "idle     ";
-      ROBSpecialOp_readCSR : _zz_stage_updateBPU_1_isJumpInst_string = "readCSR  ";
-      ROBSpecialOp_readCNT : _zz_stage_updateBPU_1_isJumpInst_string = "readCNT  ";
-      default : _zz_stage_updateBPU_1_isJumpInst_string = "?????????";
+    case(_zz_io_retireIsReadCnt_1)
+      ROBSpecialOp_nop : _zz_io_retireIsReadCnt_1_string = "nop      ";
+      ROBSpecialOp_bpuUpdate : _zz_io_retireIsReadCnt_1_string = "bpuUpdate";
+      ROBSpecialOp_lsuAction : _zz_io_retireIsReadCnt_1_string = "lsuAction";
+      ROBSpecialOp_ll : _zz_io_retireIsReadCnt_1_string = "ll       ";
+      ROBSpecialOp_writeCSR : _zz_io_retireIsReadCnt_1_string = "writeCSR ";
+      ROBSpecialOp_ertn : _zz_io_retireIsReadCnt_1_string = "ertn     ";
+      ROBSpecialOp_idle : _zz_io_retireIsReadCnt_1_string = "idle     ";
+      ROBSpecialOp_readCSR : _zz_io_retireIsReadCnt_1_string = "readCSR  ";
+      ROBSpecialOp_readCNT : _zz_io_retireIsReadCnt_1_string = "readCNT  ";
+      default : _zz_io_retireIsReadCnt_1_string = "?????????";
     endcase
   end
   always @(*) begin
@@ -30942,7 +34775,7 @@ module ROB (
 
   assign _zz_retirePC_0 = _zz__zz_retirePC_0;
   assign _zz_noPPRDMask = _zz__zz_noPPRDMask;
-  assign _zz_stage_updateBPU_0_isJumpInst = _zz__zz_stage_updateBPU_0_isJumpInst;
+  assign _zz_io_retireIsReadCnt_0 = _zz__zz_io_retireIsReadCnt_0;
   assign _zz_retireMask = _zz__zz_retireMask;
   assign _zz_stage_updateBPU_0_taken = _zz__zz_stage_updateBPU_0_taken;
   assign _zz_stage_updateBPU_0_predictFail = _zz__zz_stage_updateBPU_0_predictFail;
@@ -30950,8 +34783,10 @@ module ROB (
   assign _zz_normalExceptionMask = _zz__zz_normalExceptionMask;
   assign _zz_normalExceptionMask_1 = _zz__zz_normalExceptionMask_1;
   assign _zz_retireMask_2 = _zz__zz_retireMask_2;
-  assign idleEn = ((_zz_retireMask_2 && (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_idle)) && io_interrupt);
+  assign idleEn = ((((_zz_retireMask_2 && _zz_retireMask) && (! _zz_retireMask_1)) && (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_idle)) && io_interrupt);
   assign dispatchNum = _zz_dispatchNum;
+  assign _zz_io_retireValid_0 = retireMask[0];
+  assign _zz_io_retireValid_1 = retireMask[1];
   assign retireNum = _zz_retireNum;
   always @(*) begin
     stage_availROBMask[0] = (! _zz_stage_availROBMask);
@@ -30961,8 +34796,8 @@ module ROB (
   assign io_dispatch_robIdx_0 = tail_0;
   assign io_dispatch_robIdx_1 = tail_1;
   always @(*) begin
-    retireMask[0] = ((_zz_retireMask_2 && _zz_retireMask) && (! _zz_retireMask_1));
-    retireMask[1] = ((((_zz_retireMask_5 && _zz_retireMask_3) && (! _zz_retireMask_4)) && (&retireMask[0 : 0])) && (! inhibitNextRetireMask[0]));
+    retireMask[0] = (((_zz_retireMask_2 && _zz_retireMask) && (! _zz_retireMask_1)) && (_zz_io_retireIsReadCnt_0 != ROBSpecialOp_idle));
+    retireMask[1] = (((((_zz_retireMask_5 && _zz_retireMask_3) && (! _zz_retireMask_4)) && (_zz_io_retireIsReadCnt_1 != ROBSpecialOp_idle)) && (&retireMask[0 : 0])) && (! inhibitNextRetireMask[0]));
   end
 
   always @(*) begin
@@ -30971,7 +34806,7 @@ module ROB (
   end
 
   assign _zz_retirePC_1 = _zz__zz_retirePC_1;
-  assign _zz_stage_updateBPU_1_isJumpInst = _zz__zz_stage_updateBPU_1_isJumpInst;
+  assign _zz_io_retireIsReadCnt_1 = _zz__zz_io_retireIsReadCnt_1;
   assign _zz_retireMask_3 = _zz__zz_retireMask_3;
   assign _zz_stage_updateBPU_1_taken = _zz__zz_stage_updateBPU_1_taken;
   assign _zz_stage_updateBPU_1_predictFail = _zz__zz_stage_updateBPU_1_predictFail;
@@ -31556,7 +35391,7 @@ module ROB (
     _zz_rob_31_isComplete_1[1] = ((head_1 == 5'h1f) && retireMask[1]);
   end
 
-  assign when_ROB_l75 = io_dispatch_allowMask[0];
+  assign when_ROB_l86 = io_dispatch_allowMask[0];
   assign _zz_1 = ({31'd0,1'b1} <<< tail_0);
   assign _zz_2 = _zz_1[0];
   assign _zz_3 = _zz_1[1];
@@ -31590,7 +35425,7 @@ module ROB (
   assign _zz_31 = _zz_1[29];
   assign _zz_32 = _zz_1[30];
   assign _zz_33 = _zz_1[31];
-  assign when_ROB_l75_1 = io_dispatch_allowMask[1];
+  assign when_ROB_l86_1 = io_dispatch_allowMask[1];
   assign _zz_34 = ({31'd0,1'b1} <<< tail_1);
   assign _zz_35 = _zz_34[0];
   assign _zz_36 = _zz_34[1];
@@ -32485,8 +36320,8 @@ module ROB (
   end
 
   always @(*) begin
-    inhibitNextRetireMask[0] = (((((_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_lsuAction) || (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_ll)) || (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_writeCSR)) || (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_ertn)) || _zz_stage_updateBPU_0_predictFail);
-    inhibitNextRetireMask[1] = (((((_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_lsuAction) || (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_ll)) || (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_writeCSR)) || (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_ertn)) || _zz_stage_updateBPU_1_predictFail);
+    inhibitNextRetireMask[0] = (((((_zz_io_retireIsReadCnt_0 == ROBSpecialOp_lsuAction) || (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_ll)) || (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_writeCSR)) || (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_ertn)) || _zz_stage_updateBPU_0_predictFail);
+    inhibitNextRetireMask[1] = (((((_zz_io_retireIsReadCnt_1 == ROBSpecialOp_lsuAction) || (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_ll)) || (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_writeCSR)) || (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_ertn)) || _zz_stage_updateBPU_1_predictFail);
   end
 
   assign _zz_retireEPC = flushMask[0];
@@ -32494,6 +36329,20 @@ module ROB (
   assign retireRealEROBIdx = (_zz_retireEPC ? retireEROBIdx_0 : retireEROBIdx_1);
   assign retireRealECode = (idleEn ? 6'h00 : (_zz_retireEPC ? retireECode_0 : retireECode_1));
   assign retireRealESubCode = (idleEn ? 1'b0 : (_zz_retireEPC ? retireESubCode_0 : retireESubCode_1));
+  assign io_retireValid_0 = _zz_io_retireValid_0;
+  assign io_retireValid_1 = _zz_io_retireValid_1;
+  assign io_retireIsReadCnt_0 = (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_readCNT);
+  assign io_retireIsReadCnt_1 = (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_readCNT);
+  assign io_retireCsrRstat_0 = (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_readCSR);
+  assign io_retireCsrRstat_1 = (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_readCSR);
+  assign io_retirePC_0 = retirePC_0;
+  assign io_retirePC_1 = retirePC_1;
+  assign io_retireWen_0 = stage_retireARAT_0_wen;
+  assign io_retireWen_1 = stage_retireARAT_1_wen;
+  assign io_retireARATidx_0 = stage_retireARAT_0_ard;
+  assign io_retireARATidx_1 = stage_retireARAT_1_ard;
+  assign io_retirePRATidx_0 = stage_retireARAT_0_prd;
+  assign io_retirePRATidx_1 = stage_retireARAT_1_prd;
   assign ertn = (|(ertnMask & retireMask));
   assign normalException = ((_zz_retireEPC ? normalExceptionMask[0] : normalExceptionMask[1]) || idleEn);
   assign tlbrException = (_zz_retireEPC ? tlbrExceptionMask[0] : tlbrExceptionMask[1]);
@@ -32517,23 +36366,23 @@ module ROB (
   end
 
   always @(*) begin
-    lsuActionMask[0] = (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_lsuAction);
-    lsuActionMask[1] = (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_lsuAction);
+    lsuActionMask[0] = (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_lsuAction);
+    lsuActionMask[1] = (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_lsuAction);
   end
 
   always @(*) begin
-    llMask[0] = (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_ll);
-    llMask[1] = (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_ll);
+    llMask[0] = (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_ll);
+    llMask[1] = (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_ll);
   end
 
   always @(*) begin
-    writeCSRMask[0] = (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_writeCSR);
-    writeCSRMask[1] = (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_writeCSR);
+    writeCSRMask[0] = (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_writeCSR);
+    writeCSRMask[1] = (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_writeCSR);
   end
 
   always @(*) begin
-    ertnMask[0] = (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_ertn);
-    ertnMask[1] = (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_ertn);
+    ertnMask[0] = (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_ertn);
+    ertnMask[1] = (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_ertn);
   end
 
   always @(*) begin
@@ -32561,7 +36410,7 @@ module ROB (
   assign stage_retireROBIdx_0 = head_0;
   assign stage_retireEn_0 = retireMask[0];
   assign stage_updateBPU_0_pc = retirePC_0;
-  assign stage_updateBPU_0_isJumpInst = (_zz_stage_updateBPU_0_isJumpInst == ROBSpecialOp_bpuUpdate);
+  assign stage_updateBPU_0_isJumpInst = (_zz_io_retireIsReadCnt_0 == ROBSpecialOp_bpuUpdate);
   assign stage_updateBPU_0_taken = _zz_stage_updateBPU_0_taken;
   assign stage_updateBPU_0_predictFail = _zz_stage_updateBPU_0_predictFail;
   assign stage_updateBPU_0_target = retireTargetPC_0;
@@ -32578,7 +36427,7 @@ module ROB (
   assign stage_retireROBIdx_1 = head_1;
   assign stage_retireEn_1 = retireMask[1];
   assign stage_updateBPU_1_pc = retirePC_1;
-  assign stage_updateBPU_1_isJumpInst = (_zz_stage_updateBPU_1_isJumpInst == ROBSpecialOp_bpuUpdate);
+  assign stage_updateBPU_1_isJumpInst = (_zz_io_retireIsReadCnt_1 == ROBSpecialOp_bpuUpdate);
   assign stage_updateBPU_1_taken = _zz_stage_updateBPU_1_taken;
   assign stage_updateBPU_1_predictFail = _zz_stage_updateBPU_1_predictFail;
   assign stage_updateBPU_1_target = retireTargetPC_1;
@@ -33159,7 +37008,7 @@ module ROB (
       rob_30_isComplete <= (((|_zz_rob_30_isComplete_1) || io_flush) ? 1'b0 : (rob_30_isComplete || (|_zz_rob_30_isComplete)));
       rob_31_valid <= (((|_zz_rob_31_isComplete_1) || io_flush) ? 1'b0 : (rob_31_valid || (|_zz_rob_31_valid)));
       rob_31_isComplete <= (((|_zz_rob_31_isComplete_1) || io_flush) ? 1'b0 : (rob_31_isComplete || (|_zz_rob_31_isComplete)));
-      if(when_ROB_l75) begin
+      if(when_ROB_l86) begin
         if(_zz_2) begin
           rob_0_pc <= io_dispatch_pc_0;
         end
@@ -33642,7 +37491,7 @@ module ROB (
         end
       end
       tail_0 <= (io_flush ? 5'h00 : _zz_tail_0);
-      if(when_ROB_l75_1) begin
+      if(when_ROB_l86_1) begin
         if(_zz_35) begin
           rob_0_pc <= io_dispatch_pc_1;
         end
@@ -37091,70 +40940,70 @@ module PRF (
   input  wire [31:0]   io_write_3_data,
   input  wire [5:0]    io_write_4_idx,
   input  wire [31:0]   io_write_4_data,
-  output reg  [31:0]   io_debugRegs_0,
-  output reg  [31:0]   io_debugRegs_1,
-  output reg  [31:0]   io_debugRegs_2,
-  output reg  [31:0]   io_debugRegs_3,
-  output reg  [31:0]   io_debugRegs_4,
-  output reg  [31:0]   io_debugRegs_5,
-  output reg  [31:0]   io_debugRegs_6,
-  output reg  [31:0]   io_debugRegs_7,
-  output reg  [31:0]   io_debugRegs_8,
-  output reg  [31:0]   io_debugRegs_9,
-  output reg  [31:0]   io_debugRegs_10,
-  output reg  [31:0]   io_debugRegs_11,
-  output reg  [31:0]   io_debugRegs_12,
-  output reg  [31:0]   io_debugRegs_13,
-  output reg  [31:0]   io_debugRegs_14,
-  output reg  [31:0]   io_debugRegs_15,
-  output reg  [31:0]   io_debugRegs_16,
-  output reg  [31:0]   io_debugRegs_17,
-  output reg  [31:0]   io_debugRegs_18,
-  output reg  [31:0]   io_debugRegs_19,
-  output reg  [31:0]   io_debugRegs_20,
-  output reg  [31:0]   io_debugRegs_21,
-  output reg  [31:0]   io_debugRegs_22,
-  output reg  [31:0]   io_debugRegs_23,
-  output reg  [31:0]   io_debugRegs_24,
-  output reg  [31:0]   io_debugRegs_25,
-  output reg  [31:0]   io_debugRegs_26,
-  output reg  [31:0]   io_debugRegs_27,
-  output reg  [31:0]   io_debugRegs_28,
-  output reg  [31:0]   io_debugRegs_29,
-  output reg  [31:0]   io_debugRegs_30,
-  output reg  [31:0]   io_debugRegs_31,
-  output reg  [31:0]   io_debugRegs_32,
-  output reg  [31:0]   io_debugRegs_33,
-  output reg  [31:0]   io_debugRegs_34,
-  output reg  [31:0]   io_debugRegs_35,
-  output reg  [31:0]   io_debugRegs_36,
-  output reg  [31:0]   io_debugRegs_37,
-  output reg  [31:0]   io_debugRegs_38,
-  output reg  [31:0]   io_debugRegs_39,
-  output reg  [31:0]   io_debugRegs_40,
-  output reg  [31:0]   io_debugRegs_41,
-  output reg  [31:0]   io_debugRegs_42,
-  output reg  [31:0]   io_debugRegs_43,
-  output reg  [31:0]   io_debugRegs_44,
-  output reg  [31:0]   io_debugRegs_45,
-  output reg  [31:0]   io_debugRegs_46,
-  output reg  [31:0]   io_debugRegs_47,
-  output reg  [31:0]   io_debugRegs_48,
-  output reg  [31:0]   io_debugRegs_49,
-  output reg  [31:0]   io_debugRegs_50,
-  output reg  [31:0]   io_debugRegs_51,
-  output reg  [31:0]   io_debugRegs_52,
-  output reg  [31:0]   io_debugRegs_53,
-  output reg  [31:0]   io_debugRegs_54,
-  output reg  [31:0]   io_debugRegs_55,
-  output reg  [31:0]   io_debugRegs_56,
-  output reg  [31:0]   io_debugRegs_57,
-  output reg  [31:0]   io_debugRegs_58,
-  output reg  [31:0]   io_debugRegs_59,
-  output reg  [31:0]   io_debugRegs_60,
-  output reg  [31:0]   io_debugRegs_61,
-  output reg  [31:0]   io_debugRegs_62,
-  output reg  [31:0]   io_debugRegs_63,
+  output wire [31:0]   io_debugRegs_0,
+  output wire [31:0]   io_debugRegs_1,
+  output wire [31:0]   io_debugRegs_2,
+  output wire [31:0]   io_debugRegs_3,
+  output wire [31:0]   io_debugRegs_4,
+  output wire [31:0]   io_debugRegs_5,
+  output wire [31:0]   io_debugRegs_6,
+  output wire [31:0]   io_debugRegs_7,
+  output wire [31:0]   io_debugRegs_8,
+  output wire [31:0]   io_debugRegs_9,
+  output wire [31:0]   io_debugRegs_10,
+  output wire [31:0]   io_debugRegs_11,
+  output wire [31:0]   io_debugRegs_12,
+  output wire [31:0]   io_debugRegs_13,
+  output wire [31:0]   io_debugRegs_14,
+  output wire [31:0]   io_debugRegs_15,
+  output wire [31:0]   io_debugRegs_16,
+  output wire [31:0]   io_debugRegs_17,
+  output wire [31:0]   io_debugRegs_18,
+  output wire [31:0]   io_debugRegs_19,
+  output wire [31:0]   io_debugRegs_20,
+  output wire [31:0]   io_debugRegs_21,
+  output wire [31:0]   io_debugRegs_22,
+  output wire [31:0]   io_debugRegs_23,
+  output wire [31:0]   io_debugRegs_24,
+  output wire [31:0]   io_debugRegs_25,
+  output wire [31:0]   io_debugRegs_26,
+  output wire [31:0]   io_debugRegs_27,
+  output wire [31:0]   io_debugRegs_28,
+  output wire [31:0]   io_debugRegs_29,
+  output wire [31:0]   io_debugRegs_30,
+  output wire [31:0]   io_debugRegs_31,
+  output wire [31:0]   io_debugRegs_32,
+  output wire [31:0]   io_debugRegs_33,
+  output wire [31:0]   io_debugRegs_34,
+  output wire [31:0]   io_debugRegs_35,
+  output wire [31:0]   io_debugRegs_36,
+  output wire [31:0]   io_debugRegs_37,
+  output wire [31:0]   io_debugRegs_38,
+  output wire [31:0]   io_debugRegs_39,
+  output wire [31:0]   io_debugRegs_40,
+  output wire [31:0]   io_debugRegs_41,
+  output wire [31:0]   io_debugRegs_42,
+  output wire [31:0]   io_debugRegs_43,
+  output wire [31:0]   io_debugRegs_44,
+  output wire [31:0]   io_debugRegs_45,
+  output wire [31:0]   io_debugRegs_46,
+  output wire [31:0]   io_debugRegs_47,
+  output wire [31:0]   io_debugRegs_48,
+  output wire [31:0]   io_debugRegs_49,
+  output wire [31:0]   io_debugRegs_50,
+  output wire [31:0]   io_debugRegs_51,
+  output wire [31:0]   io_debugRegs_52,
+  output wire [31:0]   io_debugRegs_53,
+  output wire [31:0]   io_debugRegs_54,
+  output wire [31:0]   io_debugRegs_55,
+  output wire [31:0]   io_debugRegs_56,
+  output wire [31:0]   io_debugRegs_57,
+  output wire [31:0]   io_debugRegs_58,
+  output wire [31:0]   io_debugRegs_59,
+  output wire [31:0]   io_debugRegs_60,
+  output wire [31:0]   io_debugRegs_61,
+  output wire [31:0]   io_debugRegs_62,
+  output wire [31:0]   io_debugRegs_63,
   input  wire          aclk,
   input  wire          aresetn
 );
@@ -38144,6 +41993,70 @@ module PRF (
   assign _zz_4 = ({63'd0,1'b1} <<< io_write_3_idx);
   assign when_PRF_l27_4 = (io_write_4_idx != _zz_when_PRF_l27_4);
   assign _zz_5 = ({63'd0,1'b1} <<< io_write_4_idx);
+  assign io_debugRegs_0 = regFile_0;
+  assign io_debugRegs_1 = regFile_1;
+  assign io_debugRegs_2 = regFile_2;
+  assign io_debugRegs_3 = regFile_3;
+  assign io_debugRegs_4 = regFile_4;
+  assign io_debugRegs_5 = regFile_5;
+  assign io_debugRegs_6 = regFile_6;
+  assign io_debugRegs_7 = regFile_7;
+  assign io_debugRegs_8 = regFile_8;
+  assign io_debugRegs_9 = regFile_9;
+  assign io_debugRegs_10 = regFile_10;
+  assign io_debugRegs_11 = regFile_11;
+  assign io_debugRegs_12 = regFile_12;
+  assign io_debugRegs_13 = regFile_13;
+  assign io_debugRegs_14 = regFile_14;
+  assign io_debugRegs_15 = regFile_15;
+  assign io_debugRegs_16 = regFile_16;
+  assign io_debugRegs_17 = regFile_17;
+  assign io_debugRegs_18 = regFile_18;
+  assign io_debugRegs_19 = regFile_19;
+  assign io_debugRegs_20 = regFile_20;
+  assign io_debugRegs_21 = regFile_21;
+  assign io_debugRegs_22 = regFile_22;
+  assign io_debugRegs_23 = regFile_23;
+  assign io_debugRegs_24 = regFile_24;
+  assign io_debugRegs_25 = regFile_25;
+  assign io_debugRegs_26 = regFile_26;
+  assign io_debugRegs_27 = regFile_27;
+  assign io_debugRegs_28 = regFile_28;
+  assign io_debugRegs_29 = regFile_29;
+  assign io_debugRegs_30 = regFile_30;
+  assign io_debugRegs_31 = regFile_31;
+  assign io_debugRegs_32 = regFile_32;
+  assign io_debugRegs_33 = regFile_33;
+  assign io_debugRegs_34 = regFile_34;
+  assign io_debugRegs_35 = regFile_35;
+  assign io_debugRegs_36 = regFile_36;
+  assign io_debugRegs_37 = regFile_37;
+  assign io_debugRegs_38 = regFile_38;
+  assign io_debugRegs_39 = regFile_39;
+  assign io_debugRegs_40 = regFile_40;
+  assign io_debugRegs_41 = regFile_41;
+  assign io_debugRegs_42 = regFile_42;
+  assign io_debugRegs_43 = regFile_43;
+  assign io_debugRegs_44 = regFile_44;
+  assign io_debugRegs_45 = regFile_45;
+  assign io_debugRegs_46 = regFile_46;
+  assign io_debugRegs_47 = regFile_47;
+  assign io_debugRegs_48 = regFile_48;
+  assign io_debugRegs_49 = regFile_49;
+  assign io_debugRegs_50 = regFile_50;
+  assign io_debugRegs_51 = regFile_51;
+  assign io_debugRegs_52 = regFile_52;
+  assign io_debugRegs_53 = regFile_53;
+  assign io_debugRegs_54 = regFile_54;
+  assign io_debugRegs_55 = regFile_55;
+  assign io_debugRegs_56 = regFile_56;
+  assign io_debugRegs_57 = regFile_57;
+  assign io_debugRegs_58 = regFile_58;
+  assign io_debugRegs_59 = regFile_59;
+  assign io_debugRegs_60 = regFile_60;
+  assign io_debugRegs_61 = regFile_61;
+  assign io_debugRegs_62 = regFile_62;
+  assign io_debugRegs_63 = regFile_63;
   always @(posedge aclk) begin
     if(when_PRF_l27) begin
       if(_zz_1[0]) begin
@@ -39115,70 +43028,6 @@ module PRF (
         regFile_63 <= io_write_4_data;
       end
     end
-    io_debugRegs_0 <= regFile_0;
-    io_debugRegs_1 <= regFile_1;
-    io_debugRegs_2 <= regFile_2;
-    io_debugRegs_3 <= regFile_3;
-    io_debugRegs_4 <= regFile_4;
-    io_debugRegs_5 <= regFile_5;
-    io_debugRegs_6 <= regFile_6;
-    io_debugRegs_7 <= regFile_7;
-    io_debugRegs_8 <= regFile_8;
-    io_debugRegs_9 <= regFile_9;
-    io_debugRegs_10 <= regFile_10;
-    io_debugRegs_11 <= regFile_11;
-    io_debugRegs_12 <= regFile_12;
-    io_debugRegs_13 <= regFile_13;
-    io_debugRegs_14 <= regFile_14;
-    io_debugRegs_15 <= regFile_15;
-    io_debugRegs_16 <= regFile_16;
-    io_debugRegs_17 <= regFile_17;
-    io_debugRegs_18 <= regFile_18;
-    io_debugRegs_19 <= regFile_19;
-    io_debugRegs_20 <= regFile_20;
-    io_debugRegs_21 <= regFile_21;
-    io_debugRegs_22 <= regFile_22;
-    io_debugRegs_23 <= regFile_23;
-    io_debugRegs_24 <= regFile_24;
-    io_debugRegs_25 <= regFile_25;
-    io_debugRegs_26 <= regFile_26;
-    io_debugRegs_27 <= regFile_27;
-    io_debugRegs_28 <= regFile_28;
-    io_debugRegs_29 <= regFile_29;
-    io_debugRegs_30 <= regFile_30;
-    io_debugRegs_31 <= regFile_31;
-    io_debugRegs_32 <= regFile_32;
-    io_debugRegs_33 <= regFile_33;
-    io_debugRegs_34 <= regFile_34;
-    io_debugRegs_35 <= regFile_35;
-    io_debugRegs_36 <= regFile_36;
-    io_debugRegs_37 <= regFile_37;
-    io_debugRegs_38 <= regFile_38;
-    io_debugRegs_39 <= regFile_39;
-    io_debugRegs_40 <= regFile_40;
-    io_debugRegs_41 <= regFile_41;
-    io_debugRegs_42 <= regFile_42;
-    io_debugRegs_43 <= regFile_43;
-    io_debugRegs_44 <= regFile_44;
-    io_debugRegs_45 <= regFile_45;
-    io_debugRegs_46 <= regFile_46;
-    io_debugRegs_47 <= regFile_47;
-    io_debugRegs_48 <= regFile_48;
-    io_debugRegs_49 <= regFile_49;
-    io_debugRegs_50 <= regFile_50;
-    io_debugRegs_51 <= regFile_51;
-    io_debugRegs_52 <= regFile_52;
-    io_debugRegs_53 <= regFile_53;
-    io_debugRegs_54 <= regFile_54;
-    io_debugRegs_55 <= regFile_55;
-    io_debugRegs_56 <= regFile_56;
-    io_debugRegs_57 <= regFile_57;
-    io_debugRegs_58 <= regFile_58;
-    io_debugRegs_59 <= regFile_59;
-    io_debugRegs_60 <= regFile_60;
-    io_debugRegs_61 <= regFile_61;
-    io_debugRegs_62 <= regFile_62;
-    io_debugRegs_63 <= regFile_63;
   end
 
 
