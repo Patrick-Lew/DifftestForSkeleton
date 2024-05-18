@@ -66,7 +66,7 @@ int Difftest::step(vluint64_t &main_time) {
 #ifdef OUTPUT_PC_INFO
 #ifdef PRINT_CLK_TIME
         //display();
-        printf("[%010ldns] mycpu : pc = %08x, inst = %08x, reg = %02d, val = %08x\n",
+        printf("[%010ldns] mycpu : pc = %08x, prfIndex = %08x, aRatIndex = %02d, val = %08x\n",
             main_time, dut.commit[idx_commit].pc, dut.commit[idx_commit].inst, dut.commit[idx_commit].wen ? dut.commit[idx_commit].wdest : 0, dut.commit[idx_commit].wdata);
 #else
         printf("mycpu : pc = %08x, inst = %08x, reg = %02d, val = %08x\n",
@@ -81,7 +81,7 @@ int Difftest::step(vluint64_t &main_time) {
             display();
             printf("now pc is 0x1c032478\n");
         }
-        fprintf(trace_out, "[%010ldns] mycpu : pc = %08x, inst = %08x, reg = %02d, val = %08x\n",
+        fprintf(trace_out, "[%010ldns] mycpu : pc = %08x, prfIndex = %08x, aRatIndex = %02d, val = %08x\n",
             main_time, dut.commit[idx_commit].pc, dut.commit[idx_commit].inst, dut.commit[idx_commit].wen ? dut.commit[idx_commit].wdest : 0, dut.commit[idx_commit].wdata);
 #else
         fprintf(trace_out, "mycpu : pc = %08x, inst = %08x, reg = %02d, val = %08x\n",
