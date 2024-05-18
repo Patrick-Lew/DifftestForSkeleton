@@ -58,11 +58,11 @@ echo "  --slice-simu-trace    	slice simu_trace.txt with trace-slice-size ns(def
 	 " 
 echo "  --trace-slice-size size	simu trace slice clock size(default: 100000)     
 	 "
-echo "  --tail-waveform       	tail waveform with waveform-tail-size ns(default: disable)
+echo "  --tail-waveform       	tail waveform with waveform-tail-size ns(default: enable)
 	 "
 echo "  --waveform-tail-size size	waveform tail clock size(default: 10000)
 	 "
-echo "  --tail-simu-trace		tail simu_trace.txt with trace-tail-size ns(default: disable)
+echo "  --tail-simu-trace		tail simu_trace.txt with trace-tail-size ns(default: enable)
 	 "
 echo "  --trace-tail-size size	simu trace tail clock size(default: 100000)
 	 "
@@ -86,9 +86,9 @@ SLICE_SIMU_TRACE=n
 TRACE_SLICE_SIZE=100000
 SIMU_TRACE=y 
 MEM_TRACE=n
-TAIL_WAVEFORM=n
+TAIL_WAVEFORM=y
 WAVEFORM_TAIL_SIZE=10000
-TAIL_SIMU_TRACE=n
+TAIL_SIMU_TRACE=y
 TRACE_TAIL_SIZE=100000
 DEAD_CLOCK_EN=y
 DEAD_CLOCK_SIZE=10000
