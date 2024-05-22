@@ -36,6 +36,7 @@ static uint32_t estat_last;
 static uint32_t estat_flag;
 static uint32_t estat_mask;
 static uint32_t estat_new;
+int systemcall_flag = 0;
 
 #ifdef DEAD_CLOCK_EN
 static bool dead_clock_enable = false;
@@ -130,6 +131,9 @@ int Difftest::step(vluint64_t &main_time) {
         }
     }
     estat_last = dut.csr.estat;
+
+
+
 
     if(idx_commit > 0) dut.csr.this_pc = dut.commit[idx_commit - 1].pc;
     /* exec the first instruction */
@@ -253,6 +257,7 @@ int Difftest::step(vluint64_t &main_time) {
         }
         return STATE_ABORT;
     } else {
+        systemcall_flag = 1;
         return STATE_RUNNING;
     }
 #endif
