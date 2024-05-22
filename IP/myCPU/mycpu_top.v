@@ -786,7 +786,7 @@ DifftestInstrCommit DifftestInstrCommit0(
     .clock              (aclk           ),
     .coreid             (0              ),
     .index              (DifftestDelayBundle_DifftestInstrCommitIndex_0              ),
-    .valid              (DifftestDelayBundle_DifftestInstrCommitValid_0 | DifftestBundle_DifftestSkip_0      ),
+    .valid              (DifftestDelayBundle_DifftestInstrCommitValid_0   ),
     .pc                 (DifftestDelayBundle_DifftestInstrCommitPC_0         ),
     .instr              (DifftestDelayBundle_DifftestInstrCommitInstr_0       ),
     .skip               (DifftestBundle_DifftestSkip_0              ),
@@ -797,7 +797,7 @@ DifftestInstrCommit DifftestInstrCommit0(
     .wen                (DifftestDelayBundle_DifftestWen_0        ),
     .wdest              (DifftestDelayBundle_DifftestWdest_0      ),
     .wdata              (DifftestDelayBundle_DifftestWdata_0      ),
-    .csr_rstat          (DifftestDelayBundle_DifftestCsrRstat_0),
+    .csr_rstat          (DifftestBundle_DifftestCsrRstat_0),
     .csr_data           (DifftestDelayBundle_DifftestCsrData_0   )
 );
 
@@ -805,7 +805,7 @@ DifftestInstrCommit DifftestInstrCommit1(
     .clock              (aclk           ),
     .coreid             (0              ),
     .index              (DifftestDelayBundle_DifftestInstrCommitIndex_1              ),
-    .valid              (DifftestDelayBundle_DifftestInstrCommitValid_1 | DifftestBundle_DifftestSkip_1     ),
+    .valid              (DifftestDelayBundle_DifftestInstrCommitValid_1  ),
     .pc                 (DifftestDelayBundle_DifftestInstrCommitPC_1         ),
     .instr              (DifftestDelayBundle_DifftestInstrCommitInstr_1       ),
     .skip               (DifftestBundle_DifftestSkip_1             ),
@@ -816,7 +816,7 @@ DifftestInstrCommit DifftestInstrCommit1(
     .wen                (DifftestDelayBundle_DifftestWen_1        ),
     .wdest              (DifftestDelayBundle_DifftestWdest_1      ),
     .wdata              (DifftestDelayBundle_DifftestWdata_1      ),
-    .csr_rstat          (DifftestDelayBundle_DifftestCsrRstat_1),
+    .csr_rstat          (DifftestBundle_DifftestCsrRstat_1),
     .csr_data           (DifftestDelayBundle_DifftestCsrData_1   )
 );
 
