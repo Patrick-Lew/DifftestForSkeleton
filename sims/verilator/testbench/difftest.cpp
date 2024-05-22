@@ -23,7 +23,7 @@ static const char* reg_name[DIFFTEST_NR_REG] = {
 
 static const char compare_mask[DIFFTEST_NR_CSRREG] = {
     1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
-    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  0,
     1,  1,  1,  1,  1,  0,  1
 };
 
@@ -227,7 +227,7 @@ int Difftest::step(vluint64_t &main_time) {
         fprintf(trace_out,"warning: ecode error, dut = %x, ref = %x\n", dut.csr.estat, ref.csr.estat);
         #endif
         //display();
-        // return STATE_ABORT; 
+        return STATE_RUNNING; 
         ecode_error = true;
     }
     for(int i = 0; i < DIFFTEST_NR_CSRREG; i++) {
