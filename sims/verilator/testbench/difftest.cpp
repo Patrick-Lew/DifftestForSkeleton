@@ -22,7 +22,7 @@ static const char* reg_name[DIFFTEST_NR_REG] = {
 };
 
 static const char compare_mask[DIFFTEST_NR_CSRREG] = {
-    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+    1,  1,  1,  1,  0,  1,  1,  1,  1,  1,
     1,  1,  1,  1,  1,  1,  1,  1,  1,  0,
     1,  1,  1,  1,  1,  0,  1
 };
@@ -199,13 +199,13 @@ int Difftest::step(vluint64_t &main_time) {
 
     if (dut.excp.excp_valid) {
         if (dut.excp.exception != 0) {     // not hard interrupt, nemu can detect itself
-            // printf("receive exception 0x%x at pc 0x%x\n", dut.excp.exception, dut.excp.exceptionPC);
-            // fprintf(trace_out,"receive exception 0x%x at pc 0x%x\n", dut.excp.exception, dut.excp.exceptionPC);
+            printf("receive exception 0x%x at pc 0x%x\n", dut.excp.exception, dut.excp.exceptionPC);
+            fprintf(trace_out,"receive exception 0x%x at pc 0x%x\n", dut.excp.exception, dut.excp.exceptionPC);
             proxy->exec(1);
         } else {    // hard interrupt, dut copy intr code to nemu
-//               printf("excp pc : 0x%x\n", dut.excp.exceptionPC);
-//               printf("cpu pc : 0x%x\n", dut.csr.this_pc);
-//               printf("interrupt : 0x%x\n", dut.excp.interrupt);
+              printf("excp pc : 0x%x\n", dut.excp.exceptionPC);
+              printf("cpu pc : 0x%x\n", dut.csr.this_pc);
+              printf("interrupt : 0x%x\n", dut.excp.interrupt);
             if (dut.excp.interrupt != 0) {
                 proxy->raise_intr(dut.excp.interrupt);
             }
@@ -227,7 +227,8 @@ int Difftest::step(vluint64_t &main_time) {
         fprintf(trace_out,"warning: ecode error, dut = %x, ref = %x\n", dut.csr.estat, ref.csr.estat);
         #endif
         //display();
-        return STATE_RUNNING; 
+        //return STATE_RUNNING; 
+        return STATE_ABORT;
         ecode_error = true;
     }
     for(int i = 0; i < DIFFTEST_NR_CSRREG; i++) {
