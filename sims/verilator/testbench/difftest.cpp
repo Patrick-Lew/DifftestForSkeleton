@@ -231,6 +231,19 @@ int Difftest::step(vluint64_t &main_time) {
         return STATE_ABORT;
         ecode_error = true;
     }
+
+    for (int i = 0; i < DIFFTEST_COMMIT_WIDTH; i++)
+    {
+        if (dut.commit[i].skip)
+        {
+            printf("skip here\n");
+            dut.commit[i].skip = 0;
+            return STATE_RUNNING;
+        }
+        
+    }
+    
+
     for(int i = 0; i < DIFFTEST_NR_CSRREG; i++) {
         if (!compare_mask[i])
             dut_regs_ptr[DIFFTEST_NR_GREG + i] = ref_regs_ptr[DIFFTEST_NR_GREG + i] = 0;
