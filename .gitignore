@@ -67,3 +67,7 @@ sims/verilator/run_prog/obj_dir/Vsimu_top__Trace__1.cpp
 sims/verilator/run_prog/obj_dir/Vsimu_top__Trace__1.o
 sims/verilator/run_prog/obj_dir/Vsimu_top__verFiles.dat
 sims/verilator/run_prog/obj_dir/Vsimu_top.o
+sims/verilator/run_prog/config-software.mak
+sims/verilator/run_prog/config.log
+sims/verilator/run_prog/run
+sims/verilator/run_prog/run.sh
