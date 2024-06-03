@@ -786,7 +786,7 @@ DifftestInstrCommit DifftestInstrCommit0(
     .clock              (aclk           ),
     .coreid             (0              ),
     .index              (DifftestDelayBundle_DifftestInstrCommitIndex_0              ),
-    .valid              (DifftestDelayBundle_DifftestInstrCommitValid_0   ),
+    .valid              (DifftestDelayBundle_DifftestInstrCommitValid_0 || DifftestDelayBundle_DifftestIsTlbFill_0  ),
     .pc                 (DifftestDelayBundle_DifftestInstrCommitPC_0         ),
     .instr              (DifftestDelayBundle_DifftestInstrCommitInstr_0       ),
     .skip               (DifftestBundle_DifftestSkip_0 && DifftestDelayBundle_DifftestInstrCommitValid_0             ),
