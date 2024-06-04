@@ -795,8 +795,8 @@ DifftestInstrCommit DifftestInstrCommit0(
     .is_CNTinst         (DifftestDelayBundle_DifftestIsCount_0   ),
     .timer_64_value     (DifftestDelayBundle_DifftestWdata_0   ),
     .wen                (DifftestDelayBundle_DifftestWen_0        ),
-    .wdest              (DifftestDelayBundle_DifftestWdest_0      ),
-    .wdata              (DifftestDelayBundle_DifftestWdata_0      ),
+    .wdest              (DifftestBundle_DifftestWdest_0      ),
+    .wdata              (DifftestBundle_DifftestWdata_0      ),
     .csr_rstat          (DifftestBundle_DifftestCsrRstat_0),
     .csr_data           (DifftestDelayBundle_DifftestCsrData_0   )
 );
@@ -814,8 +814,8 @@ DifftestInstrCommit DifftestInstrCommit1(
     .is_CNTinst         (DifftestDelayBundle_DifftestIsCount_1   ),
     .timer_64_value     (DifftestDelayBundle_DifftestWdata_1   ),
     .wen                (DifftestDelayBundle_DifftestWen_1        ),
-    .wdest              (DifftestDelayBundle_DifftestWdest_1      ),
-    .wdata              (DifftestDelayBundle_DifftestWdata_1      ),
+    .wdest              (DifftestBundle_DifftestWdest_1      ),
+    .wdata              (DifftestBundle_DifftestWdata_1      ),
     .csr_rstat          (DifftestBundle_DifftestCsrRstat_1),
     .csr_data           (DifftestDelayBundle_DifftestCsrData_1   )
 );
